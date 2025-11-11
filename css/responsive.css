@@ -1,0 +1,437 @@
+/* ===================================
+   PIANO - Responsive Styles
+   =================================== */
+
+/* Tablet (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    /* Typography */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.25rem; }
+    
+    /* Hero */
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .hero-chart {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .chart-container {
+        height: 300px;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    /* Steps */
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        text-align: left;
+        gap: 1.5rem;
+    }
+    
+    .step-icon {
+        margin: 0;
+    }
+    
+    /* Pricing */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+/* Mobile (320px - 767px) */
+@media screen and (max-width: 767px) {
+    /* Container */
+    :root {
+        --container-padding: 1rem;
+    }
+    
+    /* Typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.125rem; }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Navigation */
+    .navbar-menu,
+    .navbar-actions {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 5rem 0 2rem;
+        min-height: auto;
+    }
+
+    /* Dual Headline Responsive */
+    .hero-dual-headline {
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .hero-slogan {
+        font-size: 2rem;
+    }
+
+    .hero-catchphrase {
+        font-size: 2rem;
+    }
+
+    .headline-divider {
+        margin: 0.5rem 0;
+    }
+
+    .divider-icon {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-chart {
+        max-width: 100%;
+    }
+    
+    .chart-container {
+        height: 250px;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .bar-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Calculator */
+    .calculator-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .slider-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .slider-value {
+        font-size: 1.25rem;
+    }
+    
+    .calculator-results {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+    
+    .result-value.large {
+        font-size: 1.75rem;
+    }
+    
+    /* Steps */
+    .step-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .step-icon {
+        margin: 0 auto 1rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Pricing */
+    .pricing-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .badge {
+        right: 1.5rem;
+    }
+    
+    .amount {
+        font-size: 2.5rem;
+    }
+    
+    /* FAQ */
+    .faq-question {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 1rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* AI System Intro */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .institutional-tech {
+        padding: 2rem;
+    }
+
+    /* AI Modules */
+    .module-tabs {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .module-tab {
+        min-width: auto;
+    }
+
+    .module-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .module-detail {
+        padding: 2rem;
+    }
+
+    /* Cost Comparison */
+    .cost-comparison-banner {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .cost-arrow {
+        transform: rotate(90deg);
+    }
+
+    /* Tech Badges */
+    .tech-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-badge {
+        text-align: center;
+        min-width: 200px;
+    }
+
+    /* Hero Eyebrow */
+    .hero-eyebrow {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Dual Headline Mobile */
+    .hero-slogan {
+        font-size: 1.75rem;
+    }
+
+    .hero-catchphrase {
+        font-size: 1.75rem;
+    }
+
+    .divider-icon {
+        font-size: 1.25rem;
+    }
+
+    /* Institutional Badges */
+    .institutional-badges {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .inst-badge {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        white-space: nowrap;
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-stats .stat-item {
+        width: 100%;
+    }
+
+    /* AI Points Grid */
+    .ai-points-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Small Mobile (320px - 480px) */
+@media screen and (max-width: 480px) {
+    /* Typography */
+    h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-large {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Hero Eyebrow - Extra Small */
+    .hero-eyebrow {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    /* Institutional Badges - Stack Vertically */
+    .institutional-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .inst-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        width: auto;
+        max-width: 90%;
+    }
+
+    /* Chart - Even Smaller */
+    .chart-container {
+        height: 180px;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .bar-label {
+        font-size: 0.5rem;
+        padding: 0.25rem;
+    }
+
+    .chart-bar {
+        min-width: 50px;
+    }
+
+    /* Pricing */
+    .amount {
+        font-size: 2rem;
+    }
+
+    .currency {
+        font-size: 1.25rem;
+    }
+
+    /* Warning Box */
+    .warning-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Landscape Mobile */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 4rem 0 2rem;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Sharper borders for retina */
+    .navbar,
+    .calculator-card,
+    .pricing-card,
+    .faq-item,
+    .warning-box {
+        border-width: 0.5px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .navbar,
+    .mobile-menu,
+    .btn,
+    .slider-container,
+    .footer {
+        display: none;
+    }
+    
+    .hero,
+    .calculator-section,
+    .how-it-works,
+    .pricing,
+    .faq {
+        page-break-inside: avoid;
+    }
+}
