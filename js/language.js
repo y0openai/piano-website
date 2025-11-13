@@ -46,7 +46,7 @@ const translations = {
         'testimonial.profit': 'profit',
 
         // Calculator
-        'calculator.title': 'Tired of low returns? Calculate your potential.',
+        'calculator.title': 'How Fast Could Your Money Grow?',
         'calculator.conservative': 'Conservative (2% monthly)',
         'calculator.balanced': 'Balanced (3% monthly)',
         'calculator.aggressive': 'Aggressive (4% monthly)',
@@ -126,11 +126,9 @@ const translations = {
         'hero.badge3': 'Citadel-Speed Execution',
 
         // AI System
-        'aiSystem.header.eyebrow': 'Wall Street Sophistication for Individual Traders',
-        'aiSystem.header.title': 'Intelligence That Learns While You Sleep',
-        'aiSystem.header.description': 'Goldman Sachs and Citadel invested hundreds of millions in institutional-grade infrastructure. Now accessible to everyone.',
-        'aiSystem.title': 'True AI Trading: Self-Learning and Evolving',
-        'aiSystem.subtitle': 'Order Flow analysis systems built by top hedge funds and investment banks with millions of dollars now implemented with AI and accessible to individual investors',
+        'aiSystem.header.eyebrow': 'How is this possible?',
+        'aiSystem.title': '5 AI Modules Working Together 24/7',
+        'aiSystem.subtitle': 'Sophisticated technology used exclusively by global top hedge funds · investment banks,<br>now implemented as an AI-integrated system',
         'aiSystem.basic.title': 'Retail Traders',
         'aiSystem.basic.item1': 'Simple bots & indicators',
         'aiSystem.basic.item2': 'Manual strategies',
@@ -153,7 +151,7 @@ const translations = {
         'modules.title': 'Perfect Harmony of 5 AI Modules',
         'modules.subtitle': 'Each module learns independently and works together to create optimal trading decisions',
         'modules.ai.title': 'Next-Generation Intelligence System',
-        'modules.ai.desc': 'PIANO transcends legacy automated trading programs. Our system continuously monitors market conditions, enabling 5 independent AI modules to analyze, deliberate, and synthesize optimal trading decisions autonomously.',
+        'modules.ai.desc': 'PIANO thinks. Five independent AI modules analyze markets in real-time, make autonomous decisions, and execute optimal trades.',
         'modules.ai.point1.title': 'Continuous Data Intelligence',
         'modules.ai.point1.desc': 'Real-time collection and processing of exchange data, order flows, volume dynamics, and price movements',
         'modules.ai.point2.title': 'Independent Decision-Making',
@@ -175,7 +173,7 @@ const translations = {
         // Module Details - Order Flow
         'modules.orderflow.title': 'Order Flow AI',
         'modules.orderflow.benefit.title': 'Detect institutional moves within 3 seconds and follow them',
-        'modules.orderflow.benefit.desc': 'We\'ve implemented the Order Flow analysis technology that Goldman Sachs and Citadel invested billions to develop. The moment institutional investors start buying/selling, our AI detects it instantly and positions in the same direction.',
+        'modules.orderflow.benefit.desc': 'We\'ve implemented the Order Flow analysis technology that Goldman Sachs and Citadel developed with substantial investment. The moment institutional investors start buying/selling, our AI detects it instantly and positions in the same direction.',
         'modules.orderflow.benefit.point1': 'Instant large order detection:',
         'modules.orderflow.benefit.point1.desc': 'Real-time capture of multi-million dollar institutional trades',
         'modules.orderflow.benefit.point2': 'Predict market sentiment shifts:',
@@ -345,7 +343,7 @@ const translations = {
         'testimonial.profit': '수익',
 
         // Calculator
-        'calculator.title': '수익 비교 계산기 (적금 vs PIANO)',
+        'calculator.title': '당신의 돈이 얼마나 빠르게 불어날까요?',
         'calculator.conservative': '보수적 (월 2%)',
         'calculator.balanced': '균형잡힌 (월 3%)',
         'calculator.aggressive': '공격적 (월 4%)',
@@ -425,11 +423,9 @@ const translations = {
         'hero.badge3': 'Citadel-Speed Execution',
 
         // AI System
-        'aiSystem.header.eyebrow': '개인 트레이더를 위한 Wall Street 수준의 정교함',
-        'aiSystem.header.title': 'Intelligence That Learns While You Sleep',
-        'aiSystem.header.description': '골드만삭스와 시타델이 천문학적 금액을 투자한 기관급 인프라를 이제 모두가 사용할 수 있습니다.',
-        'aiSystem.title': '진정한 AI 트레이딩: 스스로 학습하고 진화합니다',
-        'aiSystem.subtitle': '탑 헤지펀드와 투자은행이 구축한 Order Flow 분석 시스템을 AI로 구현하여 개인 투자자도 접근 가능하게 만들었습니다',
+        'aiSystem.header.eyebrow': '어떻게 가능한가요?',
+        'aiSystem.title': '5개의 AI 모듈이 24/7 협업합니다',
+        'aiSystem.subtitle': '글로벌 TOP 헤지펀드·투자은행만 사용해온 정교한 기술을<br>AI 통합 시스템으로 구현했습니다',
         'aiSystem.basic.title': '개인 투자자',
         'aiSystem.basic.item1': '단순 봇 & 지표',
         'aiSystem.basic.item2': '수동 전략 관리',
@@ -452,7 +448,7 @@ const translations = {
         'modules.title': '5대 AI 모듈의 완벽한 조화',
         'modules.subtitle': '각 모듈이 독립적으로 학습하고 함께 작동하여 최적의 거래 결정을 만듭니다',
         'modules.ai.title': '차세대 지능형 시스템',
-        'modules.ai.desc': 'PIANO는 과거의 자동 매매 프로그램을 뛰어넘습니다. 실시간으로 시장 상황을 모니터링하며, 5개의 독립적인 AI 모듈이 분석하고 판단한 결과를 종합하여 최적의 거래 결정을 자율적으로 실행합니다.',
+        'modules.ai.desc': 'PIANO는 생각하는 AI입니다. 5개의 독립 모듈이 실시간으로 시장을 분석하고, 스스로 판단하여 최적의 거래를 실행합니다.',
         'modules.ai.point1.title': '지속적 데이터 인텔리전스',
         'modules.ai.point1.desc': '거래소 데이터, 주문흐름, 거래량 동향, 가격 변동을 실시간으로 수집 및 처리',
         'modules.ai.point2.title': '독립적 의사결정',
@@ -474,7 +470,7 @@ const translations = {
         // Module Details - Order Flow
         'modules.orderflow.title': '주문흐름 분석 AI',
         'modules.orderflow.benefit.title': '대형 투자자의 움직임을 3초 안에 포착해 따라갑니다',
-        'modules.orderflow.benefit.desc': '골드만삭스와 시타델이 천문학적 비용을 투자해 개발한 Order Flow 분석 기술을 AI로 구현했습니다. 기관 투자자들이 매수/매도를 시작하는 순간, AI가 즉시 감지하고 같은 방향으로 포지션을 잡습니다.',
+        'modules.orderflow.benefit.desc': '골드만삭스와 시타델이 막대한 비용으로 개발한 Order Flow 분석 기술을 AI로 구현했습니다. 기관 투자자들이 매수/매도를 시작하는 순간, AI가 즉시 감지하고 같은 방향으로 포지션을 잡습니다.',
         'modules.orderflow.benefit.point1': '대형 주문 즉시 감지:',
         'modules.orderflow.benefit.point1.desc': '기관의 수백만 달러 거래를 실시간 포착',
         'modules.orderflow.benefit.point2': '시장 심리 변화 예측:',
@@ -711,20 +707,20 @@ class LanguageManager {
         if (slider) {
             if (this.currentLang === 'en') {
                 // Convert to USD for English
-                const minUSD = Math.round(500000 * exchangeRate);    // $375
-                const maxUSD = Math.round(10000000 * exchangeRate);  // $7,500
-                const defaultUSD = Math.round(5000000 * exchangeRate); // $3,750
+                const minUSD = Math.round(500000 * exchangeRate);         // $375
+                const maxUSD = Math.round(100000000 * exchangeRate);      // $75,000
+                const defaultUSD = Math.round(5000000 * exchangeRate);    // $3,750
 
                 slider.min = minUSD;
                 slider.max = maxUSD;
                 slider.value = defaultUSD;
-                slider.step = 50; // $50 steps for USD
+                slider.step = 500; // $500 steps for USD
             } else {
                 // Use KRW for Korean
-                slider.min = 500000;      // ₩500,000
-                slider.max = 10000000;    // ₩10,000,000
-                slider.value = 5000000;   // ₩5,000,000
-                slider.step = 100000;     // ₩100,000 steps for KRW
+                slider.min = 500000;         // ₩500,000
+                slider.max = 100000000;      // ₩100,000,000 (1억)
+                slider.value = 5000000;      // ₩5,000,000
+                slider.step = 500000;        // ₩500,000 steps for KRW
             }
         }
     }

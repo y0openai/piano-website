@@ -271,15 +271,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // Parallax Effect for Hero Section
+    // Parallax Effect for Hero Section - Subtle Effect
     // ===================================
     const heroSection = document.querySelector('.hero');
-    
+
     if (heroSection) {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
-            const parallax = scrolled * 0.5;
-            heroSection.style.transform = `translateY(${parallax}px)`;
+
+            // Only apply parallax when scrolled is less than 600px to prevent overlap
+            if (scrolled < 600) {
+                const parallax = scrolled * 0.15;  // Very subtle effect (0.15)
+                heroSection.style.transform = `translateY(${parallax}px)`;
+            } else {
+                // Remove parallax after scrolling past hero section
+                heroSection.style.transform = `translateY(90px)`;  // Lock at max parallax value
+            }
         });
     }
     

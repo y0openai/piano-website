@@ -8,22 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculator Configuration
     // ===================================
     const config = {
-        minInvestment: 500000,      // ₩500,000 / $375
-        maxInvestment: 10000000,    // ₩10,000,000 / $7,500
-        defaultInvestment: 5000000, // ₩5,000,000 / $3,750
-        bankRate: 0.04,             // 4% annual
-        kospiRate: 0.066,           // 6.6% annual
+        minInvestment: 500000,        // ₩500,000 / $375
+        maxInvestment: 100000000,     // ₩100,000,000 / $75,000 (1억)
+        defaultInvestment: 5000000,   // ₩5,000,000 / $3,750
+        bankRate: 0.04,               // 4% annual
+        kospiRate: 0.066,             // 6.6% annual
         pianoMonthlyRate: {
-            conservative: 0.02,      // 2% monthly
-            balanced: 0.03,          // 3% monthly
-            aggressive: 0.04         // 4% monthly
+            conservative: 0.02,        // 2% monthly
+            balanced: 0.03,            // 3% monthly
+            aggressive: 0.04           // 4% monthly
         },
         defaultRiskLevel: 'balanced',
-        bankTaxRate: 0.154,         // 15.4% (14% income tax + 1.4% local tax)
-        cryptoTaxRate: 0,           // 0% (tax-free for crypto futures)
-        exchangeRate: 0.00075,      // KRW to USD conversion rate (1 KRW ≈ $0.00075)
-        currency: '₩',              // Current currency symbol
-        locale: 'ko-KR'             // Current locale for number formatting
+        bankTaxRate: 0.154,           // 15.4% (14% income tax + 1.4% local tax)
+        cryptoTaxRate: 0,             // 0% (tax-free for crypto futures)
+        exchangeRate: 0.00075,        // KRW to USD conversion rate (1 KRW ≈ $0.00075)
+        currency: '₩',                // Current currency symbol
+        locale: 'ko-KR'               // Current locale for number formatting
     };
     
     // ===================================

@@ -66,7 +66,7 @@
                 <span class="banner-divider">•</span>
                 <span class="banner-institutions">
                     <span class="inst-name">Bloomberg</span>
-                    <span class="inst-name">Goldman</span>
+                    <span class="inst-name">Goldman Sachs</span>
                     <span class="inst-name">Citadel</span>
                 </span>
             </div>
@@ -245,7 +245,7 @@
     <section class="calculator-section">
         <div class="container">
             <div class="calculator-card">
-                <h2 class="section-title" data-i18n="calculator.title">Tired of low returns? Calculate your potential.</h2>
+                <h2 class="section-title" data-i18n="calculator.title">당신의 돈이 얼마나 빠르게 불어날까요?</h2>
                 
                 <!-- Scenario Tabs -->
                 <div class="calculator-scenarios">
@@ -261,7 +261,7 @@
                     </label>
                     <div class="slider-container">
                         <input type="range" id="investmentSlider" class="slider"
-                               min="500000" max="10000000" step="100000" value="5000000">
+                               min="500000" max="100000000" step="500000" value="5000000">
                         <div class="slider-track">
                             <div class="slider-fill" id="sliderFill"></div>
                         </div>
@@ -348,21 +348,51 @@
     <!-- AI System Introduction Section -->
     <section class="ai-system-intro" id="ai-system">
         <div class="container">
-            <!-- New Section Header -->
-            <div class="ai-system-header">
-                <div class="header-eyebrow" data-i18n="aiSystem.header.eyebrow">개인 트레이더에게 Wall Street의 정교함을</div>
-                <h2 class="header-title" data-i18n="aiSystem.header.title">Intelligence That Learns While You Sleep</h2>
-                <p class="header-description" data-i18n="aiSystem.header.description">
-                    골드만삭스와 시타델이 수억 달러를 투자한<br>
-                    기관급 인프라를 이제 모두가 사용할 수 있습니다.
+            <!-- Unified Section Header -->
+            <div class="section-header">
+                <div class="header-eyebrow" data-i18n="aiSystem.header.eyebrow">어떻게 가능한가요?</div>
+                <h2 class="section-title" data-i18n="aiSystem.title">5개의 AI 모듈이 24/7 협업합니다</h2>
+                <p class="section-subtitle" data-i18n="aiSystem.subtitle">
+                    글로벌 톱 헤지펀드와 투자은행들이 천문학적 비용을 투자한 기술을<br>
+                    통합 시스템으로 구현했습니다
                 </p>
             </div>
 
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="aiSystem.title">True AI Trading: Self-Learning and Evolving</h2>
-                <p class="section-subtitle" data-i18n="aiSystem.subtitle">
-                    Order Flow analysis systems built by top hedge funds and investment banks with millions of dollars now implemented with AI and accessible to individual investors
-                </p>
+            <!-- Institutional Technology Implementation -->
+            <div class="institutional-tech">
+                <h3 class="tech-title" data-i18n="aiSystem.tech.title">Institutional-Grade Technology Implementation</h3>
+
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h4 data-i18n="aiSystem.tech.bloomberg.title">Bloomberg Terminal Level</h4>
+                        <ul class="tech-checklist">
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item1">L2/L3 Order Book Depth</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item2">VWAP & Volume Profile</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item3">Block Trade Detection</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item4">Cross-Market Analysis</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4 data-i18n="aiSystem.tech.goldman.title">Goldman Sachs / JP Morgan</h4>
+                        <ul class="tech-checklist">
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item1">Microstructure Analysis</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item2">Hidden Liquidity Detection</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item3">Price Impact Modeling</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item4">Smart Order Routing</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4 data-i18n="aiSystem.tech.citadel.title">Citadel / Two Sigma HFT</h4>
+                        <ul class="tech-checklist">
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item1">Order Flow Toxicity (VPIN)</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item2">Kyle's Lambda</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item3">Adverse Selection Cost</span></li>
+                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item4">Latency Arbitrage Detection</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Comparison Table -->
@@ -408,43 +438,6 @@
                 </div>
             </div>
 
-            <!-- Institutional Technology Implementation -->
-            <div class="institutional-tech">
-                <h3 class="tech-title" data-i18n="aiSystem.tech.title">Institutional-Grade Technology Implementation</h3>
-
-                <div class="tech-grid">
-                    <div class="tech-category">
-                        <h4 data-i18n="aiSystem.tech.bloomberg.title">Bloomberg Terminal Level</h4>
-                        <ul class="tech-checklist">
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item1">L2/L3 Order Book Depth</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item2">VWAP & Volume Profile</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item3">Block Trade Detection</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.bloomberg.item4">Cross-Market Analysis</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-category">
-                        <h4 data-i18n="aiSystem.tech.goldman.title">Goldman Sachs / JP Morgan</h4>
-                        <ul class="tech-checklist">
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item1">Microstructure Analysis</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item2">Hidden Liquidity Detection</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item3">Price Impact Modeling</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.goldman.item4">Smart Order Routing</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-category">
-                        <h4 data-i18n="aiSystem.tech.citadel.title">Citadel / Two Sigma HFT</h4>
-                        <ul class="tech-checklist">
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item1">Order Flow Toxicity (VPIN)</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item2">Kyle's Lambda</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item3">Adverse Selection Cost</span></li>
-                            <li><span class="check-icon">✓</span> <span data-i18n="aiSystem.tech.citadel.item4">Latency Arbitrage Detection</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
             <!-- Institutional Cost Comparison Banner -->
             <div class="cost-comparison-banner">
                 <div class="cost-item">
@@ -479,48 +472,6 @@
                 <p class="section-subtitle" data-i18n="modules.subtitle">
                     Each module learns independently and works together to create optimal trading decisions
                 </p>
-            </div>
-
-            <!-- Why True AI Section -->
-            <div class="ai-explanation">
-                <h3 class="ai-explanation-title" data-i18n="modules.ai.title">Why This is True AI</h3>
-                <p class="ai-explanation-desc" data-i18n="modules.ai.desc">
-                    PIANO is not simply a bot following programmed rules. Every 60 seconds, it collects market data, and 5 independent AI modules make their own judgments, then synthesize them to autonomously execute optimal trading decisions.
-                </p>
-
-                <div class="ai-points-grid">
-                    <div class="ai-point">
-                        <div class="ai-point-icon">
-                            <span class="material-symbols-outlined">database</span>
-                        </div>
-                        <h4 data-i18n="modules.ai.point1.title">Real-time Data Collection</h4>
-                        <p data-i18n="modules.ai.point1.desc">Collects exchange data, order books, volume, and price movements every minute</p>
-                    </div>
-
-                    <div class="ai-point">
-                        <div class="ai-point-icon">
-                            <span class="material-symbols-outlined">psychology</span>
-                        </div>
-                        <h4 data-i18n="modules.ai.point2.title">Independent Decision-Making</h4>
-                        <p data-i18n="modules.ai.point2.desc">5 AI modules each analyze the market and make independent judgments</p>
-                    </div>
-
-                    <div class="ai-point">
-                        <div class="ai-point-icon">
-                            <span class="material-symbols-outlined">tune</span>
-                        </div>
-                        <h4 data-i18n="modules.ai.point3.title">Autonomous Adjustment</h4>
-                        <p data-i18n="modules.ai.point3.desc">AI autonomously adjusts position size, entry timing, and targets in real-time</p>
-                    </div>
-
-                    <div class="ai-point">
-                        <div class="ai-point-icon">
-                            <span class="material-symbols-outlined">trending_up</span>
-                        </div>
-                        <h4 data-i18n="modules.ai.point4.title">Continuous Learning</h4>
-                        <p data-i18n="modules.ai.point4.desc">Automatically optimizes strategies by comparing with historical patterns</p>
-                    </div>
-                </div>
             </div>
 
             <!-- Tab Navigation -->
@@ -819,6 +770,48 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why True AI Section -->
+            <div class="ai-explanation">
+                <h3 class="ai-explanation-title" data-i18n="modules.ai.title">Why This is True AI</h3>
+                <p class="ai-explanation-desc" data-i18n="modules.ai.desc">
+                    PIANO is not simply a bot following programmed rules. Every 60 seconds, it collects market data, and 5 independent AI modules make their own judgments, then synthesize them to autonomously execute optimal trading decisions.
+                </p>
+
+                <div class="ai-points-grid">
+                    <div class="ai-point">
+                        <div class="ai-point-icon">
+                            <span class="material-symbols-outlined">database</span>
+                        </div>
+                        <h4 data-i18n="modules.ai.point1.title">Real-time Data Collection</h4>
+                        <p data-i18n="modules.ai.point1.desc">Collects exchange data, order books, volume, and price movements every minute</p>
+                    </div>
+
+                    <div class="ai-point">
+                        <div class="ai-point-icon">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <h4 data-i18n="modules.ai.point2.title">Independent Decision-Making</h4>
+                        <p data-i18n="modules.ai.point2.desc">5 AI modules each analyze the market and make independent judgments</p>
+                    </div>
+
+                    <div class="ai-point">
+                        <div class="ai-point-icon">
+                            <span class="material-symbols-outlined">tune</span>
+                        </div>
+                        <h4 data-i18n="modules.ai.point4.title">Autonomous Adjustment</h4>
+                        <p data-i18n="modules.ai.point4.desc">AI autonomously adjusts position size, entry timing, and targets in real-time</p>
+                    </div>
+
+                    <div class="ai-point">
+                        <div class="ai-point-icon">
+                            <span class="material-symbols-outlined">trending_up</span>
+                        </div>
+                        <h4 data-i18n="modules.ai.point3.title">Continuous Learning</h4>
+                        <p data-i18n="modules.ai.point3.desc">Automatically optimizes strategies by comparing with historical patterns</p>
                     </div>
                 </div>
             </div>
