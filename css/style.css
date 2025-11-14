@@ -287,13 +287,20 @@ p { font-size: 1rem; }
     letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--ai-cyan), var(--ai-glow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--ai-cyan);
     text-align: left;
     animation: fadeInSlogan 1s ease-out;
     position: relative;
+}
+
+/* 그라디언트 텍스트 지원 브라우저용 */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+    .hero-slogan {
+        background: linear-gradient(135deg, var(--ai-cyan), var(--ai-glow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }
 
 .hero-slogan::before {
@@ -1575,10 +1582,6 @@ p { font-size: 1rem; }
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--ai-cyan);
-    background: linear-gradient(135deg, var(--ai-cyan) 0%, var(--ai-glow) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: 2rem;
     padding: 0.5rem 1.25rem;
     border: 1px solid var(--ai-cyan);
@@ -1586,6 +1589,16 @@ p { font-size: 1rem; }
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
     animation: fadeInDown 0.8s ease-out, pulseGlow 3s ease-in-out infinite;
+}
+
+/* 그라디언트 텍스트 지원 브라우저용 */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+    .hero-eyebrow {
+        background: linear-gradient(135deg, var(--ai-cyan) 0%, var(--ai-glow) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }
 
 /* Dual Headline Structure */
