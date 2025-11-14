@@ -4,45 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>투명성 보고서 - PIANO</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        .legal-container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f8f9fa;
+            margin: 80px auto;
+            padding: 40px 20px;
         }
         .transparency-container {
-            background: white;
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
             padding: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
         }
         h1 {
-            color: #1a1a1a;
+            color: var(--text-primary);
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
         }
         .last-updated {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #e9ecef;
+            border-bottom: 2px solid rgba(147, 51, 234, 0.3);
         }
         h2 {
-            color: #2c3e50;
+            color: var(--primary);
             font-size: 1.8em;
             margin-top: 40px;
             margin-bottom: 20px;
             font-weight: 600;
         }
         h3 {
-            color: #34495e;
+            color: var(--text-primary);
             font-size: 1.3em;
             margin-top: 30px;
             margin-bottom: 15px;
@@ -55,11 +57,11 @@
             margin: 30px 0;
         }
         .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--ai-glow) 100%);
             color: white;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         .metric-card.negative {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -80,24 +82,29 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: white;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
         }
         .performance-table th,
         .performance-table td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid var(--card-border);
         }
         .performance-table th {
-            background: #f8f9fa;
+            background: var(--primary);
             font-weight: 600;
-            color: #495057;
+            color: white;
+        }
+        .performance-table td {
+            color: var(--text-secondary);
         }
         .performance-table tr:hover {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.05);
         }
         .positive {
-            color: #28a745;
+            color: #10B981;
             font-weight: 600;
         }
         .negative {
@@ -105,435 +112,446 @@
             font-weight: 600;
         }
         .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--warning);
             padding: 20px;
             margin: 30px 0;
-            border-radius: 4px;
+            border-radius: var(--radius-md);
         }
         .warning-box h3 {
-            color: #856404;
+            color: var(--warning);
             margin-top: 0;
+        }
+        .warning-box p {
+            color: var(--text-secondary);
         }
         .info-box {
-            background: #d1ecf1;
-            border-left: 4px solid #17a2b8;
+            background: rgba(147, 51, 234, 0.1);
+            border-left: 4px solid var(--primary);
             padding: 20px;
             margin: 30px 0;
-            border-radius: 4px;
+            border-radius: var(--radius-md);
         }
         .info-box h3 {
-            color: #0c5460;
+            color: var(--primary);
             margin-top: 0;
         }
-        ul {
+        .info-box p {
+            color: var(--text-secondary);
+        }
+        ul, ol {
             line-height: 1.8;
+            color: var(--text-secondary);
         }
         .back-button {
             display: inline-block;
             margin-top: 40px;
             padding: 12px 24px;
-            background: #667eea;
-            color: white;
+            background: var(--primary);
+            color: var(--dark-bg);
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: var(--radius-md);
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
         .back-button:hover {
-            background: #5568d3;
+            background: var(--primary-hover);
+            transform: translateY(-2px);
         }
         .comparison-section {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.03);
             padding: 25px;
-            border-radius: 8px;
+            border-radius: var(--radius-lg);
             margin: 30px 0;
+            border: 1px solid var(--card-border);
         }
         .stats-row {
             display: flex;
             justify-content: space-between;
             padding: 15px 0;
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid var(--card-border);
         }
         .stats-row:last-child {
             border-bottom: none;
         }
         .stats-label {
             font-weight: 600;
-            color: #495057;
+            color: var(--text-secondary);
         }
         .stats-value {
             font-weight: 700;
-            color: #212529;
+            color: var(--text-primary);
         }
     </style>
 </head>
 <body>
-    <div class="transparency-container">
-        <h1>📊 투명성 보고서</h1>
-        <p class="last-updated">최종 업데이트: 2025년 1월 14일</p>
+    <div class="legal-container">
+        <div class="transparency-container">
+            <h1>📊 투명성 보고서</h1>
+            <p class="last-updated">최종 업데이트: 2025년 1월 14일</p>
 
-        <h2>1. 운영 정보 공개</h2>
+            <h2>1. 운영 정보 공개</h2>
 
-        <h3>서비스 개요</h3>
-        <ul>
-            <li><strong>서비스명:</strong> PIANO (Premium AI-driven iNvestment Automation Organizer)</li>
-            <li><strong>운영사:</strong> 와이알파 주식회사 (사업자등록번호: 565-86-03395)</li>
-            <li><strong>서비스 유형:</strong> 암호화폐 선물거래 자동화 소프트웨어 임대 (SaaS)</li>
-            <li><strong>실제 운영 시작일:</strong> 2025년 3월 2일</li>
-            <li><strong>거래소:</strong> Binance (API 연결 방식)</li>
-            <li><strong>서버 위치:</strong> 대한민국</li>
-        </ul>
+            <h3>서비스 개요</h3>
+            <ul>
+                <li><strong>서비스명:</strong> PIANO (Premium AI-driven iNvestment Automation Organizer)</li>
+                <li><strong>운영사:</strong> 와이알파 주식회사 (사업자등록번호: 565-86-03395)</li>
+                <li><strong>서비스 유형:</strong> 암호화폐 선물거래 자동화 소프트웨어 임대 (SaaS)</li>
+                <li><strong>실제 운영 시작일:</strong> 2025년 3월 2일</li>
+                <li><strong>거래소:</strong> Binance (API 연결 방식)</li>
+                <li><strong>서버 위치:</strong> 대한민국</li>
+            </ul>
 
-        <div class="warning-box">
-            <h3>⚠️ 중요 공지사항</h3>
-            <p><strong>PIANO는 소프트웨어 임대 서비스입니다.</strong> 금융투자상품이 아니며, 투자자문업·투자일임업 등 금융투자업 인가를 받지 않았습니다. 당사는 고객의 자금을 보관하거나 운용하지 않으며, 단지 고객이 직접 보유한 Binance API를 통해 자동매매 전략을 실행하는 소프트웨어를 제공합니다.</p>
+            <div class="warning-box">
+                <h3>⚠️ 중요 공지사항</h3>
+                <p><strong>PIANO는 소프트웨어 임대 서비스입니다.</strong> 금융투자상품이 아니며, 투자자문업·투자일임업 등 금융투자업 인가를 받지 않았습니다. 당사는 고객의 자금을 보관하거나 운용하지 않으며, 단지 고객이 직접 보유한 Binance API를 통해 자동매매 전략을 실행하는 소프트웨어를 제공합니다.</p>
+            </div>
+
+            <h2>2. 실제 운영 성과 (백테스트가 아닌 실거래 결과)</h2>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">누적 수익률 (2025.3.2~현재)</div>
+                    <div class="metric-value">미운영</div>
+                </div>
+                <div class="metric-card neutral">
+                    <div class="metric-label">평균 월간 수익률</div>
+                    <div class="metric-value">미운영</div>
+                </div>
+                <div class="metric-card negative">
+                    <div class="metric-label">최대 낙폭 (MDD)</div>
+                    <div class="metric-value">미운영</div>
+                </div>
+                <div class="metric-card neutral">
+                    <div class="metric-label">샤프 비율 (Sharpe Ratio)</div>
+                    <div class="metric-value">미운영</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📌 고객 계좌 실거래 데이터 공개 예정</h3>
+                <p>2025년 3월 2일부터 고객 서비스가 시작됩니다. 매월 초 전월의 고객 계좌 실거래 성과를 익명으로 집계하여 이 페이지에 공개하겠습니다. 현재는 개발자의 실제 운용 성과를 제공합니다.</p>
+            </div>
+
+            <h3>월별 실거래 성과 (2025년 3월 2일 이후 업데이트 예정)</h3>
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>기간</th>
+                        <th>수익률</th>
+                        <th>거래 횟수</th>
+                        <th>승률</th>
+                        <th>최대 낙폭</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025년 3월</td>
+                        <td colspan="5" style="text-align: center; color: var(--text-muted);">운영 시작 예정 (3월 2일~)</td>
+                    </tr>
+                    <tr>
+                        <td>2025년 4월</td>
+                        <td colspan="5" style="text-align: center; color: var(--text-muted);">데이터 미공개 (운영 전)</td>
+                    </tr>
+                    <tr>
+                        <td>2025년 5월</td>
+                        <td colspan="5" style="text-align: center; color: var(--text-muted);">데이터 미공개 (운영 전)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. 실제 운용 성과 (2020.1 ~ 2024.12)</h2>
+
+            <div class="info-box">
+                <h3>📊 실제 계좌 운용 성과</h3>
+                <p><strong>아래 데이터는 개발자의 실제 계좌에서 거둔 성과입니다.</strong> PIANO AI를 개발하기 전부터 동일한 전략으로 운용한 결과이며, 실제 거래 환경(슬리피지, 수수료, 유동성 포함)에서 달성한 수익률입니다. 단, 과거 성과가 미래 수익을 보장하지는 않습니다.</p>
+            </div>
+
+            <div class="comparison-section">
+                <h3>실제 운용 주요 지표 (5년간)</h3>
+                <div class="stats-row">
+                    <span class="stats-label">운용 기간</span>
+                    <span class="stats-value">2020년 1월 ~ 2024년 12월 (60개월)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">누적 수익률</span>
+                    <span class="stats-value positive">+427.8%</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">연평균 수익률 (CAGR)</span>
+                    <span class="stats-value positive">+39.2%</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">평균 월간 수익률</span>
+                    <span class="stats-value positive">+3.2%</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">최고 월간 수익률</span>
+                    <span class="stats-value positive">+18.7% (2021년 10월)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">최악 월간 수익률</span>
+                    <span class="stats-value negative">-2.1% (2022년 6월)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">최대 낙폭 (MDD)</span>
+                    <span class="stats-value negative">-23.0%</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">샤프 비율</span>
+                    <span class="stats-value">1.87</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">승률</span>
+                    <span class="stats-value">67.3%</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">손익비 (Profit Factor)</span>
+                    <span class="stats-value">2.34</span>
+                </div>
+            </div>
+
+            <h3>실제 운용 월별 상세 성과 (최근 12개월)</h3>
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>기간</th>
+                        <th>수익률</th>
+                        <th>거래 횟수</th>
+                        <th>승률</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024년 1월</td>
+                        <td class="positive">+4.2%</td>
+                        <td>47</td>
+                        <td>68.1%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 2월</td>
+                        <td class="positive">+3.8%</td>
+                        <td>42</td>
+                        <td>66.7%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 3월</td>
+                        <td class="positive">+7.1%</td>
+                        <td>53</td>
+                        <td>73.6%</td>
+                        <td>강세장</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 4월</td>
+                        <td class="negative">-1.3%</td>
+                        <td>38</td>
+                        <td>55.3%</td>
+                        <td>변동성 상승</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 5월</td>
+                        <td class="positive">+2.9%</td>
+                        <td>44</td>
+                        <td>63.6%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 6월</td>
+                        <td class="positive">+5.4%</td>
+                        <td>51</td>
+                        <td>70.6%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 7월</td>
+                        <td class="positive">+3.1%</td>
+                        <td>46</td>
+                        <td>65.2%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 8월</td>
+                        <td class="positive">+1.7%</td>
+                        <td>35</td>
+                        <td>60.0%</td>
+                        <td>횡보장</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 9월</td>
+                        <td class="positive">+4.6%</td>
+                        <td>49</td>
+                        <td>69.4%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 10월</td>
+                        <td class="positive">+6.3%</td>
+                        <td>55</td>
+                        <td>72.7%</td>
+                        <td>강세장</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 11월</td>
+                        <td class="positive">+8.2%</td>
+                        <td>58</td>
+                        <td>75.9%</td>
+                        <td>비트코인 랠리</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 12월</td>
+                        <td class="positive">+2.4%</td>
+                        <td>41</td>
+                        <td>61.0%</td>
+                        <td>차익실현 구간</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. 위험 공시</h2>
+
+            <h3>실제 손실 사례 (실제 운용 기록)</h3>
+            <ul>
+                <li><strong>2022년 5월~7월 연속 손실:</strong> 3개월 연속 마이너스 수익률 (-1.8%, -2.1%, -0.9%) 기록. 누적 손실 약 -4.8%</li>
+                <li><strong>최대 낙폭 기간:</strong> 2022년 5월~2022년 10월, 고점 대비 최대 -23% 하락</li>
+                <li><strong>변동성 급증 시:</strong> 시장 변동성이 급증하는 구간에서 Stop-Loss가 연속 발동되어 일시적 손실 확대 가능</li>
+            </ul>
+
+            <h3>레버리지 위험</h3>
+            <p>PIANO는 최대 5배 레버리지를 사용할 수 있습니다. 레버리지는 수익과 손실을 동시에 확대시킵니다.</p>
+
+            <div class="comparison-section">
+                <h4>레버리지별 손실 시뮬레이션 (원금 500만원 기준)</h4>
+                <div class="stats-row">
+                    <span class="stats-label">시장 -5% 하락 시 (1배 레버리지)</span>
+                    <span class="stats-value negative">-250,000원 (-5%)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">시장 -5% 하락 시 (3배 레버리지)</span>
+                    <span class="stats-value negative">-750,000원 (-15%)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">시장 -5% 하락 시 (5배 레버리지)</span>
+                    <span class="stats-value negative">-1,250,000원 (-25%)</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">시장 -20% 급락 시 (5배 레버리지)</span>
+                    <span class="stats-value negative">-5,000,000원 (-100%, 청산)</span>
+                </div>
+            </div>
+
+            <h2>5. 고객 계좌 실거래 성과 (서비스 시작 후 공개)</h2>
+
+            <p>2025년 3월 2일 서비스 시작 이후, 매 분기마다 고객 계좌의 실제 거래 성과를 익명으로 집계하여 공개하겠습니다.</p>
+
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>기간</th>
+                        <th>개발자 계좌 성과</th>
+                        <th>고객 평균 성과</th>
+                        <th>차이</th>
+                        <th>주요 원인</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025년 Q1</td>
+                        <td colspan="4" style="text-align: center; color: var(--text-muted);">서비스 시작 전 (3월 2일 시작 예정)</td>
+                    </tr>
+                    <tr>
+                        <td>2025년 Q2</td>
+                        <td colspan="4" style="text-align: center; color: var(--text-muted);">데이터 미공개 (분기 종료 후 공개)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>6. 수수료 및 비용 구조</h2>
+
+            <h3>소프트웨어 이용료</h3>
+            <ul>
+                <li><strong>월 이용료:</strong> 396,000원 (VAT 포함)</li>
+                <li><strong>무료 체험:</strong> 7일 (전액 환불 가능)</li>
+                <li><strong>중도 해지:</strong> 일할 계산 환불 (미사용 기간에 대해 환불)</li>
+            </ul>
+
+            <h3>거래 수수료 (Binance 부과)</h3>
+            <ul>
+                <li><strong>Maker 수수료:</strong> 0.02% (BNB 할인 적용 시 0.015%)</li>
+                <li><strong>Taker 수수료:</strong> 0.04% (BNB 할인 적용 시 0.030%)</li>
+                <li><strong>자금조달비용 (Funding Rate):</strong> 8시간마다 변동 (-0.05% ~ +0.05%)</li>
+            </ul>
+
+            <h2>7. 데이터 보안 및 개인정보 처리</h2>
+
+            <ul>
+                <li><strong>API Key 보관:</strong> 고객의 Binance API Key는 암호화되어 한국 내 서버에 저장됩니다</li>
+                <li><strong>출금 권한:</strong> API Key에 출금(Withdraw) 권한은 <strong>절대 요구하지 않습니다</strong></li>
+                <li><strong>접근 제한:</strong> API Key는 거래(Trade) 및 조회(Read) 권한만 필요합니다</li>
+                <li><strong>개인정보 보유기간:</strong> 계약 종료 후 3개월까지 보관 후 즉시 파기</li>
+                <li><strong>제3자 제공:</strong> 고객 동의 없이 개인정보를 제3자에게 제공하지 않습니다</li>
+            </ul>
+
+            <h2>8. 고객 문의 및 민원 처리</h2>
+
+            <h3>문의 채널</h3>
+            <ul>
+                <li><strong>이메일:</strong> yalpha9999@gmail.com</li>
+                <li><strong>고객센터:</strong> 0505-4004-4231 (평일 10:00~18:00)</li>
+                <li><strong>평균 응답 시간:</strong> 영업일 기준 24시간 이내</li>
+            </ul>
+
+            <h3>민원 처리 절차</h3>
+            <ol>
+                <li>고객 문의 접수 (이메일 또는 전화)</li>
+                <li>담당자 배정 및 내용 확인 (1영업일 이내)</li>
+                <li>해결 방안 제시 (3영업일 이내)</li>
+                <li>처리 완료 및 결과 안내</li>
+            </ol>
+
+            <div class="warning-box">
+                <h3>⚠️ 투자 손실 관련 민원</h3>
+                <p>PIANO는 소프트웨어 제공 서비스이며 투자수익을 보장하지 않습니다. 시장 변동에 따른 투자 손실에 대해서는 책임을 지지 않습니다. 다만, 소프트웨어 오류로 인한 손실이 명백히 입증된 경우에는 개별 협의를 통해 해결합니다.</p>
+            </div>
+
+            <h2>9. 업데이트 이력</h2>
+
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025년 1월 14일</td>
+                        <td>투명성 보고서 최초 공개. 백테스트 결과 및 운영 정보 게시</td>
+                    </tr>
+                    <tr>
+                        <td>2025년 3월 2일 (예정)</td>
+                        <td>실제 운영 시작. 이후 매월 초 실거래 성과 업데이트 예정</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr style="margin: 50px 0; border: none; border-top: 2px solid rgba(147, 51, 234, 0.3);">
+
+            <p style="color: var(--text-secondary); font-size: 0.9em; line-height: 1.8;">
+                본 투명성 보고서는 고객의 알 권리를 보장하고 신뢰할 수 있는 서비스 제공을 위해 작성되었습니다.
+                모든 정보는 사실에 기반하여 작성되었으며, 허위·과장 없이 투명하게 공개합니다.<br><br>
+
+                <strong>투자에는 항상 위험이 따릅니다.</strong> 본 보고서의 모든 수치는 과거 데이터이며 미래 수익을 보장하지 않습니다.
+                투자 결정은 반드시 본인의 판단과 책임 하에 이루어져야 합니다.<br><br>
+
+                문의사항이 있으시면 언제든지 yalpha9999@gmail.com 또는 0505-4004-4231로 연락 주시기 바랍니다.
+            </p>
+
+            <a href="index.html" class="back-button">← 메인 페이지로 돌아가기</a>
         </div>
-
-        <h2>2. 실제 운영 성과 (백테스트가 아닌 실거래 결과)</h2>
-
-        <div class="metric-grid">
-            <div class="metric-card">
-                <div class="metric-label">누적 수익률 (2025.3.2~현재)</div>
-                <div class="metric-value">미운영</div>
-            </div>
-            <div class="metric-card neutral">
-                <div class="metric-label">평균 월간 수익률</div>
-                <div class="metric-value">미운영</div>
-            </div>
-            <div class="metric-card negative">
-                <div class="metric-label">최대 낙폭 (MDD)</div>
-                <div class="metric-value">미운영</div>
-            </div>
-            <div class="metric-card neutral">
-                <div class="metric-label">샤프 비율 (Sharpe Ratio)</div>
-                <div class="metric-value">미운영</div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h3>📌 고객 계좌 실거래 데이터 공개 예정</h3>
-            <p>2025년 3월 2일부터 고객 서비스가 시작됩니다. 매월 초 전월의 고객 계좌 실거래 성과를 익명으로 집계하여 이 페이지에 공개하겠습니다. 현재는 개발자의 실제 운용 성과를 제공합니다.</p>
-        </div>
-
-        <h3>월별 실거래 성과 (2025년 3월 2일 이후 업데이트 예정)</h3>
-        <table class="performance-table">
-            <thead>
-                <tr>
-                    <th>기간</th>
-                    <th>수익률</th>
-                    <th>거래 횟수</th>
-                    <th>승률</th>
-                    <th>최대 낙폭</th>
-                    <th>비고</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2025년 3월</td>
-                    <td colspan="5" style="text-align: center; color: #6c757d;">운영 시작 예정 (3월 2일~)</td>
-                </tr>
-                <tr>
-                    <td>2025년 4월</td>
-                    <td colspan="5" style="text-align: center; color: #6c757d;">데이터 미공개 (운영 전)</td>
-                </tr>
-                <tr>
-                    <td>2025년 5월</td>
-                    <td colspan="5" style="text-align: center; color: #6c757d;">데이터 미공개 (운영 전)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>3. 실제 운용 성과 (2020.1 ~ 2024.12)</h2>
-
-        <div class="info-box">
-            <h3>📊 실제 계좌 운용 성과</h3>
-            <p><strong>아래 데이터는 개발자의 실제 계좌에서 거둔 성과입니다.</strong> PIANO AI를 개발하기 전부터 동일한 전략으로 운용한 결과이며, 실제 거래 환경(슬리피지, 수수료, 유동성 포함)에서 달성한 수익률입니다. 단, 과거 성과가 미래 수익을 보장하지는 않습니다.</p>
-        </div>
-
-        <div class="comparison-section">
-            <h3>실제 운용 주요 지표 (5년간)</h3>
-            <div class="stats-row">
-                <span class="stats-label">운용 기간</span>
-                <span class="stats-value">2020년 1월 ~ 2024년 12월 (60개월)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">누적 수익률</span>
-                <span class="stats-value positive">+427.8%</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">연평균 수익률 (CAGR)</span>
-                <span class="stats-value positive">+39.2%</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">평균 월간 수익률</span>
-                <span class="stats-value positive">+3.2%</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">최고 월간 수익률</span>
-                <span class="stats-value positive">+18.7% (2021년 10월)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">최악 월간 수익률</span>
-                <span class="stats-value negative">-2.1% (2022년 6월)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">최대 낙폭 (MDD)</span>
-                <span class="stats-value negative">-23.0%</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">샤프 비율</span>
-                <span class="stats-value">1.87</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">승률</span>
-                <span class="stats-value">67.3%</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">손익비 (Profit Factor)</span>
-                <span class="stats-value">2.34</span>
-            </div>
-        </div>
-
-        <h3>실제 운용 월별 상세 성과 (최근 12개월)</h3>
-        <table class="performance-table">
-            <thead>
-                <tr>
-                    <th>기간</th>
-                    <th>수익률</th>
-                    <th>거래 횟수</th>
-                    <th>승률</th>
-                    <th>비고</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024년 1월</td>
-                    <td class="positive">+4.2%</td>
-                    <td>47</td>
-                    <td>68.1%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 2월</td>
-                    <td class="positive">+3.8%</td>
-                    <td>42</td>
-                    <td>66.7%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 3월</td>
-                    <td class="positive">+7.1%</td>
-                    <td>53</td>
-                    <td>73.6%</td>
-                    <td>강세장</td>
-                </tr>
-                <tr>
-                    <td>2024년 4월</td>
-                    <td class="negative">-1.3%</td>
-                    <td>38</td>
-                    <td>55.3%</td>
-                    <td>변동성 상승</td>
-                </tr>
-                <tr>
-                    <td>2024년 5월</td>
-                    <td class="positive">+2.9%</td>
-                    <td>44</td>
-                    <td>63.6%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 6월</td>
-                    <td class="positive">+5.4%</td>
-                    <td>51</td>
-                    <td>70.6%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 7월</td>
-                    <td class="positive">+3.1%</td>
-                    <td>46</td>
-                    <td>65.2%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 8월</td>
-                    <td class="positive">+1.7%</td>
-                    <td>35</td>
-                    <td>60.0%</td>
-                    <td>횡보장</td>
-                </tr>
-                <tr>
-                    <td>2024년 9월</td>
-                    <td class="positive">+4.6%</td>
-                    <td>49</td>
-                    <td>69.4%</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>2024년 10월</td>
-                    <td class="positive">+6.3%</td>
-                    <td>55</td>
-                    <td>72.7%</td>
-                    <td>강세장</td>
-                </tr>
-                <tr>
-                    <td>2024년 11월</td>
-                    <td class="positive">+8.2%</td>
-                    <td>58</td>
-                    <td>75.9%</td>
-                    <td>비트코인 랠리</td>
-                </tr>
-                <tr>
-                    <td>2024년 12월</td>
-                    <td class="positive">+2.4%</td>
-                    <td>41</td>
-                    <td>61.0%</td>
-                    <td>차익실현 구간</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>4. 위험 공시</h2>
-
-        <h3>실제 손실 사례 (실제 운용 기록)</h3>
-        <ul>
-            <li><strong>2022년 5월~7월 연속 손실:</strong> 3개월 연속 마이너스 수익률 (-1.8%, -2.1%, -0.9%) 기록. 누적 손실 약 -4.8%</li>
-            <li><strong>최대 낙폭 기간:</strong> 2022년 5월~2022년 10월, 고점 대비 최대 -23% 하락</li>
-            <li><strong>변동성 급증 시:</strong> 시장 변동성이 급증하는 구간에서 Stop-Loss가 연속 발동되어 일시적 손실 확대 가능</li>
-        </ul>
-
-        <h3>레버리지 위험</h3>
-        <p>PIANO는 최대 5배 레버리지를 사용할 수 있습니다. 레버리지는 수익과 손실을 동시에 확대시킵니다.</p>
-
-        <div class="comparison-section">
-            <h4>레버리지별 손실 시뮬레이션 (원금 500만원 기준)</h4>
-            <div class="stats-row">
-                <span class="stats-label">시장 -5% 하락 시 (1배 레버리지)</span>
-                <span class="stats-value negative">-250,000원 (-5%)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">시장 -5% 하락 시 (3배 레버리지)</span>
-                <span class="stats-value negative">-750,000원 (-15%)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">시장 -5% 하락 시 (5배 레버리지)</span>
-                <span class="stats-value negative">-1,250,000원 (-25%)</span>
-            </div>
-            <div class="stats-row">
-                <span class="stats-label">시장 -20% 급락 시 (5배 레버리지)</span>
-                <span class="stats-value negative">-5,000,000원 (-100%, 청산)</span>
-            </div>
-        </div>
-
-        <h2>5. 고객 계좌 실거래 성과 (서비스 시작 후 공개)</h2>
-
-        <p>2025년 3월 2일 서비스 시작 이후, 매 분기마다 고객 계좌의 실제 거래 성과를 익명으로 집계하여 공개하겠습니다.</p>
-
-        <table class="performance-table">
-            <thead>
-                <tr>
-                    <th>기간</th>
-                    <th>개발자 계좌 성과</th>
-                    <th>고객 평균 성과</th>
-                    <th>차이</th>
-                    <th>주요 원인</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2025년 Q1</td>
-                    <td colspan="4" style="text-align: center; color: #6c757d;">서비스 시작 전 (3월 2일 시작 예정)</td>
-                </tr>
-                <tr>
-                    <td>2025년 Q2</td>
-                    <td colspan="4" style="text-align: center; color: #6c757d;">데이터 미공개 (분기 종료 후 공개)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>6. 수수료 및 비용 구조</h2>
-
-        <h3>소프트웨어 이용료</h3>
-        <ul>
-            <li><strong>월 이용료:</strong> 396,000원 (VAT 포함)</li>
-            <li><strong>무료 체험:</strong> 7일 (전액 환불 가능)</li>
-            <li><strong>중도 해지:</strong> 일할 계산 환불 (미사용 기간에 대해 환불)</li>
-        </ul>
-
-        <h3>거래 수수료 (Binance 부과)</h3>
-        <ul>
-            <li><strong>Maker 수수료:</strong> 0.02% (BNB 할인 적용 시 0.015%)</li>
-            <li><strong>Taker 수수료:</strong> 0.04% (BNB 할인 적용 시 0.030%)</li>
-            <li><strong>자금조달비용 (Funding Rate):</strong> 8시간마다 변동 (-0.05% ~ +0.05%)</li>
-        </ul>
-
-        <h2>7. 데이터 보안 및 개인정보 처리</h2>
-
-        <ul>
-            <li><strong>API Key 보관:</strong> 고객의 Binance API Key는 암호화되어 한국 내 서버에 저장됩니다</li>
-            <li><strong>출금 권한:</strong> API Key에 출금(Withdraw) 권한은 <strong>절대 요구하지 않습니다</strong></li>
-            <li><strong>접근 제한:</strong> API Key는 거래(Trade) 및 조회(Read) 권한만 필요합니다</li>
-            <li><strong>개인정보 보유기간:</strong> 계약 종료 후 3개월까지 보관 후 즉시 파기</li>
-            <li><strong>제3자 제공:</strong> 고객 동의 없이 개인정보를 제3자에게 제공하지 않습니다</li>
-        </ul>
-
-        <h2>8. 고객 문의 및 민원 처리</h2>
-
-        <h3>문의 채널</h3>
-        <ul>
-            <li><strong>이메일:</strong> yalpha9999@gmail.com</li>
-            <li><strong>고객센터:</strong> 0505-4004-4231 (평일 10:00~18:00)</li>
-            <li><strong>평균 응답 시간:</strong> 영업일 기준 24시간 이내</li>
-        </ul>
-
-        <h3>민원 처리 절차</h3>
-        <ol>
-            <li>고객 문의 접수 (이메일 또는 전화)</li>
-            <li>담당자 배정 및 내용 확인 (1영업일 이내)</li>
-            <li>해결 방안 제시 (3영업일 이내)</li>
-            <li>처리 완료 및 결과 안내</li>
-        </ol>
-
-        <div class="warning-box">
-            <h3>⚠️ 투자 손실 관련 민원</h3>
-            <p>PIANO는 소프트웨어 제공 서비스이며 투자수익을 보장하지 않습니다. 시장 변동에 따른 투자 손실에 대해서는 책임을 지지 않습니다. 다만, 소프트웨어 오류로 인한 손실이 명백히 입증된 경우에는 개별 협의를 통해 해결합니다.</p>
-        </div>
-
-        <h2>9. 업데이트 이력</h2>
-
-        <table class="performance-table">
-            <thead>
-                <tr>
-                    <th>날짜</th>
-                    <th>내용</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2025년 1월 14일</td>
-                    <td>투명성 보고서 최초 공개. 백테스트 결과 및 운영 정보 게시</td>
-                </tr>
-                <tr>
-                    <td>2025년 3월 2일 (예정)</td>
-                    <td>실제 운영 시작. 이후 매월 초 실거래 성과 업데이트 예정</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <hr style="margin: 50px 0; border: none; border-top: 2px solid #e9ecef;">
-
-        <p style="color: #6c757d; font-size: 0.9em; line-height: 1.8;">
-            본 투명성 보고서는 고객의 알 권리를 보장하고 신뢰할 수 있는 서비스 제공을 위해 작성되었습니다.
-            모든 정보는 사실에 기반하여 작성되었으며, 허위·과장 없이 투명하게 공개합니다.<br><br>
-
-            <strong>투자에는 항상 위험이 따릅니다.</strong> 본 보고서의 모든 수치는 과거 데이터이며 미래 수익을 보장하지 않습니다.
-            투자 결정은 반드시 본인의 판단과 책임 하에 이루어져야 합니다.<br><br>
-
-            문의사항이 있으시면 언제든지 yalpha9999@gmail.com 또는 0505-4004-4231로 연락 주시기 바랍니다.
-        </p>
-
-        <a href="index.html" class="back-button">← 메인 페이지로 돌아가기</a>
     </div>
 
     <script>
