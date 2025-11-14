@@ -114,7 +114,7 @@
         .warning-box {
             background: rgba(255, 193, 7, 0.1);
             border-left: 4px solid var(--warning);
-            padding: 20px;
+            padding: 20px 30px 20px 40px;
             margin: 30px 0;
             border-radius: var(--radius-md);
         }
@@ -122,10 +122,13 @@
             color: var(--warning);
             margin-top: 0;
             margin-bottom: 15px;
+            white-space: nowrap;
+            min-width: max-content;
         }
         .warning-box p {
             color: var(--text-secondary);
             margin-top: 0;
+            line-height: 1.8;
         }
         .info-box {
             background: rgba(147, 51, 234, 0.1);
@@ -174,6 +177,7 @@
             justify-content: space-between;
             padding: 15px 0;
             border-bottom: 1px solid var(--card-border);
+            gap: 20px;
         }
         .stats-row:last-child {
             border-bottom: none;
@@ -181,10 +185,14 @@
         .stats-label {
             font-weight: 600;
             color: var(--text-secondary);
+            flex: 0 0 65%;
+            min-width: 0;
         }
         .stats-value {
             font-weight: 700;
             color: var(--text-primary);
+            flex: 0 0 35%;
+            text-align: right;
         }
     </style>
 </head>
@@ -238,32 +246,19 @@
             </div>
 
             <h3>월별 실거래 성과 (2025년 3월 2일 이후 업데이트 예정)</h3>
-            <table class="performance-table">
-                <thead>
-                    <tr>
-                        <th>기간</th>
-                        <th>수익률</th>
-                        <th>거래 횟수</th>
-                        <th>승률</th>
-                        <th>최대 낙폭</th>
-                        <th>비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2025년 3월</td>
-                        <td colspan="5" style="text-align: center; color: var(--text-muted);">운영 시작 예정 (3월 2일~)</td>
-                    </tr>
-                    <tr>
-                        <td>2025년 4월</td>
-                        <td colspan="5" style="text-align: center; color: var(--text-muted);">데이터 미공개 (운영 전)</td>
-                    </tr>
-                    <tr>
-                        <td>2025년 5월</td>
-                        <td colspan="5" style="text-align: center; color: var(--text-muted);">데이터 미공개 (운영 전)</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="info-box">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 3월:</strong> 운영 시작 예정 (3월 2일~)
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 4월:</strong> 데이터 미공개 (운영 전)
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 5월:</strong> 데이터 미공개 (운영 전)
+                    </li>
+                </ul>
+            </div>
 
             <h2>3. 실제 운용 성과 (2020.1 ~ 2024.12)</h2>
 
@@ -317,103 +312,46 @@
             </div>
 
             <h3>실제 운용 월별 상세 성과 (최근 12개월)</h3>
-            <table class="performance-table">
-                <thead>
-                    <tr>
-                        <th>기간</th>
-                        <th>수익률</th>
-                        <th>거래 횟수</th>
-                        <th>승률</th>
-                        <th>비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024년 1월</td>
-                        <td class="positive">+4.2%</td>
-                        <td>47</td>
-                        <td>68.1%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 2월</td>
-                        <td class="positive">+3.8%</td>
-                        <td>42</td>
-                        <td>66.7%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 3월</td>
-                        <td class="positive">+7.1%</td>
-                        <td>53</td>
-                        <td>73.6%</td>
-                        <td>강세장</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 4월</td>
-                        <td class="negative">-1.3%</td>
-                        <td>38</td>
-                        <td>55.3%</td>
-                        <td>변동성 상승</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 5월</td>
-                        <td class="positive">+2.9%</td>
-                        <td>44</td>
-                        <td>63.6%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 6월</td>
-                        <td class="positive">+5.4%</td>
-                        <td>51</td>
-                        <td>70.6%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 7월</td>
-                        <td class="positive">+3.1%</td>
-                        <td>46</td>
-                        <td>65.2%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 8월</td>
-                        <td class="positive">+1.7%</td>
-                        <td>35</td>
-                        <td>60.0%</td>
-                        <td>횡보장</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 9월</td>
-                        <td class="positive">+4.6%</td>
-                        <td>49</td>
-                        <td>69.4%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 10월</td>
-                        <td class="positive">+6.3%</td>
-                        <td>55</td>
-                        <td>72.7%</td>
-                        <td>강세장</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 11월</td>
-                        <td class="positive">+8.2%</td>
-                        <td>58</td>
-                        <td>75.9%</td>
-                        <td>비트코인 랠리</td>
-                    </tr>
-                    <tr>
-                        <td>2024년 12월</td>
-                        <td class="positive">+2.4%</td>
-                        <td>41</td>
-                        <td>61.0%</td>
-                        <td>차익실현 구간</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="comparison-section">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 1월:</strong> <span class="positive">+4.2%</span> | 거래 47회 | 승률 68.1%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 2월:</strong> <span class="positive">+3.8%</span> | 거래 42회 | 승률 66.7%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 3월:</strong> <span class="positive">+7.1%</span> | 거래 53회 | 승률 73.6% | 강세장
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 4월:</strong> <span class="negative">-1.3%</span> | 거래 38회 | 승률 55.3% | 변동성 상승
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 5월:</strong> <span class="positive">+2.9%</span> | 거래 44회 | 승률 63.6%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 6월:</strong> <span class="positive">+5.4%</span> | 거래 51회 | 승률 70.6%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 7월:</strong> <span class="positive">+3.1%</span> | 거래 46회 | 승률 65.2%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 8월:</strong> <span class="positive">+1.7%</span> | 거래 35회 | 승률 60.0% | 횡보장
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 9월:</strong> <span class="positive">+4.6%</span> | 거래 49회 | 승률 69.4%
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 10월:</strong> <span class="positive">+6.3%</span> | 거래 55회 | 승률 72.7% | 강세장
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid var(--card-border);">
+                        <strong>• 2024년 11월:</strong> <span class="positive">+8.2%</span> | 거래 58회 | 승률 75.9% | 비트코인 랠리
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px;">
+                        <strong>• 2024년 12월:</strong> <span class="positive">+2.4%</span> | 거래 41회 | 승률 61.0% | 차익실현 구간
+                    </li>
+                </ul>
+            </div>
 
             <h2>4. 위험 공시</h2>
 
@@ -451,27 +389,16 @@
 
             <p>2025년 3월 2일 서비스 시작 이후, 매 분기마다 고객 계좌의 실제 거래 성과를 익명으로 집계하여 공개하겠습니다.</p>
 
-            <table class="performance-table">
-                <thead>
-                    <tr>
-                        <th>기간</th>
-                        <th>개발자 계좌 성과</th>
-                        <th>고객 평균 성과</th>
-                        <th>차이</th>
-                        <th>주요 원인</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2025년 Q1</td>
-                        <td colspan="4" style="text-align: center; color: var(--text-muted);">서비스 시작 전 (3월 2일 시작 예정)</td>
-                    </tr>
-                    <tr>
-                        <td>2025년 Q2</td>
-                        <td colspan="4" style="text-align: center; color: var(--text-muted);">데이터 미공개 (분기 종료 후 공개)</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="info-box">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 Q1:</strong> 서비스 시작 전 (3월 2일 시작 예정)
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 Q2:</strong> 데이터 미공개 (분기 종료 후 공개)
+                    </li>
+                </ul>
+            </div>
 
             <h2>6. 수수료 및 비용 구조</h2>
 
@@ -523,24 +450,16 @@
 
             <h2>9. 업데이트 이력</h2>
 
-            <table class="performance-table">
-                <thead>
-                    <tr>
-                        <th>날짜</th>
-                        <th>내용</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2025년 1월 14일</td>
-                        <td>투명성 보고서 최초 공개. 백테스트 결과 및 운영 정보 게시</td>
-                    </tr>
-                    <tr>
-                        <td>2025년 3월 2일 (예정)</td>
-                        <td>실제 운영 시작. 이후 매월 초 실거래 성과 업데이트 예정</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="info-box">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 1월 14일:</strong> 투명성 보고서 최초 공개. 백테스트 결과 및 운영 정보 게시
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>• 2025년 3월 2일 (예정):</strong> 실제 운영 시작. 이후 매월 초 실거래 성과 업데이트 예정
+                    </li>
+                </ul>
+            </div>
 
             <hr style="margin: 50px 0; border: none; border-top: 2px solid rgba(147, 51, 234, 0.3);">
 

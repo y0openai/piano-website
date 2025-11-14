@@ -878,7 +878,10 @@ p { font-size: 1rem; }
 }
 
 .warning-box strong {
+    display: block !important;
     font-weight: 700;
+    margin-bottom: 15px !important;
+    width: 100%;
 }
 
 /* ===================================
