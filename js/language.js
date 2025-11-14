@@ -613,7 +613,7 @@ const translations = {
         'footer.company': '회사 정보',
         'footer.companyName': '와이알파 주식회사',
         'footer.bizNumber': '사업자등록번호: 565-86-03395',
-        'footer.ceo': '대표자: 신달수',
+        'footer.ceo': '대표자: 신용수',
         'footer.address': '주소: 서울시 양천구 월정로9길20',
         'footer.customerService': '고객센터: 0505-4004-4231',
         'footer.email': '이메일: yalpha9999@gmail.com',
