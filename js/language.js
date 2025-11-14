@@ -324,7 +324,7 @@ const translations = {
         // Hero Section
         'hero.eyebrow': '개인 트레이더를 위한 기관급 기술',
         'hero.slogan': '개인 트레이더에게<br>Wall Street의 정교함을',
-        'hero.catchphrase': '적금 금리의 10배 수익',
+        'hero.catchphrase': '적금 금리보다 10배 성장 속도',
         'hero.subtitle': '은행 적금: 연 4%. PIANO: 월 평균 3%.\n조건 없이, 누구나, 언제나.',
         'hero.cta.demo': '무료 데모 체험하기',
         'hero.cta.video': 'AI 작동 영상 보기',
