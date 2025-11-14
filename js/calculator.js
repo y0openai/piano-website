@@ -106,34 +106,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Store animation frame IDs to cancel ongoing animations
+    let animationFrames = new Map();
+
     // ===================================
     // Update Calculator Function
     // ===================================
     function updateCalculator() {
         const investment = parseFloat(slider.value);
-        
+
         // Update slider fill
         updateSliderFill();
-        
-        // Update display value with animation
+
+        // Update display value immediately (no animation to prevent mismatch)
         if (investmentDisplay) {
-            const currentDisplay = investmentDisplay.textContent.replace(/[^\d]/g, '');
-            const currentValue = parseInt(currentDisplay) || 0;
-            
-            if (Math.abs(currentValue - investment) > 100000) {
-                // For large changes, update immediately
-                investmentDisplay.textContent = formatCurrency(investment);
-            } else {
-                // For small changes, animate smoothly
-                animateValue(investmentDisplay, currentValue, investment, 100);
-            }
+            investmentDisplay.textContent = formatCurrency(investment);
         }
-        
+
         // Calculate returns
         const bankResult = calculateBankReturn(investment);
         const pianoResult = calculatePianoReturn(investment, config.defaultRiskLevel);
 
-        // Update principal displays
+        // Update principal displays immediately
         if (bankPrincipal) {
             bankPrincipal.textContent = formatCurrency(investment);
         }
@@ -141,32 +135,27 @@ document.addEventListener('DOMContentLoaded', function() {
             pianoPrincipal.textContent = formatCurrency(investment);
         }
 
-        // Update bank interest/tax displays with animation
+        // Update bank interest/tax displays immediately
         if (bankInterest) {
-            const currentInterest = parseInt(bankInterest.textContent.replace(/[^\d]/g, '')) || 0;
-            animateValue(bankInterest, currentInterest, bankResult.grossInterest, 300, '+');
+            bankInterest.textContent = '+' + formatCurrency(bankResult.grossInterest);
         }
 
         if (bankTax) {
-            const currentTax = parseInt(bankTax.textContent.replace(/[^\d]/g, '')) || 0;
-            animateValue(bankTax, currentTax, bankResult.tax, 300, '-');
+            bankTax.textContent = '-' + formatCurrency(bankResult.tax);
         }
 
-        // Update PIANO profit displays with animation
+        // Update PIANO profit displays immediately
         if (pianoProfit) {
-            const currentProfit = parseInt(pianoProfit.textContent.replace(/[^\d]/g, '')) || 0;
-            animateValue(pianoProfit, currentProfit, pianoResult.profit, 300, '+');
+            pianoProfit.textContent = '+' + formatCurrency(pianoResult.profit);
         }
 
-        // Update total return displays with smooth animation
+        // Update total return displays immediately
         if (bankReturn) {
-            const currentBank = parseInt(bankReturn.textContent.replace(/[^\d]/g, '')) || 0;
-            animateValue(bankReturn, currentBank, bankResult.total, 300);
+            bankReturn.textContent = formatCurrency(bankResult.total);
         }
 
         if (pianoReturn) {
-            const currentPiano = parseInt(pianoReturn.textContent.replace(/[^\d]/g, '')) || 0;
-            animateValue(pianoReturn, currentPiano, pianoResult.total, 300);
+            pianoReturn.textContent = formatCurrency(pianoResult.total);
         }
 
         // Update comparison metrics
