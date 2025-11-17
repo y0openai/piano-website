@@ -25,6 +25,8 @@ const translations = {
         'hero.chart.bank': 'Bank\n4%',
         'hero.chart.kospi': 'KOSPI\n6.6%',
         'hero.chart.piano': 'PIANO\n42.58%',
+        'hero.chart.verified': 'Binance · 3M',
+        'hero.chart.rank': 'Top 0.38%',
         
         // Stats
         'stats.totalProfit': 'Total Profits Generated',
@@ -125,6 +127,36 @@ const translations = {
         'hero.badge2': 'Goldman-Level Algorithms',
         'hero.badge3': 'Citadel-Speed Execution',
 
+
+        // Hero Binance Performance Badge
+        'hero.binance.label': 'Binance Official Verification',
+        'hero.binance.brand': 'PIANO AI achieved',
+        'hero.binance.rank': 'Top 0.38%',
+        'hero.binance.desc': 'Rank',
+        'hero.binance.period': 'Out of All Futures Traders · Last 3 Months Live',
+        'hero.binance.verified': 'Verified',
+
+        // Third-Party Validation Section
+        'validation.eyebrow': 'Third-Party Verification',
+        'validation.title': 'Real Performance, Not Backtests',
+        'validation.subtitle': 'Achieved top 0.38% ranking among millions of traders<br>on Binance Futures for 3 consecutive months',
+        'validation.verified': 'Verified',
+        'validation.stat.rank': 'Rank',
+        'validation.stat.rankValue': 'Top 0.38%',
+        'validation.stat.beat': 'Performance',
+        'validation.stat.beatValue': '99.62% of Traders',
+        'validation.stat.period': 'Measurement Period',
+        'validation.stat.periodValue': '3 Months (Live)',
+        'validation.stat.original': 'Original Report',
+        'validation.cta': 'View Full Report',
+        'validation.comparison.title': 'What This Means',
+        'validation.comparison.average': 'Average Trader',
+        'validation.comparison.averageValue': '~50th Percentile',
+        'validation.comparison.pro': 'Professional Trader',
+        'validation.comparison.proValue': '~80th Percentile',
+        'validation.comparison.piano': 'PIANO AI',
+        'validation.comparison.pianoValue': '99.62th Percentile',
+        'validation.note': 'Binance Futures Performance Report is calculated based on actual trading results, not backtests or simulations, but live trading outcomes.',
         // AI System
         'aiSystem.header.eyebrow': 'How is this possible?',
         'aiSystem.title': '5 AI Modules Working Together 24/7',
@@ -910,6 +942,8 @@ const translations = {
         'hero.chart.bank': '은행\n4%',
         'hero.chart.kospi': 'KOSPI\n6.6%',
         'hero.chart.piano': 'PIANO\n42.58%',
+        'hero.chart.verified': '바이낸스 · 3개월',
+        'hero.chart.rank': '상위 0.38%',
         
         // Stats
         'stats.totalProfit': '총 수익 창출',
@@ -1010,6 +1044,36 @@ const translations = {
         'hero.badge2': 'Goldman-Level Algorithms',
         'hero.badge3': 'Citadel-Speed Execution',
 
+
+        // Hero Binance Performance Badge
+        'hero.binance.label': '바이낸스 공식 인증',
+        'hero.binance.brand': 'PIANO AI가',
+        'hero.binance.rank': '상위 0.38%',
+        'hero.binance.desc': '달성',
+        'hero.binance.period': '전체 선물 트레이더 중 · 최근 3개월 실거래',
+        'hero.binance.verified': '검증완료',
+
+        // Third-Party Validation Section
+        'validation.eyebrow': '제3자 검증',
+        'validation.title': '백테스트 아니에요, 실제 거래 성과예요',
+        'validation.subtitle': '바이낸스 선물 트레이더 수백만 명 중<br>상위 0.38%를 3개월간 유지했어요',
+        'validation.verified': '검증 완료',
+        'validation.stat.rank': '순위',
+        'validation.stat.rankValue': '상위 0.38%',
+        'validation.stat.beat': '퍼포먼스',
+        'validation.stat.beatValue': '전체의 99.62% 능가',
+        'validation.stat.period': '측정 기간',
+        'validation.stat.periodValue': '3개월 (실거래)',
+        'validation.stat.original': '원문 리포트',
+        'validation.cta': '전체 리포트 보기',
+        'validation.comparison.title': '이것이 의미하는 것',
+        'validation.comparison.average': '평균 트레이더',
+        'validation.comparison.averageValue': '~50 백분위',
+        'validation.comparison.pro': '전문 트레이더',
+        'validation.comparison.proValue': '~80 백분위',
+        'validation.comparison.piano': 'PIANO AI',
+        'validation.comparison.pianoValue': '99.62 백분위',
+        'validation.note': '바이낸스에서 공식 집계한 실제 거래 성과예요. 백테스트나 시뮬레이션이 아니라, 진짜 돈으로 거래한 결과를 보여드려요.',
         // AI System
         'aiSystem.header.eyebrow': '어떻게 가능한가요?',
         'aiSystem.title': '5개의 AI 모듈이 24/7 협업해요',

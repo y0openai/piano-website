@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/enhancements.css">
+    <link rel="stylesheet" href="css/validation.css">
+    <link rel="stylesheet" href="css/chart-badge.css">
 </head>
 <body>
     <!-- Header Navigation -->
@@ -149,6 +151,21 @@
                             <span class="bar-label" data-i18n="hero.chart.kospi">KOSPI (6.6%)</span>
                         </div>
                         <div class="chart-bar highlight" data-value="42.58" data-label="PIANO">
+                            <div class="binance-verification-badge" onclick="document.querySelector('.third-party-validation').scrollIntoView({behavior:'smooth'})">
+                                <svg class="binance-icon-small" viewBox="0 0 126.61 126.61" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="currentColor">
+                                        <polygon points="63.3,0 24.4,38.9 38.7,53.2 63.3,28.6 87.9,53.2 102.2,38.9"/>
+                                        <polygon points="0,63.4 14.1,77.4 28.3,63.4 14.1,49.2"/>
+                                        <polygon points="98.4,63.4 112.5,77.4 126.6,63.4 112.5,49.2"/>
+                                        <polygon points="63.3,126.6 102.2,87.7 87.9,73.5 63.3,98.1 38.7,73.5 24.4,87.7"/>
+                                        <polygon points="77.8,63.3 63.3,48.8 52.9,59.1 47.8,64.2 46,66 60.5,80.5 75.1,66 77.8,63.3"/>
+                                    </g>
+                                </svg>
+                                <span class="verification-text">
+                                    <span class="verification-rank" data-i18n="hero.chart.rank">상위 0.38%</span>
+                                    <span class="verification-label" data-i18n="hero.chart.verified">바이낸스 · 3개월</span>
+                                </span>
+                            </div>
                             <div class="bar-fill"></div>
                             <span class="bar-label" data-i18n="hero.chart.piano">PIANO (42.58%)</span>
                         </div>
@@ -460,6 +477,101 @@
                     <span class="cost-value">$499<span class="cost-period">/month</span></span>
                 </div>
                 <p class="cost-savings" data-i18n="pricing.comparison.savings">Same technology, 1.2% of the cost</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Third-Party Validation Section -->
+    <section class="third-party-validation">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-eyebrow" data-i18n="validation.eyebrow">제3자 검증</div>
+                <h2 class="section-title" data-i18n="validation.title">백테스트가 아닌, 실전 성과입니다</h2>
+                <p class="section-subtitle" data-i18n="validation.subtitle">
+                    바이낸스 선물 거래소 수백만 트레이더 중<br>
+                    상위 0.38% 실적을 3개월간 달성했습니다
+                </p>
+            </div>
+
+            <div class="validation-showcase">
+                <div class="validation-card primary">
+                    <div class="card-header-validation">
+                        <div class="binance-logo-text">
+                            <svg class="binance-icon" viewBox="0 0 126.61 126.61" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="currentColor">
+                                    <polygon points="63.3,0 24.4,38.9 38.7,53.2 63.3,28.6 87.9,53.2 102.2,38.9"/>
+                                    <polygon points="0,63.4 14.1,77.4 28.3,63.4 14.1,49.2"/>
+                                    <polygon points="98.4,63.4 112.5,77.4 126.6,63.4 112.5,49.2"/>
+                                    <polygon points="63.3,126.6 102.2,87.7 87.9,73.5 63.3,98.1 38.7,73.5 24.4,87.7"/>
+                                    <polygon points="77.8,63.3 63.3,48.8 52.9,59.1 47.8,64.2 46,66 60.5,80.5 75.1,66 77.8,63.3"/>
+                                </g>
+                            </svg>
+                            <span class="binance-text">Binance</span>
+                        </div>
+                        <span class="verified-badge-large">
+                            <span class="verify-icon">✓</span>
+                            <span data-i18n="validation.verified">Verified</span>
+                        </span>
+                    </div>
+                    <div class="validation-stats">
+                        <div class="stat-row">
+                            <span class="stat-label" data-i18n="validation.stat.rank">Performance Rank</span>
+                            <span class="stat-value gold" data-i18n="validation.stat.rankValue">Top 0.38%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-i18n="validation.stat.beat">Beat</span>
+                            <span class="stat-value" data-i18n="validation.stat.beatValue">99.62% of Traders</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-i18n="validation.stat.period">Measurement Period</span>
+                            <span class="stat-value" data-i18n="validation.stat.periodValue">3 Months (Live)</span>
+                        </div>
+                        <div class="stat-row original-quote">
+                            <span class="stat-label" data-i18n="validation.stat.original">Original Report</span>
+                            <span class="stat-value quote">"You beat 99.62% of users in 3M return"</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline">
+                        <span class="material-symbols-outlined">verified</span>
+                        <span data-i18n="validation.cta">View Full Report</span>
+                    </button>
+                </div>
+
+                <div class="validation-comparison">
+                    <h4 data-i18n="validation.comparison.title">What This Means</h4>
+                    <div class="comparison-bars">
+                        <div class="bar-item">
+                            <span class="bar-label" data-i18n="validation.comparison.average">Average Trader</span>
+                            <div class="bar-visual-container">
+                                <div class="bar-visual weak" style="width: 50%;"></div>
+                            </div>
+                            <span class="bar-value" data-i18n="validation.comparison.averageValue">~50th Percentile</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label" data-i18n="validation.comparison.pro">Professional Trader</span>
+                            <div class="bar-visual-container">
+                                <div class="bar-visual good" style="width: 80%;"></div>
+                            </div>
+                            <span class="bar-value" data-i18n="validation.comparison.proValue">~80th Percentile</span>
+                        </div>
+                        <div class="bar-item highlight">
+                            <span class="bar-label" data-i18n="validation.comparison.piano">PIANO AI</span>
+                            <div class="bar-visual-container">
+                                <div class="bar-visual excellent" style="width: 99.62%;"></div>
+                            </div>
+                            <span class="bar-value">
+                                <span data-i18n="validation.comparison.pianoValue">99.62th Percentile</span> 🏆
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="validation-note">
+                <span class="material-symbols-outlined">info</span>
+                <p data-i18n="validation.note">
+                    바이낸스 선물 퍼포먼스 리포트는 실제 거래 성과를 기반으로 계산되며, 백테스트나 시뮬레이션이 아닌 라이브 트레이딩 결과입니다.
+                </p>
             </div>
         </div>
     </section>
