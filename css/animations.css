@@ -356,6 +356,42 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Hero background subtle animation */
+@keyframes heroBackgroundFloat {
+    0%, 100% {
+        transform: scale(1.05) translate(0, 0);
+    }
+    25% {
+        transform: scale(1.05) translate(-1%, -1%);
+    }
+    50% {
+        transform: scale(1.05) translate(0, 1%);
+    }
+    75% {
+        transform: scale(1.05) translate(1%, -0.5%);
+    }
+}
+
+.hero::before {
+    animation: heroBackgroundFloat 40s ease-in-out infinite;
+}
+
+/* Module background dynamic animation */
+@keyframes moduleBackgroundPulse {
+    0%, 100% {
+        transform: scale(1.02) translate(0, 0);
+        opacity: 0.12;
+    }
+    50% {
+        transform: scale(1.08) translate(-2%, 2%);
+        opacity: 0.18;
+    }
+}
+
+.module-detail::before {
+    animation: moduleBackgroundPulse 8s ease-in-out infinite;
+}
+
 /* Disable animations for reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     *,
