@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 묻는 질문 (FAQ) - PIANO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .legal-container {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 40px 20px;
+        }
+        .faq-container {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+        }
+        h1 {
+            color: var(--text-primary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(147, 51, 234, 0.3);
+        }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .category-tab {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--card-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: var(--text-secondary);
+        }
+        .category-tab:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .category-tab.active {
+            background: var(--primary);
+            color: var(--dark-bg);
+            border-color: var(--primary);
+        }
+        .faq-section {
+            display: none;
+        }
+        .faq-section.active {
+            display: block;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .faq-question {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+            color: var(--text-primary);
+        }
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .faq-question::before {
+            content: 'Q.';
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.8em;
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+        .faq-item.open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: var(--text-secondary);
+        }
+        .faq-item.open .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+        .faq-answer::before {
+            content: 'A.';
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .faq-answer ul, .faq-answer ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .faq-answer li {
+            margin: 8px 0;
+            color: var(--text-secondary);
+        }
+        .warning-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: var(--dark-bg);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+        .important-badge {
+            display: inline-block;
+            background: #dc3545;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+        .highlight-box {
+            background: rgba(147, 51, 234, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--dark-bg);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .back-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="legal-container">
+        <div class="faq-container">
+            <h1>자주 묻는 질문</h1>
+            <p class="subtitle">PIANO 서비스에 대해 궁금한 점을 빠르게 찾아보세요</p>
+
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="general">일반</div>
+                <div class="category-tab" data-category="technical">기술 및 사용법</div>
+                <div class="category-tab" data-category="payment">요금 및 환불</div>
+                <div class="category-tab" data-category="legal">법적 사항</div>
+                <div class="category-tab" data-category="risk">투자 위험</div>
+            </div>
+
+            <!-- 일반 섹션 -->
+            <div class="faq-section active" data-section="general">
+                <div class="faq-item">
+                    <div class="faq-question">PIANO가 뭔가요?</div>
+                    <div class="faq-answer">
+                        PIANO는 <strong>AI 기반 암호화폐 선물 자동매매 소프트웨어</strong>예요.
+                        고객님의 Binance 계정에 API를 연결하면, AI가 24시간 자동으로 매매를 실행해요.
+                        코인 지식이 없어도 사용할 수 있어요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">정말 코인 지식이 없어도 되나요?</div>
+                    <div class="faq-answer">
+                        네, 괜찮아요! PIANO는 모든 매매 결정을 AI가 대신 해요.
+                        고객님은 Binance 계정만 만들고 API를 연결하면 끝이에요.
+                        차트 분석, 매매 타이밍 포착 등은 모두 AI가 알아서 처리해요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">원금이 얼마나 필요한가요?</div>
+                    <div class="faq-answer">
+                        <strong>최소 50만원</strong>부터 시작할 수 있어요.
+                        권장 금액은 500만원 이상이에요. 원금이 클수록 복리 효과가 커지고,
+                        수수료 대비 효율이 좋아져요.
+                        <div class="highlight-box">
+                            <strong>예시:</strong><br>
+                            • 50만원: 월 이용료 대비 부담이 커서 비효율적<br>
+                            • 500만원: 적정 수준, 수익률 3% 시 월 15만원 수익 가능<br>
+                            • 5,000만원: 최적, 수익률 3% 시 월 150만원 수익 가능
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">PIANO는 투자 상품인가요?</div>
+                    <div class="faq-answer">
+                        <strong>아니요, 투자 상품이 아니에요.</strong> PIANO는 <strong>소프트웨어 임대(SaaS) 서비스</strong>예요.
+                        Netflix나 YouTube Premium처럼 매월 이용료를 내고 소프트웨어를 사용하는 구조예요.
+                        <br><br>
+                        고객님의 돈은 고객님의 Binance 계정에 그대로 있고,
+                        우리는 그 계정에서 매매만 대신 실행하는 소프트웨어를 제공해요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">내 돈을 맡기는 건가요?</div>
+                    <div class="faq-answer">
+                        <strong>절대 아니에요!</strong> 고객님의 돈은 100% 고객님의 Binance 계정에만 있어요.
+                        우리는 API를 통해 매매 신호만 보낼 뿐, 돈을 직접 보관하거나 관리하지 않아요.
+                        <br><br>
+                        게다가 API 설정 시 <strong>출금(Withdraw) 권한은 절대 주지 마세요.</strong>
+                        거래(Trade)와 조회(Read) 권한만 있으면 돼요.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 기술 및 사용법 섹션 -->
+            <div class="faq-section" data-section="technical">
+                <div class="faq-item">
+                    <div class="faq-question">어떻게 시작하나요?</div>
+                    <div class="faq-answer">
+                        정말 간단해요! 3단계만 거치면 돼요:
+                        <ol>
+                            <li><strong>Binance 계정 생성</strong> (이미 있다면 Skip)</li>
+                            <li><strong>API Key 발급</strong> (Trade + Read 권한만, Withdraw 권한은 제외)</li>
+                            <li><strong>PIANO에 API 연결</strong> (우리 대시보드에서 간단 설정)</li>
+                        </ol>
+                        이후로는 AI가 24시간 자동으로 일해요!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">API Key가 유출되면 위험하지 않나요?</div>
+                    <div class="faq-answer">
+                        <strong>출금 권한만 주지 않으면 안전해요.</strong>
+                        <br><br>
+                        API Key를 만들 때 반드시 다음 설정을 확인하세요:
+                        <ul>
+                            <li><strong>Enable Reading</strong> (조회 권한: ON)</li>
+                            <li><strong>Enable Spot & Margin Trading</strong> (거래 권한: ON)</li>
+                            <li><strong>Enable Withdrawals</strong> (출금 권한: OFF - 절대 켜지 마세요!)</li>
+                        </ul>
+                        출금 권한이 없으면 API가 유출되어도 돈을 빼갈 수 없어요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">중간에 멈추거나 수동으로 개입할 수 있나요?</div>
+                    <div class="faq-answer">
+                        네, 언제든지 가능해요!
+                        <ul>
+                            <li><strong>일시정지:</strong> 대시보드에서 "자동매매 중지" 버튼 클릭</li>
+                            <li><strong>수동 개입:</strong> Binance 앱/웹에서 직접 포지션 종료 가능</li>
+                            <li><strong>API 연결 해제:</strong> Binance에서 API Key 삭제하면 즉시 중단</li>
+                        </ul>
+                        다만 AI 알고리즘을 신뢰하고 장기 운영하는 것을 권장해요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">어떤 코인을 거래하나요?</div>
+                    <div class="faq-answer">
+                        주로 <strong>비트코인(BTC), 이더리움(ETH)</strong> 같은 메이저 코인 선물을 거래해요.
+                        유동성이 높고 안정적인 코인 위주로 운영돼요.
+                        <br><br>
+                        알트코인은 변동성이 너무 커서 위험 관리가 어렵기 때문에 제외했어요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">레버리지는 어떻게 설정하나요?</div>
+                    <div class="faq-answer">
+                        PIANO는 기본적으로 <strong>3배 레버리지</strong>로 운영돼요.
+                        설정에서 본인이 조절할 수 있어요.
+                        <div class="highlight-box">
+                            <strong>주의:</strong> 레버리지가 높을수록 수익도 크지만 손실도 커져요.
+                            처음에는 1~3배 시작을 추천해요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 요금 및 환불 섹션 -->
+            <div class="faq-section" data-section="payment">
+                <div class="faq-item">
+                    <div class="faq-question">이용료가 얼마인가요?<span class="warning-badge">필독</span></div>
+                    <div class="faq-answer">
+                        <strong>월 396,000원</strong> (VAT 포함)이에요.
+                        <br><br>
+                        이건 소프트웨어 임대료일 뿐, 투자 원금이 아니에요.
+                        투자 원금은 별도로 고객님의 Binance 계정에 입금하셔야 해요.
+                        <div class="highlight-box">
+                            <strong>실제 필요 금액 예시:</strong><br>
+                            • 소프트웨어 이용료: 396,000원/월<br>
+                            • 투자 원금: 5,000,000원 (권장)<br>
+                            • 총 초기 비용: 약 5,396,000원
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">무료 체험이 있나요?</div>
+                    <div class="faq-answer">
+                        네! <strong>7일 무료 체험</strong>을 제공해요.
+                        <br><br>
+                        7일 이내에 만족하지 못하면 전액 환불해드려요.
+                        이유를 묻지 않고 바로 환불 처리돼요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">중도 해지하면 환불되나요?</div>
+                    <div class="faq-answer">
+                        네, <strong>일할 계산으로 환불</strong>해드려요.
+                        <div class="highlight-box">
+                            <strong>환불 계산 방식:</strong><br>
+                            환불액 = (월 이용료 ÷ 30일) × 미사용 일수
+                            <br><br>
+                            <strong>예시:</strong><br>
+                            월 이용료 396,000원을 결제한 후 10일 사용하고 해지한 경우<br>
+                            환불액 = (396,000 ÷ 30) × 20일 = 264,000원
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">거래 수수료는 따로 있나요?</div>
+                    <div class="faq-answer">
+                        PIANO 이용료 외에 <strong>Binance 거래 수수료</strong>가 별도로 발생해요.
+                        <ul>
+                            <li>Maker 수수료: 약 0.02%</li>
+                            <li>Taker 수수료: 약 0.04%</li>
+                            <li>자금조달비용(Funding Rate): 8시간마다 변동</li>
+                        </ul>
+                        월 50회 거래 기준으로 약 5~10만원 정도 예상돼요.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 법적 사항 섹션 -->
+            <div class="faq-section" data-section="legal">
+                <div class="faq-item">
+                    <div class="faq-question">PIANO는 금융투자업 허가를 받았나요?<span class="important-badge">중요</span></div>
+                    <div class="faq-answer">
+                        <strong>아니요, 받지 않았어요.</strong> 그리고 받을 필요도 없어요.
+                        <br><br>
+                        PIANO는 <strong>소프트웨어 제공 서비스</strong>이지, 금융투자상품이 아니에요.
+                        우리는 고객의 돈을 운용하거나 투자 조언을 하는 것이 아니라,
+                        단지 자동매매 "도구"를 제공할 뿐이에요.
+                        <div class="highlight-box">
+                            <strong>법적 근거:</strong><br>
+                            자본시장법상 금융투자업은 "타인의 재산을 운용·관리"하는 경우에만 해당돼요.
+                            PIANO는 고객이 직접 소유한 API를 통해 고객 본인의 계정에서 거래하므로,
+                            금융투자업에 해당하지 않아요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">투자 손실이 나면 보상받을 수 있나요?<span class="important-badge">필독</span></div>
+                    <div class="faq-answer">
+                        <strong>아니요, 보상받을 수 없어요.</strong>
+                        <br><br>
+                        PIANO는 소프트웨어일 뿐이고, 투자 수익을 보장하지 않아요.
+                        시장 변동에 따른 손실은 고객님의 책임이에요.
+                        <br><br>
+                        다만, <strong>소프트웨어 오류</strong>로 인한 손실(예: 버그로 잘못된 주문 발생)이 명백히 입증되면
+                        개별 협의를 통해 해결해드려요.
+                        <div class="highlight-box">
+                            <strong>반드시 기억하세요:</strong><br>
+                            암호화폐 투자는 고위험 투자예요. 원금 전액을 잃을 수도 있어요.
+                            여유 자금으로만 투자하세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">개인정보는 어떻게 관리되나요?</div>
+                    <div class="faq-answer">
+                        고객님의 개인정보와 API Key는 <strong>암호화되어 한국 내 서버</strong>에 안전하게 보관돼요.
+                        <ul>
+                            <li><strong>수집 정보:</strong> 이름, 이메일, 전화번호, Binance API Key</li>
+                            <li><strong>보관 기간:</strong> 계약 종료 후 3개월 (법정 기간)</li>
+                            <li><strong>제3자 제공:</strong> 고객 동의 없이 절대 제공하지 않아요</li>
+                        </ul>
+                        자세한 내용은 <a href="privacy.html" target="_blank" style="color: var(--primary); text-decoration: underline;">개인정보처리방침</a>을 참고하세요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">계약서는 어떻게 되나요?</div>
+                    <div class="faq-answer">
+                        회원가입 시 <strong>소프트웨어 이용약관</strong>에 동의하시면 계약이 체결돼요.
+                        <br><br>
+                        이용약관에는 다음 내용이 포함돼요:
+                        <ul>
+                            <li>서비스 제공 범위</li>
+                            <li>이용료 및 환불 정책</li>
+                            <li>책임의 한계</li>
+                            <li>계약 해지 조건</li>
+                        </ul>
+                        전문은 <a href="terms.html" target="_blank" style="color: var(--primary); text-decoration: underline;">이용약관</a>에서 확인하세요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">세금은 어떻게 되나요?</div>
+                    <div class="faq-answer">
+                        <strong>암호화폐 선물 거래 수익은 현재 과세 대상이 아니에요</strong> (2025년 기준).
+                        <br><br>
+                        다만 향후 세법이 변경될 수 있으니,
+                        국세청 및 세무사와 상담하시는 것을 권장해요.
+                        <div class="highlight-box">
+                            <strong>참고:</strong><br>
+                            암호화폐 현물 거래(매매차익)는 2025년부터 과세 예정이었으나,
+                            선물 거래는 아직 과세 대상에 포함되지 않았어요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">회사 정보를 알 수 있나요?</div>
+                    <div class="faq-answer">
+                        물론이에요! 투명하게 공개해요:
+                        <ul>
+                            <li><strong>상호:</strong> 와이알파 주식회사</li>
+                            <li><strong>사업자등록번호:</strong> 565-86-03395</li>
+                            <li><strong>대표자:</strong> 신용수</li>
+                            <li><strong>주소:</strong> 서울시 양천구 월정로9길20</li>
+                            <li><strong>고객센터:</strong> 0505-4004-4231</li>
+                            <li><strong>이메일:</strong> yalpha9999@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 투자 위험 섹션 -->
+            <div class="faq-section" data-section="risk">
+                <div class="faq-item">
+                    <div class="faq-question">정말 수익이 나나요?<span class="warning-badge">필독</span></div>
+                    <div class="faq-answer">
+                        <strong>보장할 수 없어요.</strong>
+                        <br><br>
+                        개발자의 실제 계좌에서는 5년간 연 평균 39% 수익률을 기록했지만,
+                        <strong>과거 성과가 미래 수익을 보장하지 않아요.</strong>
+                        <br><br>
+                        시장 상황에 따라 수익이 날 수도, 손실이 날 수도 있어요.
+                        <div class="highlight-box">
+                            <strong>실제 운용 성과 (2020~2024):</strong><br>
+                            • 평균 월 수익률: +3.2%<br>
+                            • 최악의 달: -2.1% (손실)<br>
+                            • 최대 낙폭(MDD): -23%
+                            <br><br>
+                            상세 성과는 <a href="transparency.html" target="_blank" style="color: var(--primary); text-decoration: underline;">투명성 보고서</a>에서 확인하세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">원금을 잃을 수도 있나요?<span class="important-badge">경고</span></div>
+                    <div class="faq-answer">
+                        <strong>네, 최악의 경우 원금 전액을 잃을 수 있어요.</strong>
+                        <br><br>
+                        암호화폐 선물 거래는 고위험 투자예요.
+                        특히 레버리지를 사용하면 손실이 빠르게 확대될 수 있어요.
+                        <div class="highlight-box">
+                            <strong>실제 손실 시나리오:</strong><br>
+                            원금 500만원, 5배 레버리지 사용 시<br>
+                            • 시장 20% 급락 → 원금 100% 손실 (청산)<br>
+                            • 시장 10% 하락 → 원금 50% 손실<br>
+                            • 시장 5% 하락 → 원금 25% 손실
+                        </div>
+                        <strong>절대 생활비나 급하게 쓸 돈을 투자하지 마세요!</strong>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">손실을 줄이는 방법이 있나요?</div>
+                    <div class="faq-answer">
+                        네, 몇 가지 방법이 있어요:
+                        <ul>
+                            <li><strong>레버리지 낮추기:</strong> 1~3배로 설정하면 위험 감소</li>
+                            <li><strong>분할 투자:</strong> 한 번에 다 넣지 말고 나눠서 투자</li>
+                            <li><strong>Stop-Loss 설정:</strong> 자동 손절매 기능 활용</li>
+                            <li><strong>장기 운영:</strong> 단기 변동에 흔들리지 말고 최소 6개월 이상 운영</li>
+                        </ul>
+                        다만 이 방법들도 손실을 완전히 막을 수는 없어요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">과거 성과를 믿어도 되나요?</div>
+                    <div class="faq-answer">
+                        <strong>참고는 하되, 미래를 보장하지는 않아요.</strong>
+                        <br><br>
+                        투명성 보고서의 데이터는 개발자가 실제 계좌에서 5년간(2020~2024) 운용한 성과예요.
+                        백테스트가 아닌 실제 거래 결과이지만, 다음 이유로 미래 성과가 다를 수 있어요:
+                        <ul>
+                            <li>시장 환경 변화 (변동성, 트렌드 패턴)</li>
+                            <li>거래소 수수료 정책 변경</li>
+                            <li>유동성 변화</li>
+                            <li>규제 환경 변화</li>
+                        </ul>
+                        고객 계좌의 실제 운영 성과는 <a href="transparency.html" target="_blank" style="color: var(--primary); text-decoration: underline;">투명성 보고서</a>에서
+                        서비스 시작 후 매월 업데이트해요.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">폭락장에서는 어떻게 대응하나요?</div>
+                    <div class="faq-answer">
+                        PIANO는 <strong>Stop-Loss(손절매)</strong> 시스템이 내장돼 있어요.
+                        <br><br>
+                        일정 손실률을 넘으면 자동으로 포지션을 종료해서 더 큰 손실을 막아요.
+                        다만 급격한 폭락 시에는 Stop-Loss가 제대로 작동하지 않을 수도 있어요.
+                        <div class="highlight-box">
+                            <strong>2022년 실제 폭락장 사례:</strong><br>
+                            2022년 암호화폐 대폭락 시기에도 개발자 계좌는 최대 -23% 낙폭에서 방어했어요.
+                            하지만 이것도 과거 사례일 뿐, 미래를 보장하지 않아요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 50px 0; border: none; border-top: 2px solid rgba(147, 51, 234, 0.3);">
+
+            <p style="color: var(--text-secondary); font-size: 0.9em; line-height: 1.8;">
+                <strong>더 궁금한 점이 있나요?</strong><br>
+                고객센터 <strong>0505-4004-4231</strong> 또는 <strong>yalpha9999@gmail.com</strong>으로 연락 주세요.<br>
+                평일 10:00~18:00에 상담 가능해요.
+            </p>
+
+            <a href="index.html" class="back-button">← 메인 페이지로 돌아가기</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 카테고리 탭 전환
+            const tabs = document.querySelectorAll('.category-tab');
+            const sections = document.querySelectorAll('.faq-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.dataset.category;
+
+                    // 모든 탭 비활성화
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // 클릭한 탭 활성화
+                    this.classList.add('active');
+
+                    // 모든 섹션 숨기기
+                    sections.forEach(s => s.classList.remove('active'));
+                    // 해당 섹션 표시
+                    document.querySelector(`[data-section="${category}"]`).classList.add('active');
+                });
+            });
+
+            // FAQ 아코디언
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function() {
+                    // 이미 열려있으면 닫기
+                    if (item.classList.contains('open')) {
+                        item.classList.remove('open');
+                    } else {
+                        // 다른 모든 FAQ 닫기 (선택사항)
+                        // faqItems.forEach(i => i.classList.remove('open'));
+                        // 클릭한 FAQ 열기
+                        item.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
