@@ -149,6 +149,21 @@ document.addEventListener('DOMContentLoaded', function() {
             pianoProfit.textContent = '+' + formatCurrency(pianoResult.profit);
         }
 
+        // Update profit rate display (annualized return based on risk level)
+        const profitRateElement = document.getElementById('profitRate');
+        if (profitRateElement) {
+            const annualizedRates = {
+                conservative: 26.82,  // (1.02)^12 - 1 = 26.82%
+                balanced: 42.58,      // (1.03)^12 - 1 = 42.58%
+                aggressive: 60.10     // (1.04)^12 - 1 = 60.10%
+            };
+            const currentLang = window.LanguageAPI ? window.LanguageAPI.getCurrentLanguage() : 'ko';
+            const rateText = currentLang === 'ko'
+                ? `(연 ${annualizedRates[config.defaultRiskLevel].toFixed(2)}%)`
+                : `(${annualizedRates[config.defaultRiskLevel].toFixed(2)}% annual)`;
+            profitRateElement.textContent = rateText;
+        }
+
         // Update total return displays immediately
         if (bankReturn) {
             bankReturn.textContent = formatCurrency(bankResult.total);
@@ -252,28 +267,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateTimelineProjection(investment, riskLevel) {
-        // Calculate returns for different time periods
-        const threeMonths = calculateTimelineReturns(investment, riskLevel, 3);
-        const sixMonths = calculateTimelineReturns(investment, riskLevel, 6);
+        // Calculate returns for different time periods (1 year, 2 years, 3 years)
         const oneYear = calculateTimelineReturns(investment, riskLevel, 12);
+        const twoYears = calculateTimelineReturns(investment, riskLevel, 24);
+        const threeYears = calculateTimelineReturns(investment, riskLevel, 36);
 
-        // Update 3-month projection
-        const timeline3m = document.getElementById('timeline3m');
-        const profit3m = document.getElementById('profit3m');
-        if (timeline3m) timeline3m.textContent = formatCurrency(threeMonths.total);
-        if (profit3m) profit3m.textContent = '+' + formatCurrency(threeMonths.profit).replace('₩', '₩');
-
-        // Update 6-month projection
-        const timeline6m = document.getElementById('timeline6m');
-        const profit6m = document.getElementById('profit6m');
-        if (timeline6m) timeline6m.textContent = formatCurrency(sixMonths.total);
-        if (profit6m) profit6m.textContent = '+' + formatCurrency(sixMonths.profit).replace('₩', '₩');
+        // Calculate return rates (percentage gain)
+        const rate1y = ((oneYear.total / investment) - 1) * 100;
+        const rate2y = ((twoYears.total / investment) - 1) * 100;
+        const rate3y = ((threeYears.total / investment) - 1) * 100;
 
         // Update 1-year projection
         const timeline1y = document.getElementById('timeline1y');
         const profit1y = document.getElementById('profit1y');
+        const rateEl1y = document.getElementById('rate1y');
         if (timeline1y) timeline1y.textContent = formatCurrency(oneYear.total);
-        if (profit1y) profit1y.textContent = '+' + formatCurrency(oneYear.profit).replace('₩', '₩') + ' 🎉';
+        if (profit1y) profit1y.textContent = '+' + formatCurrency(oneYear.profit);
+        if (rateEl1y) rateEl1y.textContent = '(+' + rate1y.toFixed(2) + '%)';
+
+        // Update 2-year projection
+        const timeline2y = document.getElementById('timeline2y');
+        const profit2y = document.getElementById('profit2y');
+        const rateEl2y = document.getElementById('rate2y');
+        if (timeline2y) timeline2y.textContent = formatCurrency(twoYears.total);
+        if (profit2y) profit2y.textContent = '+' + formatCurrency(twoYears.profit);
+        if (rateEl2y) rateEl2y.textContent = '(+' + rate2y.toFixed(2) + '%)';
+
+        // Update 3-year projection
+        const timeline3y = document.getElementById('timeline3y');
+        const profit3y = document.getElementById('profit3y');
+        const rateEl3y = document.getElementById('rate3y');
+        if (timeline3y) timeline3y.textContent = formatCurrency(threeYears.total);
+        if (profit3y) profit3y.textContent = '+' + formatCurrency(threeYears.profit) + ' 🎉';
+        if (rateEl3y) rateEl3y.textContent = '(+' + rate3y.toFixed(2) + '%)';
     }
     
     // ===================================
@@ -337,21 +363,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // Risk Level Selector (Future Enhancement)
+    // Risk Level Selector / Scenario Tabs
     // ===================================
     const riskButtons = document.querySelectorAll('[data-risk-level]');
-    
+    const scenarioTabs = document.querySelectorAll('[data-scenario]');
+
+    // Handle data-risk-level buttons
     riskButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
             riskButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
             this.classList.add('active');
-            
-            // Update risk level and recalculate
             const riskLevel = this.dataset.riskLevel;
             config.defaultRiskLevel = riskLevel;
+            updateCalculator();
+        });
+    });
+
+    // Handle scenario tabs (conservative, balanced, aggressive)
+    scenarioTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            scenarioTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const scenario = this.dataset.scenario;
+            config.defaultRiskLevel = scenario;
             updateCalculator();
         });
     });
