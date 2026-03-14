@@ -83,7 +83,7 @@ const translations = {
         // Pricing
         'pricing.title': 'Simple, Transparent Pricing',
         'pricing.profit.title': 'Performance-Based Fee',
-        'pricing.profit.desc': 'Pay only when you profit. Perfect for starting out.',
+        'pricing.profit.desc': "Pay only when you profit. Perfect for starting out. Only 'Conservative' option available.",
         'pricing.profit.fee': '+ 40% only when profitable',
         'pricing.subscription.title': 'Subscription',
         'pricing.subscription.desc': "For active traders. Unlocks 'Balanced' and 'Aggressive' strategy options.",
@@ -1001,7 +1001,7 @@ const translations = {
         // Pricing
         'pricing.title': '간단하고 투명한 요금제',
         'pricing.profit.title': '성과 연동 수수료',
-        'pricing.profit.desc': '수익이 날 때만 수수료를 내요. 처음 시작하기 완벽해요.',
+        'pricing.profit.desc': "수익이 날 때만 수수료를 내요. 처음 시작하기 완벽해요. '보수적' 옵션만 선택 가능해요.",
         'pricing.profit.fee': '+ 수익이 있을때만 40%',
         'pricing.subscription.title': '구독제',
         'pricing.subscription.desc': "적극적 트레이더를 위한 플랜이에요. '균형잡힌, 공격적' 선택이 가능해져요.",
