@@ -825,6 +825,84 @@ p { font-size: 1rem; }
 }
 
 /* ===================================
+   Plan Comparison Table
+   =================================== */
+
+.plan-comparison {
+    margin-top: 3rem;
+}
+
+.comparison-title {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(17, 24, 39, 0.4);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--card-border);
+    font-size: 0.9375rem;
+}
+
+.comparison-table th {
+    background: rgba(17, 24, 39, 0.8);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+}
+
+.comparison-table th.highlight-col {
+    color: var(--primary);
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.comparison-table td.highlight-col {
+    background: rgba(16, 185, 129, 0.04);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.check-yes {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.check-no {
+    color: var(--text-muted, #4B5563);
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===================================
    FAQ Section
    =================================== */
 

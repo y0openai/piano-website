@@ -93,6 +93,18 @@ const translations = {
         'pricing.guarantee': 'No credit card required',
         'pricing.popular': 'Most Popular',
 
+        // Plan Comparison
+        'pricing.compare.title': 'Plan Comparison',
+        'pricing.compare.feature': 'Feature',
+        'pricing.compare.monthly': 'Monthly Fee',
+        'pricing.compare.profitFee': 'Profit Fee',
+        'pricing.compare.conservative': 'Conservative Strategy',
+        'pricing.compare.balanced': 'Balanced Strategy',
+        'pricing.compare.aggressive': 'Aggressive Strategy',
+        'pricing.compare.bestFor': 'Best For',
+        'pricing.compare.beginners': 'Beginners · Small capital',
+        'pricing.compare.active': 'Active Traders',
+
         // Limited Offer
         'pricing.limited.badge': 'Limited Time Offer',
         'pricing.limited.text': 'New signups this month',
@@ -1011,6 +1023,18 @@ const translations = {
         'pricing.cta.trial': '7일 무료 체험하기',
         'pricing.guarantee': '신용카드 필요 없어요',
         'pricing.popular': '가장 인기 많아요',
+
+        // Plan Comparison
+        'pricing.compare.title': '플랜 비교',
+        'pricing.compare.feature': '기능',
+        'pricing.compare.monthly': '월 요금',
+        'pricing.compare.profitFee': '수익 수수료',
+        'pricing.compare.conservative': '보수적 전략',
+        'pricing.compare.balanced': '균형잡힌 전략',
+        'pricing.compare.aggressive': '공격적 전략',
+        'pricing.compare.bestFor': '추천 대상',
+        'pricing.compare.beginners': '입문자 · 소액',
+        'pricing.compare.active': '적극적 트레이더',
 
         // Limited Offer
         'pricing.limited.badge': '한정 특가',
