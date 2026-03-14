@@ -2029,3 +2029,46 @@ p { font-size: 1rem; }
         font-size: 0.875rem;
     }
 }
+
+/* ===================================
+   Telegram Floating Button
+   =================================== */
+
+.telegram-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0088cc;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telegram-float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(0, 136, 204, 0.5);
+}
+
+.telegram-float svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .telegram-float {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+}

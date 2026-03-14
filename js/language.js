@@ -341,6 +341,7 @@ const translations = {
         'footer.address': 'Address: Seoul, Yangcheon-gu, Woljeong-ro 9-gil 20',
         'footer.customerService': 'Customer Service: 0505-4004-4231',
         'footer.email': 'Email: yalpha9999@gmail.com',
+        'telegram.cta': 'Contact Us',
         'footer.legal': 'Legal',
         'footer.disclaimer': 'PIANO is a software rental service (SaaS), not an investment product. We do not hold or manage customer funds. All investment decisions and risks are solely the customer\'s responsibility.',
 
@@ -1259,6 +1260,7 @@ const translations = {
         'footer.address': '주소: 서울시 양천구 월정로9길20',
         'footer.customerService': '고객센터: 0505-4004-4231',
         'footer.email': '이메일: yalpha9999@gmail.com',
+        'telegram.cta': '상담하기',
         'footer.legal': '법적 고지',
         'footer.disclaimer': 'PIANO는 소프트웨어 임대 서비스(SaaS)이며 투자 상품이 아니에요. 고객의 자금을 보관하거나 운용하지 않아요. 모든 투자 결정과 위험은 전적으로 고객의 책임이에요.',
 
