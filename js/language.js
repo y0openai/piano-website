@@ -132,7 +132,7 @@ const translations = {
         'faq.q8': 'Does AI really learn by itself?',
         'faq.a8': 'Yes, PIANO AI continuously collects market data in real-time, compares it with historical patterns, and automatically optimizes strategies. Five independent AI modules each learn and evolve continuously.',
         'faq.q9': 'Why should I invest in cryptocurrency now?',
-        'faq.a9': 'Three critical factors make crypto essential today: First, traditional banking products are no longer viable. With most financial institutions offering under 4% annual returns, we live in an era where bank deposits fail to preserve wealth—they merely slow its erosion. Second, crypto futures are one of the few remaining tax-free investment vehicles. While bank interest is taxed at 15.4%, crypto futures remain completely tax-exempt. Third, global monetary expansion is accelerating at an unprecedented pace. Central banks worldwide are printing money aggressively, causing fiat currency to lose purchasing power at 5-10% annually. Holding cash means watching your wealth silently evaporate. Crypto assets offer a hedge against this systemic devaluation while providing institutional-grade returns previously accessible only to the top 0.1%.',
+        'faq.a9': 'Three reasons. ① Bank deposits at 4% aren\'t preserving wealth—they\'re just slowing the loss. ② Crypto futures are completely tax-free, unlike bank interest (15.4% taxed). ③ Global money printing is eroding cash purchasing power by 5-10% annually—crypto is a hedge against this.',
 
         // Hero Badges
         'hero.badge1': 'Bloomberg-Grade Order Flow',
@@ -1063,7 +1063,7 @@ const translations = {
         'faq.q8': 'AI가 정말 스스로 학습하나요?',
         'faq.a8': '네, PIANO AI는 실시간으로 지속적으로 시장 데이터를 수집하고, 과거 패턴과 비교하며, 자동으로 전략을 최적화해요. 5개의 독립적인 AI 모듈이 각자 학습하고 진화해요.',
         'faq.q9': '왜 지금 암호화폐 투자가 필요한가요?',
-        'faq.a9': '세 가지 결정적 이유가 있어요. 첫째, 전통적인 금융상품은 더 이상 유효하지 않아요. 대부분의 금융기관이 연 4% 미만의 수익률을 제공하는 시대에, 은행 예금은 자산을 지키는 것이 아니라 단지 손실 속도를 늦출 뿐이에요. 둘째, 암호화폐는 현존하는 몇 안 되는 비과세 투자 수단이에요. 은행 이자는 15.4%의 세금이 부과되지만, 암호화폐 선물거래는 완전히 비과세예요. 셋째, 전 세계적인 통화 팽창이 전례 없는 속도로 가속화되고 있어요. 각국 중앙은행들이 공격적으로 화폐를 발행하면서 명목화폐의 구매력이 연간 5-10%씩 감소하고 있어요. 현금을 보유하는 것은 자산 가치가 조용히 증발하는 것을 지켜보는 것과 같아요. 암호화폐 자산은 이러한 시스템적 가치 하락에 대한 헤지 수단이며, 동시에 상위 0.1%만 접근 가능했던 기관급 수익률을 제공해요.',
+        'faq.a9': '세 가지 이유예요. ① 은행 예금 연 4%로는 자산을 지키는 게 아니라 손실을 늦출 뿐이에요. ② 암호화폐 선물거래는 은행 이자(15.4% 과세)와 달리 완전 비과세예요. ③ 전 세계 통화 팽창으로 현금 구매력이 연 5-10% 감소하는데, 암호화폐는 이에 대한 헤지 수단이에요.',
 
         // Hero Badges
         'hero.badge1': 'Bloomberg-Grade Order Flow',
