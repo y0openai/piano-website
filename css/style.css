@@ -754,9 +754,9 @@ p { font-size: 1rem; }
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -833,6 +833,19 @@ p { font-size: 1rem; }
 .price-note.highlight {
     color: var(--primary);
     font-weight: 600;
+}
+
+.pricing-strategy {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.pricing-recommend {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 0.25rem;
 }
 
 /* ===================================
