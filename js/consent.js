@@ -5,9 +5,8 @@
 (function () {
     'use strict';
 
-    // ⚠️ Google Apps Script URL — 설정 후 아래 URL을 교체하세요
-    // 설정 방법은 CONSENT-SETUP.md 참고
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaO5ZhKXlOZ9Nnnk4dPCE5qpjl2NyPVd3JeRelIbevN0Tg50DfdWAncsioJ1YeBcypnQ/exec';
+    // Google Apps Script URL (미사용)
+    const GOOGLE_SCRIPT_URL = '';
 
     const CONSENT_KEY = 'piano_consent_agreed';
     const overlay = document.getElementById('consentOverlay');
@@ -84,24 +83,8 @@
             }))
         };
 
-        // Google Sheets 전송 (form 방식 — no-cors 호환)
-        if (GOOGLE_SCRIPT_URL) {
-            try {
-                const form = new FormData();
-                form.append('data', JSON.stringify(payload));
-                await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: form
-                });
-            } catch (err) {
-                console.warn('Consent record failed:', err);
-                // 전송 실패해도 동의는 진행 (사용자 경험 우선)
-            }
-        } else {
-            // URL 미설정 시 콘솔에 기록 (개발용)
-            console.log('📋 Consent record (Google Script URL not configured):', payload);
-        }
+        // 동의 기록 (현재 localStorage만 사용)
+        console.log('📋 Consent record:', payload);
 
         // 동의 저장 & 게이트 해제
         localStorage.setItem(CONSENT_KEY, JSON.stringify({
