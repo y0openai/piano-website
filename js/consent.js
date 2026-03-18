@@ -84,14 +84,15 @@
             }))
         };
 
-        // Google Sheets 전송
+        // Google Sheets 전송 (form 방식 — no-cors 호환)
         if (GOOGLE_SCRIPT_URL) {
             try {
+                const form = new FormData();
+                form.append('data', JSON.stringify(payload));
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: form
                 });
             } catch (err) {
                 console.warn('Consent record failed:', err);
