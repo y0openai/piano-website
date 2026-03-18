@@ -492,7 +492,7 @@ const translations = {
         'terms.article15.item3': 'All matters related to these Terms and Service use shall be governed by the laws of the Republic of Korea.',
 
         'terms.article16.title': 'Article 16 (Supplementary Provisions)',
-        'terms.article16.text': 'These Terms shall be effective from March 2, 2025.',
+        'terms.article16.text': 'These Terms shall be effective from March 18, 2026.',
 
         'terms.company.title': 'Company Information',
         'terms.company.name.label': 'Company Name:',
@@ -656,7 +656,7 @@ const translations = {
         'privacy.article13.change2': 'When the Privacy Policy is changed, the Company will announce the changes from 7 days before the effective date.',
         'privacy.article13.change3': 'However, in case of significant changes to user rights, notice will be given at least 30 days in advance.',
         'privacy.article14.title': 'Article 14 (Supplementary Provisions)',
-        'privacy.article14.text': 'This Privacy Policy shall take effect from March 2, 2025.',
+        'privacy.article14.text': 'This Privacy Policy shall take effect from March 18, 2026.',
         'privacy.company.title': 'Business Information',
         'privacy.company.name_label': 'Company Name:',
         'privacy.company.name': 'YALPHA Inc.',
@@ -847,7 +847,7 @@ const translations = {
         'transparency.notice.text': '<strong>PIANO is a software rental service.</strong> It is not a financial investment product and has not received licenses for investment advisory or discretionary investment services. We do not hold or manage customer funds; we only provide software that executes automated trading strategies through the customer\'s own Binance API.',
         'transparency.performance.title': '2. Actual Operating Performance',
         'transparency.performance.notice_title': 'Customer Account Live Trading Data to be Disclosed',
-        'transparency.performance.notice_text': 'Customer service will begin on March 2, 2025. We will anonymously aggregate and publish actual customer account trading performance on this page at the beginning of each month. Currently, we provide the developer\'s actual operating performance.',
+        'transparency.performance.notice_text': 'Customer service will begin on March 18, 2026. We will anonymously aggregate and publish actual customer account trading performance on this page at the beginning of each month. Currently, we provide the developer\'s actual operating performance.',
         'transparency.performance.table.metric': 'Metric',
         'transparency.performance.table.value': 'Value',
         'transparency.performance.table.note': 'Note',
@@ -1423,7 +1423,7 @@ const translations = {
         'terms.article15.item3': '본 약관 및 서비스 이용과 관련된 제반 사항은 대한민국 법령에 따릅니다.',
 
         'terms.article16.title': '제16조 (부칙)',
-        'terms.article16.text': '본 약관은 2025년 3월 2일부터 시행됩니다.',
+        'terms.article16.text': '본 약관은 2026년 3월 18일부터 시행됩니다.',
 
         'terms.company.title': '사업자 정보',
         'terms.company.name.label': '상호:',
@@ -1587,7 +1587,7 @@ const translations = {
         'privacy.article13.change2': '개인정보처리방침이 변경되는 경우 회사는 변경사항을 시행일자 7일 전부터 공지합니다.',
         'privacy.article13.change3': '다만, 이용자 권리의 중요한 변경이 있는 경우에는 최소 30일 전에 공지합니다.',
         'privacy.article14.title': '제14조 (부칙)',
-        'privacy.article14.text': '본 개인정보처리방침은 2025년 3월 2일부터 시행됩니다.',
+        'privacy.article14.text': '본 개인정보처리방침은 2026년 3월 18일부터 시행됩니다.',
         'privacy.company.title': '사업자 정보',
         'privacy.company.name_label': '상호:',
         'privacy.company.name': '와이알파 주식회사',
@@ -1798,7 +1798,7 @@ const translations = {
 
         // Section 2: Performance
         'transparency.performance.title': '2. 실제 운용 성과',
-        'transparency.performance.subtitle': '2025년 1월 1일 ~ 2025년 3월 2일',
+        'transparency.performance.subtitle': '2025년 1월 1일 ~ 2026년 3월 18일',
         'transparency.performance.notice_title': '실제 계좌 운용 성과',
         'transparency.performance.notice_text': '아래 성과는 실제 증권 계좌에서 PIANO AI 알고리즘을 운용한 결과이며, 백테스팅이나 시뮬레이션 데이터가 아닙니다. 성과는 매일 업데이트되며, 과거 성과가 미래 수익을 보장하지 않습니다.',
         'transparency.performance.table.metric': '지표',
@@ -1896,7 +1896,7 @@ const translations = {
         'transparency.updates.table.date': '날짜',
         'transparency.updates.table.version': '버전',
         'transparency.updates.table.changes': '변경 사항',
-        'transparency.updates.v1_date': '2025년 3월 2일',
+        'transparency.updates.v1_date': '2026년 3월 18일',
         'transparency.updates.v1_version': '1.0',
         'transparency.updates.v1_changes': '투명성 보고서 최초 발행'
     }
