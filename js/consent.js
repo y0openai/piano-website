@@ -7,7 +7,7 @@
 
     // ⚠️ Google Apps Script URL — 설정 후 아래 URL을 교체하세요
     // 설정 방법은 CONSENT-SETUP.md 참고
-    const GOOGLE_SCRIPT_URL = '';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFGsp0nJsRt_Xp5oyVrBShCzKNUvKbii4xal7TaATl3mAqj6VpcJ68oFa8aCMHxV1C9Q/exec';
 
     const CONSENT_KEY = 'piano_consent_agreed';
     const overlay = document.getElementById('consentOverlay');
