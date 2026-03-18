@@ -1,28 +1,30 @@
 /* ===================================
    PIANO - Legal Pages Styles
-   Professional & Trustworthy Design
+   Unified with Landing Page Design System
    =================================== */
 
-:root {
-    --legal-primary: #6366f1;
-    --legal-primary-hover: #4f46e5;
-    --legal-bg: #0f0f23;
-    --legal-card-bg: #1a1a2e;
-    --legal-card-border: rgba(147, 51, 234, 0.2);
-    --legal-text-primary: #f8fafc;
-    --legal-text-secondary: #94a3b8;
-    --legal-border: rgba(255, 255, 255, 0.1);
+/* Use main design system variables from style.css
+   --primary: #C9A962
+   --primary-hover: #B8963F
+   --dark-bg: #0F0F0F
+   --card-bg: rgba(20, 20, 20, 0.6)
+   --card-border: rgba(201, 169, 98, 0.15)
+   --text-primary: #FAF8F5
+   --text-secondary: #A8A8A0
+   --surface-dark: #1A1A1A
+*/
 
-    /* Status Colors */
-    --legal-warning: #f59e0b;
+:root {
+    /* Status Colors (keep functional) */
+    --legal-warning: #F59E0B;
     --legal-danger: #ef4444;
     --legal-success: #10b981;
     --legal-info: #3b82f6;
 
-    /* Shadows */
-    --legal-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --legal-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-    --legal-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    /* Shadows (match landing page) */
+    --legal-shadow-sm: var(--shadow-sm);
+    --legal-shadow-md: var(--shadow-md);
+    --legal-shadow-lg: var(--shadow-lg);
 }
 
 /* ===================================
@@ -30,10 +32,10 @@
    =================================== */
 
 .legal-page {
-    background: var(--legal-bg);
+    background: var(--dark-bg);
     min-height: 100vh;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--legal-text-primary);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
     line-height: 1.7;
 }
 
@@ -53,20 +55,21 @@
 .legal-tabs {
     position: sticky;
     top: 80px;
-    background: var(--legal-card-bg);
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
     padding: 24px;
     height: fit-content;
     min-width: 280px;
-    border: 1px solid var(--legal-card-border);
-    box-shadow: var(--legal-shadow-md);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
 }
 
 .legal-tabs h3 {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     margin: 0 0 20px 0;
     font-weight: 600;
 }
@@ -77,25 +80,25 @@
     gap: 12px;
     padding: 12px 16px;
     margin-bottom: 8px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     text-decoration: none;
-    color: var(--legal-text-secondary);
-    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    transition: all var(--transition-slow) ease;
     font-size: 0.95rem;
     font-weight: 500;
     border: 1px solid transparent;
 }
 
 .legal-tab-link:hover {
-    background: rgba(147, 51, 234, 0.1);
-    color: var(--legal-text-primary);
-    border-color: var(--legal-card-border);
+    background: var(--primary-light);
+    color: var(--text-primary);
+    border-color: var(--card-border);
 }
 
 .legal-tab-link.active {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(99, 102, 241, 0.2));
-    color: var(--legal-primary);
-    border-color: var(--legal-primary);
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.2), rgba(212, 184, 118, 0.15));
+    color: var(--primary);
+    border-color: var(--primary);
     font-weight: 600;
 }
 
@@ -111,22 +114,23 @@
 .legal-toc {
     position: sticky;
     top: 80px;
-    background: var(--legal-card-bg);
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
     padding: 24px;
     height: fit-content;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
-    border: 1px solid var(--legal-card-border);
-    box-shadow: var(--legal-shadow-md);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-md);
     min-width: 240px;
+    backdrop-filter: blur(10px);
 }
 
 .legal-toc h3 {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     margin: 0 0 16px 0;
     font-weight: 600;
 }
@@ -144,25 +148,25 @@
 .legal-toc a {
     display: block;
     padding: 8px 12px;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-size: 0.875rem;
     transition: all 0.2s ease;
     border-left: 2px solid transparent;
 }
 
 .legal-toc a:hover {
-    background: rgba(147, 51, 234, 0.1);
-    color: var(--legal-text-primary);
-    border-left-color: var(--legal-primary);
+    background: var(--primary-light);
+    color: var(--text-primary);
+    border-left-color: var(--primary);
     padding-left: 16px;
 }
 
 .legal-toc a.active {
-    background: rgba(147, 51, 234, 0.15);
-    color: var(--legal-primary);
-    border-left-color: var(--legal-primary);
+    background: rgba(201, 169, 98, 0.15);
+    color: var(--primary);
+    border-left-color: var(--primary);
     font-weight: 600;
 }
 
@@ -177,12 +181,12 @@
 }
 
 .legal-toc::-webkit-scrollbar-thumb {
-    background: rgba(147, 51, 234, 0.3);
+    background: rgba(201, 169, 98, 0.3);
     border-radius: 3px;
 }
 
 .legal-toc::-webkit-scrollbar-thumb:hover {
-    background: rgba(147, 51, 234, 0.5);
+    background: rgba(201, 169, 98, 0.5);
 }
 
 /* ===================================
@@ -191,24 +195,26 @@
 
 .legal-content {
     flex: 1;
-    background: var(--legal-card-bg);
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
     padding: 48px 56px;
-    border: 1px solid var(--legal-card-border);
-    box-shadow: var(--legal-shadow-md);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
 }
 
 /* Header */
 .legal-header {
     margin-bottom: 48px;
     padding-bottom: 32px;
-    border-bottom: 2px solid var(--legal-card-border);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .legal-header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--legal-text-primary);
+    font-family: var(--font-display);
+    color: var(--text-primary);
     margin: 0 0 16px 0;
     letter-spacing: -0.02em;
 }
@@ -219,7 +225,7 @@
     align-items: center;
     flex-wrap: wrap;
     font-size: 0.875rem;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
 }
 
 .legal-meta-item {
@@ -236,8 +242,8 @@
 .legal-badge {
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(147, 51, 234, 0.2);
-    color: var(--legal-primary);
+    background: var(--primary-light);
+    color: var(--primary);
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -249,10 +255,11 @@
 .legal-content h2 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--legal-text-primary);
+    font-family: var(--font-display);
+    color: var(--text-primary);
     margin: 48px 0 24px 0;
     padding-top: 24px;
-    border-top: 1px solid var(--legal-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     letter-spacing: -0.01em;
     scroll-margin-top: 100px;
 }
@@ -266,7 +273,7 @@
 .legal-content h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     margin: 32px 0 16px 0;
     scroll-margin-top: 100px;
 }
@@ -274,19 +281,19 @@
 .legal-content h4 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     margin: 24px 0 12px 0;
 }
 
 .legal-content p {
     margin-bottom: 16px;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.8;
 }
 
 .legal-content strong {
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -295,7 +302,7 @@
 .legal-content ol {
     margin: 16px 0;
     padding-left: 28px;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
 }
 
 .legal-content li {
@@ -319,9 +326,9 @@
     position: relative;
     padding: 24px 24px 24px 56px;
     margin: 32px 0;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     border-left: 4px solid;
-    box-shadow: var(--legal-shadow-sm);
+    box-shadow: var(--shadow-sm);
 }
 
 .info-box::before,
@@ -401,21 +408,21 @@
 
 /* Highlight Box */
 .highlight-box {
-    background: rgba(147, 51, 234, 0.08);
-    border-left-color: var(--legal-primary);
+    background: rgba(201, 169, 98, 0.08);
+    border-left-color: var(--primary);
 }
 
 .highlight-box::before {
     content: '★';
     font-size: 1.5rem;
-    color: var(--legal-primary);
+    color: var(--primary);
     width: auto;
     height: auto;
 }
 
 .highlight-box h3,
 .highlight-box h4 {
-    color: var(--legal-primary);
+    color: var(--primary);
     margin-top: 0;
 }
 
@@ -426,26 +433,25 @@
 .table-container {
     overflow-x: auto;
     margin: 24px 0;
-    border-radius: 12px;
-    box-shadow: var(--legal-shadow-sm);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--legal-border);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 모든 table 태그에 스타일 적용 */
 .table-container table,
 .legal-table {
     width: 100%;
     border-collapse: collapse;
     background: transparent;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
 }
 
 .table-container thead,
 .legal-table thead {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(79, 70, 229, 0.3));
-    border-bottom: 2px solid var(--legal-primary);
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.2), rgba(212, 184, 118, 0.15));
+    border-bottom: 2px solid var(--primary);
 }
 
 .table-container th,
@@ -453,11 +459,11 @@
     padding: 16px 20px;
     text-align: left;
     font-weight: 600;
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    background: rgba(99, 102, 241, 0.15);
+    background: rgba(201, 169, 98, 0.1);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -469,8 +475,8 @@
 .table-container td,
 .legal-table td {
     padding: 16px 20px;
-    color: var(--legal-text-secondary);
-    border-bottom: 1px solid var(--legal-border);
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-right: 1px solid rgba(255, 255, 255, 0.03);
     font-size: 0.95rem;
     vertical-align: top;
@@ -489,17 +495,17 @@
 
 .table-container tbody tr:hover,
 .legal-table tbody tr:hover {
-    background: rgba(147, 51, 234, 0.08);
+    background: rgba(201, 169, 98, 0.06);
     transition: background 0.2s ease;
 }
 
 .table-container strong,
 .legal-table strong {
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
-/* 첫 번째 컬럼 강조 */
+/* First column emphasis */
 .table-container td:first-child,
 .legal-table td:first-child {
     font-weight: 500;
@@ -512,8 +518,8 @@
 
 .company-info {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--legal-border);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
     padding: 24px;
     margin: 32px 0;
 }
@@ -521,13 +527,13 @@
 .company-info h3 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
     font-size: 1.125rem;
 }
 
 .company-info p {
     margin-bottom: 10px;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     display: flex;
     align-items: baseline;
@@ -535,7 +541,7 @@
 
 .company-info strong {
     min-width: 140px;
-    color: var(--legal-text-primary);
+    color: var(--text-primary);
 }
 
 /* ===================================
@@ -547,7 +553,7 @@
     gap: 16px;
     margin-top: 48px;
     padding-top: 32px;
-    border-top: 1px solid var(--legal-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-back,
@@ -556,35 +562,35 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: all var(--transition-slow) ease;
 }
 
 .btn-back {
     background: rgba(255, 255, 255, 0.05);
-    color: var(--legal-text-primary);
-    border: 1px solid var(--legal-border);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-back:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--legal-primary);
+    border-color: var(--primary);
     transform: translateY(-2px);
 }
 
 .btn-home {
-    background: var(--legal-primary);
-    color: white;
-    border: 1px solid var(--legal-primary);
+    background: var(--primary);
+    color: #0F0F0F;
+    border: 1px solid var(--primary);
 }
 
 .btn-home:hover {
-    background: var(--legal-primary-hover);
+    background: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(201, 169, 98, 0.4);
 }
 
 /* ===================================
@@ -596,35 +602,36 @@
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: var(--legal-card-bg);
-    border: 1px solid var(--legal-card-border);
-    border-radius: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
     padding: 8px 16px;
     display: flex;
     gap: 8px;
-    box-shadow: var(--legal-shadow-md);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
 }
 
 .legal-lang-btn {
     padding: 6px 12px;
     background: transparent;
     border: none;
-    color: var(--legal-text-secondary);
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.875rem;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     transition: all 0.2s ease;
 }
 
 .legal-lang-btn:hover {
-    background: rgba(147, 51, 234, 0.1);
-    color: var(--legal-text-primary);
+    background: var(--primary-light);
+    color: var(--text-primary);
 }
 
 .legal-lang-btn.active {
-    background: var(--legal-primary);
-    color: white;
+    background: var(--primary);
+    color: #0F0F0F;
 }
 
 /* ===================================
@@ -644,7 +651,7 @@
     }
 
     .legal-toc {
-        display: none; /* Hide TOC on smaller screens */
+        display: none;
     }
 
     .legal-content {
