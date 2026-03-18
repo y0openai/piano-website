@@ -1,0 +1,367 @@
+/* ===================================
+   PIANO - Consent Gate Styles
+   =================================== */
+
+.consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.consent-overlay.hidden {
+    display: none;
+}
+
+.consent-card {
+    background: #141414;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    max-width: 680px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 48px 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.consent-header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.consent-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.consent-logo .logo-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary);
+}
+
+.consent-logo .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.consent-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.consent-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Sections */
+.consent-section {
+    margin-bottom: 28px;
+}
+
+.consent-section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.consent-section-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Checkboxes */
+.consent-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.consent-check:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.consent-check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    margin-top: 1px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.consent-check input[type="checkbox"]:checked {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.consent-check input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0F0F0F;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.consent-check-label {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    cursor: pointer;
+    flex: 1;
+}
+
+.consent-check-label strong {
+    color: var(--text-primary);
+}
+
+.consent-check-label a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.consent-check-label a:hover {
+    color: var(--ai-glow);
+}
+
+/* Warning highlight for critical items */
+.consent-check.critical {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.15);
+}
+
+.consent-check.critical .consent-check-label {
+    color: #fca5a5;
+}
+
+.consent-check.critical .consent-check-label strong {
+    color: #fca5a5;
+}
+
+/* Input Fields */
+.consent-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.consent-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.consent-input-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.consent-input-group label .required {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+.consent-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: border-color 0.2s ease;
+    outline: none;
+}
+
+.consent-input::placeholder {
+    color: var(--text-muted);
+}
+
+.consent-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.1);
+}
+
+/* Submit Button */
+.consent-submit {
+    width: 100%;
+    padding: 16px 24px;
+    margin-top: 24px;
+    background: var(--primary);
+    color: #0F0F0F;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+.consent-submit:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(201, 169, 98, 0.3);
+}
+
+.consent-submit:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.consent-submit.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Footer note */
+.consent-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Error message */
+.consent-error {
+    display: none;
+    padding: 12px 16px;
+    margin-top: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-md);
+    color: #fca5a5;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.consent-error.visible {
+    display: block;
+}
+
+/* Success state */
+.consent-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.consent-success.visible {
+    display: block;
+}
+
+.consent-success .success-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.consent-success h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+}
+
+.consent-success p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Scrollbar */
+.consent-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.consent-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.consent-card::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 98, 0.2);
+    border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .consent-card {
+        padding: 32px 24px;
+        max-height: 95vh;
+    }
+
+    .consent-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .consent-check {
+        padding: 10px 12px;
+    }
+
+    .consent-check-label {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .consent-overlay {
+        padding: 10px;
+    }
+
+    .consent-card {
+        padding: 24px 16px;
+    }
+}

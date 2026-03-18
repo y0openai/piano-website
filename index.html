@@ -24,8 +24,134 @@
     <link rel="stylesheet" href="css/enhancements.css">
     <link rel="stylesheet" href="css/validation.css">
     <link rel="stylesheet" href="css/chart-badge.css">
+    <link rel="stylesheet" href="css/consent.css">
 </head>
 <body>
+    <!-- ===================================
+         Consent Gate - 서비스 이용 동의
+         =================================== -->
+    <div id="consentOverlay" class="consent-overlay">
+        <div class="consent-card">
+            <div id="consentForm">
+                <!-- Header -->
+                <div class="consent-header">
+                    <div class="consent-logo">
+                        <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">PIANO</span>
+                    </div>
+                    <h2>서비스 이용 전 확인사항</h2>
+                    <p>PIANO 서비스를 이용하시기 전에 아래 내용을 확인하고 동의해 주세요.</p>
+                </div>
+
+                <!-- STEP 1: 서비스 성격 확인 -->
+                <div class="consent-section">
+                    <h3 class="consent-section-title">서비스 성격 확인</h3>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_saas" data-label="SaaS 서비스 이해">
+                        <span class="consent-check-label">PIANO는 <strong>투자 상품이 아닌 소프트웨어 임대(SaaS) 서비스</strong>임을 이해합니다.</span>
+                    </label>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_no_advice" data-label="투자 조언 미제공 이해">
+                        <span class="consent-check-label">본 서비스는 <strong>투자 조언, 자산 운용, 수익 보장을 제공하지 않음</strong>을 이해합니다.</span>
+                    </label>
+
+                    <label class="consent-check critical">
+                        <input type="checkbox" id="chk_risk" data-label="손익 본인 책임 이해">
+                        <span class="consent-check-label"><strong>매매 결과에 따른 손익은 전적으로 본인 책임</strong>이며, 회사는 투자 손실에 대해 어떠한 보상도 하지 않음을 이해합니다.</span>
+                    </label>
+
+                    <label class="consent-check critical">
+                        <input type="checkbox" id="chk_loss" data-label="원금 전액 손실 가능성 이해">
+                        <span class="consent-check-label">암호화폐 선물 거래의 특성상 <strong>원금 전액을 손실할 가능성</strong>이 있음을 이해합니다.</span>
+                    </label>
+                </div>
+
+                <!-- STEP 2: 법적 동의 -->
+                <div class="consent-section">
+                    <h3 class="consent-section-title">법적 동의</h3>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_terms" data-label="이용약관 동의">
+                        <span class="consent-check-label"><a href="terms.html" target="_blank">소프트웨어 이용약관</a>을 읽었으며 이에 동의합니다.</span>
+                    </label>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_privacy" data-label="개인정보처리방침 동의">
+                        <span class="consent-check-label"><a href="privacy.html" target="_blank">개인정보처리방침</a>을 읽었으며 이에 동의합니다.</span>
+                    </label>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_risk_disclosure" data-label="투자위험고지 확인">
+                        <span class="consent-check-label"><a href="risk-disclosure.html" target="_blank">투자위험고지</a>를 읽었으며 그 내용을 이해하고 확인합니다.</span>
+                    </label>
+                </div>
+
+                <!-- STEP 3: 자격 확인 -->
+                <div class="consent-section">
+                    <h3 class="consent-section-title">자격 확인</h3>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_age" data-label="만 19세 이상 확인">
+                        <span class="consent-check-label">본인은 <strong>만 19세 이상</strong>임을 확인합니다.</span>
+                    </label>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_binance" data-label="본인 명의 거래소 계정 확인">
+                        <span class="consent-check-label"><strong>본인 명의의 Binance 계정</strong>을 보유하고 있거나 개설할 예정임을 확인합니다.</span>
+                    </label>
+
+                    <label class="consent-check">
+                        <input type="checkbox" id="chk_fund" data-label="여유 자금 확인">
+                        <span class="consent-check-label">투자 자금은 <strong>생활비·대출금이 아닌 여유 자금</strong>임을 확인합니다.</span>
+                    </label>
+                </div>
+
+                <!-- STEP 4: 개인정보 입력 -->
+                <div class="consent-section">
+                    <h3 class="consent-section-title">본인 확인 정보</h3>
+
+                    <div class="consent-inputs">
+                        <div class="consent-input-group">
+                            <label for="consentName">이름 <span class="required">*</span></label>
+                            <input type="text" id="consentName" class="consent-input" placeholder="실명을 입력해 주세요" autocomplete="name">
+                        </div>
+
+                        <div class="consent-input-group">
+                            <label for="consentPhone">연락처 <span class="required">*</span></label>
+                            <input type="tel" id="consentPhone" class="consent-input" placeholder="010-0000-0000" autocomplete="tel">
+                        </div>
+
+                        <div class="consent-input-group">
+                            <label for="consentEmail">이메일 <span class="required">*</span></label>
+                            <input type="email" id="consentEmail" class="consent-input" placeholder="example@email.com" autocomplete="email">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button id="consentSubmit" class="consent-submit" disabled>동의하고 사이트 이용하기</button>
+
+                <div id="consentError" class="consent-error"></div>
+
+                <p class="consent-footer">
+                    입력하신 정보와 동의 기록은 법적 분쟁 대비 목적으로만 저장되며,<br>
+                    마케팅 등 다른 용도로 사용되지 않습니다.
+                </p>
+            </div>
+
+            <!-- Success State -->
+            <div id="consentSuccess" class="consent-success">
+                <div class="success-icon">✅</div>
+                <h3>동의가 완료되었습니다</h3>
+                <p>PIANO 서비스에 오신 것을 환영합니다.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Navigation -->
     <header class="navbar">
         <div class="container">
@@ -1344,5 +1470,6 @@
     <script src="js/calculator.js"></script>
     <script src="js/language.js"></script>
     <script src="js/enhancements.js"></script>
+    <script src="js/consent.js"></script>
 </body>
 </html>
