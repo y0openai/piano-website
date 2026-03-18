@@ -1,12 +1,14 @@
 // ===================================
 // PIANO - Consent Gate System
+// Supabase: piano-website 프로젝트 (OnlyGens와 별도)
 // ===================================
 
 (function () {
     'use strict';
 
-    // Google Apps Script URL (미사용)
-    const GOOGLE_SCRIPT_URL = '';
+    // ⚠️ Supabase 설정 — piano-website 프로젝트 전용
+    const SUPABASE_URL = 'https://ayddhappfdyqyiaqyjst.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5ZGRoYXBwZmR5cXlpYXF5anN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4MTc2ODQsImV4cCI6MjA4OTM5MzY4NH0.BAExCK5d-xgBSLsoWpVnt88BhawjTvwjdvlM3L76jZI';
 
     const CONSENT_KEY = 'piano_consent_agreed';
     const overlay = document.getElementById('consentOverlay');
@@ -69,22 +71,41 @@
         const ip = await getIP();
         const timestamp = new Date().toISOString();
 
-        const payload = {
-            name: nameInput.value.trim(),
-            phone: phoneInput.value.trim(),
-            email: emailInput.value.trim(),
-            ip: ip,
-            timestamp: timestamp,
-            user_agent: navigator.userAgent,
-            consents: Array.from(checkboxes).map(cb => ({
-                id: cb.id,
-                label: cb.dataset.label,
-                checked: cb.checked
-            }))
-        };
+        const consentData = Array.from(checkboxes).map(cb => ({
+            id: cb.id,
+            label: cb.dataset.label,
+            checked: cb.checked
+        }));
 
-        // 동의 기록 (현재 localStorage만 사용)
-        console.log('📋 Consent record:', payload);
+        // Supabase에 동의 기록 저장
+        if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+            try {
+                const res = await fetch(SUPABASE_URL + '/rest/v1/piano_consents', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+                    },
+                    body: JSON.stringify({
+                        name: nameInput.value.trim(),
+                        phone: phoneInput.value.trim(),
+                        email: emailInput.value.trim(),
+                        ip: ip,
+                        user_agent: navigator.userAgent,
+                        consents: consentData
+                    })
+                });
+
+                if (!res.ok) {
+                    console.warn('Supabase insert failed:', res.status);
+                }
+            } catch (err) {
+                console.warn('Supabase connection failed:', err);
+            }
+        } else {
+            console.log('📋 Consent record (Supabase not configured):', consentData);
+        }
 
         // 동의 저장 & 게이트 해제
         localStorage.setItem(CONSENT_KEY, JSON.stringify({
