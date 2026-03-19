@@ -928,6 +928,11 @@ const translations = {
         'transparency.toc.support': '7. Customer Support',
         'transparency.toc.updates': '8. Update History',
 
+        // EWY Promo Banner (index.html)
+        'ewy.promo.title': 'Binance EWY Perpetual Futures Now Supported',
+        'ewy.promo.desc': 'AI auto-trades 83 top Korean stocks including Samsung and SK Hynix 24/7',
+        'ewy.promo.cta': 'Learn More',
+
         // EWY Page
         'ewy.nav.home': 'Home',
         'ewy.nav.pricing': 'Pricing',
@@ -1947,6 +1952,11 @@ const translations = {
         'transparency.updates.v1_date': '2026년 3월 18일',
         'transparency.updates.v1_version': '1.0',
         'transparency.updates.v1_changes': '투명성 보고서 최초 발행',
+
+        // EWY Promo Banner (index.html)
+        'ewy.promo.title': '바이낸스 EWY 무기한선물 지원',
+        'ewy.promo.desc': '삼성전자, SK하이닉스 등 83개 한국 대표주를 24시간 AI 자동매매',
+        'ewy.promo.cta': '자세히 보기',
 
         // EWY Page
         'ewy.nav.home': '홈으로',

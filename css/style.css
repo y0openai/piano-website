@@ -2169,3 +2169,90 @@ p { font-size: 1rem; }
         font-size: 0.875rem;
     }
 }
+
+/* ===================================
+   EWY Promo Banner
+   =================================== */
+.ewy-promo-banner {
+    padding: 2rem 0;
+}
+.ewy-promo-banner .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+.ewy-promo-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    background: rgba(201, 169, 98, 0.06);
+    border: 1px solid rgba(201, 169, 98, 0.15);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+.ewy-promo-link:hover {
+    background: rgba(201, 169, 98, 0.1);
+    border-color: rgba(201, 169, 98, 0.3);
+}
+.ewy-promo-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.ewy-promo-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: var(--primary);
+    color: #0A0A0A;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+.ewy-promo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.ewy-promo-text strong {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.ewy-promo-text span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.ewy-promo-arrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: gap 0.2s;
+}
+.ewy-promo-link:hover .ewy-promo-arrow {
+    gap: 10px;
+}
+.ewy-promo-arrow .material-symbols-outlined {
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .ewy-promo-link {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+        align-items: flex-start;
+    }
+    .ewy-promo-text strong { font-size: 14px; }
+    .ewy-promo-text span { font-size: 12px; }
+}
