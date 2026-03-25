@@ -515,7 +515,6 @@
         <div class="ewy-nav-actions">
             <a href="index.html" class="ewy-nav-link" data-i18n="ewy.nav.home">홈으로</a>
             <a href="index.html#pricing" class="ewy-nav-link" data-i18n="ewy.nav.pricing">요금제</a>
-            <button class="ewy-lang-btn" id="ewyLangToggle">EN</button>
         </div>
     </nav>
 
@@ -711,21 +710,5 @@
 
     <!-- Language Script -->
     <script src="js/language.js"></script>
-    <script>
-        // Language toggle for EWY page
-        const langBtn = document.getElementById('ewyLangToggle');
-        if (langBtn && window.LanguageAPI) {
-            const updateBtn = () => {
-                const lang = window.LanguageAPI.getCurrentLanguage();
-                langBtn.textContent = lang === 'ko' ? 'EN' : '한국어';
-            };
-            updateBtn();
-            langBtn.addEventListener('click', () => {
-                const current = window.LanguageAPI.getCurrentLanguage();
-                window.LanguageAPI.setLanguage(current === 'ko' ? 'en' : 'ko');
-                updateBtn();
-            });
-        }
-    </script>
 </body>
 </html>

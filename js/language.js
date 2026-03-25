@@ -2023,7 +2023,7 @@ const translations = {
 // ===================================
 class LanguageManager {
     constructor() {
-        this.currentLang = this.getStoredLanguage() || this.detectBrowserLanguage();
+        this.currentLang = 'en';
         this.init();
     }
     
