@@ -1,0 +1,10 @@
+# Drafts (internal only)
+HOMEPAGE_DRAFT.md
+EWY_DRAFT.md
+
+# Design assets
+*.png
+*.pen
+
+# System
+.DS_Store

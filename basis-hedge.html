@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Basis Hedge? — PIANO</title>
+  <meta name="description" content="Learn how Basis Hedge works, step by step with everyday analogies. Understand the risk management strategy used by the world's largest financial institutions.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="header__logo">PIANO</a>
+      <nav class="header__nav">
+        <a href="/" style="font-weight: 700; color: #FFFFFF;">&larr; Back to Home</a>
+      </nav>
+      <button class="header__hamburger" aria-label="Open menu" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/">&larr; Back to Home</a>
+  </nav>
+
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge">
+        &#128214; Financial Concepts, Made Simple
+      </div>
+      <h1 class="hero__headline">What Is a<br>Basis Hedge?</h1>
+      <p class="hero__sub">It's the strategy used by the world's largest financial institutions.<br>It can bring your risk down to nearly zero.<br>The name sounds fancy, but the idea is really simple.</p>
+    </div>
+  </section>
+
+
+  <!-- ========== STEP 1: Everyday Analogy ========== -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="guide-step-badge">STEP 1</div>
+      <h2 class="section-title">Let's start with an everyday example</h2>
+      <p class="problem__desc" style="max-width: 640px; margin-bottom: 48px;">Think about planning a trip to Europe.<br>Nobody knows if the exchange rate will go up or down.<br>So you exchange your money ahead of time.</p>
+
+      <div class="guide-diagram">
+        <div class="problem__card" style="flex: 1; text-align: center;">
+          <div class="problem__icon">&#9992;</div>
+          <h4>Before the trip</h4>
+          <p>You exchange USD to EUR early</p>
+        </div>
+        <div style="display: flex; align-items: center; font-size: 32px; font-weight: 900; color: #A1A1AA; padding: 0 8px;">&rarr;</div>
+        <div class="problem__card" style="flex: 1; text-align: center;">
+          <div class="problem__icon">&#128737;</div>
+          <h4>Even if rates change</h4>
+          <p>You already exchanged, so no worries</p>
+        </div>
+      </div>
+
+      <div class="guide-insight">
+        <span style="font-size: 24px;">&#128161;</span>
+        <p>That's exactly what <strong>'hedging'</strong> is all about.<br>You lock in certainty now, instead of worrying about the future.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== STEP 2: Crypto Application ========== -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="guide-step-badge">STEP 2</div>
+      <h2 class="section-title">Now let's apply this to crypto</h2>
+      <p class="problem__desc" style="max-width: 640px; margin-bottom: 48px;">You buy (LONG) and sell (SHORT) the same asset at the same time.<br>No matter which way the price moves, they cancel each other out.</p>
+
+      <div class="guide-diagram" style="margin-bottom: 48px;">
+        <div class="problem__card" style="flex: 1; text-align: center; border-left: 3px solid #000;">
+          <div class="problem__icon">&#128200;</div>
+          <h4>Buy spot</h4>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #000;">LONG</p>
+        </div>
+        <div style="display: flex; align-items: center; font-size: 28px; font-weight: 900; color: #A1A1AA; padding: 0 8px;">+</div>
+        <div class="problem__card" style="flex: 1; text-align: center; border-left: 3px solid #000;">
+          <div class="problem__icon">&#128201;</div>
+          <h4>Sell futures</h4>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #000;">SHORT</p>
+        </div>
+        <div style="display: flex; align-items: center; font-size: 28px; font-weight: 900; color: #A1A1AA; padding: 0 8px;">=</div>
+        <div class="problem__card" style="flex: 1; text-align: center; background: #000; color: #FFF;">
+          <h4 style="color: #FFF; margin-top: 8px;">Combined</h4>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 28px; color: #FFF;">&asymp; 0</p>
+        </div>
+      </div>
+
+      <p class="problem__desc" style="margin-bottom: 24px;">Let's take a look at every scenario:</p>
+
+      <div class="guide-scenario-grid">
+        <div class="guide-scenario">
+          <p class="section-label section-label--light" style="margin-bottom: 12px;">Scenario 1</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px;">Price goes up 10%</h4>
+          <p style="font-size: 14px; color: #71717A; line-height: 1.8;">Spot: +10%<br>Futures: -10%</p>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #E4E4E7;">Total &asymp; 0</p>
+        </div>
+        <div class="guide-scenario">
+          <p class="section-label section-label--light" style="margin-bottom: 12px;">Scenario 2</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px;">Price goes down 10%</h4>
+          <p style="font-size: 14px; color: #71717A; line-height: 1.8;">Spot: -10%<br>Futures: +10%</p>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #E4E4E7;">Total &asymp; 0</p>
+        </div>
+        <div class="guide-scenario">
+          <p class="section-label section-label--light" style="margin-bottom: 12px;">Scenario 3</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px;">Price stays the same</h4>
+          <p style="font-size: 14px; color: #71717A; line-height: 1.8;">Spot: 0%<br>Futures: 0%</p>
+          <p style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #E4E4E7;">Total &asymp; 0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== STEP 3: Funding Fee ========== -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="guide-step-badge">STEP 3</div>
+      <h2 class="section-title">If profit is zero, why bother?</h2>
+      <p class="problem__desc" style="max-width: 640px; margin-bottom: 48px;">Great question.<br>Here's where the concept of <strong>Funding Fee</strong> comes in.</p>
+
+      <div style="max-width: 720px;">
+        <div class="problem__card" style="border-left: 3px solid #000; margin-bottom: 24px;">
+          <h4 style="font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px;">What is a Funding Fee?</h4>
+          <p style="font-size: 15px; color: #71717A; line-height: 1.8; margin-bottom: 16px;">In perpetual futures markets, a fee is exchanged between longs and shorts <strong>every 8 hours</strong>.<br>This is called the Funding Fee.</p>
+          <p style="font-size: 15px; color: #71717A; line-height: 1.8; margin-bottom: 16px;">When there are more longs &rarr; longs pay shorts<br>When there are more shorts &rarr; shorts pay longs</p>
+          <p style="font-size: 15px; color: #71717A; line-height: 1.8;">In a Basis Hedge, the SHORT position is usually the one receiving the Funding Fee.</p>
+        </div>
+
+        <div class="features__info">
+          <strong>&#9888; Heads up:</strong> The Funding Rate changes depending on market conditions. You won't always receive it. If the Funding Rate turns negative, it can actually become a cost.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== WHO USES THIS ========== -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label section-label--dark">WHO USES THIS</p>
+      <h2 class="section-title">So, who actually uses this strategy?</h2>
+
+      <div class="guide-scenario-grid" style="margin-bottom: 48px;">
+        <div class="guide-institution-card">
+          <p class="section-label" style="color: #71717A; margin-bottom: 16px;">Hedge Funds</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: #FFF;">Citadel &middot; Bridgewater &middot; Two Sigma</h4>
+          <p style="font-size: 14px; color: #A1A1AA; line-height: 1.7;">They eliminate directional risk and capture spreads through Basis Trades</p>
+        </div>
+        <div class="guide-institution-card">
+          <p class="section-label" style="color: #71717A; margin-bottom: 16px;">Investment Banks</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: #FFF;">Goldman Sachs &middot; JP Morgan &middot; Morgan Stanley</h4>
+          <p style="font-size: 14px; color: #A1A1AA; line-height: 1.7;">Their derivatives hedge desks manage client asset risk to stay neutral</p>
+        </div>
+        <div class="guide-institution-card">
+          <p class="section-label" style="color: #71717A; margin-bottom: 16px;">Market Makers</p>
+          <h4 style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: #FFF;">Jane Street &middot; Wintermute &middot; Jump Trading</h4>
+          <p style="font-size: 14px; color: #A1A1AA; line-height: 1.7;">They hedge inventory risk while providing liquidity to the market</p>
+        </div>
+      </div>
+
+      <p style="font-size: 15px; color: #71717A; line-height: 1.7; max-width: 640px;">Basis Hedge (also known as Cash-and-Carry) is one of the oldest arbitrage strategies in financial markets.</p>
+    </div>
+  </section>
+
+
+  <!-- ========== THE CHALLENGE + PIANO BRIDGE ========== -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-title">But here's the thing -- it's hard to do on your own</h2>
+      <p class="problem__desc" style="max-width: 640px; margin-bottom: 48px;">The strategy itself is simple.<br>But running it yourself means constant management.</p>
+
+      <div class="guide-scenario-grid" style="margin-bottom: 48px;">
+        <div class="problem__card" style="text-align: center;">
+          <div class="problem__icon">&#9203;</div>
+          <h4>24/7 Monitoring</h4>
+          <p>The crypto market never sleeps. Your position ratios can drift even while you're sleeping.</p>
+        </div>
+        <div class="problem__card" style="text-align: center;">
+          <div class="problem__icon">&#9881;</div>
+          <h4>Manual Rebalancing</h4>
+          <p>Every time the ratios drift, you need to calculate and adjust manually.</p>
+        </div>
+        <div class="problem__card" style="text-align: center;">
+          <div class="problem__icon">&#128556;</div>
+          <h4>Emotional Interference</h4>
+          <p>When prices swing hard, fear and greed kick in. You end up breaking your own hedge.</p>
+        </div>
+      </div>
+
+      <div class="guide-insight">
+        <span style="font-size: 24px;">&rarr;</span>
+        <p><strong>Piano</strong> is the software that automates all of this maintenance for you.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== CTA ========== -->
+  <section class="section section--dark" style="text-align: center;">
+    <div class="container">
+      <h2 class="section-title" style="max-width: none;">Curious about Piano?</h2>
+      <div class="hero__actions" style="justify-content: center; margin-top: 40px;">
+        <a href="/" class="btn btn--primary">Piano Homepage &rarr;</a>
+        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn btn--outline">Chat on Telegram</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <p class="footer__logo">PIANO</p>
+        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
+        <p class="footer__contact">Get in Touch &rarr; <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2025 PIANO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Mobile Nav
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', function() {
+      mobileNav.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
