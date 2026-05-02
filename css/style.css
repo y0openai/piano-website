@@ -138,8 +138,7 @@ p { color: #666; line-height: 1.75; }
   padding: 48px 32px; border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px; background: #0F0F0F;
 }
-.hero__figure .fig-label { align-self: flex-start; }
-.iso-svg { width: 100%; max-width: 260px; }
+.iso-svg { width: 100%; max-width: 520px; }
 
 
 /* ==============================
