@@ -6,637 +6,473 @@
   <title>PIANO — Automated Hedge Balancing for Crypto</title>
   <meta name="description" content="Automatically balance your hedge positions. A tool that maintains the spot-to-futures ratio based on your configured parameters.">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header class="header">
-    <div class="container">
-      <a href="/" class="header__logo">PIANO</a>
-      <nav class="header__nav">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#features">Features</a>
-        <a href="#security">Security</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="header__cta">Contact Us</a>
-      </nav>
-      <button class="header__hamburger" aria-label="Open menu" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">PIANO</a>
+    <div class="nav__links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#security">Security</a>
+      <a href="#pricing">Pricing</a>
     </div>
-  </header>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Get Started →</a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#features" onclick="closeDrawer()">Features</a>
+  <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
+  <a href="#security" onclick="closeDrawer()">Security</a>
+  <a href="#pricing" onclick="closeDrawer()">Pricing</a>
+  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Get Started →</a>
+</div>
 
-  <!-- Mobile Nav -->
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#how-it-works">How It Works</a>
-    <a href="#features">Features</a>
-    <a href="#security">Security</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Contact Us &rarr;</a>
-  </nav>
 
-
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__badge">
-        <span></span>
-        Automated Hedge Balancing for Crypto
-      </div>
-      <h1 class="hero__headline">Keep your hedge positions<br>in balance, automatically</h1>
-      <p class="hero__sub">No need to monitor the market 24/7.<br>A tool that automatically maintains the hedge ratio between spot and futures.</p>
-      <div class="hero__actions">
-        <a href="#how-it-works" class="btn btn--primary">Learn More &darr;</a>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn btn--outline">Contact Us</a>
-      </div>
+<!-- ========== HERO ========== -->
+<section class="hero container">
+  <div class="hero__text">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Automated Hedge Balancing
     </div>
-  </section>
-
-
-  <!-- ========== PROBLEM (WHY PIANO) ========== -->
-  <section class="section section--light" id="how-it-works">
-    <div class="container">
-      <div class="problem__header">
-        <p class="section-label section-label--light">WHY PIANO</p>
-        <h2 class="section-title">Maintaining a hedge is harder than opening one</h2>
-        <p class="problem__desc">A spot LONG + futures SHORT structure (Basis Hedge) reduces directional risk.<br>But in practice, these problems come up.</p>
-      </div>
-
-      <div class="problem__grid">
-        <div class="problem__card">
-          <div class="problem__icon"><i data-lucide="clock"></i></div>
-          <h4>24/7 Market</h4>
-          <p>The crypto market never sleeps.<br>Your position ratio can drift even while you sleep.</p>
-        </div>
-        <div class="problem__card">
-          <div class="problem__icon"><i data-lucide="refresh-cw"></i></div>
-          <h4>Manual Rebalancing</h4>
-          <p>Every time the spot&middot;futures ratio drifts, you have to adjust it yourself.</p>
-        </div>
-        <div class="problem__card">
-          <div class="problem__icon"><i data-lucide="brain"></i></div>
-          <h4>Emotional Decisions</h4>
-          <p>When volatility spikes, fear and greed take over.<br>You end up breaking your own hedge structure.</p>
-        </div>
-        <div class="problem__card">
-          <div class="problem__icon"><i data-lucide="calculator"></i></div>
-          <h4>Complex Calculations</h4>
-          <p>Position size, entry conditions, and rebalancing timing all need to be calculated in real time.</p>
-        </div>
-      </div>
-
-      <p class="problem__bottom">Piano automates this maintenance&middot;management work for you.</p>
+    <h1 class="hero__h1">Keep your hedge<br>in balance,<br>automatically.</h1>
+    <p class="hero__sub">No need to monitor 24/7. A tool that maintains the spot-to-futures ratio based on your configured parameters.</p>
+    <div class="hero__ctas">
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Get Started →</a>
+      <a href="#how-it-works" class="btn-outline">How It Works</a>
     </div>
-  </section>
+  </div>
+
+  <!-- FIG 0.1 — Hedge Layer Stack -->
+  <div class="hero__figure">
+    <span class="fig-label">FIG 0.1</span>
+    <svg class="iso-svg" viewBox="50 28 190 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Sphere -->
+      <g class="fig01-sp">
+        <circle cx="120" cy="48" r="18" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
+        <ellipse cx="120" cy="48" rx="18" ry="6.5" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.5"/>
+        <ellipse cx="120" cy="48" rx="18" ry="3" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.25"/>
+      </g>
+
+      <!-- Layer 3 (top) -->
+      <g class="fig01-l3">
+        <polygon points="120,70 165,96 133,115 88,89" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="120,78 165,104 165,96 120,70" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="165,104 133,123 133,115 165,96" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      </g>
+
+      <!-- Layer 2 -->
+      <g class="fig01-l2">
+        <polygon points="120,105 165,131 133,150 88,124" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="120,113 165,139 165,131 120,105" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="165,139 133,158 133,150 165,131" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      </g>
+
+      <!-- Layer 1 -->
+      <g class="fig01-l1">
+        <polygon points="120,140 165,166 133,185 88,159" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="120,148 165,174 165,166 120,140" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="165,174 133,193 133,185 165,166" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      </g>
+
+      <!-- Layer 0 (bottom) -->
+      <g class="fig01-l0">
+        <polygon points="120,175 165,201 133,220 88,194" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="120,183 165,209 165,201 120,175" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
+        <polygon points="165,209 133,228 133,220 165,201" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      </g>
+
+    </svg>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 
-  <!-- ========== ACTIVE BASIS ========== -->
-  <section class="section section--dark" id="active-basis">
-    <div class="container">
-      <div class="basis__header">
-        <p class="section-label section-label--dark">WHY "ACTIVE"</p>
-        <h2 class="section-title">Traditional Basis Hedge stops here</h2>
-        <p class="basis__desc">Spot LONG + futures SHORT. Open a position and collect Funding Fee.<br>And then — just leave it.</p>
-      </div>
-
-      <!-- Before vs After -->
-      <div class="basis__compare">
-        <div class="basis__compare-col basis__compare-col--before">
-          <p class="basis__compare-label">Typical Basis Hedge</p>
-          <h3 class="basis__compare-title">Passive</h3>
-          <ul class="basis__compare-list">
-            <li>Open a position and leave it</li>
-            <li>Ratio drifts? Nothing happens</li>
-            <li>Entry price stays fixed</li>
-            <li>Only collect Funding Fee</li>
-          </ul>
-        </div>
-        <div class="basis__compare-col basis__compare-col--after">
-          <p class="basis__compare-label">Piano's Active Basis</p>
-          <h3 class="basis__compare-title">Active</h3>
-          <ul class="basis__compare-list">
-            <li>Open a position and <strong>actively manage it</strong></li>
-            <li>Detect imbalance and <strong>auto-correct</strong></li>
-            <li>Corrections <strong>improve your entry price</strong></li>
-            <li>Funding Fee + <strong>rebalancing alpha</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Piano adds this -->
-      <div class="basis__active-summary">
-        <p class="basis__active-summary-title">This is where Piano begins</p>
-        <p class="basis__active-summary-desc">Within the same Basis Hedge structure, the rebalancing process itself becomes an opportunity.<br>When imbalance occurs, Piano corrects at favorable conditions.<br>Improved entry prices are actively realized.</p>
-      </div>
-
-      <!-- 3 differentiators -->
-      <div class="basis__features">
-        <div class="basis__feature">
-          <p class="basis__feature-num">01</p>
-          <h4>Smart Entry Filter</h4>
-          <p>Piano doesn't enter at just any time.<br>It only executes when conditions are statistically favorable.</p>
-        </div>
-        <div class="basis__feature">
-          <p class="basis__feature-num">02</p>
-          <h4>Auto Imbalance Correction</h4>
-          <p>When the ratio drifts, it's detected automatically.<br>Each correction improves the average entry price.</p>
-        </div>
-        <div class="basis__feature">
-          <p class="basis__feature-num">03</p>
-          <h4>Linked Balancing</h4>
-          <p>Restores 1:1 balance after correction.<br>Improved entry prices are actively realized.</p>
-        </div>
-      </div>
-
-      <div class="basis__guide-link">
-        <a href="basis-hedge.html">Want to learn more about Basis Hedge? &rarr;</a>
-      </div>
+<!-- ========== FEATURES ========== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="features-intro">
+      <span class="label">Core Features</span>
+      <h2>Three mechanisms that<br>keep your hedge intact</h2>
+      <p>Built on freqtrade open-source framework. Every execution respects boundaries you define.</p>
     </div>
-  </section>
 
-
-  <!-- ========== CORE FEATURES ========== -->
-  <section class="section section--light" id="features">
-    <div class="container">
-      <p class="section-label section-label--light">CORE FEATURES</p>
-      <h2 class="section-title">Three core features</h2>
-
-      <div class="features__list">
-
-        <!-- Feature 01 -->
-        <div class="feature__item">
-          <div>
-            <p class="feature__number">01</p>
-            <h3 class="feature__title">Statistical Entry Condition Filter</h3>
-            <p class="feature__desc">Market conditions are automatically evaluated before entering a position.<br>Execution only happens when your configured conditions are met.</p>
-            <p class="feature__note">By reducing entries under unfavorable conditions, the initial stability of the hedge structure is improved.</p>
-          </div>
-          <div>
-            <table class="feature__table">
-              <thead>
-                <tr>
-                  <th>Evaluation Criteria</th>
-                  <th>How It Works</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Volatility Level</td>
-                  <td>Avoids entry when volatility is too high</td>
-                </tr>
-                <tr>
-                  <td>Volume Pattern</td>
-                  <td>Detects abnormal volume periods</td>
-                </tr>
-                <tr>
-                  <td>Trend State</td>
-                  <td>Filters out extremely biased periods</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Feature 02 -->
-        <div class="feature__item feature__item--reverse">
-          <div>
-            <p class="feature__number">02</p>
-            <h3 class="feature__title">Auto Position Imbalance Correction</h3>
-            <p class="feature__desc">When market movements cause the spot&middot;futures ratio to drift, AI evaluates the situation in real time and adjusts positions to restore balance.</p>
-            <p class="feature__note">AI operates within the boundaries you define.<br>You can adjust those boundaries or stop execution at any time.</p>
-          </div>
-          <div>
-            <table class="feature__table">
-              <thead>
-                <tr>
-                  <th>Market Signal</th>
-                  <th>AI Response</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>VWAP Deviation</td>
-                  <td>Rebalances when price diverges from the volume-weighted average</td>
-                </tr>
-                <tr>
-                  <td>Volume Spike</td>
-                  <td>Reassesses balance when volume surges unexpectedly</td>
-                </tr>
-                <tr>
-                  <td>Range Breakout</td>
-                  <td>Readjusts as price breaks beyond the expected range</td>
-                </tr>
-                <tr>
-                  <td>Volatility Convergence</td>
-                  <td>Settles positions once volatility stabilizes</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Feature 03 -->
-        <div class="feature__item">
-          <div>
-            <p class="feature__number">03</p>
-            <h3 class="feature__title">Linked Balancing</h3>
-            <p class="feature__desc">Buy at favorable prices and let AI restore balance in real time — your average entry price continuously improves.<br><br>Normally we hold spot and futures at equal weight to neutralize market risk. When prices move in your favor, DCA buys additional on one side — intentionally creating an imbalance. AI detects this and rebalances the other side to restore the 1:1 ratio. Since the additional purchase was made at a better price, your average entry price automatically improves with each cycle.</p>
-          </div>
-          <div>
-            <div class="feature__code"><strong>① Balanced State</strong>
-Spot 0.05 BTC + Futures 0.05 BTC &rarr; Ratio 1:1
-
-<strong>② DCA Triggered</strong> (AI detects favorable price and buys additional spot)
-Spot 0.07 BTC + Futures 0.05 BTC &rarr; Ratio 1.4x (intentional imbalance)
-
-<strong>③ Linked Balancing</strong> (AI adds matching futures to restore balance)
-Spot 0.07 BTC + Futures 0.07 BTC &rarr; Ratio 1:1 (restored, average entry price improved)</div>
-          </div>
-        </div>
-
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-card__num">FIG 0.2 — 01</span>
+        <!-- FIG 0.2 inline (small) — Three Cubes -->
+        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
+          <!-- Cube A -->
+          <g class="fig02-ca">
+            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <!-- Cube B -->
+          <g class="fig02-cb">
+            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <!-- Cube C -->
+          <g class="fig02-cc">
+            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+        </svg>
+        <h3>Statistical Entry Condition Filter</h3>
+        <p>Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
+        <span class="feature-card__note">Entry / Risk gate</span>
       </div>
 
-      <div class="features__info">
-        All features execute only according to your configured conditions. Piano does not make investment decisions for you. You can stop execution or change parameters at any time.
+      <div class="feature-card">
+        <span class="feature-card__num">FIG 0.2 — 02</span>
+        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
+          <g class="fig02-cb">
+            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <g class="fig02-ca">
+            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <g class="fig02-cc">
+            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+        </svg>
+        <h3>Auto Position Imbalance Correction</h3>
+        <p>When market movements drift the spot·futures ratio, AI evaluates in real time and adjusts positions to restore balance.</p>
+        <span class="feature-card__note">Rebalance / AI correction</span>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-card__num">FIG 0.2 — 03</span>
+        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
+          <g class="fig02-cc">
+            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <g class="fig02-ca">
+            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+          <g class="fig02-cb">
+            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
+            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          </g>
+        </svg>
+        <h3>Linked Balancing</h3>
+        <p>DCA buys at favorable prices while AI continuously restores the 1:1 ratio — your average entry improves with each cycle.</p>
+        <span class="feature-card__note">DCA + auto-rebalance</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 
-  <!-- ========== SECURITY ========== -->
-  <section class="section section--dark" id="security">
-    <div class="container">
-      <div class="security__header">
-        <p class="section-label section-label--dark">SECURITY</p>
-        <h2 class="section-title">We never directly access your assets</h2>
-        <p class="security__desc">Piano connects to your Binance account via API.<br>But it never holds or transfers your assets.</p>
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="hiw">
+
+      <!-- FIG 0.3 — Card Stack -->
+      <div class="hiw__fig">
+        <span class="fig-label">FIG 0.3</span>
+        <svg class="iso-svg" viewBox="70 40 150 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 8 cards, py = 56,70,84,98,112,126,140,154 -->
+          <!-- W=55,D=40,H=4 → W*0.866=47.6≈48, W*0.5=27.5≈28, D*0.866=34.6≈35, D*0.5=20 -->
+          <!-- Top: (120,py-4),(168,py+24),(133,py+44),(85,py+16) -->
+          <!-- Front: (120,py),(168,py+28),(168,py+24),(120,py-4) -->
+          <!-- Right: (168,py+28),(133,py+48),(133,py+44),(168,py+24) -->
+
+          <g class="fig03-c7">
+            <polygon points="120,150 168,174 133,194 85,170" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,154 168,182 168,178 120,150" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,182 133,202 133,198 168,178" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c6">
+            <polygon points="120,136 168,160 133,180 85,156" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,140 168,168 168,164 120,136" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,168 133,188 133,184 168,164" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c5">
+            <polygon points="120,122 168,146 133,166 85,142" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,126 168,154 168,150 120,122" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,154 133,174 133,170 168,150" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c4">
+            <polygon points="120,108 168,132 133,152 85,128" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,112 168,140 168,136 120,108" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,140 133,160 133,156 168,136" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c3">
+            <polygon points="120,94 168,118 133,138 85,114" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,98 168,126 168,122 120,94" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,126 133,146 133,142 168,122" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c2">
+            <polygon points="120,80 168,104 133,124 85,100" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,84 168,112 168,108 120,80" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,112 133,132 133,128 168,108" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c1">
+            <polygon points="120,66 168,90 133,110 85,86" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,70 168,98 168,94 120,66" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,98 133,118 133,114 168,94" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+          <g class="fig03-c0">
+            <polygon points="120,52 168,76 133,96 85,72" fill="#141414" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="120,56 168,84 168,80 120,52" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
+            <polygon points="168,84 133,104 133,100 168,80" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          </g>
+        </svg>
       </div>
 
-      <div class="security__grid">
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="key-round"></i></div>
-          <h4>API Key Creation</h4>
-          <p>You create it directly on Binance</p>
+      <div class="hiw__body">
+        <div class="hiw__header">
+          <span class="label">Get Started</span>
+          <h2>Running in<br>three steps</h2>
+          <p>Default parameters are provided so you can start right away.</p>
         </div>
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="shield-off"></i></div>
-          <h4>Withdrawal Disabled</h4>
-          <p>Only API keys without withdrawal permission are used</p>
-        </div>
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="globe-lock"></i></div>
-          <h4>IP Restriction</h4>
-          <p>Access only from authorized server IPs</p>
-        </div>
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="power-off"></i></div>
-          <h4>Instant Revocation</h4>
-          <p>Revoke the API key and access is cut immediately</p>
-        </div>
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="sliders-horizontal"></i></div>
-          <h4>Parameter Control</h4>
-          <p>You set and change all execution conditions yourself</p>
-        </div>
-        <div class="security__item">
-          <div class="security__item-icon"><i data-lucide="container"></i></div>
-          <h4>Isolated Environment</h4>
-          <p>Each user runs on a separate, dedicated instance</p>
-        </div>
-      </div>
-
-      <div class="security__compare">
-        <div class="security__col security__col--do">
-          <h4>What Piano does</h4>
-          <ul>
-            <li>Automatically maintains hedge ratios</li>
-            <li>Automatically corrects position imbalances</li>
-            <li>Executes only according to your preconfigured conditions</li>
-            <li>Monitors 24/7 automatically</li>
-          </ul>
-        </div>
-        <div class="security__col security__col--dont">
-          <h4>What Piano doesn't do</h4>
-          <ul>
-            <li>No investment advice or asset recommendations</li>
-            <li>No profit guarantees or performance promises</li>
-            <li>Never arbitrarily disposes of your assets</li>
-            <li>No withdrawals or asset transfers</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== EWY BANNER ========== -->
-  <section class="ewy-banner">
-    <div class="container">
-      <div>
-        <span class="ewy-banner__badge">NEW</span>
-        <h3 class="ewy-banner__title">Now supporting Binance EWY perpetual futures</h3>
-        <p class="ewy-banner__desc">Automated Basis Hedge balancing with 83 leading Korean stocks including Samsung Electronics and SK Hynix</p>
-      </div>
-      <a href="ewy.html" class="ewy-banner__link">Learn More &rarr;</a>
-    </div>
-  </section>
-
-
-  <!-- ========== TECH STACK ========== -->
-  <section class="section section--light" id="tech">
-    <div class="container">
-      <div class="tech__header">
-        <p class="section-label section-label--light">TECH STACK</p>
-        <h2 class="section-title">Built on open source. Transparent by design.</h2>
-        <p class="tech__desc">Piano is software built on the freqtrade open-source trading framework.</p>
-      </div>
-
-      <div class="tech__grid">
-        <div class="tech__item">
-          <p class="tech__item-label">FRAMEWORK</p>
-          <h4>freqtrade</h4>
-          <p>Open-source trading framework</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">INFRASTRUCTURE</p>
-          <h4>Cloud VPS</h4>
-          <p>Dedicated instance for each user</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">EXCHANGE</p>
-          <h4>Binance API</h4>
-          <p>Connected to the Binance exchange</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">STRATEGY</p>
-          <h4>Basis Hedge</h4>
-          <p>Spot + futures hedge structure</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== STEPS ========== -->
-  <section class="section section--dark" id="steps">
-    <div class="container">
-      <div class="steps__header">
-        <p class="section-label section-label--dark">GET STARTED</p>
-        <h2 class="section-title">Get started in 3 steps</h2>
-      </div>
-
-      <div class="steps__grid">
-        <div class="steps__card">
-          <p class="steps__number">01</p>
-          <p class="steps__time">Takes 5 min</p>
-          <h4>Create Binance API Key</h4>
-          <p>Create an API key from your Binance account.<br>Make sure to disable withdrawal permission.<br>Allow only the designated server IP.</p>
-        </div>
-        <div class="steps__card">
-          <p class="steps__number">02</p>
-          <p class="steps__time">Configure</p>
-          <h4>Set Parameters</h4>
-          <p>Configure parameters like rebalancing conditions and position size.<br>Default values are provided so you can start right away.<br>You can change them at any time.</p>
-        </div>
-        <div class="steps__card">
-          <p class="steps__number">03</p>
-          <p class="steps__time">Monitor</p>
-          <h4>Monitor</h4>
-          <p>Piano manages position balance according to your configured conditions.<br>You can check position status and execution history on the dashboard.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== PRICING ========== -->
-  <section class="section section--light" id="pricing">
-    <div class="container">
-      <div class="pricing__wrapper">
-        <p class="section-label section-label--light">PRICING</p>
-        <h2 class="section-title">Simple and transparent pricing</h2>
-
-        <div class="pricing__card">
-          <div class="pricing__row">
-            <span class="pricing__label">Setup Fee</span>
-            <span class="pricing__value">Flat rate (inquire)</span>
-          </div>
-          <div class="pricing__row">
-            <span class="pricing__label">Monthly Maintenance</span>
-            <span class="pricing__value">Flat rate (inquire)</span>
-          </div>
-        </div>
-
-        <p class="pricing__note">No fees tied to profits or trading volume.<br>Contact us for exact pricing details.</p>
-
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn btn--dark">Contact Us &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== FAQ ========== -->
-  <section class="section section--gray" id="faq">
-    <div class="container">
-      <div class="faq__header">
-        <p class="section-label section-label--light">FAQ</p>
-        <h2 class="section-title">Frequently asked questions</h2>
-      </div>
-
-      <div class="faq__list">
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            What is Piano?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              Piano is a tool that automatically maintains the balance of spot+futures hedge (Basis Hedge) positions on Binance. It's built on the freqtrade open-source framework.
+        <div class="hiw__steps">
+          <div class="hiw__step">
+            <div class="hiw__step-num">01</div>
+            <div>
+              <div class="hiw__step-time">~5 min</div>
+              <h3>Create Binance API Key</h3>
+              <p>Create an API key from your Binance account. Disable withdrawal permission and allow only the designated server IP.</p>
             </div>
           </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            Do I need crypto trading experience?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              A basic understanding of Basis Hedge structures and Binance futures trading is required. This tool automates the maintenance&middot;management of hedge positions. It does not make trading decisions for you.
+          <div class="hiw__step">
+            <div class="hiw__step-num">02</div>
+            <div>
+              <div class="hiw__step-time">Configure</div>
+              <h3>Set Parameters</h3>
+              <p>Configure rebalancing conditions and position size. You can adjust any parameter at any time.</p>
             </div>
           </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            Are my assets safe?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              Your funds always remain in your Binance account. Piano only uses API keys without withdrawal permission. Revoke the API key and access is blocked immediately.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            Does Piano invest on my behalf?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              No. Piano is a tool that automatically maintains the balance of hedge positions according to your configured conditions. It does not make investment decisions, select assets, or guarantee profits.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            Can I incur losses?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              Yes. Cryptocurrency trading always carries the risk of principal loss. While the hedge structure reduces directional risk, losses can occur due to factors such as extreme market volatility, Funding Rate reversals, and exchange risk.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            How does pricing work?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              Pricing consists of a flat setup fee and a flat monthly maintenance fee. There are no fees tied to profits or trading volume.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" type="button">
-            Can I stop at any time?
-            <span class="faq__icon">+</span>
-          </button>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              Yes. Revoke the API key on Binance and Piano's access is blocked immediately. You have full control without any separate cancellation process.
+          <div class="hiw__step">
+            <div class="hiw__step-num">03</div>
+            <div>
+              <div class="hiw__step-time">Ongoing</div>
+              <h3>Monitor</h3>
+              <p>Piano manages position balance automatically. Check status and execution history on the dashboard.</p>
             </div>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 
-  <!-- ========== RISK WARNING ========== -->
-  <section class="risk">
-    <div class="container">
-      <div class="risk__inner">
-        <p class="risk__title"><i data-lucide="triangle-alert" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Risk Disclosure</p>
-        <div class="risk__text">
-          <p class="risk__section-title">Nature of Service</p>
-          <p><strong>1. Piano is a software tool.</strong> &mdash; It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
-          <p><strong>2. Piano does not solicit investments.</strong> &mdash; It does not recommend or solicit the purchase or sale of any specific assets.</p>
-          <p><strong>3. Piano does not make investment decisions on your behalf.</strong> &mdash; All trades are executed according to user-configured conditions. Decisions regarding timing, asset selection, and trade size are solely the user's responsibility.</p>
-          <p><strong>4. Piano does not guarantee returns.</strong> &mdash; Past performance, backtests, and simulation results do not guarantee future returns.</p>
-          <br>
-          <p class="risk__section-title">Investment Risk Disclosure</p>
-          <p>Cryptocurrency trading involves significant risk and may result in the complete loss of principal. All trades are conducted at the user's own judgment and responsibility. Before making any investment decisions, carefully consider your financial situation, investment experience, and risk tolerance.</p>
-        </div>
+<!-- ========== SECURITY ========== -->
+<section class="section" id="security">
+  <div class="container">
+    <div class="security-header">
+      <span class="label">Security</span>
+      <h2>We never directly<br>access your assets</h2>
+      <p>Piano connects to Binance via API but never holds or transfers your assets.</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="key-round"></i></div>
+        <h3>API Key Creation</h3>
+        <p>You create it directly on Binance</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="shield-off"></i></div>
+        <h3>Withdrawal Disabled</h3>
+        <p>Only keys without withdrawal permission are used</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="globe-lock"></i></div>
+        <h3>IP Restriction</h3>
+        <p>Access only from authorized server IPs</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="power-off"></i></div>
+        <h3>Instant Revocation</h3>
+        <p>Revoke the API key and access is cut immediately</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="sliders-horizontal"></i></div>
+        <h3>Parameter Control</h3>
+        <p>You set and change all execution conditions yourself</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="container"></i></div>
+        <h3>Isolated Environment</h3>
+        <p>Each user runs on a dedicated instance</p>
       </div>
     </div>
-  </section>
 
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__brand">
-        <p class="footer__logo">PIANO</p>
-        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
-        <p class="footer__contact">Get in Touch &rarr; <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
+    <div class="security-compare">
+      <div class="security-col security-col--do">
+        <h3>What Piano does</h3>
+        <ul>
+          <li>Automatically maintains hedge ratios</li>
+          <li>Automatically corrects position imbalances</li>
+          <li>Executes only per your preconfigured conditions</li>
+          <li>Monitors 24/7 automatically</li>
+        </ul>
+      </div>
+      <div class="security-col">
+        <h3>What Piano doesn't do</h3>
+        <ul>
+          <li>No investment advice or asset recommendations</li>
+          <li>No profit guarantees or performance promises</li>
+          <li>Never arbitrarily disposes of your assets</li>
+          <li>No withdrawals or asset transfers</li>
+        </ul>
       </div>
     </div>
-    <div class="container">
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2025 PIANO. All rights reserved.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== PRICING ========== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="label">Pricing</span>
+      <h2>Simple, transparent pricing</h2>
+      <p>No fees tied to profits or trading volume.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-row">
+        <span class="pricing-row__label">Setup Fee</span>
+        <span class="pricing-row__val">Flat rate (inquire)</span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-row__label">Monthly Maintenance</span>
+        <span class="pricing-row__val">Flat rate (inquire)</span>
+      </div>
+      <p class="pricing-note">Contact us for exact pricing details.</p>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Contact Us →</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="label">FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" type="button">What is Piano?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Piano is a tool that automatically maintains the balance of spot+futures hedge (Basis Hedge) positions on Binance. It's built on the freqtrade open-source framework.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Do I need crypto trading experience?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">A basic understanding of Basis Hedge structures and Binance futures trading is required. Piano automates maintenance and management of hedge positions — it does not make trading decisions for you.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Are my assets safe?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Your funds always remain in your Binance account. Piano only uses API keys without withdrawal permission. Revoke the API key and access is blocked immediately.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Does Piano invest on my behalf?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Piano only executes within the boundaries you configure. It does not make autonomous investment decisions or guarantee any returns.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Which exchanges are supported?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Currently Binance spot + futures. EWY perpetual futures (Korean equity index) is also supported. See <a href="ewy.html" style="color:#888;text-decoration:underline">EWY page</a> for details.</div></div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
 
-  <!-- ========== SCRIPTS ========== -->
-  <script>
-    // FAQ Accordion
-    document.querySelectorAll('.faq__question').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.closest('.faq__item');
-        var isActive = item.classList.contains('active');
+<!-- ========== CTA ========== -->
+<div class="cta-block">
+  <div class="container">
+    <h2>Start automating your hedge today</h2>
+    <p>Connect via Telegram and get set up in minutes.</p>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Get Started →</a>
+  </div>
+</div>
 
-        // Close all
-        document.querySelectorAll('.faq__item').forEach(function(el) {
-          el.classList.remove('active');
-        });
 
-        // Open clicked (if it was closed)
-        if (!isActive) {
-          item.classList.add('active');
-        }
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span class="footer__logo">PIANO</span>
+      <div class="footer__links">
+        <a href="basis-hedge.html">What is Basis Hedge?</a>
+        <a href="ewy.html">EWY Futures</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="risk-disclosure.html">Risk Disclosure</a>
+      </div>
+      <span class="footer__copy">© 2025 와이알파 주식회사. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  lucide.createIcons();
+
+  // Hamburger / drawer
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
+  function closeDrawer() { drawer.classList.remove('open'); }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = null;
       });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
     });
-
-    // Mobile Nav
-    var hamburger = document.getElementById('hamburger');
-    var mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', function() {
-      mobileNav.classList.toggle('active');
-      // Animate hamburger
-      this.classList.toggle('active');
-    });
-
-    // Close mobile nav on link click
-    mobileNav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileNav.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          var offset = 72; // header height
-          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
+  });
+</script>
 
 </body>
 </html>
