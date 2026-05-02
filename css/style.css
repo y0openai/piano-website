@@ -408,6 +408,11 @@ p { color: var(--fg-3); line-height: 1.75; }
 @keyframes bh-clock-tick  { to { transform: rotate(360deg); } }
 @keyframes bh-bldg-rise   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 @keyframes bh-bar-grow    { 0%,100% { transform: scaleY(0.92); } 50% { transform: scaleY(1.05); } }
+@keyframes bh-manual-clock-spin { to { transform: rotate(360deg); } }
+@keyframes bh-manual-slide { 0%,100% { transform: translateX(-14px); } 50% { transform: translateX(20px); } }
+@keyframes bh-manual-long-drift { 0%,100% { transform: scaleY(0.82); } 50% { transform: scaleY(1.12); } }
+@keyframes bh-manual-short-drift { 0%,100% { transform: scaleY(1.1); } 50% { transform: scaleY(0.76); } }
+@keyframes bh-manual-alert-pop { 0%,100% { opacity: 0.56; transform: translateX(0); } 50% { opacity: 1; transform: translateX(-5px); } }
 
 .bh-fee-flow, .bh-flow-line { animation: bh-flow-dash 1.5s linear infinite; }
 .bh-zero-label { animation: bh-pulse-soft 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
@@ -432,9 +437,14 @@ p { color: var(--fg-3); line-height: 1.75; }
 .bh-bldg-2 { animation: bh-bldg-rise 3s ease-in-out infinite 0.3s; transform-box: fill-box; transform-origin: center; }
 .bh-bldg-3 { animation: bh-bldg-rise 3s ease-in-out infinite 0.6s; transform-box: fill-box; transform-origin: center; }
 
-.bh-alert-1, .bh-spike-1 { animation: bh-pulse-strong 1.4s ease-in-out infinite; }
-.bh-alert-2, .bh-spike-2 { animation: bh-pulse-strong 1.4s ease-in-out infinite 0.4s; }
-.bh-alert-3, .bh-spike-3 { animation: bh-pulse-strong 1.4s ease-in-out infinite 0.8s; }
+.bh-manual-clock-hand { animation: bh-manual-clock-spin 6s linear infinite; transform-origin: 92px 112px; }
+.bh-manual-knob { animation: bh-manual-slide 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-manual-long-bar { animation: bh-manual-long-drift 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.bh-manual-short-bar { animation: bh-manual-short-drift 2.8s ease-in-out infinite 0.35s; transform-box: fill-box; transform-origin: bottom; }
+.bh-manual-alert { animation: bh-manual-alert-pop 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-manual-alert-b { animation-delay: 0.35s; }
+.bh-manual-alert-c { animation-delay: 0.7s; }
+.bh-manual-stress { animation: bh-flow-dash 1.35s linear infinite; }
 
 @media (max-width: 700px) {
   .bh-section-graphic { max-width: 100%; }
@@ -446,7 +456,8 @@ p { color: var(--fg-3); line-height: 1.75; }
   .bh-bars-red-front, .bh-bars-red-depth,
   .bh-col-long, .bh-col-short, .bh-pivot, .bh-clock-hands, .bh-profit-bar,
   .bh-bldg-1, .bh-bldg-2, .bh-bldg-3,
-  .bh-alert-1, .bh-alert-2, .bh-alert-3, .bh-spike-1, .bh-spike-2, .bh-spike-3 {
+  .bh-manual-clock-hand, .bh-manual-knob, .bh-manual-long-bar, .bh-manual-short-bar,
+  .bh-manual-alert, .bh-manual-stress {
     animation: none !important;
   }
 }
