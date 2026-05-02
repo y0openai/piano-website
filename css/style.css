@@ -339,3 +339,138 @@ p { color: #666; line-height: 1.75; }
 
 /* Recharts focus suppression (carried over) */
 .recharts-wrapper:focus-visible, .recharts-surface:focus-visible { outline: none; }
+
+
+/* ==============================
+   SUB-PAGE SHARED
+   ============================== */
+.page-hero {
+  padding: 120px 0 72px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.page-hero__back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; color: #444; margin-bottom: 28px;
+  transition: color 0.18s;
+}
+.page-hero__back:hover { color: #888; }
+.page-hero h1 { margin-bottom: 16px; }
+.page-hero p { font-size: 1rem; color: #555; max-width: 520px; line-height: 1.75; }
+
+/* Article body */
+.article { max-width: 720px; margin: 0 auto; }
+.article-section { padding: 72px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.article-section:last-child { border-bottom: none; }
+.article-section h2 { margin-bottom: 16px; }
+.article-section > p { margin-bottom: 32px; }
+
+/* Step badge */
+.step-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #333;
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+  padding: 4px 10px; margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Callout */
+.callout {
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+  padding: 24px 28px; margin: 28px 0;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.callout--warn { border-color: rgba(234,179,8,0.25); background: rgba(234,179,8,0.04); }
+.callout__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.callout p { font-size: 0.9rem; color: #666; margin: 0; }
+.callout strong { color: #EDEDED; }
+
+/* Equation row (LONG + SHORT = 0) */
+.equation-row {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center; gap: 12px; margin: 32px 0;
+}
+.equation-op { font-size: 1.4rem; color: #333; text-align: center; font-weight: 700; }
+.equation-card {
+  border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 24px 20px; text-align: center;
+}
+.equation-card--result { background: #EDEDED; border-color: #EDEDED; }
+.equation-card--result h3 { color: #0C0C0C; }
+.equation-card--result .equation-val { color: #0C0C0C; }
+.equation-card h3 { font-size: 0.9rem; margin-bottom: 8px; }
+.equation-val { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: #EDEDED; }
+
+/* Scenario grid */
+.scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 28px 0; }
+.scenario-card {
+  border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 24px 20px;
+}
+.scenario-card__num { font-size: 0.65rem; color: #333; font-family: 'Courier New', monospace; letter-spacing: 0.1em; margin-bottom: 10px; }
+.scenario-card h3 { font-size: 0.9rem; margin-bottom: 12px; }
+.scenario-card__math { font-size: 0.82rem; color: #444; line-height: 1.7; margin-bottom: 12px; }
+.scenario-card__result {
+  font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; color: #EDEDED;
+  padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Institution cards */
+.institution-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 32px 0; }
+.institution-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 24px; }
+.institution-card__type { font-size: 0.65rem; color: #444; font-family: 'Courier New', monospace; letter-spacing: 0.1em; margin-bottom: 10px; }
+.institution-card h3 { font-size: 0.875rem; margin-bottom: 6px; }
+.institution-card p { font-size: 0.82rem; color: #444; }
+
+/* Challenge cards */
+.challenge-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 32px 0; }
+.challenge-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 28px 24px; }
+.challenge-card__icon { font-size: 1.4rem; margin-bottom: 12px; }
+.challenge-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+.challenge-card p { font-size: 0.82rem; color: #444; }
+
+/* Info stat grid (EWY) */
+.stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin: 32px 0; }
+.stat-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 22px 20px; }
+.stat-card__label { font-size: 0.65rem; color: #444; font-family: 'Courier New', monospace; letter-spacing: 0.1em; margin-bottom: 8px; text-transform: uppercase; }
+.stat-card h3 { font-size: 1rem; margin-bottom: 4px; }
+.stat-card p { font-size: 0.8rem; color: #444; }
+
+/* Holdings list */
+.holdings-list { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; margin: 28px 0; }
+.holdings-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.875rem;
+}
+.holdings-row:last-child { border-bottom: none; }
+.holdings-row__name { color: #888; }
+.holdings-row__weight { color: #EDEDED; font-family: 'Courier New', monospace; font-size: 0.8rem; }
+
+/* Data table */
+.data-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 0.875rem; }
+.data-table th {
+  text-align: left; padding: 12px 16px;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #444; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.data-table td { padding: 14px 16px; color: #666; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* Risk list */
+.risk-list { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+.risk-item { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 24px; }
+.risk-item h3 { font-size: 0.95rem; margin-bottom: 12px; }
+.risk-item ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.risk-item li { font-size: 0.875rem; color: #555; display: flex; gap: 10px; }
+.risk-item li::before { content: '—'; color: #333; flex-shrink: 0; }
+
+/* Sub-page responsive */
+@media (max-width: 860px) {
+  .scenario-grid, .institution-grid, .challenge-grid { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .equation-row { grid-template-columns: 1fr; }
+  .equation-op { display: none; }
+}
+@media (max-width: 560px) {
+  .stat-grid { grid-template-columns: 1fr; }
+}

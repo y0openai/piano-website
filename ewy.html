@@ -5,429 +5,359 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIANO — EWY Perpetual Futures Basis Hedge Balancing</title>
   <meta name="description" content="Piano's hedge position balancing feature now extends to Binance EWY perpetual futures.">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header class="header">
-    <div class="container">
-      <a href="/" class="header__logo">PIANO</a>
-      <nav class="header__nav">
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">PIANO</a>
+    <div class="nav__links">
+      <a href="#what-is-ewy">What is EWY</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#risks">Risks</a>
+    </div>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Contact Us →</a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="/" onclick="closeDrawer()">← Home</a>
+  <a href="#what-is-ewy" onclick="closeDrawer()">What is EWY</a>
+  <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
+  <a href="#risks" onclick="closeDrawer()">Risks</a>
+  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Contact Us →</a>
+</div>
+
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <a href="/" class="page-hero__back">← Back to Home</a>
+    <span class="label">New — EWY Perpetual Futures</span>
+    <h1>Basis Hedge Balancing<br>for EWY Futures</h1>
+    <p>Piano's hedge position balancing feature now extends to Binance EWY perpetual futures. Positions are automatically rebalanced based on your configured conditions — using the same principles as crypto.</p>
+    <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+      <a href="#what-is-ewy" class="btn-primary">Learn More ↓</a>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline">Contact Us</a>
+    </div>
+    <p style="margin-top:16px;font-size:0.78rem;color:#333;">Piano automates risk management. It does not provide investment advice or guarantee returns.</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <!-- WHAT IS EWY -->
+  <div class="article-section" id="what-is-ewy">
+    <span class="label">What Is EWY</span>
+    <h2>iShares MSCI South Korea ETF</h2>
+    <p>EWY is the flagship South Korean equity ETF managed by BlackRock. It tracks the MSCI Korea 25/50 Index and consists of approximately 83 leading Korean stocks.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card__label">Asset Manager</div>
+        <h3>BlackRock</h3>
+        <p>World's largest asset manager</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Benchmark Index</div>
+        <h3>MSCI Korea</h3>
+        <p>25/50 Index</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Holdings</div>
+        <h3>Approx. 83</h3>
+        <p>Leading Korean companies</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Listed Exchange</div>
+        <h3>NYSE Arca</h3>
+        <p>U.S. stock exchange</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:14px;font-size:0.85rem;color:#555;letter-spacing:0.06em;text-transform:uppercase;">Top Holdings</h3>
+    <div class="holdings-list">
+      <div class="holdings-row">
+        <span class="holdings-row__name">Samsung Electronics</span>
+        <span class="holdings-row__weight">Approx. 22%</span>
+      </div>
+      <div class="holdings-row">
+        <span class="holdings-row__name">SK Hynix</span>
+        <span class="holdings-row__weight">Approx. 10%</span>
+      </div>
+      <div class="holdings-row">
+        <span class="holdings-row__name">Hyundai Motor</span>
+        <span class="holdings-row__weight">Approx. 4%</span>
+      </div>
+      <div class="holdings-row">
+        <span class="holdings-row__name">KB Financial</span>
+        <span class="holdings-row__weight">Approx. 3%</span>
+      </div>
+      <div class="holdings-row">
+        <span class="holdings-row__name">POSCO Holdings</span>
+        <span class="holdings-row__weight">Approx. 3%</span>
+      </div>
+      <div class="holdings-row">
+        <span class="holdings-row__name">Remaining approx. 78 stocks</span>
+        <span class="holdings-row__weight">Approx. 58%</span>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:#333;margin-top:8px;">Weightings may change due to MSCI rebalancing. Figures above are for reference only and are not real-time data.</p>
+
+    <div class="callout" style="margin-top:24px;">
+      <span class="callout__icon">📋</span>
+      <p>Binance offers perpetual futures (EWYUSDT Perpetual) based on the EWY ETF. Settlement is in USDT, with Funding Rate settlement every 8 hours.</p>
+    </div>
+  </div>
+
+
+  <!-- HOW IT WORKS -->
+  <div class="article-section" id="how-it-works">
+    <span class="label">How It Works</span>
+    <h2>The Same Basis Hedge Balancing Method</h2>
+    <p>The same hedge balancing principles used for crypto are applied to EWY perpetual futures.</p>
+
+    <div class="scenario-grid" style="margin-bottom:32px;">
+      <div class="scenario-card">
+        <div class="scenario-card__num">Basic Structure</div>
+        <h3>Spot + Opposite Futures</h3>
+        <div class="scenario-card__math">Offsets directional risk</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card__num">Core Function</div>
+        <h3>Ratio Maintenance</h3>
+        <div class="scenario-card__math">Manages Funding Fee settlement</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card__num">Key Feature</div>
+        <h3>Imbalance → Correction</h3>
+        <div class="scenario-card__math">Automatically restores balance</div>
+      </div>
+    </div>
+
+    <p style="margin-bottom:16px;">It only executes within your configured parameter ranges. You can change parameters or stop execution at any time.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Imbalance Detection</td>
+          <td>Monitors spot-futures ratio deviations in real time</td>
+        </tr>
+        <tr>
+          <td>Auto Correction</td>
+          <td>Adjusts position ratios based on your configured conditions</td>
+        </tr>
+        <tr>
+          <td>Balance Restoration</td>
+          <td>Automatically restores 1:1 balance and achieves better entry prices</td>
+        </tr>
+        <tr>
+          <td>Funding Rate Management</td>
+          <td>Manages positions by reflecting settlement every 8 hours</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- TRADING HOURS -->
+  <div class="article-section">
+    <span class="label">Trading Hours</span>
+    <h2>Trading Hours</h2>
+    <p>Trading hours for EWY perpetual futures differ from those of the underlying EWY ETF.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Market</th>
+          <th>Trading Hours (KST)</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Korea Stock Exchange (KRX)</td>
+          <td>09:00 – 15:30</td>
+          <td>Closed on Korean holidays</td>
+        </tr>
+        <tr>
+          <td>EWY ETF (NYSE Arca)</td>
+          <td>23:30 – 06:00 (next day)</td>
+          <td>Based on U.S. market hours</td>
+        </tr>
+        <tr>
+          <td>EWYUSDT Perpetual Futures</td>
+          <td>24 hours</td>
+          <td>Year-round</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout--warn">
+      <span class="callout__icon">⚠️</span>
+      <p>Perpetual futures trade 24 hours a day. However, during hours when the underlying EWY ETF market is closed, <strong>liquidity may decrease, spreads may widen, and price discrepancies may occur.</strong> This is an additional risk factor.</p>
+    </div>
+  </div>
+
+
+  <!-- RISKS -->
+  <div class="article-section" id="risks">
+    <span class="label">Risk Factors</span>
+    <h2>Risks Specific to EWY Perpetual Futures</h2>
+    <p>EWY perpetual futures carry unique risks that differ from standard crypto perpetual futures. Please make sure you understand the following before getting started.</p>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <h3>1. Leverage Risk</h3>
+        <ul>
+          <li>Using leverage may result in losses exceeding your principal</li>
+          <li>If the market moves sharply against your position, forced liquidation may result in total loss</li>
+          <li>Higher leverage multipliers dramatically increase liquidation risk</li>
+          <li>Piano does not advise on leverage selection — this is entirely your responsibility</li>
+        </ul>
+      </div>
+      <div class="risk-item">
+        <h3>2. Off-Hours Liquidity Risk</h3>
+        <ul>
+          <li>During Korean daytime hours, the underlying asset market is closed</li>
+          <li>Liquidity may drop significantly, and bid-ask spreads may widen considerably</li>
+          <li>Discrepancies may arise between futures prices and the underlying asset value</li>
+          <li>Slippage may increase significantly</li>
+        </ul>
+      </div>
+      <div class="risk-item">
+        <h3>3. Funding Rate Risk</h3>
+        <ul>
+          <li>Funding Rate is settled every 8 hours and may fluctuate between positive and negative</li>
+          <li>Depending on position direction, you may be required to pay Funding Fee continuously</li>
+          <li>Sudden changes in Funding Rate may result in unexpected costs</li>
+        </ul>
+      </div>
+      <div class="risk-item">
+        <h3>4. Price Divergence Risk</h3>
+        <ul>
+          <li>Perpetual futures prices do not always match the underlying EWY ETF price</li>
+          <li>Significant divergence may occur when the underlying market is closed</li>
+          <li>Global events may cause unexpected price movements</li>
+        </ul>
+      </div>
+      <div class="risk-item">
+        <h3>5. Exchange Risk</h3>
+        <ul>
+          <li>EWY perpetual futures are traded exclusively on Binance</li>
+          <li>Trading may be suspended due to exchange system failures or policy changes</li>
+          <li>The contract may be terminated if the exchange decides to delist it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SERVICE BOUNDARY -->
+  <div class="article-section">
+    <span class="label">Service Boundary</span>
+    <h2>Service Boundaries</h2>
+
+    <div class="security-compare">
+      <div class="security-col security-col--do">
+        <h3>What Piano Does</h3>
+        <ul>
+          <li>Maintains position balance based on your configured conditions</li>
+          <li>Automatically corrects spot-futures ratio imbalances</li>
+          <li>Manages Funding Rate settlement</li>
+          <li>Monitors position status 24/7</li>
+          <li>Executes according to your configured parameters only</li>
+        </ul>
+      </div>
+      <div class="security-col">
+        <h3>What Piano Does Not Do</h3>
+        <ul>
+          <li>Does not recommend investment decisions or trade timing</li>
+          <li>Does not guarantee returns or promise performance</li>
+          <li>Does not advise on leverage multipliers</li>
+          <li>Does not arbitrarily dispose of your assets</li>
+          <li>Does not provide market forecasts or investment strategies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px;">
+      <span class="callout__icon">📋</span>
+      <p>Piano is a <strong>tool that automates risk management</strong>. It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
+    </div>
+  </div>
+
+
+  <!-- RISK DISCLOSURE -->
+  <div class="article-section">
+    <span class="label">Risk Disclosure</span>
+    <h2>Full Risk Disclosure</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <p><strong style="color:#EDEDED">1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
+      <p><strong style="color:#EDEDED">2. Piano does not solicit investment.</strong> — It does not recommend or encourage the purchase or sale of any specific asset.</p>
+      <p><strong style="color:#EDEDED">3. Piano does not make investment decisions on your behalf.</strong> — All trades are executed according to user-configured conditions.</p>
+      <p><strong style="color:#EDEDED">4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
+      <p><strong style="color:#EDEDED">5. Risk of Principal Loss</strong> — Trading EWY perpetual futures is a leveraged derivative transaction that may result in total loss of principal.</p>
+      <p><strong style="color:#EDEDED">6. Leverage Risk</strong> — The decision to use leverage and the chosen multiplier are entirely the user's own judgment and responsibility.</p>
+      <p><strong style="color:#EDEDED">7. Liquidity and Market Risk</strong> — During hours when the underlying asset market is closed, risks such as insufficient liquidity and price divergence may occur.</p>
+      <p><strong style="color:#EDEDED">8. Software Risk</strong> — The service may not function properly due to bugs, network outages, API errors, or changes to exchange systems.</p>
+      <p><strong style="color:#EDEDED">9. Personal Responsibility</strong> — All trading decisions and resulting profits or losses are entirely the user's own judgment and responsibility.</p>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="container">
+    <h2>Questions about EWY futures?</h2>
+    <p>Reach out to us on Telegram. Please review the risk disclosures above before getting started.</p>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Contact Us →</a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span class="footer__logo">PIANO</span>
+      <div class="footer__links">
         <a href="/">Home</a>
-        <a href="#what-is-ewy">What is EWY</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#risks">Risks</a>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="header__cta">Contact Us</a>
-      </nav>
-      <button class="header__hamburger" aria-label="Open menu" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="/">Home</a>
-    <a href="#what-is-ewy">What is EWY</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#risks">Risks</a>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Contact Us &rarr;</a>
-  </nav>
-
-
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__badge">
-        <span></span>
-        EWY Perpetual Futures Support
-      </div>
-      <h1 class="hero__headline">Basis Hedge Balancing<br>Now Available for EWY Perpetual Futures</h1>
-      <p class="hero__sub">Piano's hedge position balancing feature now extends to Binance EWY perpetual futures.<br>It detects position ratio imbalances using the same principles as crypto.<br>Positions are automatically rebalanced based on your configured conditions.</p>
-      <p class="hero__disclaimer">Piano is a tool that automates risk management.<br>It does not provide investment advice or guarantee returns.</p>
-      <div class="hero__actions">
-        <a href="#what-is-ewy" class="btn btn--primary">Learn More &darr;</a>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn btn--outline">Contact Us</a>
+        <a href="basis-hedge.html">What is Basis Hedge?</a>
       </div>
     </div>
-  </section>
+  </div>
+</footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
+  function closeDrawer() { drawer.classList.remove('open'); }
 
-  <!-- ========== WHAT IS EWY ========== -->
-  <section class="section section--light" id="what-is-ewy">
-    <div class="container">
-      <div class="problem__header">
-        <p class="section-label section-label--light">WHAT IS EWY</p>
-        <h2 class="section-title">iShares MSCI South Korea ETF</h2>
-        <p class="problem__desc">EWY is the flagship South Korean equity ETF managed by BlackRock.<br>It tracks the MSCI Korea 25/50 Index and consists of approximately 83 leading Korean stocks.</p>
-      </div>
-
-      <div class="tech__grid">
-        <div class="tech__item">
-          <p class="tech__item-label">Asset Manager</p>
-          <h4>BlackRock</h4>
-          <p>The world's largest asset manager</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">Benchmark Index</p>
-          <h4>MSCI Korea</h4>
-          <p>25/50 Index</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">Holdings</p>
-          <h4>Approx. 83</h4>
-          <p>Leading Korean companies</p>
-        </div>
-        <div class="tech__item">
-          <p class="tech__item-label">Listed Exchange</p>
-          <h4>NYSE Arca</h4>
-          <p>U.S. stock exchange</p>
-        </div>
-      </div>
-
-      <!-- Top Holdings -->
-      <div class="ewy-holdings">
-        <h3 class="ewy-holdings__title">Top Holdings</h3>
-        <div class="ewy-holdings__grid">
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">Samsung Electronics</span>
-            <span class="ewy-holdings__weight">Approx. 22%</span>
-          </div>
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">SK Hynix</span>
-            <span class="ewy-holdings__weight">Approx. 10%</span>
-          </div>
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">Hyundai Motor</span>
-            <span class="ewy-holdings__weight">Approx. 4%</span>
-          </div>
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">KB Financial</span>
-            <span class="ewy-holdings__weight">Approx. 3%</span>
-          </div>
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">POSCO Holdings</span>
-            <span class="ewy-holdings__weight">Approx. 3%</span>
-          </div>
-          <div class="ewy-holdings__item">
-            <span class="ewy-holdings__name">Remaining approx. 78 stocks</span>
-            <span class="ewy-holdings__weight">Approx. 58%</span>
-          </div>
-        </div>
-        <p class="ewy-holdings__note">Weightings may change due to MSCI rebalancing. The figures above are for reference only. They are not real-time data.</p>
-      </div>
-
-      <!-- Binance EWY Futures Info -->
-      <div class="features__info">
-        Binance offers perpetual futures (EWYUSDT Perpetual) based on the EWY ETF as the underlying asset. Settlement is in USDT, with Funding Rate settlement every 8 hours.
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== HOW PIANO WORKS WITH EWY ========== -->
-  <section class="section section--dark" id="how-it-works">
-    <div class="container">
-      <div class="basis__header">
-        <p class="section-label section-label--dark">HOW IT WORKS</p>
-        <h2 class="section-title">The Same Basis Hedge Balancing Method</h2>
-        <p class="basis__desc">The same hedge balancing principles used for crypto are applied to EWY perpetual futures.</p>
-      </div>
-
-      <div class="basis__structure">
-        <div class="basis__box">
-          <p class="basis__box-label">Basic Structure</p>
-          <p class="basis__box-dir" style="font-size:20px;">Spot + Opposite Futures</p>
-          <p class="basis__box-role">Offsets directional risk</p>
-        </div>
-        <div class="basis__box">
-          <p class="basis__box-label">Core Function</p>
-          <p class="basis__box-dir" style="font-size:20px;">Ratio Maintenance</p>
-          <p class="basis__box-role">Manages Funding Fee settlement</p>
-        </div>
-        <div class="basis__box">
-          <p class="basis__box-label">Key Feature</p>
-          <p class="basis__box-dir" style="font-size:20px;">Imbalance &rarr; Correction</p>
-          <p class="basis__box-role">Automatically restores balance</p>
-        </div>
-      </div>
-
-      <div class="features__list">
-        <div class="feature__item">
-          <div>
-            <h3 class="feature__title" style="color:#fff">How It Works</h3>
-            <p class="feature__desc" style="color:#A1A1AA">It only executes within your configured parameter ranges. You can change parameters or stop execution at any time.</p>
-          </div>
-          <div>
-            <table class="feature__table feature__table--dark">
-              <thead>
-                <tr>
-                  <th>Feature</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Imbalance Detection</td>
-                  <td>Monitors spot-futures ratio deviations in real time</td>
-                </tr>
-                <tr>
-                  <td>Auto Correction</td>
-                  <td>Adjusts position ratios based on your configured conditions</td>
-                </tr>
-                <tr>
-                  <td>Balance Restoration</td>
-                  <td>Automatically restores 1:1 balance and achieves better entry prices</td>
-                </tr>
-                <tr>
-                  <td>Funding Rate Management</td>
-                  <td>Manages positions by reflecting settlement every 8 hours</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== TRADING HOURS ========== -->
-  <section class="section section--light">
-    <div class="container">
-      <div class="problem__header">
-        <p class="section-label section-label--light">TRADING HOURS</p>
-        <h2 class="section-title">Trading Hours</h2>
-        <p class="problem__desc">Trading hours for EWY perpetual futures differ from those of the underlying EWY ETF.</p>
-      </div>
-
-      <div class="ewy-hours">
-        <table class="feature__table">
-          <thead>
-            <tr>
-              <th>Market</th>
-              <th>Trading Hours (KST)</th>
-              <th>Note</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Korea Stock Exchange (KRX)</td>
-              <td>09:00 - 15:30</td>
-              <td>Closed on Korean holidays</td>
-            </tr>
-            <tr>
-              <td>EWY ETF (NYSE Arca)</td>
-              <td>23:30 - 06:00 (next day)</td>
-              <td>Based on U.S. market hours</td>
-            </tr>
-            <tr>
-              <td>EWYUSDT Perpetual Futures</td>
-              <td>24 hours</td>
-              <td>Year-round</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="features__info" style="background:#FFF3CD;color:#856404;">
-        &#9888; Perpetual futures trade 24 hours a day. However, during hours when the underlying asset (EWY ETF) market is closed, liquidity may decrease, spreads may widen, and price discrepancies may occur. This is an additional risk factor.
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== EWY RISKS ========== -->
-  <section class="section section--dark" id="risks">
-    <div class="container">
-      <div class="security__header">
-        <p class="section-label section-label--dark">RISK FACTORS</p>
-        <h2 class="section-title">Risks Specific to EWY Perpetual Futures</h2>
-        <p class="security__desc">EWY perpetual futures carry unique risks that differ from standard crypto perpetual futures. Please make sure you understand the following before getting started.</p>
-      </div>
-
-      <div class="ewy-risks">
-        <div class="ewy-risk__item">
-          <h4>1. Leverage Risk</h4>
-          <ul>
-            <li>Using leverage may result in <strong>losses exceeding your principal</strong></li>
-            <li>If the market moves sharply against your position, <strong>forced liquidation</strong> may result in total loss of the position</li>
-            <li>Higher leverage multipliers dramatically increase the risk of liquidation</li>
-            <li>Piano does not provide advice on leverage selection; this is entirely your own judgment and responsibility</li>
-          </ul>
-        </div>
-        <div class="ewy-risk__item">
-          <h4>2. Off-Hours Liquidity Risk</h4>
-          <ul>
-            <li>During Korean daytime hours (09:00-23:30), the underlying asset market is closed</li>
-            <li>Liquidity may drop significantly, and bid-ask spreads may widen considerably</li>
-            <li>Discrepancies may arise between futures prices and the underlying asset value</li>
-            <li>Slippage (the difference between expected and executed prices) may increase</li>
-          </ul>
-        </div>
-        <div class="ewy-risk__item">
-          <h4>3. Funding Rate Risk</h4>
-          <ul>
-            <li>Funding Rate is settled every 8 hours and may fluctuate between positive (+) and negative (-) values</li>
-            <li>Depending on position direction, you may be required to pay Funding Fee continuously</li>
-            <li>Sudden changes in Funding Rate may result in unexpected costs</li>
-          </ul>
-        </div>
-        <div class="ewy-risk__item">
-          <h4>4. Price Divergence Risk</h4>
-          <ul>
-            <li>Perpetual futures prices do not always match the underlying asset (EWY ETF) price</li>
-            <li>Significant divergence may occur when the underlying asset market is closed</li>
-            <li>Global events may cause unexpected price movements</li>
-          </ul>
-        </div>
-        <div class="ewy-risk__item">
-          <h4>5. Exchange Risk</h4>
-          <ul>
-            <li>EWY perpetual futures are traded exclusively on Binance</li>
-            <li>Trading may be suspended due to exchange system failures or policy changes</li>
-            <li>The contract may be terminated if the exchange decides to delist it</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== DO / DON'T ========== -->
-  <section class="section section--light">
-    <div class="container">
-      <div class="problem__header">
-        <p class="section-label section-label--light">SERVICE BOUNDARY</p>
-        <h2 class="section-title">Service Boundaries</h2>
-      </div>
-
-      <div class="security__compare">
-        <div class="security__col security__col--do" style="background:#F4F4F5;">
-          <h4 style="color:#000">What Piano Does</h4>
-          <ul style="color:#71717A;">
-            <li>Maintains position balance based on your configured conditions</li>
-            <li>Automatically corrects spot-futures ratio imbalances</li>
-            <li>Manages Funding Rate settlement</li>
-            <li>Monitors position status</li>
-            <li>Executes according to your configured parameters</li>
-          </ul>
-        </div>
-        <div class="security__col security__col--dont" style="background:#F4F4F5;">
-          <h4 style="color:#000">What Piano Does Not Do</h4>
-          <ul style="color:#71717A;">
-            <li>Does not recommend investment decisions or trade timing</li>
-            <li>Does not guarantee returns or promise performance</li>
-            <li>Does not advise on leverage multipliers</li>
-            <li>Does not arbitrarily dispose of your assets</li>
-            <li>Does not provide market forecasts or investment strategies</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="features__info">
-        Piano is a <strong>tool that automates risk management</strong>. It is not an investment advisory, discretionary investment management, or financial product brokerage service.
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== CTA ========== -->
-  <section class="section section--dark" style="padding:80px 0;">
-    <div class="container" style="text-align:center;">
-      <h2 class="section-title">Contact Us</h2>
-      <p style="color:#71717A;font-family:Inter,sans-serif;font-size:16px;margin-bottom:32px;">If you have questions about EWY perpetual futures Basis Hedge balancing, reach out to us on Telegram.</p>
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn btn--primary">Contact Us &rarr;</a>
-      <p style="color:#A1A1AA;font-family:Inter,sans-serif;font-size:13px;margin-top:24px;">Please review the risk disclosures on this page before reaching out.</p>
-    </div>
-  </section>
-
-
-  <!-- ========== RISK WARNING ========== -->
-  <section class="risk">
-    <div class="container">
-      <div class="risk__inner">
-        <p class="risk__title">&#9888; Risk Disclosure</p>
-        <div class="risk__text">
-          <p class="risk__section-title">Service Disclosure</p>
-          <p><strong>1. Piano is a software tool.</strong> &mdash; It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
-          <p><strong>2. Piano does not solicit investment.</strong> &mdash; It does not recommend or encourage the purchase or sale of any specific asset.</p>
-          <p><strong>3. Piano does not make investment decisions on your behalf.</strong> &mdash; All trades are executed according to user-configured conditions. Decisions regarding trade timing, asset selection, and position sizing are solely the user's responsibility.</p>
-          <p><strong>4. Piano does not guarantee returns.</strong> &mdash; Past performance, backtests, and simulation results do not guarantee future returns.</p>
-          <br>
-          <p class="risk__section-title">Investment Risk Disclosure</p>
-          <p><strong>5. Risk of Principal Loss</strong> &mdash; Trading EWY perpetual futures is a leveraged derivative transaction that may result in total loss of principal or losses exceeding the initial investment.</p>
-          <p><strong>6. Leverage Risk</strong> &mdash; Leveraged trading amplifies both gains and losses. The decision to use leverage and the chosen multiplier are entirely the user's own judgment and responsibility.</p>
-          <p><strong>7. Liquidity and Market Risk</strong> &mdash; During hours when the underlying asset market is closed, risks such as insufficient liquidity, wider spreads, and price divergence may occur.</p>
-          <p><strong>8. Funding Rate Risk</strong> &mdash; Funding Rate fluctuates based on market conditions, and position maintenance costs may increase significantly beyond expectations.</p>
-          <p><strong>9. Software Risk</strong> &mdash; The service may not function properly due to bugs, network outages, API errors, or changes to exchange systems.</p>
-          <p><strong>10. Exchange Dependency Risk</strong> &mdash; Trading may become unavailable due to Binance policy changes, service interruptions, or delisting decisions.</p>
-          <p><strong>11. Regulatory Risk</strong> &mdash; Changes in laws or regulations may restrict or prohibit EWY perpetual futures trading.</p>
-          <p><strong>12. Personal Responsibility</strong> &mdash; All trading decisions and resulting profits or losses are entirely the user's own judgment and responsibility.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__brand">
-        <p class="footer__logo">PIANO</p>
-        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
-        <p class="footer__contact">Contact Us &rarr; <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2025 PIANO. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- ========== SCRIPTS ========== -->
-  <script>
-    // Mobile Nav
-    var hamburger = document.getElementById('hamburger');
-    var mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', function() {
-      mobileNav.classList.toggle('active');
-      this.classList.toggle('active');
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
     });
-
-    mobileNav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileNav.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          var offset = 72;
-          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-
+  });
+</script>
 </body>
 </html>
