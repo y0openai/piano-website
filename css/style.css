@@ -409,10 +409,10 @@ p { color: var(--fg-3); line-height: 1.75; }
 @keyframes bh-bldg-rise   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 @keyframes bh-bar-grow    { 0%,100% { transform: scaleY(0.92); } 50% { transform: scaleY(1.05); } }
 @keyframes bh-manual-clock-spin { to { transform: rotate(360deg); } }
-@keyframes bh-manual-slide { 0%,100% { transform: translateX(-14px); } 50% { transform: translateX(20px); } }
+@keyframes bh-manual-slide { 0%,100% { transform: translateX(-8px); } 50% { transform: translateX(10px); } }
 @keyframes bh-manual-long-drift { 0%,100% { transform: scaleY(0.82); } 50% { transform: scaleY(1.12); } }
 @keyframes bh-manual-short-drift { 0%,100% { transform: scaleY(1.1); } 50% { transform: scaleY(0.76); } }
-@keyframes bh-manual-alert-pop { 0%,100% { opacity: 0.56; transform: translateX(0); } 50% { opacity: 1; transform: translateX(-5px); } }
+@keyframes bh-manual-alert-pop { 0%,100% { opacity: 0.58; transform: translateX(0); } 50% { opacity: 0.9; transform: translateX(-3px); } }
 
 .bh-fee-flow, .bh-flow-line { animation: bh-flow-dash 1.5s linear infinite; }
 .bh-zero-label { animation: bh-pulse-soft 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
