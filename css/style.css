@@ -44,6 +44,21 @@
 
   --green: #16C784;
   --red:   #EA3943;
+
+  /* ISO SVG fills */
+  --iso-t:    #14191F;
+  --iso-l:    #0D1117;
+  --iso-r:    #10151B;
+  --iso-a:    #0F1E18;
+  --iso-k:    #C0CAD4;
+  --iso-bd:   #2A3444;
+  --iso-bd2:  #2E3A4A;
+  --iso-ls:   #080C12;
+  --iso-lbd:  #ffffff;
+  --iso-grid: #343A46;
+  --iso-div:  rgba(255,255,255,0.18);
+  --iso-shad: #05070A;
+  --iso-cap:  #EDEDED;
 }
 
 [data-theme="light"] {
@@ -84,6 +99,21 @@
 
   --warn-bd: rgba(180,120,0,0.25);
   --warn-bg: rgba(180,120,0,0.05);
+
+  /* ISO SVG fills — light mode */
+  --iso-t:    #D8E2ED;
+  --iso-l:    #C2D0DE;
+  --iso-r:    #CAD8E8;
+  --iso-a:    #D0EAE0;
+  --iso-k:    #E8EFF5;
+  --iso-bd:   #9AAEC0;
+  --iso-bd2:  #9AAEC0;
+  --iso-ls:   #BED0E0;
+  --iso-lbd:  #8899AA;
+  --iso-grid: #9AAEC0;
+  --iso-div:  rgba(0,0,0,0.12);
+  --iso-shad: rgba(0,0,0,0.08);
+  --iso-cap:  #111111;
 }
 
 /* ---- Theme transition ---- */
@@ -264,6 +294,19 @@ p { color: var(--fg-3); line-height: 1.75; }
   border-radius: 16px; background: var(--bg-1);
 }
 .iso-svg { width: 100%; max-width: 520px; }
+.iso-face-top   { fill: var(--iso-t); }
+.iso-face-left  { fill: var(--iso-l); }
+.iso-face-right { fill: var(--iso-r); }
+.iso-panel      { fill: var(--iso-t); }
+.iso-panel-accent { fill: var(--iso-a); }
+.iso-key        { fill: var(--iso-k); }
+.iso-key-border { stroke: var(--iso-bd); }
+.iso-layer      { fill: var(--iso-r); }
+.iso-layer-side { fill: var(--iso-ls); }
+.iso-grid       { stroke: var(--iso-grid) !important; }
+.iso-divider    { stroke: var(--iso-div) !important; }
+.iso-shadow     { fill: var(--iso-shad); }
+.iso-cap        { fill: var(--iso-cap); }
 
 
 /* ==============================
