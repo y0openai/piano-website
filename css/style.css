@@ -306,13 +306,42 @@ p { color: #666; line-height: 1.75; }
 .cta-block h2 { margin-bottom: 14px; }
 .cta-block p { margin-bottom: 36px; max-width: 400px; margin-left: auto; margin-right: auto; }
 
-.footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 36px 0; }
-.footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer__logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: -0.02em; }
-.footer__links { display: flex; gap: 20px; flex-wrap: wrap; }
+/* Risk Disclosure */
+.risk-disclosure { padding: 0 0 48px; }
+.risk-disclosure__box {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 36px 40px;
+}
+.risk-disclosure__header {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em;
+  text-transform: uppercase; color: #555; margin-bottom: 24px;
+}
+.risk-disclosure__sub {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #444;
+  margin: 24px 0 14px;
+}
+.risk-disclosure__sub:first-of-type { margin-top: 0; }
+.risk-disclosure__items { display: flex; flex-direction: column; gap: 10px; }
+.risk-disclosure__items p, .risk-disclosure__body {
+  font-size: 0.875rem; color: #555; line-height: 1.7;
+}
+.risk-disclosure__items p strong, .risk-disclosure__body strong { color: #888; }
+
+/* Footer — vertical stack */
+.footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 0 32px; }
+.footer__inner { display: flex; flex-direction: column; gap: 6px; }
+.footer__logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: #EDEDED; margin-bottom: 2px; }
+.footer__tagline { font-size: 0.875rem; color: #555; }
+.footer__contact { font-size: 0.875rem; color: #555; margin-top: 2px; }
+.footer__contact a { color: #888; transition: color 0.18s; }
+.footer__contact a:hover { color: #EDEDED; }
+.footer__copy { font-size: 0.75rem; color: #333; margin-top: 24px; }
+.footer__links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
 .footer__links a { font-size: 0.8rem; color: #444; transition: color 0.18s; }
 .footer__links a:hover { color: #888; }
-.footer__copy { font-size: 0.78rem; color: #333; }
 
 
 /* ==============================
