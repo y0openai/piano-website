@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIANO — Animated Logo Storyboard</title>
+  <meta name="description" content="Animated logo storyboard for PIANO logo concepts.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --story-bg: #0c0c0c;
+      --story-panel: #111;
+      --story-panel-2: #151515;
+      --story-line: rgba(255, 255, 255, 0.08);
+      --story-line-strong: rgba(255, 255, 255, 0.16);
+      --story-text: #ededed;
+      --story-muted: #666;
+      --story-faint: #333;
+      --piano-rise: #16c784;
+      --piano-fall: #ea3943;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+        var(--story-bg);
+      background-size: 48px 48px;
+    }
+
+    .story-page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 132px 28px 96px;
+    }
+
+    .story-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .story-hero h1 {
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
+
+    .story-hero p {
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    .story-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .story-button {
+      border: 1px solid var(--story-line-strong);
+      background: rgba(255,255,255,0.03);
+      color: var(--story-text);
+      border-radius: 7px;
+      padding: 9px 14px;
+      font: 700 0.78rem/1 Inter, sans-serif;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+    }
+
+    .story-button:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-1px);
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .story-card {
+      border: 1px solid var(--story-line);
+      background: rgba(15,15,15,0.86);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .story-card__head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: start;
+      padding: 26px 28px;
+      border-bottom: 1px solid var(--story-line);
+    }
+
+    .story-kicker {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--story-faint);
+      font: 700 0.68rem/1.2 "Courier New", monospace;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .story-card h2 {
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      margin-bottom: 8px;
+    }
+
+    .story-card__head p {
+      max-width: 640px;
+      font-size: 0.92rem;
+    }
+
+    .story-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      min-height: 390px;
+    }
+
+    .animation-box {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 390px;
+      padding: 34px;
+      background: #0f0f0f;
+      border-right: 1px solid var(--story-line);
+      overflow: hidden;
+    }
+
+    .animation-box::before {
+      content: "";
+      position: absolute;
+      inset: 32px;
+      border: 1px solid rgba(255,255,255,0.045);
+      pointer-events: none;
+    }
+
+    .animation-box--light {
+      background: #f7f8fa;
+    }
+
+    .animation-box--light::before {
+      border-color: rgba(12,12,12,0.08);
+    }
+
+    .story-svg {
+      position: relative;
+      width: min(100%, 520px);
+      height: auto;
+      overflow: visible;
+    }
+
+    .story-steps {
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 28px;
+      background: rgba(255,255,255,0.015);
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--story-line);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .step-row__num {
+      color: var(--story-text);
+      font: 800 0.78rem/1.4 "Courier New", monospace;
+    }
+
+    .step-row strong {
+      display: block;
+      color: var(--story-text);
+      font-size: 0.86rem;
+      margin-bottom: 2px;
+    }
+
+    .step-row span {
+      color: var(--story-muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .timeline span:nth-child(1) { background: #333; }
+    .timeline span:nth-child(2) { background: var(--piano-rise); }
+    .timeline span:nth-child(3) { background: var(--piano-fall); }
+    .timeline span:nth-child(4) { background: #ededed; }
+
+    .stroke-round {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .piano-word {
+      font-family: Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0;
+      dominant-baseline: middle;
+    }
+
+    /* Logo 1: Ten-key P */
+    @keyframes logo1-track {
+      0%, 8% { stroke-dashoffset: 520; opacity: 0.35; }
+      24%, 100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    @keyframes logo1-keys {
+      0%, 25% { transform: scaleY(0.12); opacity: 0; }
+      42% { opacity: 1; }
+      52%, 100% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes logo1-tune {
+      0%, 45% { stroke-dashoffset: 240; opacity: 0; }
+      58% { opacity: 1; }
+      75%, 100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    @keyframes logo1-word {
+      0%, 72% { transform: translateX(-12px); opacity: 0; }
+      86%, 100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .logo1-track {
+      stroke-dasharray: 520;
+      animation: logo1-track 3.8s ease-in-out infinite;
+    }
+
+    .logo1-key {
+      transform-box: fill-box;
+      transform-origin: bottom;
+      animation: logo1-keys 3.8s ease-in-out infinite;
+    }
+
+    .logo1-key:nth-of-type(2) { animation-delay: 0.04s; }
+    .logo1-key:nth-of-type(3) { animation-delay: 0.08s; }
+    .logo1-key:nth-of-type(4) { animation-delay: 0.12s; }
+    .logo1-key:nth-of-type(5) { animation-delay: 0.16s; }
+    .logo1-key:nth-of-type(6) { animation-delay: 0.20s; }
+    .logo1-key:nth-of-type(7) { animation-delay: 0.24s; }
+    .logo1-key:nth-of-type(8) { animation-delay: 0.28s; }
+    .logo1-key:nth-of-type(9) { animation-delay: 0.32s; }
+    .logo1-key:nth-of-type(10) { animation-delay: 0.36s; }
+
+    .logo1-tune {
+      stroke-dasharray: 240;
+      animation: logo1-tune 3.8s ease-in-out infinite;
+    }
+
+    .logo1-word {
+      animation: logo1-word 3.8s ease-in-out infinite;
+    }
+
+    /* Logo 2: Balanced A */
+    @keyframes logo2-word {
+      0%, 12% { opacity: 0; transform: translateY(10px); }
+      28%, 100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes logo2-beam {
+      0%, 30% { transform: rotate(-12deg); opacity: 0; }
+      45% { opacity: 1; }
+      68%, 100% { transform: rotate(0); opacity: 1; }
+    }
+
+    @keyframes logo2-weights {
+      0%, 36% { transform: translateY(-16px); opacity: 0; }
+      62% { transform: translateY(6px); opacity: 1; }
+      78%, 100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes logo2-scan {
+      0%, 28% { transform: translateX(-26px); opacity: 0; }
+      38% { opacity: 1; }
+      62% { transform: translateX(32px); opacity: 1; }
+      72%, 100% { opacity: 0; }
+    }
+
+    .logo2-word { animation: logo2-word 3.8s ease-in-out infinite; }
+    .logo2-beam {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: logo2-beam 3.8s ease-in-out infinite;
+    }
+    .logo2-weight {
+      animation: logo2-weights 3.8s ease-in-out infinite;
+    }
+    .logo2-scan { animation: logo2-scan 3.8s ease-in-out infinite; }
+
+    /* Logo 3: Keyslot wordmark */
+    @keyframes logo3-carve {
+      0%, 24% { transform: scaleY(0); opacity: 0; }
+      42%, 100% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes logo3-pulse {
+      0%, 42% { transform: scaleY(0.15); opacity: 0; }
+      56% { opacity: 1; }
+      68%, 100% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes logo3-wave {
+      0%, 58% { stroke-dashoffset: 360; opacity: 0; }
+      70% { opacity: 1; }
+      88%, 100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    .logo3-cut {
+      transform-box: fill-box;
+      transform-origin: bottom;
+      animation: logo3-carve 3.8s ease-in-out infinite;
+    }
+
+    .logo3-bar {
+      transform-box: fill-box;
+      transform-origin: bottom;
+      animation: logo3-pulse 3.8s ease-in-out infinite;
+    }
+
+    .logo3-wave {
+      stroke-dasharray: 360;
+      animation: logo3-wave 3.8s ease-in-out infinite;
+    }
+
+    /* Concept D: Scan Loop */
+    @keyframes conceptd-word {
+      0%, 10% { opacity: 0; transform: translateY(10px); }
+      24%, 100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes conceptd-cursor {
+      0%, 24% { transform: translateX(-110px); opacity: 0; }
+      34% { opacity: 1; }
+      58% { transform: translateX(118px); opacity: 1; }
+      70%, 100% { opacity: 0; }
+    }
+
+    @keyframes conceptd-keys {
+      0%, 34% { transform: scaleY(0.12); opacity: 0; }
+      50% { opacity: 1; }
+      64%, 100% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes conceptd-wave {
+      0%, 44% { stroke-dashoffset: 420; opacity: 0; }
+      58% { opacity: 1; }
+      78%, 100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    @keyframes conceptd-loop {
+      0%, 54% { stroke-dashoffset: 300; opacity: 0; transform: scale(0.86); }
+      68% { opacity: 1; }
+      86%, 100% { stroke-dashoffset: 0; opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes conceptd-close {
+      0%, 74% { opacity: 0; transform: translateX(-12px); }
+      86%, 100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .conceptd-word { animation: conceptd-word 3.9s ease-in-out infinite; }
+    .conceptd-cursor { animation: conceptd-cursor 3.9s ease-in-out infinite; }
+    .conceptd-key {
+      transform-box: fill-box;
+      transform-origin: bottom;
+      animation: conceptd-keys 3.9s ease-in-out infinite;
+    }
+    .conceptd-wave {
+      stroke-dasharray: 420;
+      animation: conceptd-wave 3.9s ease-in-out infinite;
+    }
+    .conceptd-loop {
+      transform-box: fill-box;
+      transform-origin: center;
+      stroke-dasharray: 300;
+      animation: conceptd-loop 3.9s ease-in-out infinite;
+    }
+    .conceptd-close { animation: conceptd-close 3.9s ease-in-out infinite; }
+
+    /* Logo 4: P Essence */
+    @keyframes logo4-skeleton {
+      0%, 18% { opacity: 1; transform: translateX(-18px); }
+      34% { opacity: 0.42; transform: translateX(18px); }
+      46%, 100% { opacity: 0; transform: translateX(32px); }
+    }
+
+    @keyframes logo4-shell {
+      0%, 18% { opacity: 0.28; stroke-dashoffset: 620; }
+      36%, 100% { opacity: 1; stroke-dashoffset: 0; }
+    }
+
+    @keyframes logo4-window {
+      0%, 28% { opacity: 0; transform: scaleX(0.58); }
+      46%, 100% { opacity: 1; transform: scaleX(1); }
+    }
+
+    @keyframes logo4-key-shell {
+      0%, 38% { opacity: 0; transform: translateY(8px); }
+      54%, 100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes logo4-meter {
+      0%, 48% { opacity: 0; transform: scaleY(0.12); }
+      58% { opacity: 1; transform: scaleY(0.88); }
+      68% { opacity: 1; transform: scaleY(0.28); }
+      78% { opacity: 1; transform: scaleY(1); }
+      90%, 100% { opacity: 1; transform: scaleY(0.58); }
+    }
+
+    @keyframes logo4-eq-line {
+      0%, 58% { stroke-dashoffset: 460; opacity: 0; }
+      70% { opacity: 1; }
+      88%, 100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    @keyframes logo4-node {
+      0%, 72% { transform: scale(0.3); opacity: 0; }
+      82% { transform: scale(1.2); opacity: 1; }
+      92%, 100% { transform: scale(1); opacity: 1; }
+    }
+
+    .logo4-skeleton { animation: logo4-skeleton 4.4s ease-in-out infinite; }
+    .logo4-shell {
+      stroke-dasharray: 620;
+      animation: logo4-shell 4.4s ease-in-out infinite;
+    }
+    .logo4-window {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: logo4-window 4.4s ease-in-out infinite;
+    }
+    .logo4-key-shell,
+    .logo4-meter {
+      transform-box: fill-box;
+      transform-origin: bottom;
+    }
+    .logo4-key-shell { animation: logo4-key-shell 4.4s ease-in-out infinite; }
+    .logo4-meter { animation: logo4-meter 4.4s ease-in-out infinite; }
+    .logo4-meter:nth-of-type(2) { animation-delay: 0.08s; }
+    .logo4-meter:nth-of-type(3) { animation-delay: 0.16s; }
+    .logo4-meter:nth-of-type(4) { animation-delay: 0.24s; }
+    .logo4-meter:nth-of-type(5) { animation-delay: 0.32s; }
+    .logo4-eq-line {
+      stroke-dasharray: 460;
+      animation: logo4-eq-line 4.4s ease-in-out infinite;
+    }
+    .logo4-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: logo4-node 4.4s ease-in-out infinite;
+    }
+
+    .story-card.is-restarting * {
+      animation: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .story-page { padding-top: 104px; }
+      .story-hero,
+      .story-card__head,
+      .story-stage {
+        grid-template-columns: 1fr;
+      }
+      .story-controls { justify-content: flex-start; }
+      .animation-box {
+        min-height: 300px;
+        border-right: none;
+        border-bottom: 1px solid var(--story-line);
+      }
+      .story-svg { width: min(100%, 380px); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">PIANO</a>
+    <div class="nav__links">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+    </div>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Get Started →</a>
+  </div>
+</nav>
+
+<main class="story-page">
+  <section class="story-hero">
+    <div>
+      <span class="label">Animated Logo Storyboard</span>
+      <h1>Review every PIANO logo motion in one place.</h1>
+      <p>Each concept loops continuously. Use replay when you want to restart a single motion or replay all concepts together from frame zero.</p>
+    </div>
+    <div class="story-controls">
+      <button class="story-button" type="button" data-replay-all>Replay All</button>
+    </div>
+  </section>
+
+  <section class="story-grid" aria-label="Animated logo concepts">
+    <article class="story-card" id="logo-1">
+      <div class="story-card__head">
+        <div>
+          <span class="story-kicker">Logo 1 / Ten-Key P</span>
+          <h2>Track → Keys → Tune → Lockup</h2>
+          <p>The P-track draws first, ten monitored symbol bars rise inside the counter, the tuning curve resolves, then the PIANO lockup appears.</p>
+        </div>
+        <button class="story-button" type="button" data-replay="#logo-1">Replay</button>
+      </div>
+      <div class="timeline" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="story-stage">
+        <div class="animation-box animation-box--light">
+          <svg class="story-svg" viewBox="0 0 560 260" role="img" aria-label="Animated ten-key P logo">
+            <path class="logo1-track stroke-round" d="M70 205V55h87c50 0 78 30 78 72s-28 72-78 72h-58" fill="none" stroke="#0b0d10" stroke-width="18"/>
+            <g fill="#16c784">
+              <rect class="logo1-key" x="118" y="144" width="6" height="35"/>
+              <rect class="logo1-key" x="137" y="118" width="6" height="61"/>
+              <rect class="logo1-key" x="156" y="98" width="6" height="81"/>
+              <rect class="logo1-key" x="175" y="132" width="6" height="47"/>
+              <rect class="logo1-key" x="194" y="108" width="6" height="71"/>
+            </g>
+            <g fill="#ea3943">
+              <rect class="logo1-key" x="128" y="126" width="6" height="53"/>
+              <rect class="logo1-key" x="147" y="156" width="6" height="23"/>
+              <rect class="logo1-key" x="166" y="116" width="6" height="63"/>
+              <rect class="logo1-key" x="185" y="150" width="6" height="29"/>
+              <rect class="logo1-key" x="204" y="136" width="6" height="43"/>
+            </g>
+            <path class="logo1-tune stroke-round" d="M105 164c31-60 67 52 102-18 20-40 40-36 58-22" fill="none" stroke="#16c784" stroke-width="5"/>
+            <text class="piano-word logo1-word" x="296" y="134" font-size="76" fill="#0b0d10">PIANO</text>
+            <text class="logo1-word" x="301" y="188" fill="#6b7280" font-family="Inter" font-size="14" font-weight="700">TEN KEYS · MANY SYMBOLS · ONE BALANCE</text>
+          </svg>
+        </div>
+        <div class="story-steps">
+          <div class="step-row"><div class="step-row__num">00</div><div><strong>Track</strong><span>Draw the recognizable P rail.</span></div></div>
+          <div class="step-row"><div class="step-row__num">01</div><div><strong>Keys</strong><span>Ten bars rise as watched symbols.</span></div></div>
+          <div class="step-row"><div class="step-row__num">02</div><div><strong>Tune</strong><span>The curve corrects drift.</span></div></div>
+          <div class="step-row"><div class="step-row__num">03</div><div><strong>Lockup</strong><span>The complete wordmark holds.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story-card" id="logo-2">
+      <div class="story-card__head">
+        <div>
+          <span class="story-kicker">Logo 2 / Balanced A</span>
+          <h2>Drift → Scan → Level → Resolve</h2>
+          <p>The A carries the hedge idea directly: two legs begin uneven, the system scans pressure, the beam levels, and the balanced lockup holds.</p>
+        </div>
+        <button class="story-button" type="button" data-replay="#logo-2">Replay</button>
+      </div>
+      <div class="timeline" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="story-stage">
+        <div class="animation-box">
+          <svg class="story-svg" viewBox="0 0 560 260" role="img" aria-label="Animated balanced A logo">
+            <g class="logo2-word">
+              <text class="piano-word" x="38" y="136" font-size="76" fill="#ededed">PI</text>
+              <path class="stroke-round" d="M188 174l42-100 42 100" fill="none" stroke="#ededed" stroke-width="14"/>
+              <text class="piano-word" x="292" y="136" font-size="76" fill="#ededed">NO</text>
+            </g>
+            <path class="logo2-scan stroke-round" d="M64 150h430" fill="none" stroke="#ea3943" stroke-width="4" stroke-dasharray="9 10"/>
+            <g class="logo2-beam">
+              <path class="stroke-round" d="M199 139h62m-31-43v43" fill="none" stroke="#16c784" stroke-width="6"/>
+              <path class="stroke-round logo2-weight" d="M208 165h16m28 0h16" fill="none" stroke="#ea3943" stroke-width="6"/>
+            </g>
+            <circle class="logo2-weight" cx="230" cy="139" r="8" fill="#16c784"/>
+          </svg>
+        </div>
+        <div class="story-steps">
+          <div class="step-row"><div class="step-row__num">00</div><div><strong>Drift</strong><span>Spot and futures legs are visually uneven.</span></div></div>
+          <div class="step-row"><div class="step-row__num">01</div><div><strong>Scan</strong><span>A horizontal scan reads symbol pressure.</span></div></div>
+          <div class="step-row"><div class="step-row__num">02</div><div><strong>Level</strong><span>The A beam becomes balanced.</span></div></div>
+          <div class="step-row"><div class="step-row__num">03</div><div><strong>Resolve</strong><span>The balanced wordmark holds.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story-card" id="logo-3">
+      <div class="story-card__head">
+        <div>
+          <span class="story-kicker">Logo 3 / Keyslot Wordmark</span>
+          <h2>Solid → Carve → Pulse → Tuned</h2>
+          <p>The wordmark starts clean, piano-key slots open inside the letterforms, ten channels pulse, and the tuning wave settles across the glyphs.</p>
+        </div>
+        <button class="story-button" type="button" data-replay="#logo-3">Replay</button>
+      </div>
+      <div class="timeline" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="story-stage">
+        <div class="animation-box animation-box--light">
+          <svg class="story-svg" viewBox="0 0 560 260" role="img" aria-label="Animated keyslot wordmark logo">
+            <text class="piano-word" x="52" y="136" font-size="86" fill="#0b0d10">PIANO</text>
+            <g fill="#f7f8fa">
+              <rect class="logo3-cut" x="88" y="122" width="8" height="42"/>
+              <rect class="logo3-cut" x="106" y="98" width="8" height="66"/>
+              <rect class="logo3-cut" x="124" y="108" width="8" height="56"/>
+              <rect class="logo3-cut" x="142" y="132" width="8" height="32"/>
+              <rect class="logo3-cut" x="160" y="110" width="8" height="54"/>
+              <rect class="logo3-cut" x="282" y="102" width="8" height="62"/>
+              <rect class="logo3-cut" x="300" y="126" width="8" height="38"/>
+              <rect class="logo3-cut" x="318" y="106" width="8" height="58"/>
+              <rect class="logo3-cut" x="336" y="130" width="8" height="34"/>
+              <rect class="logo3-cut" x="354" y="114" width="8" height="50"/>
+            </g>
+            <g fill="#16c784">
+              <rect class="logo3-bar" x="88" y="148" width="8" height="16"/>
+              <rect class="logo3-bar" x="124" y="144" width="8" height="20"/>
+              <rect class="logo3-bar" x="160" y="150" width="8" height="14"/>
+              <rect class="logo3-bar" x="282" y="138" width="8" height="26"/>
+              <rect class="logo3-bar" x="318" y="144" width="8" height="20"/>
+            </g>
+            <g fill="#ea3943">
+              <rect class="logo3-bar" x="106" y="142" width="8" height="22"/>
+              <rect class="logo3-bar" x="142" y="152" width="8" height="12"/>
+              <rect class="logo3-bar" x="300" y="148" width="8" height="16"/>
+              <rect class="logo3-bar" x="336" y="146" width="8" height="18"/>
+              <rect class="logo3-bar" x="354" y="150" width="8" height="14"/>
+            </g>
+            <path class="logo3-wave stroke-round" d="M76 145c62-56 126 54 186-4 57-54 111 18 166-24" fill="none" stroke="#16c784" stroke-width="5"/>
+          </svg>
+        </div>
+        <div class="story-steps">
+          <div class="step-row"><div class="step-row__num">00</div><div><strong>Solid</strong><span>The wordmark enters as a strong mark.</span></div></div>
+          <div class="step-row"><div class="step-row__num">01</div><div><strong>Carve</strong><span>Piano-key slots open inside glyphs.</span></div></div>
+          <div class="step-row"><div class="step-row__num">02</div><div><strong>Pulse</strong><span>Ten channels rise in alternating colors.</span></div></div>
+          <div class="step-row"><div class="step-row__num">03</div><div><strong>Tuned</strong><span>The balance wave resolves across the word.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story-card" id="concept-d">
+      <div class="story-card__head">
+        <div>
+          <span class="story-kicker">Concept D / Scan Loop</span>
+          <h2>Appear → Scan → Tune → Loop</h2>
+          <p>The wordmark appears first. The I becomes a vertical market scanner, ten symbol bars pulse through the letters, and the O resolves into a rebalance loop.</p>
+        </div>
+        <button class="story-button" type="button" data-replay="#concept-d">Replay</button>
+      </div>
+      <div class="timeline" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="story-stage">
+        <div class="animation-box">
+          <svg class="story-svg" viewBox="0 0 560 260" role="img" aria-label="Animated scan loop logo concept">
+            <text class="piano-word conceptd-word" x="48" y="136" font-size="86" fill="#ededed">PIANO</text>
+            <rect class="conceptd-cursor" x="156" y="72" width="8" height="118" fill="#16c784"/>
+            <g fill="#16c784">
+              <rect class="conceptd-key" x="80" y="144" width="7" height="24"/>
+              <rect class="conceptd-key" x="104" y="122" width="7" height="46"/>
+              <rect class="conceptd-key" x="128" y="132" width="7" height="36"/>
+              <rect class="conceptd-key" x="276" y="116" width="7" height="52"/>
+              <rect class="conceptd-key" x="324" y="130" width="7" height="38"/>
+            </g>
+            <g fill="#ea3943">
+              <rect class="conceptd-key" x="92" y="126" width="7" height="42"/>
+              <rect class="conceptd-key" x="116" y="150" width="7" height="18"/>
+              <rect class="conceptd-key" x="300" y="142" width="7" height="26"/>
+              <rect class="conceptd-key" x="348" y="120" width="7" height="48"/>
+              <rect class="conceptd-key" x="372" y="138" width="7" height="30"/>
+            </g>
+            <path class="conceptd-wave stroke-round" d="M70 150c58-46 110 36 164-4 48-35 90 20 134-12 35-25 64-18 96-8" fill="none" stroke="#16c784" stroke-width="5"/>
+            <ellipse class="conceptd-loop" cx="420" cy="133" rx="52" ry="42" fill="none" stroke="#ea3943" stroke-width="4"/>
+            <path class="conceptd-close stroke-round" d="M455 132h42m-14-15 15 15-15 15" fill="none" stroke="#ea3943" stroke-width="5"/>
+          </svg>
+        </div>
+        <div class="story-steps">
+          <div class="step-row"><div class="step-row__num">00</div><div><strong>Appear</strong><span>The wordmark appears as the base identity.</span></div></div>
+          <div class="step-row"><div class="step-row__num">01</div><div><strong>Scan</strong><span>The I acts as a market scan cursor.</span></div></div>
+          <div class="step-row"><div class="step-row__num">02</div><div><strong>Tune</strong><span>Symbol bars and the balance wave activate.</span></div></div>
+          <div class="step-row"><div class="step-row__num">03</div><div><strong>Loop</strong><span>The O becomes the rebalance loop and exit flow.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story-card" id="logo-4">
+      <div class="story-card__head">
+        <div>
+          <span class="story-kicker">Logo 4 / P Essence</span>
+          <h2>Skeleton → Keys → Equalize → Rebalance</h2>
+          <p>The P begins as a skeleton-loading mark. Equal-height rise and fall keys become multi-symbol channels, while small meters inside them move like an equalizer to express hedge rebalancing.</p>
+        </div>
+        <button class="story-button" type="button" data-replay="#logo-4">Replay</button>
+      </div>
+      <div class="timeline" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="story-stage">
+        <div class="animation-box animation-box--light">
+          <svg class="story-svg" viewBox="0 0 560 260" role="img" aria-label="Animated P essence logo">
+            <path class="logo4-skeleton stroke-round" d="M94 206V67h70c36 0 58 23 58 58 0 35-22 58-58 58h-38" fill="none" stroke="#d7dce3" stroke-width="17"/>
+            <path class="logo4-shell stroke-round" d="M94 206V67h70c36 0 58 23 58 58 0 35-22 58-58 58h-38" fill="none" stroke="#0b0d10" stroke-width="17"/>
+            <g>
+              <rect class="logo4-key-shell" x="123" y="110" width="10" height="53" rx="2" fill="#16c784"/>
+              <rect class="logo4-key-shell" x="142" y="110" width="10" height="53" rx="2" fill="#ea3943"/>
+              <rect class="logo4-key-shell" x="161" y="110" width="10" height="53" rx="2" fill="#16c784"/>
+              <rect class="logo4-key-shell" x="180" y="110" width="10" height="53" rx="2" fill="#ea3943"/>
+              <rect class="logo4-key-shell" x="200" y="110" width="10" height="53" rx="2" fill="#16c784"/>
+            </g>
+            <g fill="#0b0d10">
+              <rect class="logo4-meter" x="126" y="126" width="4" height="29" rx="1"/>
+              <rect class="logo4-meter" x="145" y="126" width="4" height="29" rx="1"/>
+              <rect class="logo4-meter" x="164" y="126" width="4" height="29" rx="1"/>
+              <rect class="logo4-meter" x="183" y="126" width="4" height="29" rx="1"/>
+              <rect class="logo4-meter" x="203" y="126" width="4" height="29" rx="1"/>
+            </g>
+            <path class="logo4-eq-line stroke-round" d="M118 148c20-38 43 31 65-10 12-22 23-22 34-17" fill="none" stroke="#16c784" stroke-width="4"/>
+            <path class="logo4-eq-line stroke-round" d="M118 160c22-26 44 22 66-6 12-16 23-14 34-10" fill="none" stroke="#ea3943" stroke-width="3"/>
+            <circle class="logo4-node" cx="118" cy="148" r="5" fill="#f7f8fa" stroke="#16c784" stroke-width="3"/>
+            <circle class="logo4-node" cx="183" cy="138" r="5" fill="#f7f8fa" stroke="#ea3943" stroke-width="3"/>
+            <text class="piano-word logo1-word" x="356" y="133" font-size="70" fill="#0b0d10">PIANO</text>
+          </svg>
+        </div>
+        <div class="story-steps">
+          <div class="step-row"><div class="step-row__num">00</div><div><strong>Skeleton</strong><span>The P begins as a loading placeholder.</span></div></div>
+          <div class="step-row"><div class="step-row__num">01</div><div><strong>Rise/Fall</strong><span>Equal-height color keys become multi-symbol channels.</span></div></div>
+          <div class="step-row"><div class="step-row__num">02</div><div><strong>Equalize</strong><span>Meters inside each key move like an equalizer.</span></div></div>
+          <div class="step-row"><div class="step-row__num">03</div><div><strong>Rebalance</strong><span>Dual hedge lines lock into balance.</span></div></div>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<script>
+  function replayCard(card) {
+    card.classList.add('is-restarting');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => card.classList.remove('is-restarting'));
+    });
+  }
+
+  document.querySelectorAll('[data-replay]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = document.querySelector(button.getAttribute('data-replay'));
+      if (card) replayCard(card);
+    });
+  });
+
+  document.querySelector('[data-replay-all]').addEventListener('click', () => {
+    document.querySelectorAll('.story-card').forEach(replayCard);
+  });
+</script>
+
+</body>
+</html>

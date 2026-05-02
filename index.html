@@ -185,55 +185,40 @@
   <div class="container">
     <div class="hiw">
 
-      <!-- FIG 0.3 — Card Stack -->
+      <!-- FIG 0.3 — Three-step setup -->
       <div class="hiw__fig">
         <span class="fig-label">FIG 0.3</span>
-        <svg class="iso-svg" viewBox="70 40 150 175" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 8 cards, py = 56,70,84,98,112,126,140,154 -->
-          <!-- W=55,D=40,H=4 → W*0.866=47.6≈48, W*0.5=27.5≈28, D*0.866=34.6≈35, D*0.5=20 -->
-          <!-- Top: (120,py-4),(168,py+24),(133,py+44),(85,py+16) -->
-          <!-- Front: (120,py),(168,py+28),(168,py+24),(120,py-4) -->
-          <!-- Right: (168,py+28),(133,py+48),(133,py+44),(168,py+24) -->
+        <svg class="iso-svg fig03-setup" viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Animated isometric three-step setup graphic">
+          <ellipse class="fig03-shadow" cx="370" cy="438" rx="176" ry="28" fill="#05070A"/>
 
-          <g class="fig03-c7">
-            <polygon points="120,150 168,174 133,194 85,170" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,154 168,182 168,178 120,150" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,182 133,202 133,198 168,178" fill="#111" stroke="#fff" stroke-width="1.2"/>
+          <g class="fig03-layer fig03-layer--monitor">
+            <path d="M236 325l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M236 325v34l180 103 204-123v-38L416 424z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M323 331l120-69 100 47-124 75z" fill="#070A0F" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M350 331l82-47M377 344l82-47M404 356l82-47M359 310l92 43M386 295l92 43" stroke="#343A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-bar fig03-bar--a" d="M367 325l12-7v-38l-12 7zM413 301l12-7v-52l-12 7zM459 322l12-7v-32l-12 7z" fill="#16C784"/>
+            <path class="fig03-bar fig03-bar--b" d="M390 312l12-7v-26l-12 7zM436 336l12-7v-44l-12 7z" fill="#EA3943"/>
+            <path class="fig03-profit" d="M486 347c36-8 56-2 73 16M548 346l15 18-24 8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="264" y="344" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">03 MONITOR</text>
           </g>
-          <g class="fig03-c6">
-            <polygon points="120,136 168,160 133,180 85,156" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,140 168,168 168,164 120,136" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,168 133,188 133,184 168,164" fill="#111" stroke="#fff" stroke-width="1.2"/>
+
+          <g class="fig03-layer fig03-layer--params">
+            <path d="M205 242l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M205 242v32l180 104 204-123v-37L385 341z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="fig03-key fig03-key--rise" d="M294 273l20-11 18 9-20 11zM336 249l20-11 18 9-20 11zM378 225l20-11 18 9-20 11z" fill="#16C784"/>
+            <path class="fig03-key fig03-key--fall" d="M315 261l20-11 18 9-20 11zM357 237l20-11 18 9-20 11z" fill="#EA3943"/>
+            <path class="fig03-sliders" d="M434 229l84 39M421 250l84 39M408 271l84 39M472 247l16 8M452 263l16 8M498 292l16 8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-ratio" d="M278 305c46-44 92 36 139-7 28-26 54-20 78-8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="232" y="260" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">02 PARAMETERS</text>
           </g>
-          <g class="fig03-c5">
-            <polygon points="120,122 168,146 133,166 85,142" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,126 168,154 168,150 120,122" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,154 133,174 133,170 168,150" fill="#111" stroke="#fff" stroke-width="1.2"/>
-          </g>
-          <g class="fig03-c4">
-            <polygon points="120,108 168,132 133,152 85,128" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,112 168,140 168,136 120,108" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,140 133,160 133,156 168,136" fill="#111" stroke="#fff" stroke-width="1.2"/>
-          </g>
-          <g class="fig03-c3">
-            <polygon points="120,94 168,118 133,138 85,114" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,98 168,126 168,122 120,94" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,126 133,146 133,142 168,122" fill="#111" stroke="#fff" stroke-width="1.2"/>
-          </g>
-          <g class="fig03-c2">
-            <polygon points="120,80 168,104 133,124 85,100" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,84 168,112 168,108 120,80" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,112 133,132 133,128 168,108" fill="#111" stroke="#fff" stroke-width="1.2"/>
-          </g>
-          <g class="fig03-c1">
-            <polygon points="120,66 168,90 133,110 85,86" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,70 168,98 168,94 120,66" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,98 133,118 133,114 168,94" fill="#111" stroke="#fff" stroke-width="1.2"/>
-          </g>
-          <g class="fig03-c0">
-            <polygon points="120,52 168,76 133,96 85,72" fill="#141414" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="120,56 168,84 168,80 120,52" fill="#0e0e0e" stroke="#fff" stroke-width="1.2"/>
-            <polygon points="168,84 133,104 133,100 168,80" fill="#111" stroke="#fff" stroke-width="1.2"/>
+
+          <g class="fig03-layer fig03-layer--api">
+            <path d="M174 159l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M174 159v31l180 104 204-123v-36L354 258z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="fig03-api-key" d="M292 148c0-16 13-29 29-29s29 13 29 29-13 29-29 29c-6 0-12-2-16-5l-50 29h-24l-15 15-22-13 15-15v-19l54-31c-1-3-1-6-1-10zM321 137a11 11 0 1 0 0 22 11 11 0 0 0 0-22z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-lock" d="M405 125h64v48h-64zM419 125v-17c0-16 9-27 18-27s18 11 18 27v17" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="406" y="199" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">SERVER IP</text>
+            <text x="202" y="177" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">01 API KEY</text>
           </g>
         </svg>
       </div>
