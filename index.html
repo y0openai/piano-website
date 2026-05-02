@@ -22,7 +22,7 @@
   <!-- ========== HEADER ========== -->
   <header class="header">
     <div class="container">
-      <a href="/" class="header__logo">PIANO</a>
+      <a href="https://y0openai.github.io/piano-website/" class="header__logo">PIANO</a>
       <nav class="header__nav">
         <a href="#how-it-works">How It Works</a>
         <a href="#features">Features</a>
@@ -216,33 +216,33 @@
           <div>
             <p class="feature__number">02</p>
             <h3 class="feature__title">Auto Position Imbalance Correction</h3>
-            <p class="feature__desc">When market movements cause the spot&middot;futures ratio to drift, positions are corrected based on your preconfigured conditions.</p>
-            <p class="feature__note">All corrections execute only within your configured parameter range.<br>You can change parameters or stop execution at any time.</p>
+            <p class="feature__desc">When market movements cause the spot&middot;futures ratio to drift, AI evaluates the situation in real time and adjusts positions to restore balance.</p>
+            <p class="feature__note">AI operates within the boundaries you define.<br>You can adjust those boundaries or stop execution at any time.</p>
           </div>
           <div>
             <table class="feature__table">
               <thead>
                 <tr>
-                  <th>Correction Trigger</th>
-                  <th>How It Works</th>
+                  <th>Market Signal</th>
+                  <th>AI Response</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>VWAP Deviation</td>
-                  <td>Corrects when price deviates from the volume-weighted average</td>
+                  <td>Rebalances when price diverges from the volume-weighted average</td>
                 </tr>
                 <tr>
                   <td>Volume Spike</td>
-                  <td>Checks balance when volume changes suddenly</td>
+                  <td>Reassesses balance when volume surges unexpectedly</td>
                 </tr>
                 <tr>
                   <td>Range Breakout</td>
-                  <td>Readjusts when price moves outside the configured range</td>
+                  <td>Readjusts as price breaks beyond the expected range</td>
                 </tr>
                 <tr>
                   <td>Volatility Convergence</td>
-                  <td>Settles positions after volatility stabilizes</td>
+                  <td>Settles positions once volatility stabilizes</td>
                 </tr>
               </tbody>
             </table>
@@ -254,17 +254,17 @@
           <div>
             <p class="feature__number">03</p>
             <h3 class="feature__title">Linked Balancing</h3>
-            <p class="feature__desc">When DCA buys additional spot at a favorable price, an intentional imbalance is created.<br>Linked Balancing matches the futures side to restore 1:1 balance.<br>In this process, the average entry price is improved.</p>
+            <p class="feature__desc">Buy at favorable prices and let AI restore balance in real time — your average entry price continuously improves.<br><br>Normally we hold spot and futures at equal weight to neutralize market risk. When prices move in your favor, DCA buys additional on one side — intentionally creating an imbalance. AI detects this and rebalances the other side to restore the 1:1 ratio. Since the additional purchase was made at a better price, your average entry price automatically improves with each cycle.</p>
           </div>
           <div>
             <div class="feature__code"><strong>① Balanced State</strong>
 Spot 0.05 BTC + Futures 0.05 BTC &rarr; Ratio 1:1
 
-<strong>② DCA Triggered</strong> (adds spot or futures when price moves)
+<strong>② DCA Triggered</strong> (AI detects favorable price and buys additional spot)
 Spot 0.07 BTC + Futures 0.05 BTC &rarr; Ratio 1.4x (intentional imbalance)
 
-<strong>③ Linked Balancing</strong> (adds futures to restore balance)
-Spot 0.07 BTC + Futures 0.07 BTC &rarr; Ratio 1:1 (restored at a better entry price)</div>
+<strong>③ Linked Balancing</strong> (AI adds matching futures to restore balance)
+Spot 0.07 BTC + Futures 0.07 BTC &rarr; Ratio 1:1 (restored, average entry price improved)</div>
           </div>
         </div>
 
