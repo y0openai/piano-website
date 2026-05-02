@@ -45,6 +45,10 @@
   --green: #16C784;
   --red:   #EA3943;
 
+  /* Logo accent colors */
+  --logo-rise: #57D5FF;
+  --logo-fall: #FF6F8B;
+
   /* ISO SVG fills */
   --iso-t:    #14191F;
   --iso-l:    #0D1117;
@@ -273,12 +277,12 @@ p { color: var(--fg-3); line-height: 1.75; }
   fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 14;
   stroke: var(--lockup-fg);
 }
-.piano-lockup__rise  { fill: var(--green); }
-.piano-lockup__fall  { fill: var(--red); }
+.piano-lockup__rise  { fill: var(--logo-rise); }
+.piano-lockup__fall  { fill: var(--logo-fall); }
 .piano-lockup__meter { fill: var(--lockup-fg); }
 .piano-lockup__rail  { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.piano-lockup__rail--rise { stroke: var(--green); stroke-width: 3; }
-.piano-lockup__rail--fall { stroke: var(--red);   stroke-width: 2.5; }
+.piano-lockup__rail--rise { stroke: var(--logo-rise); stroke-width: 3; }
+.piano-lockup__rail--fall { stroke: var(--logo-fall); stroke-width: 2.5; }
 .piano-lockup__word  {
   fill: var(--lockup-fg);
   font-family: 'Outfit', sans-serif;
