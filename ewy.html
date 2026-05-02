@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function(){var t=localStorage.getItem('piano-theme')||'auto',h=document.documentElement;
+    if(t==='light')h.setAttribute('data-theme','light');
+    else if(t==='dark')h.setAttribute('data-theme','dark');
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)h.setAttribute('data-theme','light');})();
+  </script>
 </head>
 <body>
 
@@ -31,6 +37,17 @@
       <a href="#risks">Risks</a>
     </div>
     <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Contact Us →</a>
+    <div class="theme-toggle" id="themeToggle" role="group" aria-label="Color theme">
+      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)">
+        <svg viewBox="0 0 14 14" width="13" height="13"><path d="M7 2v10M7 2A5 5 0 1 0 7 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      </button>
+      <button class="theme-toggle__btn" data-mode="light" title="Light">
+        <svg viewBox="0 0 14 14" width="13" height="13"><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M3 3l1 1M10 10l1 1M10 4l-1 1M4 10l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+      </button>
+      <button class="theme-toggle__btn" data-mode="dark" title="Dark">
+        <svg viewBox="0 0 14 14" width="13" height="13"><path d="M9.5 2.5A5 5 0 1 0 11.5 7 3.5 3.5 0 0 1 9.5 2.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </button>
+    </div>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -381,6 +398,27 @@
   const drawer = document.getElementById('navDrawer');
   hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
   function closeDrawer() { drawer.classList.remove('open'); }
+
+  // Theme toggle
+  (function(){
+    var mode = localStorage.getItem('piano-theme') || 'auto';
+    function applyTheme(m) {
+      var h = document.documentElement;
+      if (m === 'light') h.setAttribute('data-theme','light');
+      else if (m === 'dark') h.setAttribute('data-theme','dark');
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
+        h.setAttribute('data-theme','light');
+      else h.removeAttribute('data-theme');
+    }
+    function syncBtns(m) {
+      document.querySelectorAll('.theme-toggle__btn').forEach(function(b){ b.classList.toggle('active', b.dataset.mode === m); });
+    }
+    syncBtns(mode);
+    document.querySelectorAll('.theme-toggle__btn').forEach(function(b){
+      b.addEventListener('click', function(){ mode = b.dataset.mode; localStorage.setItem('piano-theme', mode); applyTheme(mode); syncBtns(mode); });
+    });
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(){ if (mode === 'auto') applyTheme('auto'); });
+  })();
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
