@@ -91,8 +91,8 @@ p { color: #666; line-height: 1.75; }
   height: 100%; display: flex; align-items: center; gap: 36px;
 }
 .nav__logo {
-  font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 800;
-  letter-spacing: -0.02em; color: #EDEDED; flex-shrink: 0;
+  display: inline-flex; align-items: center; width: 132px; height: 34px;
+  color: #EDEDED; flex-shrink: 0;
 }
 .nav__links { display: flex; gap: 28px; flex: 1; }
 .nav__links a { font-size: 0.84rem; color: #555; transition: color 0.18s; }
@@ -129,6 +129,82 @@ p { color: #666; line-height: 1.75; }
   border: 1px solid rgba(255,255,255,0.1); border-radius: 100px;
   padding: 5px 14px 5px 10px; font-size: 0.75rem; color: #555; margin-bottom: 28px;
 }
+.piano-lockup {
+  display: block;
+  overflow: visible;
+}
+.piano-lockup--nav {
+  width: 132px;
+  height: auto;
+}
+.piano-lockup--hero {
+  width: min(260px, 72vw);
+  height: auto;
+  margin-bottom: 28px;
+}
+.piano-lockup--footer {
+  width: 158px;
+  height: auto;
+}
+.piano-lockup__shell,
+.piano-anim__skeleton {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 14;
+}
+.piano-lockup__shell {
+  stroke: #EDEDED;
+}
+.piano-anim__skeleton {
+  opacity: 0;
+  stroke: rgba(255,255,255,0.15);
+  stroke-dasharray: 360;
+  animation: piano-logo-skeleton 4.4s ease-in-out 1.8s 1;
+}
+.piano-lockup__rise { fill: #16C784; }
+.piano-lockup__fall { fill: #EA3943; }
+.piano-lockup__meter { fill: #EDEDED; }
+.piano-lockup__rail {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.piano-lockup__rail--rise {
+  stroke: #16C784;
+  stroke-width: 3;
+}
+.piano-lockup__rail--fall {
+  stroke: #EA3943;
+  stroke-width: 2.5;
+}
+.piano-lockup__word {
+  fill: #EDEDED;
+  font-family: 'Outfit', sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.piano-anim__shell {
+  stroke-dasharray: 360;
+  animation: piano-logo-shell 4.4s ease-in-out 1.8s 1;
+}
+.piano-anim__keys,
+.piano-anim__meters {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: piano-logo-key-reveal 4.4s ease-in-out 1.8s 1;
+}
+.piano-anim__meters {
+  animation-name: piano-logo-meter;
+}
+.piano-anim__rail {
+  stroke-dasharray: 160;
+  animation: piano-logo-rail 4.4s ease-in-out 1.8s 1;
+}
+.piano-anim__word {
+  animation: piano-logo-word 4.4s ease-in-out 1.8s 1;
+}
 .hero__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #16C784; flex-shrink: 0; }
 .hero__h1 { margin-bottom: 20px; }
 .hero__sub { font-size: 1rem; color: #555; max-width: 420px; margin-bottom: 36px; line-height: 1.75; }
@@ -144,6 +220,33 @@ p { color: #666; line-height: 1.75; }
 /* ==============================
    ISO ANIMATIONS
    ============================== */
+@keyframes piano-logo-skeleton {
+  0% { opacity: 1; stroke-dashoffset: 360; }
+  28% { opacity: 1; stroke-dashoffset: 0; }
+  46%,100% { opacity: 0; stroke-dashoffset: 0; }
+}
+@keyframes piano-logo-shell {
+  0%,18% { opacity: 0; stroke-dashoffset: 360; }
+  42%,100% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes piano-logo-key-reveal {
+  0%,34% { opacity: 0; transform: scaleY(0.2); }
+  52%,100% { opacity: 1; transform: scaleY(1); }
+}
+@keyframes piano-logo-meter {
+  0%,48% { opacity: 0; transform: scaleY(0.35); }
+  62% { opacity: 1; transform: scaleY(1.12); }
+  76% { opacity: 1; transform: scaleY(0.72); }
+  90%,100% { opacity: 1; transform: scaleY(1); }
+}
+@keyframes piano-logo-rail {
+  0%,56% { opacity: 0; stroke-dashoffset: 160; }
+  76%,100% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes piano-logo-word {
+  0%,66% { opacity: 0; transform: translateX(-8px); }
+  82%,100% { opacity: 1; transform: translateX(0); }
+}
 @keyframes layer0-open { 0%,100%{transform:translateY(0)} 50%{transform:translateY(12px)} }
 @keyframes layer1-open { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
 @keyframes layer2-open { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
@@ -256,6 +359,7 @@ p { color: #666; line-height: 1.75; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .piano-lockup *,
   .fig03-setup * {
     animation: none !important;
   }
@@ -422,7 +526,7 @@ p { color: #666; line-height: 1.75; }
 /* Footer — vertical stack */
 .footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 0 32px; }
 .footer__inner { display: flex; flex-direction: column; gap: 6px; }
-.footer__logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: #EDEDED; margin-bottom: 2px; }
+.footer__logo { display: inline-flex; width: fit-content; margin-bottom: 2px; }
 .footer__tagline { font-size: 0.875rem; color: #555; }
 .footer__contact { font-size: 0.875rem; color: #555; margin-top: 2px; }
 .footer__contact a { color: #888; transition: color 0.18s; }
@@ -438,6 +542,7 @@ p { color: #666; line-height: 1.75; }
    ============================== */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; padding: 96px 0 60px; min-height: auto; }
+  .piano-lockup--hero { display: none; }
   .hero__figure { display: none; }
   .features-grid { grid-template-columns: 1fr; }
   .feature-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
