@@ -54,46 +54,50 @@
     </div>
   </div>
 
-  <!-- FIG 0.1 — Hedge Layer Stack -->
+  <!-- FIG 0.1 — Piano Hedge Console -->
   <div class="hero__figure">
     <span class="fig-label">FIG 0.1</span>
-    <svg class="iso-svg" viewBox="50 28 190 215" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-      <!-- Sphere -->
-      <g class="fig01-sp">
-        <circle cx="120" cy="48" r="18" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
-        <ellipse cx="120" cy="48" rx="18" ry="6.5" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.5"/>
-        <ellipse cx="120" cy="48" rx="18" ry="3" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.25"/>
+    <svg class="iso-svg" viewBox="100 85 590 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Deck -->
+      <path d="M120 250l250-144 280 144-250 146z" fill="#14191F" stroke="#2A3444" stroke-width="2"/>
+      <path d="M120 250l280 146 0 52-280-146z" fill="#0D1117" stroke="#2A3444" stroke-width="2"/>
+      <path d="M400 396l250-146 0 52-250 146z" fill="#10151B" stroke="#2A3444" stroke-width="2"/>
+      <!-- Risers + white keys (staggered scan) -->
+      <g class="fig01-r1">
+        <path d="M214 246l12-7 0-77-12 7z" fill="#35D0B4"/>
+        <path d="M202 258l26-15 36 19-26 15z" fill="#C0CAD4"/>
       </g>
-
-      <!-- Layer 3 (top) -->
-      <g class="fig01-l3">
-        <polygon points="120,70 165,96 133,115 88,89" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="120,78 165,104 165,96 120,70" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="165,104 133,123 133,115 165,96" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      <g class="fig01-r2">
+        <path d="M266 216l12-7 0-69-12 7z" fill="#35D0B4"/>
+        <path d="M254 228l26-15 36 19-26 15z" fill="#C0CAD4"/>
       </g>
-
-      <!-- Layer 2 -->
-      <g class="fig01-l2">
-        <polygon points="120,105 165,131 133,150 88,124" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="120,113 165,139 165,131 120,105" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="165,139 133,158 133,150 165,131" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      <g class="fig01-r3">
+        <path d="M318 186l12-7 0-61-12 7z" fill="#35D0B4"/>
+        <path d="M306 198l26-15 36 19-26 15z" fill="#C0CAD4"/>
       </g>
-
-      <!-- Layer 1 -->
-      <g class="fig01-l1">
-        <polygon points="120,140 165,166 133,185 88,159" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="120,148 165,174 165,166 120,140" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="165,174 133,193 133,185 165,166" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      <g class="fig01-r4">
+        <path d="M370 156l12-7 0-53-12 7z" fill="#35D0B4"/>
+        <path d="M358 168l26-15 36 19-26 15z" fill="#C0CAD4"/>
       </g>
-
-      <!-- Layer 0 (bottom) -->
-      <g class="fig01-l0">
-        <polygon points="120,175 165,201 133,220 88,194" fill="#141414" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="120,183 165,209 165,201 120,175" fill="#0e0e0e" stroke="#ffffff" stroke-width="1.4"/>
-        <polygon points="165,209 133,228 133,220 165,201" fill="#111111" stroke="#ffffff" stroke-width="1.4"/>
+      <g class="fig01-r5">
+        <path d="M422 186l12-7 0-57-12 7z" fill="#35D0B4"/>
+        <path d="M410 198l26-15 36 19-26 15z" fill="#C0CAD4"/>
       </g>
-
+      <g class="fig01-r6">
+        <path d="M454 204l12-7 0-65-12 7z" fill="#4A9FD8"/>
+      </g>
+      <!-- Blue accent keys -->
+      <path d="M232 276l26-15 36 19-26 15z" fill="#4A9FD8"/>
+      <path d="M284 246l26-15 36 19-26 15z" fill="#4A9FD8"/>
+      <path d="M336 216l26-15 36 19-26 15z" fill="#4A9FD8"/>
+      <path d="M388 186l26-15 36 19-26 15z" fill="#4A9FD8"/>
+      <path d="M440 216l26-15 36 19-26 15z" fill="#4A9FD8"/>
+      <!-- Spot rail (blue pulse) -->
+      <path class="fig01-rail-blue" d="M170 330l230 125 184-105" stroke="#4A9FD8" stroke-width="5" stroke-linecap="round"/>
+      <!-- Futures rail (teal pulse) -->
+      <path class="fig01-rail-teal" d="M210 306l190 102 146-84" stroke="#35D0B4" stroke-width="5" stroke-linecap="round"/>
+      <!-- Balance arc (trace) -->
+      <path class="fig01-arc" d="M178 206c82-94 176 86 264-26 58-72 118-54 178-22" stroke="#4A9FD8" stroke-width="4" stroke-linecap="round" stroke-dasharray="600"/>
     </svg>
   </div>
 </section>
@@ -113,26 +117,14 @@
     <div class="features-grid">
       <div class="feature-card">
         <span class="feature-card__num">FIG 0.2 — 01</span>
-        <!-- FIG 0.2 inline (small) — Three Cubes -->
-        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
-          <!-- Cube A -->
-          <g class="fig02-ca">
-            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
-          </g>
-          <!-- Cube B -->
-          <g class="fig02-cb">
-            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
-          </g>
-          <!-- Cube C -->
-          <g class="fig02-cc">
-            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
-          </g>
+        <!-- FIG 0.2-01 — Entry Condition Filter -->
+        <svg viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;margin-bottom:8px">
+          <path d="M42 82l52-30 52 30-52 30z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <path d="M174 82l52-30 52 30-52 30z" fill="#1A2434" stroke="#4A9FD8" stroke-width="1.5"/>
+          <path d="M282 82l40-23 40 23-40 23z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <path d="M160 106v-62h76v62" stroke="#4A9FD8" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path class="fig02-flow-l" d="M64 82h80" stroke="#35D0B4" stroke-width="3" stroke-linecap="round" stroke-dasharray="80"/>
+          <path class="fig02-flow-r" d="M242 82h98" stroke="#35D0B4" stroke-width="3" stroke-linecap="round" stroke-dasharray="98"/>
         </svg>
         <h3>Statistical Entry Condition Filter</h3>
         <p>Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
@@ -141,22 +133,17 @@
 
       <div class="feature-card">
         <span class="feature-card__num">FIG 0.2 — 02</span>
-        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
-          <g class="fig02-cb">
-            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
+        <!-- FIG 0.2-02 — Auto Imbalance Correction -->
+        <svg viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;margin-bottom:8px">
+          <g class="fig02-f2-left">
+            <path d="M68 88l74-42 56 30-74 42z" fill="rgba(74,159,216,0.12)" stroke="#4A9FD8" stroke-width="1.5"/>
           </g>
-          <g class="fig02-ca">
-            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          <g class="fig02-f2-right">
+            <path d="M205 84l74-42 56 30-74 42z" fill="rgba(53,208,180,0.12)" stroke="#35D0B4" stroke-width="1.5"/>
           </g>
-          <g class="fig02-cc">
-            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
-          </g>
+          <path d="M82 86l235-14" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M199 48v65" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="fig02-f2-tune" d="M98 102c42-62 90 16 132-22 30-28 62-22 90-14" stroke="#4A9FD8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="300" fill="none"/>
         </svg>
         <h3>Auto Position Imbalance Correction</h3>
         <p>When market movements drift the spot·futures ratio, AI evaluates in real time and adjusts positions to restore balance.</p>
@@ -165,22 +152,16 @@
 
       <div class="feature-card">
         <span class="feature-card__num">FIG 0.2 — 03</span>
-        <svg viewBox="35 5 170 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;margin-bottom:8px">
-          <g class="fig02-cc">
-            <polygon points="120,15 159,37 120,60 81,37" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="159,82 120,105 120,60 159,37" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="120,60 81,82 81,37 120,15" fill="#111" stroke="#fff" stroke-width="1.3"/>
+        <!-- FIG 0.2-03 — Dynamic Position Management -->
+        <svg viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;margin-bottom:8px">
+          <path d="M64 88l70-40 70 40-70 40z m134 0l70-40 70 40-70 40z m-54-16l56-32 56 32-56 32z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <g class="fig02-f3-long">
+            <path d="M96 90l20-12 0-24-20 12z M120 76l20-12 0-22-20 12z M74 98l20-12 0-18-20 12z M144 68l20-12 0-20-20 12z" fill="#4A9FD8"/>
           </g>
-          <g class="fig02-ca">
-            <polygon points="165,47 195,64 165,82 135,64" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="195,99 165,117 165,82 195,64" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="165,82 135,99 135,64 165,47" fill="#111" stroke="#fff" stroke-width="1.3"/>
+          <g class="fig02-f3-short">
+            <path d="M244 92l20-12 0-20-20 12z M268 78l20-12 0-28-20 12z M292 64l20-12 0-20-20 12z M224 100l20-12 0-18-20 12z M316 58l20-12 0-18-20 12z" fill="#35D0B4"/>
           </g>
-          <g class="fig02-cb">
-            <polygon points="75,82 101,97 75,112 49,97" fill="#141414" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="101,127 75,142 75,112 101,97" fill="#0e0e0e" stroke="#fff" stroke-width="1.3"/>
-            <polygon points="75,112 49,127 49,97 75,82" fill="#111" stroke="#fff" stroke-width="1.3"/>
-          </g>
+          <path class="fig02-f3-profit" d="M88 106c38 26 86 23 112-2 26 25 76 28 114 2" stroke="#35D0B4" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="200" fill="none"/>
         </svg>
         <h3>Linked Balancing</h3>
         <p>AI monitors the market and dynamically manages the position size ratio between both directions. When conditions turn favorable, positions are closed to realize profit.</p>

@@ -503,3 +503,79 @@ p { color: #666; line-height: 1.75; }
 @media (max-width: 560px) {
   .stat-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== FIG 0.1 — Piano Hedge Console animations ===== */
+@keyframes riser-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.fig01-r1 { animation: riser-bob 2.2s ease-in-out infinite 0s; }
+.fig01-r2 { animation: riser-bob 2.2s ease-in-out infinite 0.18s; }
+.fig01-r3 { animation: riser-bob 2.2s ease-in-out infinite 0.36s; }
+.fig01-r4 { animation: riser-bob 2.2s ease-in-out infinite 0.54s; }
+.fig01-r5 { animation: riser-bob 2.2s ease-in-out infinite 0.72s; }
+.fig01-r6 { animation: riser-bob 2.2s ease-in-out infinite 0.54s; }
+
+@keyframes arc-trace {
+  0%   { stroke-dashoffset: 600; opacity: 0.1; }
+  45%  { stroke-dashoffset: 0;   opacity: 1; }
+  72%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 600; opacity: 0.1; }
+}
+.fig01-arc { animation: arc-trace 3.6s ease-in-out infinite; }
+
+@keyframes rail-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1; }
+}
+.fig01-rail-blue { animation: rail-pulse 2.8s ease-in-out infinite; }
+.fig01-rail-teal { animation: rail-pulse 2.8s ease-in-out infinite 1.4s; }
+
+/* ===== FIG 0.2-01 — Entry Condition Filter animations ===== */
+@keyframes flow-signal {
+  0%   { stroke-dashoffset: 100; opacity: 0.15; }
+  40%  { stroke-dashoffset: 0;   opacity: 1; }
+  90%  { stroke-dashoffset: -100; opacity: 0.15; }
+  100% { stroke-dashoffset: -100; opacity: 0.15; }
+}
+.fig02-flow-l { animation: flow-signal 1.8s ease-in-out infinite; }
+.fig02-flow-r { animation: flow-signal 1.8s ease-in-out infinite 0.35s; }
+
+/* ===== FIG 0.2-02 — Imbalance Correction animations ===== */
+@keyframes drift-left {
+  0%, 15%, 75%, 100% { transform: translateX(0); }
+  45% { transform: translateX(-10px); }
+}
+@keyframes drift-right {
+  0%, 15%, 75%, 100% { transform: translateX(0); }
+  45% { transform: translateX(10px); }
+}
+@keyframes tune-draw {
+  0%, 20%  { stroke-dashoffset: 300; opacity: 0; }
+  55%, 80% { stroke-dashoffset: 0;   opacity: 1; }
+  100%     { stroke-dashoffset: 300; opacity: 0; }
+}
+.fig02-f2-left  { animation: drift-left  3.2s ease-in-out infinite; }
+.fig02-f2-right { animation: drift-right 3.2s ease-in-out infinite; }
+.fig02-f2-tune  { animation: tune-draw   3.2s ease-in-out infinite; }
+
+/* ===== FIG 0.2-03 — Dynamic Position Management animations ===== */
+@keyframes long-bars {
+  0%, 100% { transform: translateY(0); }
+  40%  { transform: translateY(-7px); }
+  75%  { transform: translateY(4px); }
+}
+@keyframes short-bars {
+  0%, 100% { transform: translateY(0); }
+  40%  { transform: translateY(5px); }
+  75%  { transform: translateY(-6px); }
+}
+@keyframes profit-flow {
+  0%   { stroke-dashoffset: 200; opacity: 0; }
+  40%  { opacity: 1; }
+  80%  { stroke-dashoffset: 0; opacity: 0.8; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.fig02-f3-long   { animation: long-bars   2.8s ease-in-out infinite; }
+.fig02-f3-short  { animation: short-bars  2.8s ease-in-out infinite; }
+.fig02-f3-profit { animation: profit-flow 2.8s ease-in-out infinite; }
