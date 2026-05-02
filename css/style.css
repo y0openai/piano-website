@@ -91,7 +91,7 @@ p { color: #666; line-height: 1.75; }
   height: 100%; display: flex; align-items: center; gap: 36px;
 }
 .nav__logo {
-  display: inline-flex; align-items: center; width: 132px; height: 34px;
+  display: inline-flex; align-items: center; width: 42px; height: 38px;
   color: #EDEDED; flex-shrink: 0;
 }
 .nav__links { display: flex; gap: 28px; flex: 1; }
@@ -134,11 +134,11 @@ p { color: #666; line-height: 1.75; }
   overflow: visible;
 }
 .piano-lockup--nav {
-  width: 132px;
+  width: 42px;
   height: auto;
 }
 .piano-lockup--footer {
-  width: 158px;
+  width: 52px;
   height: auto;
 }
 .piano-lockup__shell {
@@ -464,18 +464,21 @@ p { color: #666; line-height: 1.75; }
 }
 .risk-disclosure__items p strong, .risk-disclosure__body strong { color: #888; }
 
-/* Footer — vertical stack */
-.footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 0 32px; }
-.footer__inner { display: flex; flex-direction: column; gap: 6px; }
+/* Footer — horizontal columns */
+.footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 0 0; }
+.footer__inner { display: flex; flex-direction: row; align-items: flex-start; gap: 64px; padding-bottom: 48px; }
+.footer__brand { flex: 1; display: flex; flex-direction: column; gap: 6px; }
 .footer__logo { display: inline-flex; width: fit-content; margin-bottom: 2px; }
 .footer__tagline { font-size: 0.875rem; color: #555; }
 .footer__contact { font-size: 0.875rem; color: #555; margin-top: 2px; }
 .footer__contact a { color: #888; transition: color 0.18s; }
 .footer__contact a:hover { color: #EDEDED; }
-.footer__copy { font-size: 0.75rem; color: #333; margin-top: 24px; }
-.footer__links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
-.footer__links a { font-size: 0.8rem; color: #444; transition: color 0.18s; }
-.footer__links a:hover { color: #888; }
+.footer__nav { display: flex; flex-direction: column; gap: 10px; min-width: 140px; }
+.footer__nav-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 2px; }
+.footer__nav a { font-size: 0.82rem; color: #555; text-decoration: none; transition: color 0.18s; }
+.footer__nav a:hover { color: #EDEDED; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.04); padding: 20px 0; }
+.footer__copy { font-size: 0.75rem; color: #2A2A2A; }
 
 
 /* ==============================
@@ -498,6 +501,7 @@ p { color: #666; line-height: 1.75; }
 @media (max-width: 560px) {
   .security-grid { grid-template-columns: 1fr; }
   .container { padding: 0 20px; }
+  .footer__inner { flex-direction: column; gap: 36px; }
 }
 
 /* Recharts focus suppression (carried over) */
