@@ -408,6 +408,11 @@ p { color: var(--fg-3); line-height: 1.75; }
 @keyframes bh-clock-tick  { to { transform: rotate(360deg); } }
 @keyframes bh-bldg-rise   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 @keyframes bh-bar-grow    { 0%,100% { transform: scaleY(0.92); } 50% { transform: scaleY(1.05); } }
+@keyframes bh-neutral-long-shift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes bh-neutral-short-shift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@keyframes bh-neutral-flow-dash { to { stroke-dashoffset: -28; } }
+@keyframes bh-engine-pulse { 0%,100% { opacity: 0.86; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes bh-node-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 @keyframes bh-manual-clock-spin { to { transform: rotate(360deg); } }
 @keyframes bh-manual-slide { 0%,100% { transform: translateX(-8px); } 50% { transform: translateX(10px); } }
 @keyframes bh-manual-long-drift { 0%,100% { transform: scaleY(0.82); } 50% { transform: scaleY(1.12); } }
@@ -436,6 +441,14 @@ p { color: var(--fg-3); line-height: 1.75; }
 .bh-bldg-1 { animation: bh-bldg-rise 3s ease-in-out infinite 0s; transform-box: fill-box; transform-origin: center; }
 .bh-bldg-2 { animation: bh-bldg-rise 3s ease-in-out infinite 0.3s; transform-box: fill-box; transform-origin: center; }
 .bh-bldg-3 { animation: bh-bldg-rise 3s ease-in-out infinite 0.6s; transform-box: fill-box; transform-origin: center; }
+.bh-neutral-long { animation: bh-neutral-long-shift 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-neutral-short { animation: bh-neutral-short-shift 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-neutral-pivot, .bh-neutral-net { animation: bh-pulse-soft 2.3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-neutral-flow, .bh-network-link path { animation: bh-neutral-flow-dash 1.7s linear infinite; }
+.bh-institution-node { animation: bh-node-float 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-institution-node-b { animation-delay: 0.25s; }
+.bh-institution-node-c { animation-delay: 0.5s; }
+.bh-hedge-engine { animation: bh-engine-pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 
 .bh-manual-clock-hand { animation: bh-manual-clock-spin 6s linear infinite; transform-origin: 92px 112px; }
 .bh-manual-knob { animation: bh-manual-slide 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
@@ -456,6 +469,8 @@ p { color: var(--fg-3); line-height: 1.75; }
   .bh-bars-red-front, .bh-bars-red-depth,
   .bh-col-long, .bh-col-short, .bh-pivot, .bh-clock-hands, .bh-profit-bar,
   .bh-bldg-1, .bh-bldg-2, .bh-bldg-3,
+  .bh-neutral-long, .bh-neutral-short, .bh-neutral-pivot, .bh-neutral-net,
+  .bh-neutral-flow, .bh-network-link path, .bh-institution-node, .bh-hedge-engine,
   .bh-manual-clock-hand, .bh-manual-knob, .bh-manual-long-bar, .bh-manual-short-bar,
   .bh-manual-alert, .bh-manual-stress {
     animation: none !important;

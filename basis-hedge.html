@@ -134,19 +134,33 @@
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
         <rect width="760" height="240" fill="#FFFFFF" stroke="#D7DCE3" stroke-width="1" rx="6"/>
-        <line x1="60" y1="60" x2="700" y2="60" stroke="#0B0D10" stroke-width="4" stroke-linecap="round"/>
-        <g class="bh-col-long">
-          <path d="M 140 90 L 240 140 L 240 200 L 140 150 Z" fill="#16C784"/>
-          <path d="M 140 90 L 240 140 L 265 127 L 165 77 Z" fill="#25D48A"/>
-        </g>
-        <g class="bh-col-short">
-          <path d="M 520 90 L 620 140 L 620 200 L 520 150 Z" fill="#EA3943"/>
-          <path d="M 520 90 L 620 140 L 645 127 L 545 77 Z" fill="#F05260"/>
-        </g>
-        <path class="bh-pivot" d="M 380 45 L 395 60 L 380 75 L 365 60 Z" fill="#16C784"/>
         <text x="24" y="30" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700" fill="#6B7280">02 / LONG + SHORT = ZERO</text>
-        <text x="172" y="50" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="700" fill="#16C784">LONG</text>
-        <text x="552" y="50" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="700" fill="#EA3943">SHORT</text>
+        <text x="332" y="58" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#6B7280">OPPOSITE EXPOSURE</text>
+
+        <line class="bh-neutral-beam" x1="164" y1="126" x2="596" y2="126" stroke="#0B0D10" stroke-width="4" stroke-linecap="round"/>
+        <path d="M 380 126 L 408 188 L 352 188 Z" fill="#F7F8FA" stroke="#0B0D10" stroke-width="2"/>
+        <circle class="bh-neutral-pivot" cx="380" cy="126" r="8" fill="#16C784"/>
+
+        <g class="bh-neutral-long">
+          <path d="M 130 82 L 245 120 L 245 168 L 130 130 Z" fill="#16C784"/>
+          <path d="M 130 82 L 245 120 L 276 106 L 160 68 Z" fill="#25D48A"/>
+          <text x="154" y="61" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700" fill="#16C784">LONG SPOT</text>
+          <text x="166" y="150" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#0B0D10">+10%</text>
+        </g>
+
+        <g class="bh-neutral-short">
+          <path d="M 515 82 L 630 120 L 630 168 L 515 130 Z" fill="#EA3943"/>
+          <path d="M 515 82 L 630 120 L 661 106 L 545 68 Z" fill="#F05260"/>
+          <text x="530" y="61" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700" fill="#EA3943">SHORT FUTURES</text>
+          <text x="552" y="150" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#0B0D10">-10%</text>
+        </g>
+
+        <path class="bh-neutral-flow" d="M 286 112 C 318 90 350 90 378 110" stroke="#16C784" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 6" fill="none"/>
+        <path class="bh-neutral-flow" d="M 474 112 C 442 90 410 90 382 110" stroke="#EA3943" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 6" fill="none"/>
+        <rect class="bh-neutral-net" x="322" y="82" width="116" height="44" rx="6" fill="#0B0D10"/>
+        <text x="345" y="100" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#9AA3AF">COMBINED</text>
+        <text x="342" y="119" font-family="Inter, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">NET ≈ 0</text>
+
         <text x="24" y="232" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Opposite positions cancel each other — net result ≈ 0.</text>
       </svg>
     </div>
@@ -253,20 +267,39 @@
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
         <rect width="760" height="240" fill="#FFFFFF" stroke="#D7DCE3" stroke-width="1" rx="6"/>
-        <g class="bh-bldg-1">
-          <path d="M 70 140 L 200 205 L 200 220 L 70 175 Z" fill="#6B7280"/>
-          <path d="M 70 140 L 200 205 L 240 185 L 110 120 Z" fill="#9AA3AF"/>
-        </g>
-        <g class="bh-bldg-2">
-          <path d="M 290 95 L 430 165 L 430 220 L 290 165 Z" fill="#4B5563"/>
-          <path d="M 290 95 L 430 165 L 470 145 L 330 75 Z" fill="#6B7280"/>
-        </g>
-        <g class="bh-bldg-3">
-          <path d="M 530 55 L 680 130 L 680 220 L 530 145 Z" fill="#16C784"/>
-          <path d="M 530 55 L 680 130 L 720 110 L 570 35 Z" fill="#25D48A"/>
-        </g>
         <text x="24" y="30" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700" fill="#6B7280">04 / WHO USES THIS</text>
-        <text x="24" y="232" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Hedge funds, banks, and market makers use this globally.</text>
+
+        <g class="bh-network-link">
+          <path d="M 214 78 C 260 76 292 88 322 112" stroke="#9AA3AF" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+          <path d="M 214 162 C 260 164 292 148 322 128" stroke="#9AA3AF" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+          <path d="M 548 120 C 506 120 478 120 438 120" stroke="#9AA3AF" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+        </g>
+
+        <g class="bh-institution-node bh-institution-node-a">
+          <rect x="64" y="52" width="150" height="52" rx="6" fill="#F7F8FA" stroke="#D7DCE3"/>
+          <text x="82" y="75" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#0B0D10">HEDGE FUND</text>
+          <text x="82" y="92" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Spread capture</text>
+        </g>
+        <g class="bh-institution-node bh-institution-node-b">
+          <rect x="64" y="136" width="150" height="52" rx="6" fill="#F7F8FA" stroke="#D7DCE3"/>
+          <text x="82" y="159" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#0B0D10">BANK DESK</text>
+          <text x="82" y="176" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Risk neutral</text>
+        </g>
+        <g class="bh-institution-node bh-institution-node-c">
+          <rect x="548" y="94" width="150" height="52" rx="6" fill="#F7F8FA" stroke="#D7DCE3"/>
+          <text x="566" y="117" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#0B0D10">MARKET MAKER</text>
+          <text x="566" y="134" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Inventory hedge</text>
+        </g>
+
+        <g class="bh-hedge-engine">
+          <rect x="322" y="82" width="116" height="76" rx="8" fill="#0B0D10"/>
+          <path d="M 344 122 L 376 101 L 416 122 L 376 143 Z" fill="#10151B" stroke="#FFFFFF" stroke-width="1.5"/>
+          <path d="M 356 121 L 376 111 L 396 121 L 376 132 Z" fill="#16C784"/>
+          <text x="344" y="68" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#6B7280">SHARED ENGINE</text>
+          <text x="348" y="174" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#16C784">BASIS HEDGE</text>
+        </g>
+
+        <text x="24" y="232" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Institutional desks use the same risk-neutral structure from different angles.</text>
       </svg>
     </div>
 
