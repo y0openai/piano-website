@@ -377,6 +377,82 @@ p { color: var(--fg-3); line-height: 1.75; }
 
 
 /* ==============================
+   BASIS HEDGE ARTICLE GRAPHICS
+   ============================== */
+.bh-hero-graphic {
+  margin: 36px auto 8px;
+  max-width: 920px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #1E232B;
+  background: #080A0D;
+}
+.bh-hero-svg { width: 100%; display: block; }
+.bh-hero-caption {
+  margin: 0; padding: 14px 24px 18px;
+  background: #080A0D; color: #EDEDED;
+  font-size: 0.95rem; font-weight: 500; text-align: center;
+  border-top: 1px solid #1E232B;
+  font-family: 'Inter', sans-serif;
+}
+
+.bh-section-graphic { margin: 18px 0 24px; max-width: 480px; }
+.bh-section-graphic--wide { max-width: none; }
+.bh-section-svg { width: 100%; display: block; border-radius: 8px; overflow: visible; }
+
+@keyframes bh-flow-dash { to { stroke-dashoffset: -24; } }
+@keyframes bh-pulse-soft { 0%,100% { opacity: 0.78; } 50% { opacity: 1; } }
+@keyframes bh-pulse-strong { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes bh-bounce-up   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes bh-bounce-down { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@keyframes bh-clock-tick  { to { transform: rotate(360deg); } }
+@keyframes bh-bldg-rise   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes bh-bar-grow    { 0%,100% { transform: scaleY(0.92); } 50% { transform: scaleY(1.05); } }
+
+.bh-fee-flow, .bh-flow-line { animation: bh-flow-dash 1.5s linear infinite; }
+.bh-zero-label { animation: bh-pulse-soft 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-long-label { animation: bh-bounce-up 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-short-label { animation: bh-bounce-down 2.4s ease-in-out infinite 0.6s; transform-box: fill-box; transform-origin: center; }
+.bh-bars-green-front, .bh-bars-green-depth, .bh-bars-green-apex {
+  animation: bh-bar-grow 3.2s ease-in-out infinite;
+  transform-box: fill-box; transform-origin: bottom;
+}
+.bh-bars-red-front, .bh-bars-red-depth {
+  animation: bh-bar-grow 3.2s ease-in-out infinite 1.6s;
+  transform-box: fill-box; transform-origin: top;
+}
+
+.bh-col-long { animation: bh-bounce-up 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-col-short { animation: bh-bounce-down 2.6s ease-in-out infinite 1.3s; transform-box: fill-box; transform-origin: center; }
+.bh-pivot { animation: bh-pulse-soft 2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bh-clock-hands { animation: bh-clock-tick 8s linear infinite; transform-origin: 170px 125px; }
+.bh-profit-bar { animation: bh-pulse-soft 2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+
+.bh-bldg-1 { animation: bh-bldg-rise 3s ease-in-out infinite 0s; transform-box: fill-box; transform-origin: center; }
+.bh-bldg-2 { animation: bh-bldg-rise 3s ease-in-out infinite 0.3s; transform-box: fill-box; transform-origin: center; }
+.bh-bldg-3 { animation: bh-bldg-rise 3s ease-in-out infinite 0.6s; transform-box: fill-box; transform-origin: center; }
+
+.bh-alert-1, .bh-spike-1 { animation: bh-pulse-strong 1.4s ease-in-out infinite; }
+.bh-alert-2, .bh-spike-2 { animation: bh-pulse-strong 1.4s ease-in-out infinite 0.4s; }
+.bh-alert-3, .bh-spike-3 { animation: bh-pulse-strong 1.4s ease-in-out infinite 0.8s; }
+
+@media (max-width: 700px) {
+  .bh-section-graphic { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bh-fee-flow, .bh-flow-line, .bh-zero-label, .bh-long-label, .bh-short-label,
+  .bh-bars-green-front, .bh-bars-green-depth, .bh-bars-green-apex,
+  .bh-bars-red-front, .bh-bars-red-depth,
+  .bh-col-long, .bh-col-short, .bh-pivot, .bh-clock-hands, .bh-profit-bar,
+  .bh-bldg-1, .bh-bldg-2, .bh-bldg-3,
+  .bh-alert-1, .bh-alert-2, .bh-alert-3, .bh-spike-1, .bh-spike-2, .bh-spike-3 {
+    animation: none !important;
+  }
+}
+
+
+/* ==============================
    FEATURES 3-col
    ============================== */
 .features-intro { text-align: center; margin-bottom: 64px; }
