@@ -362,7 +362,7 @@ p { color: var(--fg-3); line-height: 1.75; }
   display: flex;
   width: max-content;
   padding: 12px 0;
-  animation: market-marquee 34s linear infinite;
+  animation: market-marquee 86s linear infinite;
   will-change: transform;
 }
 .market-marquee__viewport:hover .market-marquee__track {
@@ -487,6 +487,20 @@ p { color: var(--fg-3); line-height: 1.75; }
   border-radius: 4px;
   background: linear-gradient(135deg, #F3F7FA 0 30%, #AEB8C2 30% 70%, #6F7A84 70%);
 }
+.market-icon--platinum::before {
+  left: 7px; top: 8px;
+  width: 20px; height: 16px;
+  background: linear-gradient(135deg, #F7FBFF 0 26%, #B9CADB 26% 62%, #7D8EA0 62%);
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,0.12);
+}
+.market-icon--palladium::before {
+  left: 8px; top: 7px;
+  width: 18px; height: 18px;
+  border-radius: 3px;
+  background:
+    linear-gradient(90deg, transparent 42%, rgba(255,255,255,0.55) 42% 58%, transparent 58%),
+    linear-gradient(135deg, #D7E6F3 0 34%, #9EB5C7 34% 70%, #607486 70%);
+}
 .market-icon--oil::before {
   left: 10px; top: 7px;
   width: 14px; height: 20px;
@@ -495,6 +509,65 @@ p { color: var(--fg-3); line-height: 1.75; }
   background:
     linear-gradient(#FFCF5A 0 0) 0 5px / 100% 3px no-repeat,
     #1B1B1B;
+}
+.market-icon--region {
+  background:
+    linear-gradient(#57D5FF 0 0) 6px 8px / 22px 4px no-repeat,
+    linear-gradient(#16C784 0 0) 8px 15px / 18px 4px no-repeat,
+    linear-gradient(#FF6F8B 0 0) 11px 22px / 12px 4px no-repeat,
+    var(--bg);
+}
+.market-icon--region::before {
+  left: 5px; top: 6px;
+  width: 24px; height: 22px;
+  border: 2px solid var(--bd-8);
+}
+.market-icon--crypto::before {
+  left: 8px; top: 8px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background:
+    linear-gradient(#0C0C0C 0 0) 7px 4px / 4px 10px no-repeat,
+    linear-gradient(#0C0C0C 0 0) 5px 7px / 8px 3px no-repeat,
+    linear-gradient(#0C0C0C 0 0) 5px 12px / 8px 3px no-repeat,
+    #FFCF5A;
+}
+.market-icon--device::before {
+  left: 10px; top: 5px;
+  width: 14px; height: 24px;
+  border: 3px solid #57D5FF;
+  border-radius: 4px;
+}
+.market-icon--device::after {
+  left: 15px; bottom: 7px;
+  width: 4px; height: 2px;
+  background: #16C784;
+}
+.market-icon--cloud::before {
+  left: 6px; top: 14px;
+  width: 22px; height: 10px;
+  background: #57D5FF;
+  border-radius: 4px;
+}
+.market-icon--cloud::after {
+  left: 10px; top: 8px;
+  width: 10px; height: 10px;
+  background: #16C784;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 7px 3px 0 #57D5FF;
+}
+.market-icon--commerce::before {
+  left: 8px; top: 9px;
+  width: 18px; height: 16px;
+  background:
+    linear-gradient(#FFCF5A 0 0) 0 0 / 100% 4px no-repeat,
+    #D6A742;
+}
+.market-icon--commerce::after {
+  left: 10px; top: 16px;
+  width: 14px; height: 3px;
+  background: #0C0C0C;
+  transform: rotate(-10deg);
 }
 @keyframes market-marquee {
   to { transform: translateX(-50%); }
