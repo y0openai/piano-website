@@ -528,7 +528,7 @@ p { color: var(--fg-3); line-height: 1.75; }
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 .portfolio-card {
@@ -721,6 +721,9 @@ p { color: var(--fg-3); line-height: 1.75; }
   .nav__hamburger { display: block; }
   .theme-toggle { display: none; }
   .lang-toggle { display: none; }
+}
+@media (max-width: 1120px) and (min-width: 861px) {
+  .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .security-grid { grid-template-columns: 1fr; }

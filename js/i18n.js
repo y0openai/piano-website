@@ -30,7 +30,7 @@
       'nav.openMenu': 'Open menu',
       'nav.logoAria': 'PIANO home',
 
-      'footer.tagline': 'Automated Hedge Balancing for Crypto',
+      'footer.tagline': 'RWA Strategy Automation & Basis Hedge',
       'footer.contact.prefix': 'Get in Touch → ',
       'footer.contact.link': 'Telegram',
       'footer.nav.learn': 'Learn',
@@ -66,6 +66,9 @@
       'index.portfolio.c3.kicker': '03 / Long & Short',
       'index.portfolio.c3.h3': 'Designed for both directions',
       'index.portfolio.c3.p': 'Futures can express both long and short exposure, so approved strategies may be designed for rising or falling markets. Short exposure can also create large losses and requires strict limits.',
+      'index.portfolio.c4.kicker': '04 / Basis Hedge',
+      'index.portfolio.c4.h3': 'Basis hedge as a core edge',
+      'index.portfolio.c4.p': "Basis hedge remains one of Piano's representative strategy structures: monitoring spot-futures or related market spreads, correcting drift, and executing only within user-approved conditions.",
 
       'index.features.label': 'Core Features',
       'index.features.h2': 'Three mechanisms for<br>approved automation',
@@ -401,7 +404,7 @@
       'nav.openMenu': '메뉴 열기',
       'nav.logoAria': 'PIANO 홈',
 
-      'footer.tagline': '암호화폐 헷지 자동 밸런싱',
+      'footer.tagline': 'RWA 전략 자동화 & 베이시스 헷지',
       'footer.contact.prefix': '문의 → ',
       'footer.contact.link': '텔레그램',
       'footer.nav.learn': '알아보기',
@@ -437,6 +440,9 @@
       'index.portfolio.c3.kicker': '03 / 롱 & 숏',
       'index.portfolio.c3.h3': '상승과 하락 양방향 설계',
       'index.portfolio.c3.p': '선물은 롱과 숏 익스포저를 모두 표현할 수 있어, 승인된 전략은 상승장과 하락장 모두를 전제로 설계될 수 있습니다. 숏 익스포저 역시 큰 손실을 만들 수 있으므로 엄격한 한도가 필요합니다.',
+      'index.portfolio.c4.kicker': '04 / 베이시스 헷지',
+      'index.portfolio.c4.h3': '핵심 엣지로 유지되는 베이시스 헷지',
+      'index.portfolio.c4.p': '베이시스 헷지는 Piano의 대표 전략 구조 중 하나로 유지됩니다. 현물·선물 또는 관련 시장의 스프레드를 모니터링하고, 비율 이탈을 보정하며, 사용자가 승인한 조건 안에서만 실행합니다.',
 
       'index.features.label': '핵심 기능',
       'index.features.h2': '승인된 자동화를 위한<br>세 가지 메커니즘',
