@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="ewy.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIANO — EWY Perpetual Futures Basis Hedge Balancing</title>
-  <meta name="description" content="Piano's hedge position balancing feature now extends to Binance EWY perpetual futures.">
+  <meta name="description" data-i18n-attr="content:ewy.metaDesc" content="Piano's hedge position balancing feature now extends to Binance EWY perpetual futures.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="PIANO home">
+    <a href="/" class="nav__logo" aria-label="PIANO home" data-i18n-attr="aria-label:nav.logoAria">
       <svg class="piano-lockup piano-lockup--nav" viewBox="0 0 160 160" role="img" aria-hidden="true">
         <path class="piano-lockup__shell" d="M30 140v-116h58c30 0 48 19 48 48 0 29-18 48-48 48h-32"/>
         <path class="piano-lockup__rise" d="M54 104v-44h8v44z m32 0v-44h8v44z m32 0v-44h8v44z"/>
@@ -32,48 +32,52 @@
       </svg>
     </a>
     <div class="nav__links">
-      <a href="#what-is-ewy">What is EWY</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#risks">Risks</a>
+      <a href="#what-is-ewy" data-i18n="nav.whatIsEwy">What is EWY</a>
+      <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="#risks" data-i18n="nav.risks">Risks</a>
     </div>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Contact Us →</a>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta" data-i18n="nav.contactUs">Contact Us →</a>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.langGroup">
+      <button class="lang-toggle__btn" data-lang="en" type="button">EN</button>
+      <button class="lang-toggle__btn" data-lang="ko" type="button">KO</button>
+    </div>
     <div class="theme-toggle" id="themeToggle" role="group" aria-label="Color theme">
-      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)">
+      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)" data-i18n-attr="title:nav.themeAuto">
         <svg viewBox="0 0 14 14" width="13" height="13"><rect x="1" y="1.5" width="12" height="7.5" rx="1.2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7 9v2M4.5 11.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="light" title="Light">
+      <button class="theme-toggle__btn" data-mode="light" title="Light" data-i18n-attr="title:nav.themeLight">
         <svg viewBox="0 0 14 14" width="13" height="13"><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M3 3l1 1M10 10l1 1M10 4l-1 1M4 10l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="dark" title="Dark">
+      <button class="theme-toggle__btn" data-mode="dark" title="Dark" data-i18n-attr="title:nav.themeDark">
         <svg viewBox="0 0 14 14" width="13" height="13"><path d="M9.5 2.5A5 5 0 1 0 11.5 7 3.5 3.5 0 0 1 9.5 2.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
       </button>
     </div>
-    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.openMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="nav-drawer" id="navDrawer">
-  <a href="/" onclick="closeDrawer()">← Home</a>
-  <a href="#what-is-ewy" onclick="closeDrawer()">What is EWY</a>
-  <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
-  <a href="#risks" onclick="closeDrawer()">Risks</a>
-  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Contact Us →</a>
+  <a href="/" onclick="closeDrawer()" data-i18n="nav.home">← Home</a>
+  <a href="#what-is-ewy" onclick="closeDrawer()" data-i18n="nav.whatIsEwy">What is EWY</a>
+  <a href="#how-it-works" onclick="closeDrawer()" data-i18n="nav.howItWorks">How It Works</a>
+  <a href="#risks" onclick="closeDrawer()" data-i18n="nav.risks">Risks</a>
+  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="nav.contactUs">Contact Us →</a>
 </div>
 
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="container">
-    <a href="/" class="page-hero__back">← Back to Home</a>
-    <span class="label">New — EWY Perpetual Futures</span>
-    <h1>Basis Hedge Balancing<br>for EWY Futures</h1>
-    <p>Piano's hedge position balancing feature now extends to Binance EWY perpetual futures. Positions are automatically rebalanced based on your configured conditions — using the same principles as crypto.</p>
+    <a href="/" class="page-hero__back" data-i18n="back.home">← Back to Home</a>
+    <span class="label" data-i18n="ewy.hero.label">New — EWY Perpetual Futures</span>
+    <h1 data-i18n-html="ewy.hero.h1">Basis Hedge Balancing<br>for EWY Futures</h1>
+    <p data-i18n="ewy.hero.sub">Piano's hedge position balancing feature now extends to Binance EWY perpetual futures. Positions are automatically rebalanced based on your configured conditions — using the same principles as crypto.</p>
     <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
-      <a href="#what-is-ewy" class="btn-primary">Learn More ↓</a>
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline">Contact Us</a>
+      <a href="#what-is-ewy" class="btn-primary" data-i18n="ewy.hero.ctaPrimary">Learn More ↓</a>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline" data-i18n="ewy.hero.ctaSecondary">Contact Us</a>
     </div>
-    <p style="margin-top:16px;font-size:0.78rem;color:#333;">Piano automates risk management. It does not provide investment advice or guarantee returns.</p>
+    <p style="margin-top:16px;font-size:0.78rem;color:#333;" data-i18n="ewy.hero.note">Piano automates risk management. It does not provide investment advice or guarantee returns.</p>
   </div>
 </div>
 
@@ -82,118 +86,118 @@
 
   <!-- WHAT IS EWY -->
   <div class="article-section" id="what-is-ewy">
-    <span class="label">What Is EWY</span>
-    <h2>iShares MSCI South Korea ETF</h2>
-    <p>EWY is the flagship South Korean equity ETF managed by BlackRock. It tracks the MSCI Korea 25/50 Index and consists of approximately 83 leading Korean stocks.</p>
+    <span class="label" data-i18n="ewy.what.label">What Is EWY</span>
+    <h2 data-i18n="ewy.what.h2">iShares MSCI South Korea ETF</h2>
+    <p data-i18n="ewy.what.p">EWY is the flagship South Korean equity ETF managed by BlackRock. It tracks the MSCI Korea 25/50 Index and consists of approximately 83 leading Korean stocks.</p>
 
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-card__label">Asset Manager</div>
-        <h3>BlackRock</h3>
-        <p>World's largest asset manager</p>
+        <div class="stat-card__label" data-i18n="ewy.what.s1.label">Asset Manager</div>
+        <h3 data-i18n="ewy.what.s1.h3">BlackRock</h3>
+        <p data-i18n="ewy.what.s1.p">World's largest asset manager</p>
       </div>
       <div class="stat-card">
-        <div class="stat-card__label">Benchmark Index</div>
-        <h3>MSCI Korea</h3>
-        <p>25/50 Index</p>
+        <div class="stat-card__label" data-i18n="ewy.what.s2.label">Benchmark Index</div>
+        <h3 data-i18n="ewy.what.s2.h3">MSCI Korea</h3>
+        <p data-i18n="ewy.what.s2.p">25/50 Index</p>
       </div>
       <div class="stat-card">
-        <div class="stat-card__label">Holdings</div>
-        <h3>Approx. 83</h3>
-        <p>Leading Korean companies</p>
+        <div class="stat-card__label" data-i18n="ewy.what.s3.label">Holdings</div>
+        <h3 data-i18n="ewy.what.s3.h3">Approx. 83</h3>
+        <p data-i18n="ewy.what.s3.p">Leading Korean companies</p>
       </div>
       <div class="stat-card">
-        <div class="stat-card__label">Listed Exchange</div>
-        <h3>NYSE Arca</h3>
-        <p>U.S. stock exchange</p>
+        <div class="stat-card__label" data-i18n="ewy.what.s4.label">Listed Exchange</div>
+        <h3 data-i18n="ewy.what.s4.h3">NYSE Arca</h3>
+        <p data-i18n="ewy.what.s4.p">U.S. stock exchange</p>
       </div>
     </div>
 
-    <h3 style="margin-bottom:14px;font-size:0.85rem;color:#555;letter-spacing:0.06em;text-transform:uppercase;">Top Holdings</h3>
+    <h3 style="margin-bottom:14px;font-size:0.85rem;color:#555;letter-spacing:0.06em;text-transform:uppercase;" data-i18n="ewy.what.holdings.title">Top Holdings</h3>
     <div class="holdings-list">
       <div class="holdings-row">
-        <span class="holdings-row__name">Samsung Electronics</span>
-        <span class="holdings-row__weight">Approx. 22%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r1.name">Samsung Electronics</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r1.w">Approx. 22%</span>
       </div>
       <div class="holdings-row">
-        <span class="holdings-row__name">SK Hynix</span>
-        <span class="holdings-row__weight">Approx. 10%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r2.name">SK Hynix</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r2.w">Approx. 10%</span>
       </div>
       <div class="holdings-row">
-        <span class="holdings-row__name">Hyundai Motor</span>
-        <span class="holdings-row__weight">Approx. 4%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r3.name">Hyundai Motor</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r3.w">Approx. 4%</span>
       </div>
       <div class="holdings-row">
-        <span class="holdings-row__name">KB Financial</span>
-        <span class="holdings-row__weight">Approx. 3%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r4.name">KB Financial</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r4.w">Approx. 3%</span>
       </div>
       <div class="holdings-row">
-        <span class="holdings-row__name">POSCO Holdings</span>
-        <span class="holdings-row__weight">Approx. 3%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r5.name">POSCO Holdings</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r5.w">Approx. 3%</span>
       </div>
       <div class="holdings-row">
-        <span class="holdings-row__name">Remaining approx. 78 stocks</span>
-        <span class="holdings-row__weight">Approx. 58%</span>
+        <span class="holdings-row__name" data-i18n="ewy.what.h.r6.name">Remaining approx. 78 stocks</span>
+        <span class="holdings-row__weight" data-i18n="ewy.what.h.r6.w">Approx. 58%</span>
       </div>
     </div>
-    <p style="font-size:0.78rem;color:#333;margin-top:8px;">Weightings may change due to MSCI rebalancing. Figures above are for reference only and are not real-time data.</p>
+    <p style="font-size:0.78rem;color:#333;margin-top:8px;" data-i18n="ewy.what.h.note">Weightings may change due to MSCI rebalancing. Figures above are for reference only and are not real-time data.</p>
 
     <div class="callout" style="margin-top:24px;">
       <span class="callout__icon">📋</span>
-      <p>Binance offers perpetual futures (EWYUSDT Perpetual) based on the EWY ETF. Settlement is in USDT, with Funding Rate settlement every 8 hours.</p>
+      <p data-i18n="ewy.what.callout">Binance offers perpetual futures (EWYUSDT Perpetual) based on the EWY ETF. Settlement is in USDT, with Funding Rate settlement every 8 hours.</p>
     </div>
   </div>
 
 
   <!-- HOW IT WORKS -->
   <div class="article-section" id="how-it-works">
-    <span class="label">How It Works</span>
-    <h2>The Same Basis Hedge Balancing Method</h2>
-    <p>The same hedge balancing principles used for crypto are applied to EWY perpetual futures.</p>
+    <span class="label" data-i18n="ewy.hiw.label">How It Works</span>
+    <h2 data-i18n="ewy.hiw.h2">The Same Basis Hedge Balancing Method</h2>
+    <p data-i18n="ewy.hiw.p">The same hedge balancing principles used for crypto are applied to EWY perpetual futures.</p>
 
     <div class="scenario-grid" style="margin-bottom:32px;">
       <div class="scenario-card">
-        <div class="scenario-card__num">Basic Structure</div>
-        <h3>Spot + Opposite Futures</h3>
-        <div class="scenario-card__math">Offsets directional risk</div>
+        <div class="scenario-card__num" data-i18n="ewy.hiw.c1.num">Basic Structure</div>
+        <h3 data-i18n="ewy.hiw.c1.h3">Spot + Opposite Futures</h3>
+        <div class="scenario-card__math" data-i18n="ewy.hiw.c1.math">Offsets directional risk</div>
       </div>
       <div class="scenario-card">
-        <div class="scenario-card__num">Core Function</div>
-        <h3>Ratio Maintenance</h3>
-        <div class="scenario-card__math">Manages Funding Fee settlement</div>
+        <div class="scenario-card__num" data-i18n="ewy.hiw.c2.num">Core Function</div>
+        <h3 data-i18n="ewy.hiw.c2.h3">Ratio Maintenance</h3>
+        <div class="scenario-card__math" data-i18n="ewy.hiw.c2.math">Manages Funding Fee settlement</div>
       </div>
       <div class="scenario-card">
-        <div class="scenario-card__num">Key Feature</div>
-        <h3>Imbalance → Correction</h3>
-        <div class="scenario-card__math">Automatically restores balance</div>
+        <div class="scenario-card__num" data-i18n="ewy.hiw.c3.num">Key Feature</div>
+        <h3 data-i18n="ewy.hiw.c3.h3">Imbalance → Correction</h3>
+        <div class="scenario-card__math" data-i18n="ewy.hiw.c3.math">Automatically restores balance</div>
       </div>
     </div>
 
-    <p style="margin-bottom:16px;">It only executes within your configured parameter ranges. You can change parameters or stop execution at any time.</p>
+    <p style="margin-bottom:16px;" data-i18n="ewy.hiw.note">It only executes within your configured parameter ranges. You can change parameters or stop execution at any time.</p>
 
     <table class="data-table">
       <thead>
         <tr>
-          <th>Feature</th>
-          <th>Description</th>
+          <th data-i18n="ewy.hiw.th1">Feature</th>
+          <th data-i18n="ewy.hiw.th2">Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Imbalance Detection</td>
-          <td>Monitors spot-futures ratio deviations in real time</td>
+          <td data-i18n="ewy.hiw.r1.k">Imbalance Detection</td>
+          <td data-i18n="ewy.hiw.r1.v">Monitors spot-futures ratio deviations in real time</td>
         </tr>
         <tr>
-          <td>Auto Correction</td>
-          <td>Adjusts position ratios based on your configured conditions</td>
+          <td data-i18n="ewy.hiw.r2.k">Auto Correction</td>
+          <td data-i18n="ewy.hiw.r2.v">Adjusts position ratios based on your configured conditions</td>
         </tr>
         <tr>
-          <td>Balance Restoration</td>
-          <td>Automatically restores 1:1 balance and achieves better entry prices</td>
+          <td data-i18n="ewy.hiw.r3.k">Balance Restoration</td>
+          <td data-i18n="ewy.hiw.r3.v">Automatically restores 1:1 balance and achieves better entry prices</td>
         </tr>
         <tr>
-          <td>Funding Rate Management</td>
-          <td>Manages positions by reflecting settlement every 8 hours</td>
+          <td data-i18n="ewy.hiw.r4.k">Funding Rate Management</td>
+          <td data-i18n="ewy.hiw.r4.v">Manages positions by reflecting settlement every 8 hours</td>
         </tr>
       </tbody>
     </table>
@@ -202,91 +206,91 @@
 
   <!-- TRADING HOURS -->
   <div class="article-section">
-    <span class="label">Trading Hours</span>
-    <h2>Trading Hours</h2>
-    <p>Trading hours for EWY perpetual futures differ from those of the underlying EWY ETF.</p>
+    <span class="label" data-i18n="ewy.hours.label">Trading Hours</span>
+    <h2 data-i18n="ewy.hours.h2">Trading Hours</h2>
+    <p data-i18n="ewy.hours.p">Trading hours for EWY perpetual futures differ from those of the underlying EWY ETF.</p>
 
     <table class="data-table">
       <thead>
         <tr>
-          <th>Market</th>
-          <th>Trading Hours (KST)</th>
-          <th>Note</th>
+          <th data-i18n="ewy.hours.th1">Market</th>
+          <th data-i18n="ewy.hours.th2">Trading Hours (KST)</th>
+          <th data-i18n="ewy.hours.th3">Note</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Korea Stock Exchange (KRX)</td>
-          <td>09:00 – 15:30</td>
-          <td>Closed on Korean holidays</td>
+          <td data-i18n="ewy.hours.r1.k">Korea Stock Exchange (KRX)</td>
+          <td data-i18n="ewy.hours.r1.v">09:00 – 15:30</td>
+          <td data-i18n="ewy.hours.r1.n">Closed on Korean holidays</td>
         </tr>
         <tr>
-          <td>EWY ETF (NYSE Arca)</td>
-          <td>23:30 – 06:00 (next day)</td>
-          <td>Based on U.S. market hours</td>
+          <td data-i18n="ewy.hours.r2.k">EWY ETF (NYSE Arca)</td>
+          <td data-i18n="ewy.hours.r2.v">23:30 – 06:00 (next day)</td>
+          <td data-i18n="ewy.hours.r2.n">Based on U.S. market hours</td>
         </tr>
         <tr>
-          <td>EWYUSDT Perpetual Futures</td>
-          <td>24 hours</td>
-          <td>Year-round</td>
+          <td data-i18n="ewy.hours.r3.k">EWYUSDT Perpetual Futures</td>
+          <td data-i18n="ewy.hours.r3.v">24 hours</td>
+          <td data-i18n="ewy.hours.r3.n">Year-round</td>
         </tr>
       </tbody>
     </table>
 
     <div class="callout callout--warn">
       <span class="callout__icon">⚠️</span>
-      <p>Perpetual futures trade 24 hours a day. However, during hours when the underlying EWY ETF market is closed, <strong>liquidity may decrease, spreads may widen, and price discrepancies may occur.</strong> This is an additional risk factor.</p>
+      <p data-i18n-html="ewy.hours.callout">Perpetual futures trade 24 hours a day. However, during hours when the underlying EWY ETF market is closed, <strong>liquidity may decrease, spreads may widen, and price discrepancies may occur.</strong> This is an additional risk factor.</p>
     </div>
   </div>
 
 
   <!-- RISKS -->
   <div class="article-section" id="risks">
-    <span class="label">Risk Factors</span>
-    <h2>Risks Specific to EWY Perpetual Futures</h2>
-    <p>EWY perpetual futures carry unique risks that differ from standard crypto perpetual futures. Please make sure you understand the following before getting started.</p>
+    <span class="label" data-i18n="ewy.risk.label">Risk Factors</span>
+    <h2 data-i18n="ewy.risk.h2">Risks Specific to EWY Perpetual Futures</h2>
+    <p data-i18n="ewy.risk.p">EWY perpetual futures carry unique risks that differ from standard crypto perpetual futures. Please make sure you understand the following before getting started.</p>
 
     <div class="risk-list">
       <div class="risk-item">
-        <h3>1. Leverage Risk</h3>
+        <h3 data-i18n="ewy.risk.r1.h3">1. Leverage Risk</h3>
         <ul>
-          <li>Using leverage may result in losses exceeding your principal</li>
-          <li>If the market moves sharply against your position, forced liquidation may result in total loss</li>
-          <li>Higher leverage multipliers dramatically increase liquidation risk</li>
-          <li>Piano does not advise on leverage selection — this is entirely your responsibility</li>
+          <li data-i18n="ewy.risk.r1.l1">Using leverage may result in losses exceeding your principal</li>
+          <li data-i18n="ewy.risk.r1.l2">If the market moves sharply against your position, forced liquidation may result in total loss</li>
+          <li data-i18n="ewy.risk.r1.l3">Higher leverage multipliers dramatically increase liquidation risk</li>
+          <li data-i18n="ewy.risk.r1.l4">Piano does not advise on leverage selection — this is entirely your responsibility</li>
         </ul>
       </div>
       <div class="risk-item">
-        <h3>2. Off-Hours Liquidity Risk</h3>
+        <h3 data-i18n="ewy.risk.r2.h3">2. Off-Hours Liquidity Risk</h3>
         <ul>
-          <li>During Korean daytime hours, the underlying asset market is closed</li>
-          <li>Liquidity may drop significantly, and bid-ask spreads may widen considerably</li>
-          <li>Discrepancies may arise between futures prices and the underlying asset value</li>
-          <li>Slippage may increase significantly</li>
+          <li data-i18n="ewy.risk.r2.l1">During Korean daytime hours, the underlying asset market is closed</li>
+          <li data-i18n="ewy.risk.r2.l2">Liquidity may drop significantly, and bid-ask spreads may widen considerably</li>
+          <li data-i18n="ewy.risk.r2.l3">Discrepancies may arise between futures prices and the underlying asset value</li>
+          <li data-i18n="ewy.risk.r2.l4">Slippage may increase significantly</li>
         </ul>
       </div>
       <div class="risk-item">
-        <h3>3. Funding Rate Risk</h3>
+        <h3 data-i18n="ewy.risk.r3.h3">3. Funding Rate Risk</h3>
         <ul>
-          <li>Funding Rate is settled every 8 hours and may fluctuate between positive and negative</li>
-          <li>Depending on position direction, you may be required to pay Funding Fee continuously</li>
-          <li>Sudden changes in Funding Rate may result in unexpected costs</li>
+          <li data-i18n="ewy.risk.r3.l1">Funding Rate is settled every 8 hours and may fluctuate between positive and negative</li>
+          <li data-i18n="ewy.risk.r3.l2">Depending on position direction, you may be required to pay Funding Fee continuously</li>
+          <li data-i18n="ewy.risk.r3.l3">Sudden changes in Funding Rate may result in unexpected costs</li>
         </ul>
       </div>
       <div class="risk-item">
-        <h3>4. Price Divergence Risk</h3>
+        <h3 data-i18n="ewy.risk.r4.h3">4. Price Divergence Risk</h3>
         <ul>
-          <li>Perpetual futures prices do not always match the underlying EWY ETF price</li>
-          <li>Significant divergence may occur when the underlying market is closed</li>
-          <li>Global events may cause unexpected price movements</li>
+          <li data-i18n="ewy.risk.r4.l1">Perpetual futures prices do not always match the underlying EWY ETF price</li>
+          <li data-i18n="ewy.risk.r4.l2">Significant divergence may occur when the underlying market is closed</li>
+          <li data-i18n="ewy.risk.r4.l3">Global events may cause unexpected price movements</li>
         </ul>
       </div>
       <div class="risk-item">
-        <h3>5. Exchange Risk</h3>
+        <h3 data-i18n="ewy.risk.r5.h3">5. Exchange Risk</h3>
         <ul>
-          <li>EWY perpetual futures are traded exclusively on Binance</li>
-          <li>Trading may be suspended due to exchange system failures or policy changes</li>
-          <li>The contract may be terminated if the exchange decides to delist it</li>
+          <li data-i18n="ewy.risk.r5.l1">EWY perpetual futures are traded exclusively on Binance</li>
+          <li data-i18n="ewy.risk.r5.l2">Trading may be suspended due to exchange system failures or policy changes</li>
+          <li data-i18n="ewy.risk.r5.l3">The contract may be terminated if the exchange decides to delist it</li>
         </ul>
       </div>
     </div>
@@ -295,53 +299,53 @@
 
   <!-- SERVICE BOUNDARY -->
   <div class="article-section">
-    <span class="label">Service Boundary</span>
-    <h2>Service Boundaries</h2>
+    <span class="label" data-i18n="ewy.boundary.label">Service Boundary</span>
+    <h2 data-i18n="ewy.boundary.h2">Service Boundaries</h2>
 
     <div class="security-compare">
       <div class="security-col security-col--do">
-        <h3>What Piano Does</h3>
+        <h3 data-i18n="ewy.boundary.do.h3">What Piano Does</h3>
         <ul>
-          <li>Maintains position balance based on your configured conditions</li>
-          <li>Automatically corrects spot-futures ratio imbalances</li>
-          <li>Manages Funding Rate settlement</li>
-          <li>Monitors position status 24/7</li>
-          <li>Executes according to your configured parameters only</li>
+          <li data-i18n="ewy.boundary.do.l1">Maintains position balance based on your configured conditions</li>
+          <li data-i18n="ewy.boundary.do.l2">Automatically corrects spot-futures ratio imbalances</li>
+          <li data-i18n="ewy.boundary.do.l3">Manages Funding Rate settlement</li>
+          <li data-i18n="ewy.boundary.do.l4">Monitors position status 24/7</li>
+          <li data-i18n="ewy.boundary.do.l5">Executes according to your configured parameters only</li>
         </ul>
       </div>
       <div class="security-col">
-        <h3>What Piano Does Not Do</h3>
+        <h3 data-i18n="ewy.boundary.dont.h3">What Piano Does Not Do</h3>
         <ul>
-          <li>Does not recommend investment decisions or trade timing</li>
-          <li>Does not guarantee returns or promise performance</li>
-          <li>Does not advise on leverage multipliers</li>
-          <li>Does not arbitrarily dispose of your assets</li>
-          <li>Does not provide market forecasts or investment strategies</li>
+          <li data-i18n="ewy.boundary.dont.l1">Does not recommend investment decisions or trade timing</li>
+          <li data-i18n="ewy.boundary.dont.l2">Does not guarantee returns or promise performance</li>
+          <li data-i18n="ewy.boundary.dont.l3">Does not advise on leverage multipliers</li>
+          <li data-i18n="ewy.boundary.dont.l4">Does not arbitrarily dispose of your assets</li>
+          <li data-i18n="ewy.boundary.dont.l5">Does not provide market forecasts or investment strategies</li>
         </ul>
       </div>
     </div>
 
     <div class="callout" style="margin-top:16px;">
       <span class="callout__icon">📋</span>
-      <p>Piano is a <strong>tool that automates risk management</strong>. It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
+      <p data-i18n-html="ewy.boundary.callout">Piano is a <strong>tool that automates risk management</strong>. It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
     </div>
   </div>
 
 
   <!-- RISK DISCLOSURE -->
   <div class="article-section">
-    <span class="label">Risk Disclosure</span>
-    <h2>Full Risk Disclosure</h2>
+    <span class="label" data-i18n="ewy.full.label">Risk Disclosure</span>
+    <h2 data-i18n="ewy.full.h2">Full Risk Disclosure</h2>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <p><strong style="color:#EDEDED">1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
-      <p><strong style="color:#EDEDED">2. Piano does not solicit investment.</strong> — It does not recommend or encourage the purchase or sale of any specific asset.</p>
-      <p><strong style="color:#EDEDED">3. Piano does not make investment decisions on your behalf.</strong> — All trades are executed according to user-configured conditions.</p>
-      <p><strong style="color:#EDEDED">4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
-      <p><strong style="color:#EDEDED">5. Risk of Principal Loss</strong> — Trading EWY perpetual futures is a leveraged derivative transaction that may result in total loss of principal.</p>
-      <p><strong style="color:#EDEDED">6. Leverage Risk</strong> — The decision to use leverage and the chosen multiplier are entirely the user's own judgment and responsibility.</p>
-      <p><strong style="color:#EDEDED">7. Liquidity and Market Risk</strong> — During hours when the underlying asset market is closed, risks such as insufficient liquidity and price divergence may occur.</p>
-      <p><strong style="color:#EDEDED">8. Software Risk</strong> — The service may not function properly due to bugs, network outages, API errors, or changes to exchange systems.</p>
-      <p><strong style="color:#EDEDED">9. Personal Responsibility</strong> — All trading decisions and resulting profits or losses are entirely the user's own judgment and responsibility.</p>
+      <p data-i18n-html="ewy.full.p1"><strong style="color:#EDEDED">1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
+      <p data-i18n-html="ewy.full.p2"><strong style="color:#EDEDED">2. Piano does not solicit investment.</strong> — It does not recommend or encourage the purchase or sale of any specific asset.</p>
+      <p data-i18n-html="ewy.full.p3"><strong style="color:#EDEDED">3. Piano does not make investment decisions on your behalf.</strong> — All trades are executed according to user-configured conditions.</p>
+      <p data-i18n-html="ewy.full.p4"><strong style="color:#EDEDED">4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
+      <p data-i18n-html="ewy.full.p5"><strong style="color:#EDEDED">5. Risk of Principal Loss</strong> — Trading EWY perpetual futures is a leveraged derivative transaction that may result in total loss of principal.</p>
+      <p data-i18n-html="ewy.full.p6"><strong style="color:#EDEDED">6. Leverage Risk</strong> — The decision to use leverage and the chosen multiplier are entirely the user's own judgment and responsibility.</p>
+      <p data-i18n-html="ewy.full.p7"><strong style="color:#EDEDED">7. Liquidity and Market Risk</strong> — During hours when the underlying asset market is closed, risks such as insufficient liquidity and price divergence may occur.</p>
+      <p data-i18n-html="ewy.full.p8"><strong style="color:#EDEDED">8. Software Risk</strong> — The service may not function properly due to bugs, network outages, API errors, or changes to exchange systems.</p>
+      <p data-i18n-html="ewy.full.p9"><strong style="color:#EDEDED">9. Personal Responsibility</strong> — All trading decisions and resulting profits or losses are entirely the user's own judgment and responsibility.</p>
     </div>
   </div>
 
@@ -351,9 +355,9 @@
 <!-- CTA -->
 <div class="cta-block">
   <div class="container">
-    <h2>Questions about EWY futures?</h2>
-    <p>Reach out to us on Telegram. Please review the risk disclosures above before getting started.</p>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Contact Us →</a>
+    <h2 data-i18n="ewy.cta.h2">Questions about EWY futures?</h2>
+    <p data-i18n="ewy.cta.sub">Reach out to us on Telegram. Please review the risk disclosures above before getting started.</p>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="ewy.cta.btn">Contact Us →</a>
   </div>
 </div>
 
@@ -374,25 +378,26 @@
             <text x="184" y="99" class="piano-lockup__word">PIANO</text>
           </svg>
         </span>
-        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
-        <p class="footer__contact">Get in Touch → <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Automated Hedge Balancing for Crypto</p>
+        <p class="footer__contact"><span data-i18n="footer.contact.prefix">Get in Touch → </span><a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.contact.link">Telegram</a></p>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Learn</p>
-        <a href="/">Home</a>
-        <a href="basis-hedge.html">What is Basis Hedge?</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.learn">Learn</p>
+        <a href="/" data-i18n="footer.link.home">Home</a>
+        <a href="basis-hedge.html" data-i18n="footer.link.basis">What is Basis Hedge?</a>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Connect</p>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram Support</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.connect">Connect</p>
+        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.link.telegram">Telegram Support</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span class="footer__copy">© 2025 PIANO. All rights reserved.</span>
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 PIANO. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script>
   const hamburger = document.getElementById('hamburger');
   const drawer = document.getElementById('navDrawer');

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="bh.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Is a Basis Hedge? — PIANO</title>
-  <meta name="description" content="Learn how Basis Hedge works, step by step with everyday analogies. Understand the risk management strategy used by the world's largest financial institutions.">
+  <meta name="description" data-i18n-attr="content:bh.metaDesc" content="Learn how Basis Hedge works, step by step with everyday analogies. Understand the risk management strategy used by the world's largest financial institutions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="PIANO home">
+    <a href="/" class="nav__logo" aria-label="PIANO home" data-i18n-attr="aria-label:nav.logoAria">
       <svg class="piano-lockup piano-lockup--nav" viewBox="0 0 160 160" role="img" aria-hidden="true">
         <path class="piano-lockup__shell" d="M30 140v-116h58c30 0 48 19 48 48 0 29-18 48-48 48h-32"/>
         <path class="piano-lockup__rise" d="M54 104v-44h8v44z m32 0v-44h8v44z m32 0v-44h8v44z"/>
@@ -32,41 +32,45 @@
       </svg>
     </a>
     <div class="nav__links">
-      <a href="/#features">Features</a>
-      <a href="/#how-it-works">How It Works</a>
-      <a href="/#pricing">Pricing</a>
+      <a href="/#features" data-i18n="nav.features">Features</a>
+      <a href="/#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="/#pricing" data-i18n="nav.pricing">Pricing</a>
     </div>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Get Started →</a>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta" data-i18n="nav.getStarted">Get Started →</a>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.langGroup">
+      <button class="lang-toggle__btn" data-lang="en" type="button">EN</button>
+      <button class="lang-toggle__btn" data-lang="ko" type="button">KO</button>
+    </div>
     <div class="theme-toggle" id="themeToggle" role="group" aria-label="Color theme">
-      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)">
+      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)" data-i18n-attr="title:nav.themeAuto">
         <svg viewBox="0 0 14 14" width="13" height="13"><rect x="1" y="1.5" width="12" height="7.5" rx="1.2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7 9v2M4.5 11.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="light" title="Light">
+      <button class="theme-toggle__btn" data-mode="light" title="Light" data-i18n-attr="title:nav.themeLight">
         <svg viewBox="0 0 14 14" width="13" height="13"><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M3 3l1 1M10 10l1 1M10 4l-1 1M4 10l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="dark" title="Dark">
+      <button class="theme-toggle__btn" data-mode="dark" title="Dark" data-i18n-attr="title:nav.themeDark">
         <svg viewBox="0 0 14 14" width="13" height="13"><path d="M9.5 2.5A5 5 0 1 0 11.5 7 3.5 3.5 0 0 1 9.5 2.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
       </button>
     </div>
-    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.openMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="nav-drawer" id="navDrawer">
-  <a href="/" onclick="closeDrawer()">← Home</a>
-  <a href="/#features" onclick="closeDrawer()">Features</a>
-  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Get Started →</a>
+  <a href="/" onclick="closeDrawer()" data-i18n="nav.home">← Home</a>
+  <a href="/#features" onclick="closeDrawer()" data-i18n="nav.features">Features</a>
+  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="nav.getStarted">Get Started →</a>
 </div>
 
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="container">
-    <a href="/" class="page-hero__back">← Back to Home</a>
-    <span class="label">Financial Concepts</span>
-    <h1>What Is a<br>Basis Hedge?</h1>
-    <p>It's the strategy used by the world's largest financial institutions. It can bring your risk down to nearly zero. The name sounds technical — the idea is actually simple.</p>
+    <a href="/" class="page-hero__back" data-i18n="back.home">← Back to Home</a>
+    <span class="label" data-i18n="bh.hero.label">Financial Concepts</span>
+    <h1 data-i18n-html="bh.hero.h1">What Is a<br>Basis Hedge?</h1>
+    <p data-i18n="bh.hero.sub">It's the strategy used by the world's largest financial institutions. It can bring your risk down to nearly zero. The name sounds technical — the idea is actually simple.</p>
 
     <div class="bh-hero-graphic" aria-hidden="true">
       <svg viewBox="0 0 760 520" class="bh-hero-svg" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +87,7 @@
         <text x="294" y="308" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#9AA3AF">FUNDING FEE →</text>
         <text class="bh-short-label" x="300" y="492" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700" fill="#EA3943">↓ SHORT</text>
       </svg>
-      <p class="bh-hero-caption">For every Long position above zero, an equal Short below cancels it. Together ≈ 0.</p>
+      <p class="bh-hero-caption" data-i18n="bh.hero.figCaption">For every Long position above zero, an equal Short below cancels it. Together ≈ 0.</p>
     </div>
   </div>
 </div>
@@ -94,42 +98,42 @@
 
   <!-- STEP 1 -->
   <div class="article-section">
-    <span class="step-badge">Step 01</span>
-    <h2>Start with an everyday example</h2>
-    <p>Think about planning a trip to Europe. Nobody knows if the exchange rate will go up or down. So you exchange your money ahead of time.</p>
+    <span class="step-badge" data-i18n="bh.s1.badge">Step 01</span>
+    <h2 data-i18n="bh.s1.h2">Start with an everyday example</h2>
+    <p data-i18n="bh.s1.p">Think about planning a trip to Europe. Nobody knows if the exchange rate will go up or down. So you exchange your money ahead of time.</p>
 
     <div class="equation-row">
       <div class="equation-card">
-        <h3>Before the trip</h3>
+        <h3 data-i18n="bh.s1.eq1.h3">Before the trip</h3>
         <div class="equation-val">✈</div>
-        <p style="font-size:0.82rem;color:#444;margin-top:8px;">Exchange USD → EUR early</p>
+        <p style="font-size:0.82rem;color:#444;margin-top:8px;" data-i18n="bh.s1.eq1.p">Exchange USD → EUR early</p>
       </div>
       <div class="equation-op">→</div>
       <div class="equation-card">
-        <h3>Even if rates change</h3>
+        <h3 data-i18n="bh.s1.eq2.h3">Even if rates change</h3>
         <div class="equation-val">🛡</div>
-        <p style="font-size:0.82rem;color:#444;margin-top:8px;">Already exchanged — no worries</p>
+        <p style="font-size:0.82rem;color:#444;margin-top:8px;" data-i18n="bh.s1.eq2.p">Already exchanged — no worries</p>
       </div>
       <div class="equation-op">=</div>
       <div class="equation-card equation-card--result">
-        <h3>Certainty</h3>
+        <h3 data-i18n="bh.s1.eq3.h3">Certainty</h3>
         <div class="equation-val">✓</div>
-        <p style="font-size:0.82rem;color:#333;margin-top:8px;">Lock in now, not later</p>
+        <p style="font-size:0.82rem;color:#333;margin-top:8px;" data-i18n="bh.s1.eq3.p">Lock in now, not later</p>
       </div>
     </div>
 
     <div class="callout">
       <span class="callout__icon">💡</span>
-      <p>That's exactly what <strong>hedging</strong> is. You lock in certainty now, instead of worrying about what the future holds.</p>
+      <p data-i18n-html="bh.s1.callout">That's exactly what <strong>hedging</strong> is. You lock in certainty now, instead of worrying about what the future holds.</p>
     </div>
   </div>
 
 
   <!-- STEP 2 -->
   <div class="article-section">
-    <span class="step-badge">Step 02</span>
-    <h2>Apply this to crypto</h2>
-    <p>Buy (LONG) and sell (SHORT) the same asset at the same time. No matter which way the price moves, they cancel each other out.</p>
+    <span class="step-badge" data-i18n="bh.s2.badge">Step 02</span>
+    <h2 data-i18n="bh.s2.h2">Apply this to crypto</h2>
+    <p data-i18n="bh.s2.p">Buy (LONG) and sell (SHORT) the same asset at the same time. No matter which way the price moves, they cancel each other out.</p>
 
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
@@ -167,44 +171,44 @@
 
     <div class="equation-row">
       <div class="equation-card">
-        <h3>Buy spot</h3>
+        <h3 data-i18n="bh.s2.eq1.h3">Buy spot</h3>
         <div class="equation-val" style="font-size:1.4rem;">LONG</div>
-        <p style="font-size:0.82rem;color:#444;margin-top:8px;">📈 Spot position</p>
+        <p style="font-size:0.82rem;color:#444;margin-top:8px;" data-i18n="bh.s2.eq1.p">📈 Spot position</p>
       </div>
       <div class="equation-op">+</div>
       <div class="equation-card">
-        <h3>Sell futures</h3>
+        <h3 data-i18n="bh.s2.eq2.h3">Sell futures</h3>
         <div class="equation-val" style="font-size:1.4rem;">SHORT</div>
-        <p style="font-size:0.82rem;color:#444;margin-top:8px;">📉 Futures position</p>
+        <p style="font-size:0.82rem;color:#444;margin-top:8px;" data-i18n="bh.s2.eq2.p">📉 Futures position</p>
       </div>
       <div class="equation-op">=</div>
       <div class="equation-card equation-card--result">
-        <h3>Combined</h3>
+        <h3 data-i18n="bh.s2.eq3.h3">Combined</h3>
         <div class="equation-val">≈ 0</div>
-        <p style="font-size:0.82rem;color:#333;margin-top:8px;">Risk neutralized</p>
+        <p style="font-size:0.82rem;color:#333;margin-top:8px;" data-i18n="bh.s2.eq3.p">Risk neutralized</p>
       </div>
     </div>
 
-    <p style="margin-bottom:20px;">Every scenario plays out the same way:</p>
+    <p style="margin-bottom:20px;" data-i18n="bh.s2.scenIntro">Every scenario plays out the same way:</p>
 
     <div class="scenario-grid">
       <div class="scenario-card">
-        <div class="scenario-card__num">Scenario 01</div>
-        <h3>Price goes up 10%</h3>
-        <div class="scenario-card__math">Spot: +10%<br>Futures: −10%</div>
-        <div class="scenario-card__result">Total ≈ 0</div>
+        <div class="scenario-card__num" data-i18n="bh.s2.sc1.num">Scenario 01</div>
+        <h3 data-i18n="bh.s2.sc1.h3">Price goes up 10%</h3>
+        <div class="scenario-card__math" data-i18n-html="bh.s2.sc1.math">Spot: +10%<br>Futures: −10%</div>
+        <div class="scenario-card__result" data-i18n="bh.s2.sc1.result">Total ≈ 0</div>
       </div>
       <div class="scenario-card">
-        <div class="scenario-card__num">Scenario 02</div>
-        <h3>Price goes down 10%</h3>
-        <div class="scenario-card__math">Spot: −10%<br>Futures: +10%</div>
-        <div class="scenario-card__result">Total ≈ 0</div>
+        <div class="scenario-card__num" data-i18n="bh.s2.sc2.num">Scenario 02</div>
+        <h3 data-i18n="bh.s2.sc2.h3">Price goes down 10%</h3>
+        <div class="scenario-card__math" data-i18n-html="bh.s2.sc2.math">Spot: −10%<br>Futures: +10%</div>
+        <div class="scenario-card__result" data-i18n="bh.s2.sc2.result">Total ≈ 0</div>
       </div>
       <div class="scenario-card">
-        <div class="scenario-card__num">Scenario 03</div>
-        <h3>Price stays the same</h3>
-        <div class="scenario-card__math">Spot: 0%<br>Futures: 0%</div>
-        <div class="scenario-card__result">Total ≈ 0</div>
+        <div class="scenario-card__num" data-i18n="bh.s2.sc3.num">Scenario 03</div>
+        <h3 data-i18n="bh.s2.sc3.h3">Price stays the same</h3>
+        <div class="scenario-card__math" data-i18n-html="bh.s2.sc3.math">Spot: 0%<br>Futures: 0%</div>
+        <div class="scenario-card__result" data-i18n="bh.s2.sc3.result">Total ≈ 0</div>
       </div>
     </div>
   </div>
@@ -212,9 +216,9 @@
 
   <!-- STEP 3 -->
   <div class="article-section">
-    <span class="step-badge">Step 03</span>
-    <h2>If profit is zero, why bother?</h2>
-    <p>Great question. Here's where the concept of <strong style="color:#EDEDED">Funding Fee</strong> comes in.</p>
+    <span class="step-badge" data-i18n="bh.s3.badge">Step 03</span>
+    <h2 data-i18n="bh.s3.h2">If profit is zero, why bother?</h2>
+    <p data-i18n-html="bh.s3.p">Great question. Here's where the concept of <strong style="color:#EDEDED">Funding Fee</strong> comes in.</p>
 
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
@@ -236,24 +240,24 @@
     <div class="callout">
       <span class="callout__icon">📋</span>
       <div>
-        <p style="margin-bottom:12px;"><strong>What is a Funding Fee?</strong></p>
-        <p>In perpetual futures markets, a fee is exchanged between longs and shorts <strong>every 8 hours</strong>. This is called the Funding Fee.</p>
-        <p style="margin-top:10px;">When there are more longs → longs pay shorts<br>When there are more shorts → shorts pay longs</p>
-        <p style="margin-top:10px;">In a Basis Hedge, the SHORT position is usually the one <strong>receiving</strong> the Funding Fee.</p>
+        <p style="margin-bottom:12px;"><strong data-i18n="bh.s3.callout1.title">What is a Funding Fee?</strong></p>
+        <p data-i18n-html="bh.s3.callout1.p1">In perpetual futures markets, a fee is exchanged between longs and shorts <strong>every 8 hours</strong>. This is called the Funding Fee.</p>
+        <p style="margin-top:10px;" data-i18n-html="bh.s3.callout1.p2">When there are more longs → longs pay shorts<br>When there are more shorts → shorts pay longs</p>
+        <p style="margin-top:10px;" data-i18n-html="bh.s3.callout1.p3">In a Basis Hedge, the SHORT position is usually the one <strong>receiving</strong> the Funding Fee.</p>
       </div>
     </div>
 
     <div class="callout callout--warn">
       <span class="callout__icon">⚠️</span>
-      <p>The Funding Rate changes with market conditions. You won't always receive it. If the rate turns negative, it becomes a cost instead.</p>
+      <p data-i18n="bh.s3.callout2">The Funding Rate changes with market conditions. You won't always receive it. If the rate turns negative, it becomes a cost instead.</p>
     </div>
 
     <div class="callout">
       <span class="callout__icon">⚖️</span>
       <div>
-        <p style="margin-bottom:12px;"><strong>There's more: rebalancing creates profit opportunities</strong></p>
-        <p>Piano continuously rebalances the long and short positions as the ratio drifts. When market conditions turn favorable — for example, when the basis narrows significantly — Piano closes the position and <strong>captures the profit</strong>.</p>
-        <p style="margin-top:10px;">The hedge isn't just a waiting game. It's an active structure that generates returns when the moment is right.</p>
+        <p style="margin-bottom:12px;"><strong data-i18n="bh.s3.callout3.title">There's more: rebalancing creates profit opportunities</strong></p>
+        <p data-i18n-html="bh.s3.callout3.p1">Piano continuously rebalances the long and short positions as the ratio drifts. When market conditions turn favorable — for example, when the basis narrows significantly — Piano closes the position and <strong>captures the profit</strong>.</p>
+        <p style="margin-top:10px;" data-i18n="bh.s3.callout3.p2">The hedge isn't just a waiting game. It's an active structure that generates returns when the moment is right.</p>
       </div>
     </div>
   </div>
@@ -261,8 +265,8 @@
 
   <!-- WHO USES THIS -->
   <div class="article-section">
-    <span class="label">Who Uses This</span>
-    <h2>So, who actually uses this strategy?</h2>
+    <span class="label" data-i18n="bh.who.label">Who Uses This</span>
+    <h2 data-i18n="bh.who.h2">So, who actually uses this strategy?</h2>
 
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
@@ -305,30 +309,30 @@
 
     <div class="institution-grid">
       <div class="institution-card">
-        <div class="institution-card__type">Hedge Funds</div>
-        <h3>Citadel · Bridgewater · Two Sigma</h3>
-        <p>Eliminate directional risk and capture spreads through Basis Trades</p>
+        <div class="institution-card__type" data-i18n="bh.who.c1.type">Hedge Funds</div>
+        <h3 data-i18n="bh.who.c1.h3">Citadel · Bridgewater · Two Sigma</h3>
+        <p data-i18n="bh.who.c1.p">Eliminate directional risk and capture spreads through Basis Trades</p>
       </div>
       <div class="institution-card">
-        <div class="institution-card__type">Investment Banks</div>
-        <h3>Goldman Sachs · JP Morgan · Morgan Stanley</h3>
-        <p>Their derivatives hedge desks manage client asset risk to stay neutral</p>
+        <div class="institution-card__type" data-i18n="bh.who.c2.type">Investment Banks</div>
+        <h3 data-i18n="bh.who.c2.h3">Goldman Sachs · JP Morgan · Morgan Stanley</h3>
+        <p data-i18n="bh.who.c2.p">Their derivatives hedge desks manage client asset risk to stay neutral</p>
       </div>
       <div class="institution-card">
-        <div class="institution-card__type">Market Makers</div>
-        <h3>Jane Street · Wintermute · Jump Trading</h3>
-        <p>Hedge inventory risk while providing liquidity to the market</p>
+        <div class="institution-card__type" data-i18n="bh.who.c3.type">Market Makers</div>
+        <h3 data-i18n="bh.who.c3.h3">Jane Street · Wintermute · Jump Trading</h3>
+        <p data-i18n="bh.who.c3.p">Hedge inventory risk while providing liquidity to the market</p>
       </div>
     </div>
 
-    <p>Basis Hedge (also known as Cash-and-Carry) is one of the oldest arbitrage strategies in financial markets.</p>
+    <p data-i18n="bh.who.foot">Basis Hedge (also known as Cash-and-Carry) is one of the oldest arbitrage strategies in financial markets.</p>
   </div>
 
 
   <!-- THE CHALLENGE -->
   <div class="article-section">
-    <h2>But it's hard to manage on your own</h2>
-    <p>The strategy itself is simple. But running it yourself means constant management.</p>
+    <h2 data-i18n="bh.ch.h2">But it's hard to manage on your own</h2>
+    <p data-i18n="bh.ch.p">The strategy itself is simple. But running it yourself means constant management.</p>
 
     <div class="bh-section-graphic bh-section-graphic--wide" aria-hidden="true">
       <svg viewBox="0 0 760 240" class="bh-section-svg" xmlns="http://www.w3.org/2000/svg">
@@ -384,24 +388,24 @@
     <div class="challenge-grid">
       <div class="challenge-card">
         <div class="challenge-card__icon">⏱</div>
-        <h3>24/7 Monitoring</h3>
-        <p>The crypto market never sleeps. Position ratios drift even while you're sleeping.</p>
+        <h3 data-i18n="bh.ch.c1.h3">24/7 Monitoring</h3>
+        <p data-i18n="bh.ch.c1.p">The crypto market never sleeps. Position ratios drift even while you're sleeping.</p>
       </div>
       <div class="challenge-card">
         <div class="challenge-card__icon">⚙️</div>
-        <h3>Manual Rebalancing</h3>
-        <p>Every time ratios drift, you need to calculate and adjust manually.</p>
+        <h3 data-i18n="bh.ch.c2.h3">Manual Rebalancing</h3>
+        <p data-i18n="bh.ch.c2.p">Every time ratios drift, you need to calculate and adjust manually.</p>
       </div>
       <div class="challenge-card">
         <div class="challenge-card__icon">😰</div>
-        <h3>Emotional Interference</h3>
-        <p>When prices swing hard, fear and greed kick in. You end up breaking your own hedge.</p>
+        <h3 data-i18n="bh.ch.c3.h3">Emotional Interference</h3>
+        <p data-i18n="bh.ch.c3.p">When prices swing hard, fear and greed kick in. You end up breaking your own hedge.</p>
       </div>
     </div>
 
     <div class="callout">
       <span class="callout__icon">→</span>
-      <p><strong>Piano</strong> is the software that automates all of this maintenance for you.</p>
+      <p data-i18n-html="bh.ch.callout"><strong>Piano</strong> is the software that automates all of this maintenance for you.</p>
     </div>
   </div>
 
@@ -411,11 +415,11 @@
 <!-- CTA -->
 <div class="cta-block">
   <div class="container">
-    <h2>Curious about Piano?</h2>
-    <p>See how Piano automates your hedge position management.</p>
+    <h2 data-i18n="bh.cta.h2">Curious about Piano?</h2>
+    <p data-i18n="bh.cta.sub">See how Piano automates your hedge position management.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="/" class="btn-primary">Piano Homepage →</a>
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline">Chat on Telegram</a>
+      <a href="/" class="btn-primary" data-i18n="bh.cta.primary">Piano Homepage →</a>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline" data-i18n="bh.cta.secondary">Chat on Telegram</a>
     </div>
   </div>
 </div>
@@ -437,25 +441,26 @@
             <text x="184" y="99" class="piano-lockup__word">PIANO</text>
           </svg>
         </span>
-        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
-        <p class="footer__contact">Get in Touch → <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Automated Hedge Balancing for Crypto</p>
+        <p class="footer__contact"><span data-i18n="footer.contact.prefix">Get in Touch → </span><a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.contact.link">Telegram</a></p>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Learn</p>
-        <a href="/">Home</a>
-        <a href="ewy.html">EWY Futures</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.learn">Learn</p>
+        <a href="/" data-i18n="footer.link.home">Home</a>
+        <a href="ewy.html" data-i18n="footer.link.ewy">EWY Futures</a>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Connect</p>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram Support</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.connect">Connect</p>
+        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.link.telegram">Telegram Support</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span class="footer__copy">© 2025 PIANO. All rights reserved.</span>
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 PIANO. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script>
   const hamburger = document.getElementById('hamburger');
   const drawer = document.getElementById('navDrawer');

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="index.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIANO — Automated Hedge Balancing for Crypto</title>
-  <meta name="description" content="Automatically balance your hedge positions. A tool that maintains the spot-to-futures ratio based on your configured parameters.">
+  <meta name="description" data-i18n-attr="content:index.metaDesc" content="Automatically balance your hedge positions. A tool that maintains the spot-to-futures ratio based on your configured parameters.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
 <!-- ========== NAV ========== -->
 <nav class="nav">
   <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="PIANO home">
+    <a href="/" class="nav__logo" aria-label="PIANO home" data-i18n-attr="aria-label:nav.logoAria">
       <svg class="piano-lockup piano-lockup--nav" viewBox="0 0 160 160" role="img" aria-hidden="true">
         <path class="piano-lockup__shell" d="M30 140v-116h58c30 0 48 19 48 48 0 29-18 48-48 48h-32"/>
         <path class="piano-lockup__rise" d="M54 104v-44h8v44z m32 0v-44h8v44z m32 0v-44h8v44z"/>
@@ -34,34 +34,38 @@
       </svg>
     </a>
     <div class="nav__links">
-      <a href="#features">Features</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#security">Security</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="#security" data-i18n="nav.security">Security</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     </div>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta">Get Started →</a>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="nav__cta" data-i18n="nav.getStarted">Get Started →</a>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.langGroup">
+      <button class="lang-toggle__btn" data-lang="en" type="button">EN</button>
+      <button class="lang-toggle__btn" data-lang="ko" type="button">KO</button>
+    </div>
     <div class="theme-toggle" id="themeToggle" role="group" aria-label="Color theme">
-      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)">
+      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)" data-i18n-attr="title:nav.themeAuto">
         <svg viewBox="0 0 14 14" width="13" height="13"><rect x="1" y="1.5" width="12" height="7.5" rx="1.2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7 9v2M4.5 11.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="light" title="Light">
+      <button class="theme-toggle__btn" data-mode="light" title="Light" data-i18n-attr="title:nav.themeLight">
         <svg viewBox="0 0 14 14" width="13" height="13"><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M3 3l1 1M10 10l1 1M10 4l-1 1M4 10l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
       </button>
-      <button class="theme-toggle__btn" data-mode="dark" title="Dark">
+      <button class="theme-toggle__btn" data-mode="dark" title="Dark" data-i18n-attr="title:nav.themeDark">
         <svg viewBox="0 0 14 14" width="13" height="13"><path d="M9.5 2.5A5 5 0 1 0 11.5 7 3.5 3.5 0 0 1 9.5 2.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
       </button>
     </div>
-    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.openMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="nav-drawer" id="navDrawer">
-  <a href="#features" onclick="closeDrawer()">Features</a>
-  <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
-  <a href="#security" onclick="closeDrawer()">Security</a>
-  <a href="#pricing" onclick="closeDrawer()">Pricing</a>
-  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Get Started →</a>
+  <a href="#features" onclick="closeDrawer()" data-i18n="nav.features">Features</a>
+  <a href="#how-it-works" onclick="closeDrawer()" data-i18n="nav.howItWorks">How It Works</a>
+  <a href="#security" onclick="closeDrawer()" data-i18n="nav.security">Security</a>
+  <a href="#pricing" onclick="closeDrawer()" data-i18n="nav.pricing">Pricing</a>
+  <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="nav.getStarted">Get Started →</a>
 </div>
 
 
@@ -70,13 +74,13 @@
   <div class="hero__text">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>
-      Automated Hedge Balancing
+      <span data-i18n="index.hero.badge">Automated Hedge Balancing</span>
     </div>
-    <h1 class="hero__h1">Keep your hedge<br>in balance,<br>automatically.</h1>
-    <p class="hero__sub">No need to monitor 24/7. A tool that maintains the spot-to-futures ratio based on your configured parameters.</p>
+    <h1 class="hero__h1" data-i18n-html="index.hero.h1">Keep your hedge<br>in balance,<br>automatically.</h1>
+    <p class="hero__sub" data-i18n="index.hero.sub">No need to monitor 24/7. A tool that maintains the spot-to-futures ratio based on your configured parameters.</p>
     <div class="hero__ctas">
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Get Started →</a>
-      <a href="#how-it-works" class="btn-outline">How It Works</a>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.hero.ctaPrimary">Get Started →</a>
+      <a href="#how-it-works" class="btn-outline" data-i18n="index.hero.ctaSecondary">How It Works</a>
     </div>
   </div>
 
@@ -126,7 +130,7 @@
       <!-- Balance arc (trace) -->
       <path class="fig01-arc" d="M178 206c82-94 176 86 264-26 58-72 118-54 178-22" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-dasharray="600"/>
       <!-- Caption -->
-      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED">AI manages ratios across symbols. Exits when conditions turn favorable.</text>
+      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">AI manages ratios across symbols. Exits when conditions turn favorable.</text>
     </svg>
   </div>
 </section>
@@ -138,9 +142,9 @@
 <section class="section" id="features">
   <div class="container">
     <div class="features-intro">
-      <span class="label">Core Features</span>
-      <h2>Three mechanisms that<br>keep your hedge intact</h2>
-      <p>Built on freqtrade open-source framework. Every execution respects boundaries you define.</p>
+      <span class="label" data-i18n="index.features.label">Core Features</span>
+      <h2 data-i18n-html="index.features.h2">Three mechanisms that<br>keep your hedge intact</h2>
+      <p data-i18n="index.features.sub">Built on freqtrade open-source framework. Every execution respects boundaries you define.</p>
     </div>
 
     <div class="features-grid">
@@ -154,11 +158,11 @@
           <path d="M160 106v-62h76v62" stroke="#16C784" stroke-width="4" stroke-linecap="round" fill="none"/>
           <path class="fig02-flow-l" d="M64 82h80" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="80"/>
           <path class="fig02-flow-r" d="M242 82h98" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="98"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555">Signals pass only when configured conditions are met.</text>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f1.caption">Signals pass only when configured conditions are met.</text>
         </svg>
-        <h3>Statistical Entry Condition Filter</h3>
-        <p>Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
-        <span class="feature-card__note">Entry / Risk gate</span>
+        <h3 data-i18n="index.features.f1.h3">Statistical Entry Condition Filter</h3>
+        <p data-i18n="index.features.f1.p">Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
+        <span class="feature-card__note" data-i18n="index.features.f1.note">Entry / Risk gate</span>
       </div>
 
       <div class="feature-card">
@@ -174,11 +178,11 @@
           <path class="iso-divider" d="M82 86l235-14" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
           <path class="iso-divider" d="M199 48v65" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
           <path class="fig02-f2-tune" d="M98 102c42-62 90 16 132-22 30-28 62-22 90-14" stroke="#16C784" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="300" fill="none"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555">Ratio drift is detected and tuned back toward balance.</text>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f2.caption">Ratio drift is detected and tuned back toward balance.</text>
         </svg>
-        <h3>Auto Position Imbalance Correction</h3>
-        <p>When market movements drift the spot·futures ratio, AI evaluates in real time and adjusts positions to restore balance.</p>
-        <span class="feature-card__note">Rebalance / AI correction</span>
+        <h3 data-i18n="index.features.f2.h3">Auto Position Imbalance Correction</h3>
+        <p data-i18n="index.features.f2.p">When market movements drift the spot·futures ratio, AI evaluates in real time and adjusts positions to restore balance.</p>
+        <span class="feature-card__note" data-i18n="index.features.f2.note">Rebalance / AI correction</span>
       </div>
 
       <div class="feature-card">
@@ -193,11 +197,11 @@
             <path d="M244 92l20-12 0-20-20 12z M268 78l20-12 0-28-20 12z M292 64l20-12 0-20-20 12z M224 100l20-12 0-18-20 12z M316 58l20-12 0-18-20 12z" fill="#EA3943"/>
           </g>
           <path class="fig02-f3-profit" d="M88 106c38 26 86 23 112-2 26 25 76 28 114 2" stroke="#EA3943" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="200" fill="none"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555">AI adjusts size ratio and closes favorable positions.</text>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f3.caption">AI adjusts size ratio and closes favorable positions.</text>
         </svg>
-        <h3>Linked Balancing</h3>
-        <p>AI monitors the market and dynamically manages the position size ratio between both directions. When conditions turn favorable, positions are closed to realize profit.</p>
-        <span class="feature-card__note">DCA + auto-rebalance</span>
+        <h3 data-i18n="index.features.f3.h3">Linked Balancing</h3>
+        <p data-i18n="index.features.f3.p">AI monitors the market and dynamically manages the position size ratio between both directions. When conditions turn favorable, positions are closed to realize profit.</p>
+        <span class="feature-card__note" data-i18n="index.features.f3.note">DCA + auto-rebalance</span>
       </div>
     </div>
   </div>
@@ -251,33 +255,33 @@
 
       <div class="hiw__body">
         <div class="hiw__header">
-          <span class="label">Get Started</span>
-          <h2>Running in<br>three steps</h2>
-          <p>Default parameters are provided so you can start right away.</p>
+          <span class="label" data-i18n="index.hiw.label">Get Started</span>
+          <h2 data-i18n-html="index.hiw.h2">Running in<br>three steps</h2>
+          <p data-i18n="index.hiw.sub">Default parameters are provided so you can start right away.</p>
         </div>
         <div class="hiw__steps">
           <div class="hiw__step">
             <div class="hiw__step-num">01</div>
             <div>
-              <div class="hiw__step-time">~5 min</div>
-              <h3>Create Binance API Key</h3>
-              <p>Create an API key from your Binance account. Disable withdrawal permission and allow only the designated server IP.</p>
+              <div class="hiw__step-time" data-i18n="index.hiw.s1.time">~5 min</div>
+              <h3 data-i18n="index.hiw.s1.h3">Create Binance API Key</h3>
+              <p data-i18n="index.hiw.s1.p">Create an API key from your Binance account. Disable withdrawal permission and allow only the designated server IP.</p>
             </div>
           </div>
           <div class="hiw__step">
             <div class="hiw__step-num">02</div>
             <div>
-              <div class="hiw__step-time">Configure</div>
-              <h3>Set Parameters</h3>
-              <p>Configure rebalancing conditions and position size. You can adjust any parameter at any time.</p>
+              <div class="hiw__step-time" data-i18n="index.hiw.s2.time">Configure</div>
+              <h3 data-i18n="index.hiw.s2.h3">Set Parameters</h3>
+              <p data-i18n="index.hiw.s2.p">Configure rebalancing conditions and position size. You can adjust any parameter at any time.</p>
             </div>
           </div>
           <div class="hiw__step">
             <div class="hiw__step-num">03</div>
             <div>
-              <div class="hiw__step-time">Ongoing</div>
-              <h3>Monitor</h3>
-              <p>Piano manages position balance automatically. Check status and execution history on the dashboard.</p>
+              <div class="hiw__step-time" data-i18n="index.hiw.s3.time">Ongoing</div>
+              <h3 data-i18n="index.hiw.s3.h3">Monitor</h3>
+              <p data-i18n="index.hiw.s3.p">Piano manages position balance automatically. Check status and execution history on the dashboard.</p>
             </div>
           </div>
         </div>
@@ -294,61 +298,61 @@
 <section class="section" id="security">
   <div class="container">
     <div class="security-header">
-      <span class="label">Security</span>
-      <h2>We never directly<br>access your assets</h2>
-      <p>Piano connects to Binance via API but never holds or transfers your assets.</p>
+      <span class="label" data-i18n="index.sec.label">Security</span>
+      <h2 data-i18n-html="index.sec.h2">We never directly<br>access your assets</h2>
+      <p data-i18n="index.sec.sub">Piano connects to Binance via API but never holds or transfers your assets.</p>
     </div>
 
     <div class="security-grid">
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="key-round"></i></div>
-        <h3>API Key Creation</h3>
-        <p>You create it directly on Binance</p>
+        <h3 data-i18n="index.sec.c1.h3">API Key Creation</h3>
+        <p data-i18n="index.sec.c1.p">You create it directly on Binance</p>
       </div>
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="shield-off"></i></div>
-        <h3>Withdrawal Disabled</h3>
-        <p>Only keys without withdrawal permission are used</p>
+        <h3 data-i18n="index.sec.c2.h3">Withdrawal Disabled</h3>
+        <p data-i18n="index.sec.c2.p">Only keys without withdrawal permission are used</p>
       </div>
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="globe-lock"></i></div>
-        <h3>IP Restriction</h3>
-        <p>Access only from authorized server IPs</p>
+        <h3 data-i18n="index.sec.c3.h3">IP Restriction</h3>
+        <p data-i18n="index.sec.c3.p">Access only from authorized server IPs</p>
       </div>
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="power-off"></i></div>
-        <h3>Instant Revocation</h3>
-        <p>Revoke the API key and access is cut immediately</p>
+        <h3 data-i18n="index.sec.c4.h3">Instant Revocation</h3>
+        <p data-i18n="index.sec.c4.p">Revoke the API key and access is cut immediately</p>
       </div>
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="sliders-horizontal"></i></div>
-        <h3>Parameter Control</h3>
-        <p>You set and change all execution conditions yourself</p>
+        <h3 data-i18n="index.sec.c5.h3">Parameter Control</h3>
+        <p data-i18n="index.sec.c5.p">You set and change all execution conditions yourself</p>
       </div>
       <div class="security-card">
         <div class="security-card__icon"><i data-lucide="container"></i></div>
-        <h3>Isolated Environment</h3>
-        <p>Each user runs on a dedicated instance</p>
+        <h3 data-i18n="index.sec.c6.h3">Isolated Environment</h3>
+        <p data-i18n="index.sec.c6.p">Each user runs on a dedicated instance</p>
       </div>
     </div>
 
     <div class="security-compare">
       <div class="security-col security-col--do">
-        <h3>What Piano does</h3>
+        <h3 data-i18n="index.sec.do.h3">What Piano does</h3>
         <ul>
-          <li>Automatically maintains hedge ratios</li>
-          <li>Automatically corrects position imbalances</li>
-          <li>Executes only per your preconfigured conditions</li>
-          <li>Monitors 24/7 automatically</li>
+          <li data-i18n="index.sec.do.li1">Automatically maintains hedge ratios</li>
+          <li data-i18n="index.sec.do.li2">Automatically corrects position imbalances</li>
+          <li data-i18n="index.sec.do.li3">Executes only per your preconfigured conditions</li>
+          <li data-i18n="index.sec.do.li4">Monitors 24/7 automatically</li>
         </ul>
       </div>
       <div class="security-col">
-        <h3>What Piano doesn't do</h3>
+        <h3 data-i18n="index.sec.dont.h3">What Piano doesn't do</h3>
         <ul>
-          <li>No investment advice or asset recommendations</li>
-          <li>No profit guarantees or performance promises</li>
-          <li>Never arbitrarily disposes of your assets</li>
-          <li>No withdrawals or asset transfers</li>
+          <li data-i18n="index.sec.dont.li1">No investment advice or asset recommendations</li>
+          <li data-i18n="index.sec.dont.li2">No profit guarantees or performance promises</li>
+          <li data-i18n="index.sec.dont.li3">Never arbitrarily disposes of your assets</li>
+          <li data-i18n="index.sec.dont.li4">No withdrawals or asset transfers</li>
         </ul>
       </div>
     </div>
@@ -362,21 +366,21 @@
 <section class="section" id="pricing">
   <div class="container">
     <div class="pricing-header">
-      <span class="label">Pricing</span>
-      <h2>Simple, transparent pricing</h2>
-      <p>No fees tied to profits or trading volume.</p>
+      <span class="label" data-i18n="index.pricing.label">Pricing</span>
+      <h2 data-i18n="index.pricing.h2">Simple, transparent pricing</h2>
+      <p data-i18n="index.pricing.sub">No fees tied to profits or trading volume.</p>
     </div>
     <div class="pricing-card">
       <div class="pricing-row">
-        <span class="pricing-row__label">Setup Fee</span>
-        <span class="pricing-row__val">Flat rate (inquire)</span>
+        <span class="pricing-row__label" data-i18n="index.pricing.setup.label">Setup Fee</span>
+        <span class="pricing-row__val" data-i18n="index.pricing.setup.val">Flat rate (inquire)</span>
       </div>
       <div class="pricing-row">
-        <span class="pricing-row__label">Monthly Maintenance</span>
-        <span class="pricing-row__val">Flat rate (inquire)</span>
+        <span class="pricing-row__label" data-i18n="index.pricing.monthly.label">Monthly Maintenance</span>
+        <span class="pricing-row__val" data-i18n="index.pricing.monthly.val">Flat rate (inquire)</span>
       </div>
-      <p class="pricing-note">Contact us for exact pricing details.</p>
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Contact Us →</a>
+      <p class="pricing-note" data-i18n="index.pricing.note">Contact us for exact pricing details.</p>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.pricing.cta">Contact Us →</a>
     </div>
   </div>
 </section>
@@ -388,29 +392,29 @@
 <section class="section" id="faq">
   <div class="container">
     <div class="faq-header">
-      <span class="label">FAQ</span>
-      <h2>Frequently asked questions</h2>
+      <span class="label" data-i18n="index.faq.label">FAQ</span>
+      <h2 data-i18n="index.faq.h2">Frequently asked questions</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" type="button">What is Piano?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Piano is a tool that automatically maintains the balance of spot+futures hedge (Basis Hedge) positions on Binance. It's built on the freqtrade open-source framework.</div></div>
+        <button class="faq-question" type="button"><span data-i18n="index.faq.q1.q">What is Piano?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q1.a">Piano is a tool that automatically maintains the balance of spot+futures hedge (Basis Hedge) positions on Binance. It's built on the freqtrade open-source framework.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" type="button">Do I need crypto trading experience?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">A basic understanding of Basis Hedge structures and Binance futures trading is required. Piano automates maintenance and management of hedge positions — it does not make trading decisions for you.</div></div>
+        <button class="faq-question" type="button"><span data-i18n="index.faq.q2.q">Do I need crypto trading experience?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q2.a">A basic understanding of Basis Hedge structures and Binance futures trading is required. Piano automates maintenance and management of hedge positions — it does not make trading decisions for you.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" type="button">Are my assets safe?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Your funds always remain in your Binance account. Piano only uses API keys without withdrawal permission. Revoke the API key and access is blocked immediately.</div></div>
+        <button class="faq-question" type="button"><span data-i18n="index.faq.q3.q">Are my assets safe?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q3.a">Your funds always remain in your Binance account. Piano only uses API keys without withdrawal permission. Revoke the API key and access is blocked immediately.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" type="button">Does Piano invest on my behalf?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Piano only executes within the boundaries you configure. It does not make autonomous investment decisions or guarantee any returns.</div></div>
+        <button class="faq-question" type="button"><span data-i18n="index.faq.q4.q">Does Piano invest on my behalf?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q4.a">No. Piano only executes within the boundaries you configure. It does not make autonomous investment decisions or guarantee any returns.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" type="button">Which exchanges are supported?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Currently Binance spot + futures. EWY perpetual futures (Korean equity index) is also supported. See <a href="ewy.html" style="color:#888;text-decoration:underline">EWY page</a> for details.</div></div>
+        <button class="faq-question" type="button"><span data-i18n="index.faq.q5.q">Which exchanges are supported?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n-html="index.faq.q5.a">Currently Binance spot + futures. EWY perpetual futures (Korean equity index) is also supported. See <a href="ewy.html" style="color:#888;text-decoration:underline">EWY page</a> for details.</div></div>
       </div>
     </div>
   </div>
@@ -420,9 +424,9 @@
 <!-- ========== CTA ========== -->
 <div class="cta-block">
   <div class="container">
-    <h2>Start automating your hedge today</h2>
-    <p>Connect via Telegram and get set up in minutes.</p>
-    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary">Get Started →</a>
+    <h2 data-i18n="index.cta.h2">Start automating your hedge today</h2>
+    <p data-i18n="index.cta.sub">Connect via Telegram and get set up in minutes.</p>
+    <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.cta.btn">Get Started →</a>
   </div>
 </div>
 
@@ -431,18 +435,18 @@
 <div class="risk-disclosure">
   <div class="container">
     <div class="risk-disclosure__box">
-      <div class="risk-disclosure__header">⚠️ Risk Disclosure</div>
+      <div class="risk-disclosure__header" data-i18n="index.risk.header">⚠️ Risk Disclosure</div>
 
-      <div class="risk-disclosure__sub">Nature of Service</div>
+      <div class="risk-disclosure__sub" data-i18n="index.risk.sub1">Nature of Service</div>
       <div class="risk-disclosure__items">
-        <p><strong>1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
-        <p><strong>2. Piano does not solicit investments.</strong> — It does not recommend or solicit the purchase or sale of any specific assets.</p>
-        <p><strong>3. Piano does not make investment decisions on your behalf.</strong> — All trades are executed according to user-configured conditions. Decisions regarding timing, asset selection, and trade size are solely the user's responsibility.</p>
-        <p><strong>4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
+        <p data-i18n-html="index.risk.i1"><strong>1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
+        <p data-i18n-html="index.risk.i2"><strong>2. Piano does not solicit investments.</strong> — It does not recommend or solicit the purchase or sale of any specific assets.</p>
+        <p data-i18n-html="index.risk.i3"><strong>3. Piano does not make investment decisions on your behalf.</strong> — All trades are executed according to user-configured conditions. Decisions regarding timing, asset selection, and trade size are solely the user's responsibility.</p>
+        <p data-i18n-html="index.risk.i4"><strong>4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
       </div>
 
-      <div class="risk-disclosure__sub">Investment Risk Disclosure</div>
-      <p class="risk-disclosure__body">Cryptocurrency trading involves significant risk and may result in the complete loss of principal. All trades are conducted at the user's own judgment and responsibility. Before making any investment decisions, carefully consider your financial situation, investment experience, and risk tolerance.</p>
+      <div class="risk-disclosure__sub" data-i18n="index.risk.sub2">Investment Risk Disclosure</div>
+      <p class="risk-disclosure__body" data-i18n="index.risk.body">Cryptocurrency trading involves significant risk and may result in the complete loss of principal. All trades are conducted at the user's own judgment and responsibility. Before making any investment decisions, carefully consider your financial situation, investment experience, and risk tolerance.</p>
     </div>
   </div>
 </div>
@@ -464,26 +468,27 @@
           <text x="184" y="99" class="piano-lockup__word">PIANO</text>
         </svg>
         </span>
-        <p class="footer__tagline">Automated Hedge Balancing for Crypto</p>
-        <p class="footer__contact">Get in Touch → <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram</a></p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Automated Hedge Balancing for Crypto</p>
+        <p class="footer__contact"><span data-i18n="footer.contact.prefix">Get in Touch → </span><a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.contact.link">Telegram</a></p>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Learn</p>
-        <a href="basis-hedge.html">What is Basis Hedge?</a>
-        <a href="ewy.html">EWY Futures</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.learn">Learn</p>
+        <a href="basis-hedge.html" data-i18n="footer.link.basis">What is Basis Hedge?</a>
+        <a href="ewy.html" data-i18n="footer.link.ewy">EWY Futures</a>
       </div>
       <div class="footer__nav">
-        <p class="footer__nav-label">Connect</p>
-        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener">Telegram Support</a>
+        <p class="footer__nav-label" data-i18n="footer.nav.connect">Connect</p>
+        <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="footer.link.telegram">Telegram Support</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span class="footer__copy">© 2025 PIANO. All rights reserved.</span>
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 PIANO. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
 
+<script src="js/i18n.js"></script>
 <script>
   lucide.createIcons();
 
