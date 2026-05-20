@@ -53,6 +53,9 @@
       'index.hero.ctaPrimary': 'Get Started →',
       'index.hero.ctaSecondary': 'How It Works',
       'index.hero.figCaption': 'Approved strategies coordinate exposure across supported markets.',
+      'index.marquee.aria': 'Supported market examples',
+      'index.marquee.lead': 'Market-linked futures Piano can turn into approved strategy rules',
+      'index.marquee.note': 'Ticker badges are illustrative market examples. Availability depends on exchange support and user approval.',
 
       'index.portfolio.label': 'Market Universe',
       'index.portfolio.h2': 'Your strategy can watch<br>more than crypto',
@@ -427,6 +430,9 @@
       'index.hero.ctaPrimary': '시작하기 →',
       'index.hero.ctaSecondary': '작동 방식',
       'index.hero.figCaption': '승인된 전략이 지원 시장의 익스포저를 조율합니다.',
+      'index.marquee.aria': '지원 시장 예시',
+      'index.marquee.lead': 'Piano가 승인된 전략 규칙으로 다룰 수 있는 시장 연동 선물 예시',
+      'index.marquee.note': '티커 배지는 이해를 돕기 위한 시장 예시입니다. 지원 여부는 거래소 제공 범위와 사용자 승인에 따라 달라집니다.',
 
       'index.portfolio.label': '시장 확장',
       'index.portfolio.h2': '코인만 보는<br>도구가 아닙니다',
