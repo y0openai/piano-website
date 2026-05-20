@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PIANO — Automated Hedge Balancing for Crypto</title>
-  <meta name="description" data-i18n-attr="content:index.metaDesc" content="Automatically balance your hedge positions. A tool that maintains the spot-to-futures ratio based on your configured parameters.">
+  <title>PIANO — Algorithmic RWA Strategy Automation</title>
+  <meta name="description" data-i18n-attr="content:index.metaDesc" content="Automate market signal analysis and execution for approved crypto and RWA futures strategies within user-defined assets, limits, and API permissions.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,10 +85,10 @@
   <div class="hero__text">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>
-      <span data-i18n="index.hero.badge">Automated Hedge Balancing</span>
+      <span data-i18n="index.hero.badge">Algorithmic Strategy Automation</span>
     </div>
-    <h1 class="hero__h1" data-i18n-html="index.hero.h1">Keep your hedge<br>in balance,<br>automatically.</h1>
-    <p class="hero__sub" data-i18n="index.hero.sub">No need to monitor 24/7. A tool that maintains the spot-to-futures ratio based on your configured parameters.</p>
+    <h1 class="hero__h1" data-i18n-html="index.hero.h1">Automate your<br>approved market<br>strategy.</h1>
+    <p class="hero__sub" data-i18n="index.hero.sub">Piano analyzes market signals and executes approved strategies across supported crypto and RWA futures, within the assets, limits, and API permissions you set.</p>
     <div class="hero__ctas">
       <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.hero.ctaPrimary">Get Started →</a>
       <a href="#how-it-works" class="btn-outline" data-i18n="index.hero.ctaSecondary">How It Works</a>
@@ -141,8 +141,40 @@
       <!-- Balance arc (trace) -->
       <path class="fig01-arc" d="M178 206c82-94 176 86 264-26 58-72 118-54 178-22" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-dasharray="600"/>
       <!-- Caption -->
-      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">AI manages ratios across symbols. Exits when conditions turn favorable.</text>
+      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">Approved strategies coordinate exposure across supported markets.</text>
     </svg>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== PORTFOLIO ========== -->
+<section class="section portfolio-section">
+  <div class="container">
+    <div class="features-intro">
+      <span class="label" data-i18n="index.portfolio.label">Portfolio Structure</span>
+      <h2 data-i18n-html="index.portfolio.h2">Diversify with<br>supported RWA markets</h2>
+      <p data-i18n="index.portfolio.sub">Diversification is a classic risk-management idea: different markets can react to different drivers. Piano helps automate approved strategy rules across supported instruments, not promise outcomes.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="portfolio-card">
+        <div class="portfolio-card__kicker" data-i18n="index.portfolio.c1.kicker">01 / Diversification</div>
+        <h3 data-i18n="index.portfolio.c1.h3">Different markets, different drivers</h3>
+        <p data-i18n="index.portfolio.c1.p">Supported crypto and RWA futures can reference assets such as equity indices, ETFs, or commodities depending on exchange availability. Piano helps monitor them under one approved rule set.</p>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-card__kicker" data-i18n="index.portfolio.c2.kicker">02 / Discipline</div>
+        <h3 data-i18n="index.portfolio.c2.h3">All-weather inspired structure</h3>
+        <p data-i18n="index.portfolio.c2.p">The goal is not to predict one winning market. The goal is to define exposure rules, risk limits, and execution conditions before volatility arrives.</p>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-card__kicker" data-i18n="index.portfolio.c3.kicker">03 / Long & Short</div>
+        <h3 data-i18n="index.portfolio.c3.h3">Designed for both directions</h3>
+        <p data-i18n="index.portfolio.c3.p">Futures can express both long and short exposure, so approved strategies may be designed for rising or falling markets. Short exposure can also create large losses and requires strict limits.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -154,8 +186,8 @@
   <div class="container">
     <div class="features-intro">
       <span class="label" data-i18n="index.features.label">Core Features</span>
-      <h2 data-i18n-html="index.features.h2">Three mechanisms that<br>keep your hedge intact</h2>
-      <p data-i18n="index.features.sub">Built on freqtrade open-source framework. Every execution respects boundaries you define.</p>
+      <h2 data-i18n-html="index.features.h2">Three mechanisms for<br>approved automation</h2>
+      <p data-i18n="index.features.sub">Built on the freqtrade open-source framework. Every execution stays inside the target assets, strategy rules, and risk boundaries you approve.</p>
     </div>
 
     <div class="features-grid">
@@ -192,7 +224,7 @@
           <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f2.caption">Ratio drift is detected and tuned back toward balance.</text>
         </svg>
         <h3 data-i18n="index.features.f2.h3">Auto Position Imbalance Correction</h3>
-        <p data-i18n="index.features.f2.p">When market movements drift the spot·futures ratio, AI evaluates in real time and adjusts positions to restore balance.</p>
+        <p data-i18n="index.features.f2.p">When market movements drift an approved portfolio or hedge ratio, Piano evaluates the rule set in real time and adjusts positions inside configured limits.</p>
         <span class="feature-card__note" data-i18n="index.features.f2.note">Rebalance / AI correction</span>
       </div>
 
@@ -211,7 +243,7 @@
           <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f3.caption">AI adjusts size ratio and closes favorable positions.</text>
         </svg>
         <h3 data-i18n="index.features.f3.h3">Linked Balancing</h3>
-        <p data-i18n="index.features.f3.p">AI monitors the market and dynamically manages the position size ratio between both directions. When conditions turn favorable, positions are closed to realize profit.</p>
+        <p data-i18n="index.features.f3.p">Piano can automate long and short position sizing for approved strategies. When configured exit conditions are met, orders are executed according to the user's rules.</p>
         <span class="feature-card__note" data-i18n="index.features.f3.note">DCA + auto-rebalance</span>
       </div>
     </div>
@@ -409,7 +441,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question" type="button"><span data-i18n="index.faq.q1.q">What is Piano?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q1.a">Piano is a tool that automatically maintains the balance of spot+futures hedge (Basis Hedge) positions on Binance. It's built on the freqtrade open-source framework.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="index.faq.q1.a">Piano is a software tool that analyzes market signals and automates execution for user-approved strategies across supported crypto and RWA futures. Hedge balancing is one supported strategy structure.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button"><span data-i18n="index.faq.q2.q">Do I need crypto trading experience?</span><span class="faq-icon">+</span></button>
@@ -425,7 +457,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button"><span data-i18n="index.faq.q5.q">Which exchanges are supported?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-i18n-html="index.faq.q5.a">Currently Binance spot + futures. EWY perpetual futures (Korean equity index) is also supported. See <a href="ewy.html" style="color:#888;text-decoration:underline">EWY page</a> for details.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n-html="index.faq.q5.a">Piano focuses on Binance-connected instruments, including supported crypto markets and selected RWA perpetual/futures products such as EWY where available. Supported markets depend on exchange availability and user approval.</div></div>
       </div>
     </div>
   </div>
@@ -435,8 +467,8 @@
 <!-- ========== CTA ========== -->
 <div class="cta-block">
   <div class="container">
-    <h2 data-i18n="index.cta.h2">Start automating your hedge today</h2>
-    <p data-i18n="index.cta.sub">Connect via Telegram and get set up in minutes.</p>
+    <h2 data-i18n="index.cta.h2">Start automating approved strategies</h2>
+    <p data-i18n="index.cta.sub">Connect via Telegram and define the assets, rules, and limits before activation.</p>
     <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.cta.btn">Get Started →</a>
   </div>
 </div>
@@ -457,7 +489,7 @@
       </div>
 
       <div class="risk-disclosure__sub" data-i18n="index.risk.sub2">Investment Risk Disclosure</div>
-      <p class="risk-disclosure__body" data-i18n="index.risk.body">Cryptocurrency trading involves significant risk and may result in the complete loss of principal. All trades are conducted at the user's own judgment and responsibility. Before making any investment decisions, carefully consider your financial situation, investment experience, and risk tolerance.</p>
+      <p class="risk-disclosure__body" data-i18n="index.risk.body">Crypto and RWA-linked futures or derivative trading involves significant risk and may result in the complete loss of principal. Automated execution can amplify losses if parameters are unsuitable or market conditions change. Before activating any strategy, carefully consider your financial situation, investment experience, and risk tolerance.</p>
     </div>
   </div>
 </div>
