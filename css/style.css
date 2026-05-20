@@ -236,24 +236,22 @@ p { color: var(--fg-3); line-height: 1.75; }
 .nav-drawer.open { display: flex; }
 .nav-drawer a { font-size: 0.95rem; color: var(--fg-3); }
 
-/* ---- Theme Toggle ---- */
+/* ---- Theme Toggle (single-button cycle) ---- */
 .theme-toggle {
-  display: inline-flex; align-items: center;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
   background: none; border: 1px solid var(--bd-4);
   border-radius: 7px; padding: 0;
-  overflow: hidden; flex-shrink: 0;
+  cursor: pointer; color: var(--fg-6);
+  flex-shrink: 0;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
 }
-.theme-toggle__btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 30px; height: 30px; background: none; border: none;
-  cursor: pointer; color: var(--fg-6); transition: all 0.15s;
-}
-.theme-toggle__btn:hover { color: var(--fg); background: var(--hover-bg); }
-.theme-toggle__btn.active { color: var(--fg); background: var(--hover-bg2); }
-.theme-toggle__btn + .theme-toggle__btn { border-left: 1px solid var(--bd-3); }
-.theme-toggle__btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-/* Auto icon uses fill */
-.theme-toggle__btn--auto svg { fill: currentColor; stroke: none; }
+.theme-toggle:hover { color: var(--fg); background: var(--hover-bg); }
+.theme-toggle:active { background: var(--hover-bg2); }
+.theme-toggle__icon { width: 15px; height: 15px; display: none; }
+.theme-toggle[data-mode="auto"] .theme-toggle__icon--auto,
+.theme-toggle[data-mode="light"] .theme-toggle__icon--light,
+.theme-toggle[data-mode="dark"] .theme-toggle__icon--dark { display: block; }
 
 /* ---- Language Toggle ---- */
 .lang-toggle {

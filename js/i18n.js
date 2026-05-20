@@ -787,15 +787,24 @@
     });
   }
 
+  const listeners = [];
+  function emit(lang) {
+    listeners.forEach((fn) => {
+      try { fn(lang); } catch (e) { /* swallow */ }
+    });
+  }
+
   function setLang(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
     localStorage.setItem(STORAGE_KEY, lang);
     applyLang(lang);
+    emit(lang);
   }
 
   function init() {
     const lang = detectInitialLang();
     applyLang(lang);
+    emit(lang);
     document.querySelectorAll('.lang-toggle__btn').forEach((b) => {
       b.addEventListener('click', () => setLang(b.dataset.lang));
     });
@@ -807,6 +816,17 @@
     init();
   }
 
-  // expose for debugging
-  window.PianoI18n = { setLang, applyLang, get current() { return localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG; } };
+  window.PianoI18n = {
+    setLang,
+    applyLang,
+    get current() { return localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG; },
+    t(key) { return tr(this.current, key); },
+    onChange(fn) {
+      listeners.push(fn);
+      return () => {
+        const i = listeners.indexOf(fn);
+        if (i >= 0) listeners.splice(i, 1);
+      };
+    },
+  };
 })();

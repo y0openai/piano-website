@@ -41,17 +41,28 @@
       <button class="lang-toggle__btn" data-lang="en" type="button">EN</button>
       <button class="lang-toggle__btn" data-lang="ko" type="button">KO</button>
     </div>
-    <div class="theme-toggle" id="themeToggle" role="group" aria-label="Color theme">
-      <button class="theme-toggle__btn" data-mode="auto" title="Auto (system)" data-i18n-attr="title:nav.themeAuto">
-        <svg viewBox="0 0 14 14" width="13" height="13"><rect x="1" y="1.5" width="12" height="7.5" rx="1.2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7 9v2M4.5 11.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <button class="theme-toggle__btn" data-mode="light" title="Light" data-i18n-attr="title:nav.themeLight">
-        <svg viewBox="0 0 14 14" width="13" height="13"><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M3 3l1 1M10 10l1 1M10 4l-1 1M4 10l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
-      </button>
-      <button class="theme-toggle__btn" data-mode="dark" title="Dark" data-i18n-attr="title:nav.themeDark">
-        <svg viewBox="0 0 14 14" width="13" height="13"><path d="M9.5 2.5A5 5 0 1 0 11.5 7 3.5 3.5 0 0 1 9.5 2.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      </button>
-    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" data-mode="auto" aria-label="Toggle color theme">
+      <svg class="theme-toggle__icon theme-toggle__icon--auto" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 2.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 16 16" aria-hidden="true">
+        <circle cx="8" cy="8" r="3" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <line x1="8" y1="1" x2="8" y2="2.6"/>
+          <line x1="8" y1="13.4" x2="8" y2="15"/>
+          <line x1="1" y1="8" x2="2.6" y2="8"/>
+          <line x1="13.4" y1="8" x2="15" y2="8"/>
+          <line x1="3" y1="3" x2="4.2" y2="4.2"/>
+          <line x1="11.8" y1="11.8" x2="13" y2="13"/>
+          <line x1="13" y1="3" x2="11.8" y2="4.2"/>
+          <line x1="3" y1="13" x2="4.2" y2="11.8"/>
+        </g>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M13.5 10.5A6 6 0 0 1 5.5 2.5a6 6 0 1 0 8 8z" fill="currentColor"/>
+      </svg>
+    </button>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.openMenu">
       <span></span><span></span><span></span>
     </button>
@@ -467,9 +478,12 @@
   hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
   function closeDrawer() { drawer.classList.remove('open'); }
 
-  // Theme toggle
+  // Theme toggle (cycle: auto → light → dark)
   (function(){
+    var modes = ['auto', 'light', 'dark'];
+    var keyFor = { auto: 'nav.themeAuto', light: 'nav.themeLight', dark: 'nav.themeDark' };
     var mode = localStorage.getItem('piano-theme') || 'auto';
+    var btn = document.getElementById('themeToggle');
     function applyTheme(m) {
       var h = document.documentElement;
       if (m === 'light') h.setAttribute('data-theme','light');
@@ -478,13 +492,23 @@
         h.setAttribute('data-theme','light');
       else h.removeAttribute('data-theme');
     }
-    function syncBtns(m) {
-      document.querySelectorAll('.theme-toggle__btn').forEach(function(b){ b.classList.toggle('active', b.dataset.mode === m); });
+    function sync() {
+      btn.setAttribute('data-mode', mode);
+      var label = (window.PianoI18n && window.PianoI18n.t(keyFor[mode])) || mode;
+      btn.setAttribute('title', label);
+      btn.setAttribute('aria-label', label);
     }
-    syncBtns(mode);
-    document.querySelectorAll('.theme-toggle__btn').forEach(function(b){
-      b.addEventListener('click', function(){ mode = b.dataset.mode; localStorage.setItem('piano-theme', mode); applyTheme(mode); syncBtns(mode); });
+    applyTheme(mode);
+    sync();
+    btn.addEventListener('click', function(){
+      mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+      localStorage.setItem('piano-theme', mode);
+      applyTheme(mode);
+      sync();
     });
+    if (window.PianoI18n && window.PianoI18n.onChange) {
+      window.PianoI18n.onChange(sync);
+    }
     window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(){ if (mode === 'auto') applyTheme('auto'); });
   })();
 </script>
