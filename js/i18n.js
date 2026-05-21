@@ -460,8 +460,8 @@
       'index.metaDesc': '코인 선물 자동매매를 금, 원유, ETF, AI 반도체 주식 흐름까지 확장하는 시장 전략 자동화 소프트웨어입니다. 사용자가 정한 조건 안에서 신호 분석과 실행을 자동화합니다.',
 
       'index.hero.badge': '시장 전략 자동화',
-      'index.hero.h1': '코인 자동매매를<br>세계 시장 전략으로<br>확장하세요.',
-      'index.hero.sub': '금, 원유, QQQ, AI 반도체 주식 흐름까지. Piano는 사용자가 정한 조건 안에서 시장 신호를 분석하고 자동 실행합니다.',
+      'index.hero.h1': '코인만 보던 자동매매,<br>금·원유·ETF 흐름까지<br>조건대로 관리하세요.',
+      'index.hero.sub': 'Piano는 가상자산 선물부터 금, 원유, QQQ, AI 반도체 관련 흐름까지 시장 신호를 추적하고, 사용자가 정한 조건 안에서만 자동 실행합니다.',
       'index.hero.ctaPrimary': '전략 구성 상담하기 →',
       'index.hero.ctaSecondary': '작동 방식 보기',
       'index.hero.figCaption': '내가 정한 조건 안에서 시장 노출을 자동 조율합니다.',
