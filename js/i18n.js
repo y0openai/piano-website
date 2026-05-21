@@ -46,7 +46,6 @@
       'footer.link.terms': 'Terms of Service',
       'footer.link.privacy': 'Privacy Policy',
       'footer.link.risk': 'Risk Disclosure',
-      'footer.link.transparency': 'Transparency',
       'footer.copy': '© 2025 PIANO. All rights reserved.',
 
       'back.home': '← Back to Home',
@@ -456,7 +455,6 @@
       'footer.link.terms': '이용약관',
       'footer.link.privacy': '개인정보처리방침',
       'footer.link.risk': '위험 고지',
-      'footer.link.transparency': '투명성 보고서',
       'footer.copy': '© 2025 PIANO. All rights reserved.',
 
       'back.home': '← 홈으로 돌아가기',

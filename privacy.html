@@ -7,13 +7,14 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/enhancements.css">
-    <link rel="stylesheet" href="css/legal-pages.css">
+    <script>
+      (function(){var t=localStorage.getItem('piano-theme')||'auto',h=document.documentElement;
+      if(t==='light')h.setAttribute('data-theme','light');
+      else if(t==='dark')h.setAttribute('data-theme','dark');
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)h.setAttribute('data-theme','light');})();
+    </script>
 </head>
 <body class="legal-page">
 
@@ -32,12 +33,6 @@
                 <span class="legal-tab-icon">⚠️</span>
                 <span data-i18n="legal.nav.risk">투자위험고지</span>
             </a>
-            <!-- 투명성 보고서: 준비 중 (숨김)
-            <a href="transparency.html" class="legal-tab-link">
-                <span class="legal-tab-icon">📊</span>
-                <span data-i18n="legal.nav.transparency">투명성 보고서</span>
-            </a>
-            -->
         </nav>
 
         <main class="legal-content">
@@ -45,11 +40,11 @@
                 <h1 data-i18n="privacy.header.title">개인정보처리방침</h1>
                 <div class="legal-meta">
                     <div class="legal-meta-item">
-                        <span class="material-symbols-outlined legal-meta-icon">event</span>
+                        
                         <span><strong data-i18n="privacy.header.effective">시행일:</strong> 2026년 3월 18일</span>
                     </div>
                     <div class="legal-meta-item">
-                        <span class="material-symbols-outlined legal-meta-icon">update</span>
+                        
                         <span><strong data-i18n="privacy.header.updated">최종 수정일:</strong> 2026년 3월 18일</span>
                     </div>
                 </div>
@@ -90,7 +85,7 @@
                                 <td data-i18n="privacy.article1.table1.row3.col3">서비스 제공, 성능 분석, 부정 이용 방지</td>
                             </tr>
                             <tr>
-                                <td data-i18n="privacy.article1.table1.row4.col1">문의/상담</td>
+                                <td data-i18n="privacy.article1.table1.row4.col1">기능·결제·기술 문의</td>
                                 <td data-i18n="privacy.article1.table1.row4.col2">이름, 이메일, 문의 내용</td>
                                 <td data-i18n="privacy.article1.table1.row4.col3">고객 지원, 민원 처리</td>
                             </tr>
@@ -101,9 +96,20 @@
                 <h3 data-i18n="privacy.article1.subtitle2">2. 개인정보 수집 방법</h3>
                 <ul>
                     <li data-i18n="privacy.article1.method1">웹사이트 회원가입 및 구독 신청 시</li>
-                    <li data-i18n="privacy.article1.method2">이메일, 전화를 통한 상담 과정에서</li>
+                    <li data-i18n="privacy.article1.method2">이메일을 통한 기능·결제·기술 문의 응대 과정에서</li>
                     <li data-i18n="privacy.article1.method3">서비스 이용 과정에서 자동 수집 (쿠키, 접속 로그 등)</li>
                 </ul>
+
+                <h3 data-i18n="privacy.article1.subtitle3">3. 수집하지 않는 개인정보</h3>
+                <div class="highlight-box">
+                    <p data-i18n="privacy.article1.notcollected.intro">회사는 본 서비스가 투자자문업·투자일임업에 해당하지 않음을 명확히 하기 위하여, 다음 정보를 수집하지 않습니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.article1.notcollected.item1">이용자의 <strong>투자목적</strong> (단기 매매, 장기 보유, 헷지 등의 목적)</li>
+                        <li data-i18n="privacy.article1.notcollected.item2">이용자의 <strong>재산상황</strong> (총 자산 규모, 자산 구성, 부채 상황, 소득 수준 등)</li>
+                        <li data-i18n="privacy.article1.notcollected.item3">이용자의 <strong>투자경험</strong> (과거 거래 이력, 손익 경험, 금융상품 이해도 등)</li>
+                    </ul>
+                    <p data-i18n="privacy.article1.notcollected.note">회사는 위 정보에 기반한 맞춤형 투자판단(전략 추천, 종목 추천, 진입 시점 추천, 파라미터 추천 등)을 제공하지 않으므로, 해당 정보 자체가 수집 대상이 아닙니다.</p>
+                </div>
             </section>
 
             <section id="article2">
@@ -159,7 +165,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p data-i18n="privacy.article3.note" style="margin-top: 20px;">보유 기간 종료 시, 해당 개인정보는 지체 없이 파기됩니다.</p>
+                <p data-i18n="privacy.article3.note">보유 기간 종료 시, 해당 개인정보는 지체 없이 파기됩니다.</p>
             </section>
 
             <section id="article4">
@@ -313,7 +319,7 @@
                     <p><strong data-i18n="privacy.article11.position_label">직책:</strong> <span data-i18n="privacy.article11.position">대표이사</span></p>
                     <p><strong data-i18n="privacy.article11.phone_label">연락처:</strong> <span data-i18n="privacy.article11.phone">0505-4004-4231</span></p>
                     <p><strong data-i18n="privacy.article11.email_label">이메일:</strong> <span data-i18n="privacy.article11.email">yalpha9999@gmail.com</span></p>
-                    <p data-i18n="privacy.article11.contact_note" style="margin-top: 15px;">개인정보 관련 문의사항이 있으시면 위 연락처로 문의해 주시기 바랍니다.</p>
+                    <p data-i18n="privacy.article11.contact_note">개인정보 관련 문의사항이 있으시면 위 연락처로 문의해 주시기 바랍니다.</p>
                 </div>
             </section>
 
@@ -343,7 +349,7 @@
                 <p data-i18n="privacy.article14.text">본 개인정보처리방침은 2026년 3월 18일부터 시행됩니다.</p>
             </section>
 
-            <div class="info-box" style="margin-top: 40px;">
+            <div class="info-box">
                 <h3 data-i18n="privacy.company.title" style="margin-top: 0;">사업자 정보</h3>
                 <p><strong data-i18n="privacy.company.name_label">상호:</strong> <span data-i18n="privacy.company.name">와이알파 주식회사</span></p>
                 <p><strong data-i18n="privacy.company.ceo_label">대표자:</strong> <span data-i18n="privacy.company.ceo">신용수</span></p>
@@ -356,13 +362,11 @@
             <!-- Navigation Buttons -->
             <div class="legal-nav-buttons">
                 <a href="index.html" class="btn-home">
-                    <span class="material-symbols-outlined">home</span>
                     <span data-i18n="legal.btn.home">메인 페이지</span>
                 </a>
                 <a href="risk-disclosure.html" class="btn-back">
                     <span data-i18n="legal.btn.next">다음: 투자위험고지</span>
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
+                    </a>
             </div>
 
         </main>
@@ -388,7 +392,6 @@
         </aside>
     </div>
 
-    <script src="js/language.js"></script>
-    <script src="js/legal-pages.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
