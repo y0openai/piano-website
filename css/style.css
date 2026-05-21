@@ -2913,7 +2913,7 @@ html[data-art="pixel"] .section-showcase--garden .section-showcase__copy {
 
 .basis-spread-chip {
   position: absolute;
-  left: 45%;
+  left: 48.7%;
   top: 43%;
   display: inline-flex;
   align-items: center;
@@ -2938,8 +2938,8 @@ html[data-art="pixel"] .section-showcase--garden .section-showcase__copy {
 
 .basis-gauge-ring {
   position: absolute;
-  left: 52%;
-  top: 48.5%;
+  left: 48.7%;
+  top: 47.5%;
   width: 86px;
   height: 86px;
   border: 2px solid rgba(157,219,220,0.30);
@@ -2969,10 +2969,10 @@ html[data-art="pixel"] .section-showcase--garden .section-showcase__copy {
 
 .basis-balance-indicator {
   position: absolute;
-  right: 7.4%;
-  top: 28%;
+  right: 7.55%;
+  top: 37.5%;
   width: 10px;
-  height: 43%;
+  height: 31.5%;
   border: 1px solid rgba(157,219,220,0.28);
   border-radius: 4px;
   background: rgba(8,18,37,0.34);
