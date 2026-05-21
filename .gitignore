@@ -5,6 +5,10 @@ EWY_DRAFT.md
 # Design assets
 *.png
 !assets/pixel-concepts-board.png
+!assets/pixel-piano-portfolio.png
+!assets/pixel-global-transit.png
+!assets/pixel-portfolio-garden.png
+!assets/pixel-basis-workshop.png
 *.pen
 
 # System
