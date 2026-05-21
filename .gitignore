@@ -4,6 +4,7 @@ EWY_DRAFT.md
 
 # Design assets
 *.png
+!assets/pixel-concepts-board.png
 *.pen
 
 # System
