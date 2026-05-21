@@ -317,7 +317,9 @@ p { color: var(--fg-3); line-height: 1.75; }
   grid-template-columns: 1fr 1fr;
   align-items: center; gap: 64px;
   padding: 80px 0 72px;
+  position: relative;
 }
+.hero > *:not(canvas.hero-particles) { position: relative; z-index: 1; }
 .hero__badge {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1px solid var(--bd-6); border-radius: 100px;
@@ -342,7 +344,7 @@ p { color: var(--fg-3); line-height: 1.75; }
   font-size: 70px; font-weight: 900; letter-spacing: 0;
 }
 .hero__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
-.hero__h1 { margin-bottom: 20px; }
+.hero__h1 { margin-bottom: 20px; word-break: keep-all; overflow-wrap: break-word; }
 .hero__sub { font-size: 1rem; color: var(--fg-4); max-width: 420px; margin-bottom: 36px; line-height: 1.75; }
 .hero__ctas { display: flex; align-items: center; gap: 16px; }
 .hero__figure {
@@ -350,7 +352,33 @@ p { color: var(--fg-3); line-height: 1.75; }
   padding: 48px 32px; border: 1px solid var(--bd-3);
   border-radius: 16px; background: var(--bg-1);
 }
+/* Serious mode: drop the framed container so the particle field can breathe
+   across the whole hero. The isometric SVG floats freely. */
+html[data-art="serious"] .hero__figure {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
 .iso-svg { width: 100%; max-width: 520px; }
+
+/* Hero particle field — Serious mode only. Spans the whole hero section
+   (behind both text and figure) so it reads as an ambient field, not a
+   boxed-in artwork. */
+canvas.hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 800ms ease-out;
+}
+html[data-art="serious"] canvas.hero-particles { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  canvas.hero-particles { display: none !important; }
+}
 
 /* ==============================
    PIXEL ART MODE + PARALLAX
