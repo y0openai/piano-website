@@ -84,6 +84,7 @@ const NOISE_GLSL = /* glsl */ `
 
 const SIMULATION_SHADER = /* glsl */ `
   uniform sampler2D uPosRefs;
+  uniform sampler2D uCoinRef;
   uniform vec2 uMousePos;
   uniform float uTime;
   uniform float uDeltaTime;
@@ -92,35 +93,43 @@ const SIMULATION_SHADER = /* glsl */ `
   void main() {
     vec2 uv = gl_FragCoord.xy / resolution.xy;
     vec4 pFrame = texture2D(uPosition, uv);
-    vec2 refPos = texture2D(uPosRefs, uv).xy;
+    vec2 refPos     = texture2D(uPosRefs, uv).xy;
+    vec2 coinOffset = texture2D(uCoinRef, uv).xy;
 
     vec2 pos = pFrame.xy;
     float scale = pFrame.z;
 
-    // Distance from this particle to the mouse pointer.
-    vec2 toMouse = uMousePos - pos;
-    float mouseDist = length(toMouse);
-    // Closer particles feel the pull more strongly.
-    float mouseInfluence = smoothstep(0.55, 0.04, mouseDist) * uIsHovering;
+    // Coin formation participates with the whole field, not just particles
+    // near the cursor. Gating by distance would only attract particles whose
+    // ambient anchor is already near the mouse — and those anchors collapse
+    // onto a single point instead of filling the silhouette. Every particle
+    // gets a coin slot; hovering pulls them all toward (mouse + slot), and
+    // leaving rebuilds the ambient field as hoverSmoothed → 0.
+    float coinPull = uIsHovering;
 
-    // Target = anchor, but bent toward mouse when hover & close.
-    vec2 targetPos = mix(refPos, uMousePos, mouseInfluence * mouseInfluence);
+    // Mouse-anchored coin slot for THIS particle.
+    vec2 coinTarget = uMousePos + coinOffset;
 
-    // Steering — small acceleration, distance-weighted (Antigravity pattern).
-    vec2 dir = normalize(targetPos - pos) * 0.014;
+    // Linear blend ambient ↔ coin.
+    vec2 targetPos = mix(refPos, coinTarget, coinPull);
+
+    // Steering — stronger pull so the coin actually forms within ~0.5s
+    // of hover instead of asymptotically drifting toward it.
+    vec2 dir = normalize(targetPos - pos) * 0.035;
     float dist = length(targetPos - pos);
-    float strength = smoothstep(0.35, 0.0, dist);
+    float strength = smoothstep(0.5, 0.0, dist);
     if (dist > 0.003) pos += dir * strength;
 
-    // Apply only a fraction of the change → inertial smoothing.
-    vec2 diff = (pos - pFrame.xy) * 0.22;
+    // Apply a larger fraction of the change → faster lerp but still smooth.
+    vec2 diff = (pos - pFrame.xy) * 0.38;
 
-    // Scale: in normally, swell when mouse close.
-    float targetScale = 0.55 + mouseInfluence * 1.2;
-    scale += (targetScale - scale) * 0.08;
+    // Scale: ambient particles small, coin particles emphasized so the
+    // coin reads clearly as a denser, brighter cluster.
+    float targetScale = 0.55 + coinPull * 1.5;
+    scale += (targetScale - scale) * 0.10;
 
-    // Use velocity channel for color mixing in the render pass.
-    float velocity = mouseInfluence;
+    // velocity channel drives color blend in the render pass.
+    float velocity = coinPull;
 
     gl_FragColor = vec4(pFrame.xy + diff, scale, velocity);
   }
@@ -227,6 +236,68 @@ function sampleRadialAnchors(count, aspect) {
   return out;
 }
 
+// Coin silhouette sample — circular rim + inner "$" glyph. Used as the
+// mouse-anchored target shape: when a particle is near the cursor, it
+// steers toward (mouse + this offset) instead of its ambient anchor, so
+// the cluster around the mouse reads as a coin / unit of value.
+function sampleCoinAnchors(count) {
+  const RES = 256;
+  const c = document.createElement('canvas');
+  c.width = RES;
+  c.height = RES;
+  const ctx = c.getContext('2d');
+  ctx.clearRect(0, 0, RES, RES);
+
+  const cx = RES / 2;
+  const cy = RES / 2;
+  const R  = RES * 0.40;
+
+  // Coin rim — a hollow stroke ring (filled disc would crowd the $).
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = RES * 0.045;
+  ctx.beginPath();
+  ctx.arc(cx, cy, R, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Inner "$" glyph. Inter is loaded for the rest of the site so we get a
+  // consistent dollar sign across platforms; sans-serif is the fallback.
+  ctx.fillStyle = '#fff';
+  ctx.font = `900 ${Math.round(RES * 0.55)}px Inter, "Helvetica Neue", Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('$', cx, cy + RES * 0.02);
+
+  const img = ctx.getImageData(0, 0, RES, RES).data;
+  const filled = [];
+  for (let y = 0; y < RES; y++) {
+    for (let x = 0; x < RES; x++) {
+      const a = img[(y * RES + x) * 4 + 3];
+      if (a > 64) filled.push((x << 16) | y);
+    }
+  }
+  // Fisher-Yates so subsampling is uniform across the coin silhouette.
+  for (let i = filled.length - 1; i > 0; i--) {
+    const j = (Math.random() * (i + 1)) | 0;
+    const t = filled[i]; filled[i] = filled[j]; filled[j] = t;
+  }
+
+  // World-space coin radius. Larger reads more clearly as a coin (rim +
+  // inner $ both legible). World y range is [-1, 1] so 0.45 ≈ 22% of the
+  // hero height — a deliberate, sizeable shape, not an incidental blob.
+  const COIN_WORLD_RADIUS = 0.45;
+  const k = COIN_WORLD_RADIUS / (RES * 0.5);
+
+  const out = new Float32Array(count * 2);
+  for (let i = 0; i < count; i++) {
+    const v = filled[i % filled.length];
+    const x = v >>> 16;
+    const y = v & 0xFFFF;
+    out[i * 2 + 0] =  (x - cx) * k;
+    out[i * 2 + 1] = -(y - cy) * k; // flip y for WebGL
+  }
+  return out;
+}
+
 // ---- Three.js wiring ------------------------------------------------------
 
 async function loadThree() {
@@ -313,11 +384,36 @@ async function init() {
     refData[i * 4 + 3] = 0;
   }
   const refTex = new THREE.DataTexture(refData, TEX_SIZE, TEX_SIZE, THREE.RGBAFormat, THREE.FloatType);
+  refTex.minFilter = THREE.NearestFilter;
+  refTex.magFilter = THREE.NearestFilter;
+  refTex.wrapS = THREE.ClampToEdgeWrapping;
+  refTex.wrapT = THREE.ClampToEdgeWrapping;
+  refTex.generateMipmaps = false;
   refTex.needsUpdate = true;
+
+  // Coin-formation texture — each particle gets a random offset sampled
+  // from the coin silhouette. On hover, particles steer toward
+  // (mousePos + thisOffset) so the cluster around the cursor forms a coin.
+  const coinOffsets = sampleCoinAnchors(PARTICLE_COUNT);
+  const coinData = new Float32Array(PARTICLE_COUNT * 4);
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    coinData[i * 4 + 0] = coinOffsets[i * 2 + 0];
+    coinData[i * 4 + 1] = coinOffsets[i * 2 + 1];
+    coinData[i * 4 + 2] = 0;
+    coinData[i * 4 + 3] = 0;
+  }
+  const coinTex = new THREE.DataTexture(coinData, TEX_SIZE, TEX_SIZE, THREE.RGBAFormat, THREE.FloatType);
+  coinTex.minFilter = THREE.NearestFilter;
+  coinTex.magFilter = THREE.NearestFilter;
+  coinTex.wrapS = THREE.ClampToEdgeWrapping;
+  coinTex.wrapT = THREE.ClampToEdgeWrapping;
+  coinTex.generateMipmaps = false;
+  coinTex.needsUpdate = true;
 
   const positionVar = gpu.addVariable('uPosition', SIMULATION_SHADER, dtPosition);
   gpu.setVariableDependencies(positionVar, [positionVar]);
   positionVar.material.uniforms.uPosRefs    = { value: refTex };
+  positionVar.material.uniforms.uCoinRef    = { value: coinTex };
   positionVar.material.uniforms.uMousePos   = { value: new THREE.Vector2(99, 99) };
   positionVar.material.uniforms.uTime       = { value: 0 };
   positionVar.material.uniforms.uDeltaTime  = { value: 1 / 60 };
