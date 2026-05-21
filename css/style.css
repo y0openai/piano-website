@@ -2746,12 +2746,12 @@ html[data-art="pixel"] .pixel-stage--hero .pixel-stage__image {
 
 .pixel-floating-note {
   position: absolute;
-  width: 9px;
-  height: 14px;
+  width: 27px;
+  height: 42px;
   color: #57D5FF;
   background: currentColor;
-  border-radius: 2px 2px 1px 1px;
-  box-shadow: 0 0 14px currentColor;
+  border-radius: 6px 6px 3px 3px;
+  box-shadow: 0 0 32px currentColor;
   opacity: 0;
   animation: pixel-float-note 6.4s ease-in-out infinite;
 }
@@ -2759,10 +2759,10 @@ html[data-art="pixel"] .pixel-stage--hero .pixel-stage__image {
 .pixel-floating-note::before {
   content: "";
   position: absolute;
-  right: -5px;
-  top: -10px;
-  width: 4px;
-  height: 20px;
+  right: -15px;
+  top: -30px;
+  width: 12px;
+  height: 60px;
   background: currentColor;
 }
 
@@ -3061,5 +3061,70 @@ html[data-art="pixel"] .section-showcase--garden .section-showcase__copy {
   .map-token,
   .basis-spread-chip {
     transform: scale(0.82);
+  }
+}
+
+/* Pixel mode: combine market copy and give the RWA map full emphasis. */
+html[data-art="pixel"] .portfolio-section .features-intro {
+  max-width: 880px;
+  padding-bottom: 36px;
+}
+
+html[data-art="pixel"] .portfolio-section .features-intro p {
+  max-width: 680px;
+}
+
+html[data-art="pixel"] .section-showcase--market {
+  display: block;
+  max-width: 1280px;
+  min-height: auto;
+  margin: 0 auto;
+  padding: 0 28px 70px;
+  overflow: visible;
+  border: 0;
+}
+
+html[data-art="pixel"] .section-showcase--market::before {
+  display: none;
+}
+
+html[data-art="pixel"] .section-showcase--market .section-showcase__copy {
+  display: none;
+}
+
+html[data-art="pixel"] .section-showcase--market .pixel-stage {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(157,219,220,0.22);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 28px 90px rgba(0,0,0,0.34),
+    0 0 80px rgba(87,213,255,0.10);
+}
+
+html[data-art="pixel"] .section-showcase--market .pixel-stage__image {
+  object-position: center center;
+}
+
+html[data-art="pixel"] .portfolio-grid {
+  padding-top: 34px;
+}
+
+@media (max-width: 860px) {
+  html[data-art="pixel"] .portfolio-section .features-intro {
+    padding: 82px 20px 28px;
+  }
+
+  html[data-art="pixel"] .section-showcase--market {
+    padding: 0 20px 46px;
+  }
+
+  html[data-art="pixel"] .section-showcase--market .pixel-stage {
+    aspect-ratio: 16 / 10;
   }
 }

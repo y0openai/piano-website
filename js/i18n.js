@@ -77,8 +77,8 @@
       'index.pixel.basis.tag3': 'Spread gate',
 
       'index.portfolio.label': 'Market Universe',
-      'index.portfolio.h2': 'Your strategy can watch<br>more than crypto',
-      'index.portfolio.sub': 'The idea is simple: markets do not move for the same reason. Piano helps you turn supported futures that track crypto, commodities, ETFs, and selected global stocks into rule-based strategies you can monitor.',
+      'index.portfolio.h2': 'Map more markets<br>into one strategy view',
+      'index.portfolio.sub': 'Commodities, ETF-linked, stock-linked, and crypto futures move for different reasons. Piano brings supported markets into one rule-based strategy layer you can monitor and control.',
       'index.portfolio.c1.kicker': '01 / Macro Signals',
       'index.portfolio.c1.h3': 'Gold, silver, and oil tell a macro story',
       'index.portfolio.c1.p': 'Gold is watched when investors look for safety. Oil often reflects inflation, transport costs, and global demand. These markets give a strategy signals that are different from crypto momentum.',
@@ -486,8 +486,8 @@
       'index.pixel.basis.tag3': '실행 기준',
 
       'index.portfolio.label': '시장 확장',
-      'index.portfolio.h2': '코인만 보는<br>자동매매가 아닙니다',
-      'index.portfolio.sub': '핵심은 간단합니다. 시장은 모두 같은 이유로 움직이지 않습니다. Piano는 가상자산, 원자재, ETF, 일부 글로벌 주식 흐름을 추종하는 지원 선물을 사용자가 모니터링할 수 있는 규칙 기반 전략으로 묶어줍니다.',
+      'index.portfolio.h2': '여러 시장 흐름을<br>하나의 전략 지도로',
+      'index.portfolio.sub': '금, 원유, ETF, 주식 연동, 크립토 선물은 서로 다른 이유로 움직입니다. Piano는 지원되는 시장을 하나의 전략 화면에서 추적하고, 사용자가 정한 조건 안에서만 실행합니다.',
       'index.portfolio.c1.kicker': '01 / 거시 신호',
       'index.portfolio.c1.h3': '금과 원유는 시장의 온도계',
       'index.portfolio.c1.p': '금은 불안이 커질 때 주목받는 안전자산, 원유는 물가·운송비·글로벌 수요를 보여주는 핵심 지표입니다. 코인 가격만 보는 것보다 시장을 입체적으로 볼 수 있습니다.',
