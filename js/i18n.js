@@ -58,7 +58,7 @@
       'index.hero.badge': 'Market Strategy Automation',
       'index.hero.h1': 'Turn crypto automation<br>into a global market<br>strategy.',
       'index.hero.sub': 'Piano tracks market signals across derivative instruments — from Bitcoin to gold, oil, QQQ, and AI semiconductors. An agent AI that assists your automated trading within the conditions you set.',
-      'index.hero.ctaPrimary': 'Plan a Strategy →',
+      'index.hero.ctaPrimary': 'Get Started on Telegram →',
       'index.hero.ctaSecondary': 'See How It Works',
       'index.hero.figCaption': 'Many markets, one console — coordinated by your rules.',
       'index.marquee.aria': 'Supported market examples',
@@ -187,10 +187,6 @@
       'index.faq.q4.a': 'Piano can automate signal analysis and order execution after you define the strategy, target assets, risk limits, and API permissions. It does not guarantee returns, and all gains and losses are your responsibility.',
       'index.faq.q5.q': 'Which exchanges are supported?',
       'index.faq.q5.a': 'Piano focuses on Binance-connected instruments, including crypto markets and supported futures that track commodities, ETF-linked indices, and selected global stocks. These are derivative contracts, not ownership of the underlying asset. Supported markets depend on exchange availability and user approval.',
-
-      'index.cta.h2': 'Build your market strategy layer',
-      'index.cta.sub': 'Connect via Telegram and define the assets, rules, and limits before activation.',
-      'index.cta.btn': 'Plan a Strategy →',
 
       'index.risk.header': '⚠️ Risk Disclosure',
       'index.risk.sub1': 'Nature of Service',
@@ -472,7 +468,7 @@
       'index.hero.badge': '시장 전략 자동화',
       'index.hero.h1': '코인만 보던 자동매매,<br>금·원유·ETF 흐름까지<br>조건대로 관리하세요.',
       'index.hero.sub': 'Piano는 비트코인부터 금·원유·QQQ·AI 반도체 등 파생금융상품의 시장 신호를 추적합니다. 사용자가 지정한 조건 안에서 당신의 자동매매를 돕는 에이전트 AI입니다.',
-      'index.hero.ctaPrimary': '전략 구성 상담하기 →',
+      'index.hero.ctaPrimary': '텔레그램으로 시작하기 →',
       'index.hero.ctaSecondary': '작동 방식 보기',
       'index.hero.figCaption': '여러 시장의 흐름을 내 조건대로 — 하나의 전략 콘솔에서.',
       'index.marquee.aria': '지원 시장 예시',
@@ -601,10 +597,6 @@
       'index.faq.q4.a': 'Piano는 사용자가 전략, 대상 자산, 위험 한도, API 권한을 정한 뒤 그 범위 안에서 신호 분석과 주문 실행을 자동화합니다. 수익을 보장하지 않으며 모든 투자 손익은 사용자 책임입니다.',
       'index.faq.q5.q': '어떤 거래소를 지원하나요?',
       'index.faq.q5.a': 'Piano는 바이낸스 연동 상품을 중심으로, 가상자산 시장과 원자재, ETF 연동 지수, 일부 글로벌 주식 가격을 추종하는 지원 선물을 다룹니다. 이는 기초자산을 직접 보유하는 것이 아닌 파생상품이며, 지원 시장은 거래소 제공 여부와 사용자 승인 범위에 따라 달라집니다.',
-
-      'index.cta.h2': '나만의 시장 전략 레이어를 구성하세요',
-      'index.cta.sub': '텔레그램으로 연결해 활성화 전 대상 자산, 규칙, 한도를 먼저 정의하세요.',
-      'index.cta.btn': '전략 구성 상담하기 →',
 
       'index.risk.header': '⚠️ 위험 고지',
       'index.risk.sub1': '서비스 성격',
