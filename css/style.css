@@ -485,6 +485,17 @@ html[data-art="pixel"] .hero__figure {
 .pixel-stage__image--b { object-position: center center; }
 .pixel-stage__image--c { object-position: 18% center; }
 .pixel-stage__image--d { object-position: 82% center; }
+
+/* Pull the garden / basis scenes farther outward visually so their core
+   subjects (GOLD / ETF / SILVER / AI SEMI for garden, gauges for basis)
+   land on the side opposite the text. Compose with the parallax system's
+   --parallax-y variable so vertical scroll parallax is preserved. */
+html[data-art="pixel"] .section-showcase--garden .pixel-stage__image--c {
+  transform: translate3d(-22%, var(--parallax-y, 0), 0);
+}
+html[data-art="pixel"] .section-showcase--basis .pixel-stage__image--d {
+  transform: translate3d(22%, var(--parallax-y, 0), 0);
+}
 .pixel-stage__vignette {
   position: absolute;
   inset: 0;
