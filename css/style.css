@@ -2410,14 +2410,14 @@ html[data-art="pixel"] .section-showcase::before {
 
 html[data-art="pixel"] .section-showcase--garden::before {
   background:
-    linear-gradient(90deg, rgba(6,16,31,0.14) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.22) 62%, rgba(6,16,31,0.52) 84%, rgba(6,16,31,0.66) 100%),
-    linear-gradient(180deg, rgba(6,16,31,0.24), transparent 44%, rgba(6,16,31,0.50));
+    linear-gradient(90deg, rgba(6,16,31,0.06) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.10) 62%, rgba(6,16,31,0.32) 84%, rgba(6,16,31,0.46) 100%),
+    linear-gradient(180deg, rgba(6,16,31,0.14), transparent 46%, rgba(6,16,31,0.30));
 }
 
 html[data-art="pixel"] .section-showcase--basis::before {
   background:
-    linear-gradient(270deg, rgba(6,16,31,0.14) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.22) 62%, rgba(6,16,31,0.52) 84%, rgba(6,16,31,0.66) 100%),
-    linear-gradient(180deg, rgba(6,16,31,0.24), transparent 44%, rgba(6,16,31,0.50));
+    linear-gradient(270deg, rgba(6,16,31,0.06) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.10) 62%, rgba(6,16,31,0.32) 84%, rgba(6,16,31,0.46) 100%),
+    linear-gradient(180deg, rgba(6,16,31,0.14), transparent 46%, rgba(6,16,31,0.30));
 }
 
 html[data-art="pixel"] .section-showcase .pixel-stage {
