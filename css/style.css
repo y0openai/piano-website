@@ -483,8 +483,8 @@ html[data-art="pixel"] .hero__figure {
 }
 .pixel-stage__image--a { object-position: 58% center; }
 .pixel-stage__image--b { object-position: center center; }
-.pixel-stage__image--c { object-position: 30% center; }
-.pixel-stage__image--d { object-position: 70% center; }
+.pixel-stage__image--c { object-position: 18% center; }
+.pixel-stage__image--d { object-position: 82% center; }
 .pixel-stage__vignette {
   position: absolute;
   inset: 0;
@@ -2399,14 +2399,14 @@ html[data-art="pixel"] .section-showcase::before {
 
 html[data-art="pixel"] .section-showcase--garden::before {
   background:
-    linear-gradient(90deg, rgba(6,16,31,0.20) 0%, rgba(6,16,31,0.02) 36%, rgba(6,16,31,0.36) 60%, rgba(6,16,31,0.72) 82%, rgba(6,16,31,0.84) 100%),
-    linear-gradient(180deg, rgba(6,16,31,0.34), transparent 42%, rgba(6,16,31,0.62));
+    linear-gradient(90deg, rgba(6,16,31,0.14) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.22) 62%, rgba(6,16,31,0.52) 84%, rgba(6,16,31,0.66) 100%),
+    linear-gradient(180deg, rgba(6,16,31,0.24), transparent 44%, rgba(6,16,31,0.50));
 }
 
 html[data-art="pixel"] .section-showcase--basis::before {
   background:
-    linear-gradient(270deg, rgba(6,16,31,0.20) 0%, rgba(6,16,31,0.02) 36%, rgba(6,16,31,0.36) 60%, rgba(6,16,31,0.72) 82%, rgba(6,16,31,0.84) 100%),
-    linear-gradient(180deg, rgba(6,16,31,0.34), transparent 42%, rgba(6,16,31,0.62));
+    linear-gradient(270deg, rgba(6,16,31,0.14) 0%, rgba(6,16,31,0.00) 38%, rgba(6,16,31,0.22) 62%, rgba(6,16,31,0.52) 84%, rgba(6,16,31,0.66) 100%),
+    linear-gradient(180deg, rgba(6,16,31,0.24), transparent 44%, rgba(6,16,31,0.50));
 }
 
 html[data-art="pixel"] .section-showcase .pixel-stage {
