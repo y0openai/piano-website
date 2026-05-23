@@ -35,8 +35,8 @@
       </svg>
     </a>
     <div class="nav__links">
-      <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#security" data-i18n="nav.security">Security</a>
       <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     </div>
@@ -77,8 +77,8 @@
   </div>
 </nav>
 <div class="nav-drawer" id="navDrawer">
-  <a href="#features" onclick="closeDrawer()" data-i18n="nav.features">Features</a>
   <a href="#how-it-works" onclick="closeDrawer()" data-i18n="nav.howItWorks">How It Works</a>
+  <a href="#features" onclick="closeDrawer()" data-i18n="nav.features">Features</a>
   <a href="#security" onclick="closeDrawer()" data-i18n="nav.security">Security</a>
   <a href="#pricing" onclick="closeDrawer()" data-i18n="nav.pricing">Pricing</a>
   <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" data-i18n="nav.getStarted">Get Started →</a>
@@ -93,25 +93,104 @@
       <span class="hero__badge-dot"></span>
       <span data-i18n="index.hero.badge">Market Strategy Automation</span>
     </div>
-    <h1 class="hero__h1" data-i18n-html="index.hero.h1">Turn crypto automation<br>into a global market<br>strategy.</h1>
-    <p class="hero__sub" data-i18n="index.hero.sub">From crypto futures to gold, oil, QQQ, and AI stock-linked flows. Piano analyzes market signals and executes only within the conditions you set.</p>
+    <div class="hero-story" data-hero-carousel>
+      <div class="hero-story__viewport" aria-live="polite">
+        <article class="hero-story__item active" data-hero-panel="0">
+          <h1 data-i18n-html="index.hero.story1.q">Set your exit price<br>before the market shakes you.</h1>
+          <p data-i18n="index.hero.story1.a">So your hand does not move first in a falling market.</p>
+        </article>
+        <article class="hero-story__item" data-hero-panel="1">
+          <h1 data-i18n-html="index.hero.story2.q">Set a daily loss limit<br>before the day begins.</h1>
+          <p data-i18n="index.hero.story2.a">Leave a stopping point before the loss chase starts.</p>
+        </article>
+        <article class="hero-story__item" data-hero-panel="2">
+          <h1 data-i18n-html="index.hero.story3.q">A pause point<br>before the rushed click.</h1>
+          <p data-i18n="index.hero.story3.a">Conditions set while calm can act before impulse does.</p>
+        </article>
+        <article class="hero-story__item" data-hero-panel="3">
+          <h1 data-i18n-html="index.hero.story4.q">You do not have to<br>watch all day.</h1>
+          <p data-i18n="index.hero.story4.a">Conditions can keep checking price movement for you.</p>
+        </article>
+        <article class="hero-story__item" data-hero-panel="4">
+          <h1 data-i18n-html="index.hero.story5.q">No bot building needed,<br>start from conditions.</h1>
+          <p data-i18n="index.hero.story5.a">Focus on the rule you want to keep, not code and debugging.</p>
+        </article>
+      </div>
+      <div class="hero-story__footer">
+        <span class="hero-story__label" data-i18n="index.hero.storyLabel">Do these moments keep repeating?</span>
+        <div class="hero-story__controls" aria-label="Hero story controls" data-i18n-attr="aria-label:index.hero.storyControls">
+          <button class="hero-story__btn active" type="button" data-hero-slide="0" aria-label="Show story 1" data-i18n-attr="aria-label:index.hero.story1Aria"></button>
+          <button class="hero-story__btn" type="button" data-hero-slide="1" aria-label="Show story 2" data-i18n-attr="aria-label:index.hero.story2Aria"></button>
+          <button class="hero-story__btn" type="button" data-hero-slide="2" aria-label="Show story 3" data-i18n-attr="aria-label:index.hero.story3Aria"></button>
+          <button class="hero-story__btn" type="button" data-hero-slide="3" aria-label="Show story 4" data-i18n-attr="aria-label:index.hero.story4Aria"></button>
+          <button class="hero-story__btn" type="button" data-hero-slide="4" aria-label="Show story 5" data-i18n-attr="aria-label:index.hero.story5Aria"></button>
+        </div>
+      </div>
+    </div>
     <div class="hero__ctas">
-      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.hero.ctaPrimary">Plan a Strategy →</a>
-      <a href="#how-it-works" class="btn-outline" data-i18n="index.hero.ctaSecondary">See How It Works</a>
+      <a href="#how-it-works" class="btn-primary" data-i18n="index.hero.ctaPrimary">See How It Works</a>
+      <a href="https://t.me/pianoai_support" target="_blank" rel="noopener" class="btn-outline" data-i18n="index.hero.ctaSecondary">Ask About Features</a>
     </div>
   </div>
 
   <!-- FIG 0.1 — Piano Strategy Console -->
   <div class="hero__figure parallax-scene" data-parallax data-parallax-range="42">
-    <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-only" aria-label="Pixel piano portfolio hero art" data-i18n-attr="aria-label:index.pixel.heroAria">
-      <img class="pixel-stage__image pixel-stage__image--a parallax-layer" data-depth="-14" src="assets/pixel-piano-portfolio.png" alt="">
-      <span class="pixel-stage__vignette" aria-hidden="true"></span>
-      <div class="pixel-stage__layer pixel-notes" aria-hidden="true">
-        <span class="pixel-floating-note pixel-floating-note--one"></span>
-        <span class="pixel-floating-note pixel-floating-note--two"></span>
-        <span class="pixel-floating-note pixel-floating-note--three"></span>
-        <span class="pixel-floating-note pixel-floating-note--four"></span>
-        <span class="pixel-floating-note pixel-floating-note--five"></span>
+    <div class="hero-art-carousel pixel-only" data-hero-art>
+      <div class="hero-art-carousel__item active" data-hero-art-panel="0">
+        <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-stage--story pixel-stage--story-shaken" aria-label="Pixel investor desk scene" data-i18n-attr="aria-label:index.pixel.heroStory1Aria">
+          <img class="pixel-stage__image pixel-stage__image--a parallax-layer" data-depth="-14" src="assets/hero-question-shaken.png" alt="">
+          <span class="pixel-stage__vignette" aria-hidden="true"></span>
+          <div class="pixel-stage__layer hero-pixel-scene hero-pixel-scene--shaken" aria-hidden="true">
+            <span class="hero-pixel-note hero-pixel-note--condition" data-i18n="index.hero.art.condition">My condition</span>
+            <span class="hero-pixel-cup"></span>
+            <span class="hero-pixel-chart hero-pixel-chart--soft"></span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art-carousel__item" data-hero-art-panel="1">
+        <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-stage--story pixel-stage--story-rain" aria-label="Pixel rainy window price condition scene" data-i18n-attr="aria-label:index.pixel.heroStory2Aria">
+          <img class="pixel-stage__image pixel-stage__image--d parallax-layer" data-depth="-14" src="assets/hero-question-fall.png" alt="">
+          <span class="pixel-stage__vignette" aria-hidden="true"></span>
+          <div class="pixel-stage__layer hero-pixel-scene hero-pixel-scene--rain" aria-hidden="true">
+            <span class="hero-pixel-rain"></span>
+            <span class="hero-pixel-note hero-pixel-note--price" data-i18n="index.hero.art.price">Target price</span>
+            <span class="hero-pixel-save" data-i18n="index.hero.art.saved">Saved</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art-carousel__item" data-hero-art-panel="2">
+        <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-stage--story pixel-stage--story-noise" aria-label="Pixel news noise and condition path scene" data-i18n-attr="aria-label:index.pixel.heroStory3Aria">
+          <img class="pixel-stage__image pixel-stage__image--b parallax-layer" data-depth="-14" src="assets/hero-question-fomo.png" alt="">
+          <span class="pixel-stage__vignette" aria-hidden="true"></span>
+          <div class="pixel-stage__layer hero-pixel-scene hero-pixel-scene--noise" aria-hidden="true">
+            <span class="hero-pixel-alert hero-pixel-alert--one"></span>
+            <span class="hero-pixel-alert hero-pixel-alert--two"></span>
+            <span class="hero-pixel-path"></span>
+            <span class="hero-pixel-note hero-pixel-note--plan" data-i18n="index.hero.art.plan">Plan</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art-carousel__item" data-hero-art-panel="3">
+        <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-stage--story pixel-stage--story-wait" aria-label="Pixel calm waiting condition panel scene" data-i18n-attr="aria-label:index.pixel.heroStory4Aria">
+          <img class="pixel-stage__image pixel-stage__image--c parallax-layer" data-depth="-14" src="assets/hero-question-wait.png" alt="">
+          <span class="pixel-stage__vignette" aria-hidden="true"></span>
+          <div class="pixel-stage__layer hero-pixel-scene hero-pixel-scene--wait" aria-hidden="true">
+            <span class="hero-pixel-moon"></span>
+            <span class="hero-pixel-key-panel"></span>
+            <span class="hero-pixel-note hero-pixel-note--watch" data-i18n="index.hero.art.watch">Watching condition</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art-carousel__item" data-hero-art-panel="4">
+        <div class="pixel-stage pixel-stage--hero pixel-stage--piano pixel-stage--story pixel-stage--story-code" aria-label="Pixel code error and condition tool scene" data-i18n-attr="aria-label:index.pixel.heroStory5Aria">
+          <img class="pixel-stage__image pixel-stage__image--a parallax-layer" data-depth="-14" src="assets/hero-question-code.png" alt="">
+          <span class="pixel-stage__vignette" aria-hidden="true"></span>
+          <div class="pixel-stage__layer hero-pixel-scene hero-pixel-scene--code" aria-hidden="true">
+            <span class="hero-pixel-alert hero-pixel-alert--one"></span>
+            <span class="hero-pixel-alert hero-pixel-alert--two"></span>
+            <span class="hero-pixel-note hero-pixel-note--condition" data-i18n="index.hero.art.condition">My condition</span>
+          </div>
+        </div>
       </div>
     </div>
     <svg class="iso-svg serious-art" viewBox="80 14 640 475" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,15 +237,260 @@
       <!-- Balance arc (trace) -->
       <path class="fig01-arc" d="M178 206c82-94 176 86 264-26 58-72 118-54 178-22" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-dasharray="600"/>
       <!-- Caption -->
-      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">Your rules coordinate exposure across supported markets.</text>
+      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">Your rules coordinate execution inside available instruments.</text>
     </svg>
   </div>
 </section>
 
+<!-- ========== TRUST BOUNDARY ========== -->
+<section class="trust-boundary" aria-label="Piano service boundaries" data-i18n-attr="aria-label:index.trust.aria">
+  <div class="trust-boundary__inner container">
+    <div class="trust-boundary__intro">
+      <span class="label" data-i18n="index.trust.label">Trust Boundary</span>
+      <h2 data-i18n="index.trust.h2">Piano keeps the line clear.</h2>
+    </div>
+    <div class="trust-boundary__grid">
+      <div class="trust-boundary__item">
+        <i data-lucide="messages-square" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i1">No investment advice</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="badge-x" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i2">No asset recommendations</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i3">No profit guarantees</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="hand" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i4">No arbitrary asset disposal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="hiw">
+
+      <!-- FIG 0.3 — Three-step setup -->
+      <div class="hiw__fig">
+        <span class="fig-label">FIG 0.3</span>
+        <div class="pixel-setup-art pixel-only" aria-hidden="true">
+          <div class="pixel-setup-board pixel-setup-board--api">
+            <span class="pixel-setup-title">01 API KEY</span>
+            <span class="pixel-setup-lock"></span>
+            <span class="pixel-setup-key"></span>
+            <span class="pixel-setup-ip">SERVER IP</span>
+          </div>
+          <div class="pixel-setup-board pixel-setup-board--rules">
+            <span class="pixel-setup-title">02 RULES</span>
+            <span class="pixel-setup-slider pixel-setup-slider--one"></span>
+            <span class="pixel-setup-slider pixel-setup-slider--two"></span>
+            <span class="pixel-setup-slider pixel-setup-slider--three"></span>
+            <span class="pixel-setup-flow"></span>
+          </div>
+          <div class="pixel-setup-board pixel-setup-board--monitor">
+            <span class="pixel-setup-title">03 MONITOR</span>
+            <span class="pixel-setup-bar pixel-setup-bar--one"></span>
+            <span class="pixel-setup-bar pixel-setup-bar--two"></span>
+            <span class="pixel-setup-bar pixel-setup-bar--three"></span>
+            <span class="pixel-setup-arrow"></span>
+          </div>
+        </div>
+        <svg class="iso-svg fig03-setup serious-art" viewBox="120 20 560 470" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Animated isometric three-step setup graphic">
+          <ellipse class="fig03-shadow iso-shadow" cx="370" cy="438" rx="176" ry="28" fill="#05070A"/>
+
+          <g class="fig03-layer fig03-layer--monitor">
+            <path class="iso-layer" d="M236 325l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="iso-layer-side" d="M236 325v34l180 103 204-123v-38L416 424z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="iso-layer-side" d="M323 331l120-69 100 47-124 75z" fill="#070A0F" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+            <path class="iso-grid" d="M350 331l82-47M377 344l82-47M404 356l82-47M359 310l92 43M386 295l92 43" stroke="#343A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-bar fig03-bar--a" d="M367 325l12-7v-38l-12 7zM413 301l12-7v-52l-12 7zM459 322l12-7v-32l-12 7z" fill="#16C784"/>
+            <path class="fig03-bar fig03-bar--b" d="M390 312l12-7v-26l-12 7zM436 336l12-7v-44l-12 7z" fill="#EA3943"/>
+            <path class="fig03-profit" d="M486 347c36-8 56-2 73 16M548 346l15 18-24 8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="264" y="344" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">03 MONITOR</text>
+          </g>
+
+          <g class="fig03-layer fig03-layer--params">
+            <path class="iso-layer" d="M205 242l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="iso-layer-side" d="M205 242v32l180 104 204-123v-37L385 341z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="fig03-key fig03-key--rise" d="M294 273l20-11 18 9-20 11zM336 249l20-11 18 9-20 11zM378 225l20-11 18 9-20 11z" fill="#16C784"/>
+            <path class="fig03-key fig03-key--fall" d="M315 261l20-11 18 9-20 11zM357 237l20-11 18 9-20 11z" fill="#EA3943"/>
+            <path class="fig03-sliders" d="M434 229l84 39M421 250l84 39M408 271l84 39M472 247l16 8M452 263l16 8M498 292l16 8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-ratio" d="M278 305c46-44 92 36 139-7 28-26 54-20 78-8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="232" y="260" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">02 PARAMETERS</text>
+          </g>
+
+          <g class="fig03-layer fig03-layer--api">
+            <path class="iso-layer" d="M174 159l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="iso-layer-side" d="M174 159v31l180 104 204-123v-36L354 258z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <path class="fig03-api-key" d="M292 148c0-16 13-29 29-29s29 13 29 29-13 29-29 29c-6 0-12-2-16-5l-50 29h-24l-15 15-22-13 15-15v-19l54-31c-1-3-1-6-1-10zM321 137a11 11 0 1 0 0 22 11 11 0 0 0 0-22z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="fig03-lock" d="M405 125h64v48h-64zM419 125v-17c0-16 9-27 18-27s18 11 18 27v17" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="406" y="199" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">SERVER IP</text>
+            <text x="202" y="177" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">01 API KEY</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="hiw__body">
+        <div class="hiw__header">
+          <span class="label" data-i18n="index.hiw.label">How It Works</span>
+          <h2 data-i18n-html="index.hiw.h2">Turn a thought<br>into conditions</h2>
+          <p data-i18n="index.hiw.sub">Start from the rule you want to follow. Activation happens only after you define the target assets, limits, conditions, and API permissions yourself.</p>
+        </div>
+        <div class="hiw__steps">
+          <div class="hiw__step">
+            <div class="hiw__step-num">01</div>
+            <div>
+              <div class="hiw__step-time" data-i18n="index.hiw.s1.time">Choose</div>
+              <h3 data-i18n="index.hiw.s1.h3">Select the assets yourself</h3>
+              <p data-i18n="index.hiw.s1.p">Choose only the supported instruments you want Piano to monitor. Piano does not recommend assets or decide what is suitable for you.</p>
+            </div>
+          </div>
+          <div class="hiw__step">
+            <div class="hiw__step-num">02</div>
+            <div>
+              <div class="hiw__step-time" data-i18n="index.hiw.s2.time">Define</div>
+              <h3 data-i18n="index.hiw.s2.h3">Set conditions and limits</h3>
+              <p data-i18n="index.hiw.s2.p">Define entry conditions, exit conditions, risk limits, and position size before activation. You can adjust parameters at any time.</p>
+            </div>
+          </div>
+          <div class="hiw__step">
+            <div class="hiw__step-num">03</div>
+            <div>
+              <div class="hiw__step-time" data-i18n="index.hiw.s3.time">Activate</div>
+              <h3 data-i18n="index.hiw.s3.h3">Connect and monitor</h3>
+              <p data-i18n="index.hiw.s3.p">After you approve API permissions, Piano monitors and executes only inside your configured conditions. Status and execution history remain visible on the dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== FEATURES ========== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="features-intro">
+      <span class="label" data-i18n="index.features.label">Core Features</span>
+      <h2 data-i18n-html="index.features.h2">Three mechanisms that<br>respect your rules</h2>
+      <p data-i18n="index.features.sub">Built on the freqtrade open-source framework. Every execution stays inside the target assets, conditions, and risk boundaries you define.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <!-- FIG 0.2-01 — Entry Condition Filter -->
+        <div class="pixel-feature-art pixel-feature-art--gate pixel-only" aria-hidden="true">
+          <span class="pixel-feature-art__label">01 / CONDITION FILTER</span>
+          <div class="pixel-gate-scene">
+            <span class="pixel-signal pixel-signal--left"></span>
+            <span class="pixel-signal pixel-signal--pass"></span>
+            <span class="pixel-signal pixel-signal--blocked"></span>
+            <span class="pixel-gate"></span>
+            <span class="pixel-check pixel-check--one"></span>
+            <span class="pixel-check pixel-check--two"></span>
+            <span class="pixel-check pixel-check--three"></span>
+          </div>
+        </div>
+        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
+          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">01 / ENTRY CONDITION FILTER</text>
+          <path class="iso-panel" d="M42 82l52-30 52 30-52 30z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <path class="iso-panel-accent" d="M174 82l52-30 52 30-52 30z" fill="#0F1E18" stroke="#16C784" stroke-width="1.5"/>
+          <path class="iso-panel" d="M282 82l40-23 40 23-40 23z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <path d="M160 106v-62h76v62" stroke="#16C784" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path class="fig02-flow-l" d="M64 82h80" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="80"/>
+          <path class="fig02-flow-r" d="M242 82h98" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="98"/>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f1.caption">Signals pass only when configured conditions are met.</text>
+        </svg>
+        <h3 data-i18n="index.features.f1.h3">Statistical Entry Condition Filter</h3>
+        <p data-i18n="index.features.f1.p">Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
+        <span class="feature-card__note" data-i18n="index.features.f1.note">Entry / Risk gate</span>
+      </div>
+
+      <div class="feature-card">
+        <!-- FIG 0.2-02 — Auto Imbalance Correction -->
+        <div class="pixel-feature-art pixel-feature-art--balance pixel-only" aria-hidden="true">
+          <span class="pixel-feature-art__label">02 / RATIO CORRECTION</span>
+          <div class="pixel-balance-scene">
+            <span class="pixel-balance-pan pixel-balance-pan--long"></span>
+            <span class="pixel-balance-pan pixel-balance-pan--short"></span>
+            <span class="pixel-balance-beam"></span>
+            <span class="pixel-balance-center"></span>
+            <span class="pixel-ratio-line"></span>
+            <span class="pixel-correction-dot pixel-correction-dot--one"></span>
+            <span class="pixel-correction-dot pixel-correction-dot--two"></span>
+          </div>
+        </div>
+        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
+          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">02 / AUTO IMBALANCE CORRECTION</text>
+          <g class="fig02-f2-left">
+            <path d="M68 88l74-42 56 30-74 42z" fill="rgba(22,199,132,0.12)" stroke="#16C784" stroke-width="1.5"/>
+          </g>
+          <g class="fig02-f2-right">
+            <path d="M205 84l74-42 56 30-74 42z" fill="rgba(234,57,67,0.12)" stroke="#EA3943" stroke-width="1.5"/>
+          </g>
+          <path class="iso-divider" d="M82 86l235-14" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="iso-divider" d="M199 48v65" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="fig02-f2-tune" d="M98 102c42-62 90 16 132-22 30-28 62-22 90-14" stroke="#16C784" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="300" fill="none"/>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f2.caption">Ratio drift is detected and tuned back toward balance.</text>
+        </svg>
+        <h3 data-i18n="index.features.f2.h3">Auto Position Imbalance Correction</h3>
+        <p data-i18n="index.features.f2.p">When market movements drift a user-defined portfolio or hedge ratio, Piano evaluates the rule set in real time and adjusts positions inside configured limits.</p>
+        <span class="feature-card__note" data-i18n="index.features.f2.note">Rebalance / condition correction</span>
+      </div>
+
+      <div class="feature-card">
+        <!-- FIG 0.2-03 — Dynamic Position Management -->
+        <div class="pixel-feature-art pixel-feature-art--linked pixel-only" aria-hidden="true">
+          <span class="pixel-feature-art__label">03 / LINKED BALANCING</span>
+          <div class="pixel-linked-scene">
+            <span class="pixel-linked-grid"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--g1"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--g2"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--g3"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--r1"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--r2"></span>
+            <span class="pixel-linked-bar pixel-linked-bar--r3"></span>
+            <span class="pixel-linked-route"></span>
+          </div>
+        </div>
+        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
+          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">03 / DYNAMIC POSITION MANAGEMENT</text>
+          <path class="iso-panel" d="M64 88l70-40 70 40-70 40z m134 0l70-40 70 40-70 40z m-54-16l56-32 56 32-56 32z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
+          <g class="fig02-f3-long">
+            <path d="M96 90l20-12 0-24-20 12z M120 76l20-12 0-22-20 12z M74 98l20-12 0-18-20 12z M144 68l20-12 0-20-20 12z" fill="#16C784"/>
+          </g>
+          <g class="fig02-f3-short">
+            <path d="M244 92l20-12 0-20-20 12z M268 78l20-12 0-28-20 12z M292 64l20-12 0-20-20 12z M224 100l20-12 0-18-20 12z M316 58l20-12 0-18-20 12z" fill="#EA3943"/>
+          </g>
+          <path class="fig02-f3-profit" d="M88 106c38 26 86 23 112-2 26 25 76 28 114 2" stroke="#EA3943" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="200" fill="none"/>
+          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f3.caption">Position size and exit conditions stay tied to your rules.</text>
+        </svg>
+        <h3 data-i18n="index.features.f3.h3">Linked Balancing</h3>
+        <p data-i18n="index.features.f3.p">Piano can automate long and short position sizing for user-defined strategies. When configured exit conditions are met, orders are executed according to the user's rules.</p>
+        <span class="feature-card__note" data-i18n="index.features.f3.note">DCA + auto-rebalance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
 <!-- ========== MARKET MARQUEE ========== -->
-<section class="market-marquee" aria-label="Supported market examples" data-i18n-attr="aria-label:index.marquee.aria">
+<section class="market-marquee" aria-label="Market flow examples" data-i18n-attr="aria-label:index.marquee.aria">
   <div class="market-marquee__inner container">
-    <p class="market-marquee__lead" data-i18n="index.marquee.lead">Gold, oil, ETFs, AI stocks, and crypto-linked names on one strategy radar</p>
+    <p class="market-marquee__lead" data-i18n="index.marquee.lead">If you want to look beyond one stock screen, gold, oil, and ETF-linked flows can be watched through conditions you set.</p>
     <div class="market-marquee__viewport">
       <div class="market-marquee__track">
         <div class="market-marquee__group">
@@ -350,221 +674,6 @@
 <div class="divider pixel-only"></div>
 
 
-<!-- ========== FEATURES ========== -->
-<section class="section" id="features">
-  <div class="container">
-    <div class="features-intro">
-      <span class="label" data-i18n="index.features.label">Core Features</span>
-      <h2 data-i18n-html="index.features.h2">Three mechanisms that<br>respect your rules</h2>
-      <p data-i18n="index.features.sub">Built on the freqtrade open-source framework. Every execution stays inside the target assets, conditions, and risk boundaries you define.</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <!-- FIG 0.2-01 — Entry Condition Filter -->
-        <div class="pixel-feature-art pixel-feature-art--gate pixel-only" aria-hidden="true">
-          <span class="pixel-feature-art__label">01 / CONDITION FILTER</span>
-          <div class="pixel-gate-scene">
-            <span class="pixel-signal pixel-signal--left"></span>
-            <span class="pixel-signal pixel-signal--pass"></span>
-            <span class="pixel-signal pixel-signal--blocked"></span>
-            <span class="pixel-gate"></span>
-            <span class="pixel-check pixel-check--one"></span>
-            <span class="pixel-check pixel-check--two"></span>
-            <span class="pixel-check pixel-check--three"></span>
-          </div>
-        </div>
-        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
-          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">01 / ENTRY CONDITION FILTER</text>
-          <path class="iso-panel" d="M42 82l52-30 52 30-52 30z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
-          <path class="iso-panel-accent" d="M174 82l52-30 52 30-52 30z" fill="#0F1E18" stroke="#16C784" stroke-width="1.5"/>
-          <path class="iso-panel" d="M282 82l40-23 40 23-40 23z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
-          <path d="M160 106v-62h76v62" stroke="#16C784" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path class="fig02-flow-l" d="M64 82h80" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="80"/>
-          <path class="fig02-flow-r" d="M242 82h98" stroke="#EA3943" stroke-width="3" stroke-linecap="round" stroke-dasharray="98"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f1.caption">Signals pass only when configured conditions are met.</text>
-        </svg>
-        <h3 data-i18n="index.features.f1.h3">Statistical Entry Condition Filter</h3>
-        <p data-i18n="index.features.f1.p">Market conditions are evaluated before entering. Execution only happens when your configured conditions are met.</p>
-        <span class="feature-card__note" data-i18n="index.features.f1.note">Entry / Risk gate</span>
-      </div>
-
-      <div class="feature-card">
-        <!-- FIG 0.2-02 — Auto Imbalance Correction -->
-        <div class="pixel-feature-art pixel-feature-art--balance pixel-only" aria-hidden="true">
-          <span class="pixel-feature-art__label">02 / RATIO CORRECTION</span>
-          <div class="pixel-balance-scene">
-            <span class="pixel-balance-pan pixel-balance-pan--long"></span>
-            <span class="pixel-balance-pan pixel-balance-pan--short"></span>
-            <span class="pixel-balance-beam"></span>
-            <span class="pixel-balance-center"></span>
-            <span class="pixel-ratio-line"></span>
-            <span class="pixel-correction-dot pixel-correction-dot--one"></span>
-            <span class="pixel-correction-dot pixel-correction-dot--two"></span>
-          </div>
-        </div>
-        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
-          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">02 / AUTO IMBALANCE CORRECTION</text>
-          <g class="fig02-f2-left">
-            <path d="M68 88l74-42 56 30-74 42z" fill="rgba(22,199,132,0.12)" stroke="#16C784" stroke-width="1.5"/>
-          </g>
-          <g class="fig02-f2-right">
-            <path d="M205 84l74-42 56 30-74 42z" fill="rgba(234,57,67,0.12)" stroke="#EA3943" stroke-width="1.5"/>
-          </g>
-          <path class="iso-divider" d="M82 86l235-14" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
-          <path class="iso-divider" d="M199 48v65" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round"/>
-          <path class="fig02-f2-tune" d="M98 102c42-62 90 16 132-22 30-28 62-22 90-14" stroke="#16C784" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="300" fill="none"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f2.caption">Ratio drift is detected and tuned back toward balance.</text>
-        </svg>
-        <h3 data-i18n="index.features.f2.h3">Auto Position Imbalance Correction</h3>
-        <p data-i18n="index.features.f2.p">When market movements drift a user-defined portfolio or hedge ratio, Piano evaluates the rule set in real time and adjusts positions inside configured limits.</p>
-        <span class="feature-card__note" data-i18n="index.features.f2.note">Rebalance / AI correction</span>
-      </div>
-
-      <div class="feature-card">
-        <!-- FIG 0.2-03 — Dynamic Position Management -->
-        <div class="pixel-feature-art pixel-feature-art--linked pixel-only" aria-hidden="true">
-          <span class="pixel-feature-art__label">03 / LINKED BALANCING</span>
-          <div class="pixel-linked-scene">
-            <span class="pixel-linked-grid"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--g1"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--g2"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--g3"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--r1"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--r2"></span>
-            <span class="pixel-linked-bar pixel-linked-bar--r3"></span>
-            <span class="pixel-linked-route"></span>
-          </div>
-        </div>
-        <svg class="serious-art" viewBox="0 0 400 165" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-bottom:8px">
-          <text x="18" y="14" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#444" letter-spacing="0.06em">03 / DYNAMIC POSITION MANAGEMENT</text>
-          <path class="iso-panel" d="M64 88l70-40 70 40-70 40z m134 0l70-40 70 40-70 40z m-54-16l56-32 56 32-56 32z" fill="#14191F" stroke="#2E3A4A" stroke-width="1.5"/>
-          <g class="fig02-f3-long">
-            <path d="M96 90l20-12 0-24-20 12z M120 76l20-12 0-22-20 12z M74 98l20-12 0-18-20 12z M144 68l20-12 0-20-20 12z" fill="#16C784"/>
-          </g>
-          <g class="fig02-f3-short">
-            <path d="M244 92l20-12 0-20-20 12z M268 78l20-12 0-28-20 12z M292 64l20-12 0-20-20 12z M224 100l20-12 0-18-20 12z M316 58l20-12 0-18-20 12z" fill="#EA3943"/>
-          </g>
-          <path class="fig02-f3-profit" d="M88 106c38 26 86 23 112-2 26 25 76 28 114 2" stroke="#EA3943" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="200" fill="none"/>
-          <text x="18" y="156" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#555" data-i18n="index.features.f3.caption">Position size and exit conditions stay tied to your rules.</text>
-        </svg>
-        <h3 data-i18n="index.features.f3.h3">Linked Balancing</h3>
-        <p data-i18n="index.features.f3.p">Piano can automate long and short position sizing for user-defined strategies. When configured exit conditions are met, orders are executed according to the user's rules.</p>
-        <span class="feature-card__note" data-i18n="index.features.f3.note">DCA + auto-rebalance</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<!-- ========== HOW IT WORKS ========== -->
-<section class="section" id="how-it-works">
-  <div class="container">
-    <div class="hiw">
-
-      <!-- FIG 0.3 — Three-step setup -->
-      <div class="hiw__fig">
-        <span class="fig-label">FIG 0.3</span>
-        <div class="pixel-setup-art pixel-only" aria-hidden="true">
-          <div class="pixel-setup-board pixel-setup-board--api">
-            <span class="pixel-setup-title">01 API KEY</span>
-            <span class="pixel-setup-lock"></span>
-            <span class="pixel-setup-key"></span>
-            <span class="pixel-setup-ip">SERVER IP</span>
-          </div>
-          <div class="pixel-setup-board pixel-setup-board--rules">
-            <span class="pixel-setup-title">02 RULES</span>
-            <span class="pixel-setup-slider pixel-setup-slider--one"></span>
-            <span class="pixel-setup-slider pixel-setup-slider--two"></span>
-            <span class="pixel-setup-slider pixel-setup-slider--three"></span>
-            <span class="pixel-setup-flow"></span>
-          </div>
-          <div class="pixel-setup-board pixel-setup-board--monitor">
-            <span class="pixel-setup-title">03 MONITOR</span>
-            <span class="pixel-setup-bar pixel-setup-bar--one"></span>
-            <span class="pixel-setup-bar pixel-setup-bar--two"></span>
-            <span class="pixel-setup-bar pixel-setup-bar--three"></span>
-            <span class="pixel-setup-arrow"></span>
-          </div>
-        </div>
-        <svg class="iso-svg fig03-setup serious-art" viewBox="120 20 560 470" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Animated isometric three-step setup graphic">
-          <ellipse class="fig03-shadow iso-shadow" cx="370" cy="438" rx="176" ry="28" fill="#05070A"/>
-
-          <g class="fig03-layer fig03-layer--monitor">
-            <path class="iso-layer" d="M236 325l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="iso-layer-side" d="M236 325v34l180 103 204-123v-38L416 424z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="iso-layer-side" d="M323 331l120-69 100 47-124 75z" fill="#070A0F" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
-            <path class="iso-grid" d="M350 331l82-47M377 344l82-47M404 356l82-47M359 310l92 43M386 295l92 43" stroke="#343A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="fig03-bar fig03-bar--a" d="M367 325l12-7v-38l-12 7zM413 301l12-7v-52l-12 7zM459 322l12-7v-32l-12 7z" fill="#16C784"/>
-            <path class="fig03-bar fig03-bar--b" d="M390 312l12-7v-26l-12 7zM436 336l12-7v-44l-12 7z" fill="#EA3943"/>
-            <path class="fig03-profit" d="M486 347c36-8 56-2 73 16M548 346l15 18-24 8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="264" y="344" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">03 MONITOR</text>
-          </g>
-
-          <g class="fig03-layer fig03-layer--params">
-            <path class="iso-layer" d="M205 242l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="iso-layer-side" d="M205 242v32l180 104 204-123v-37L385 341z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="fig03-key fig03-key--rise" d="M294 273l20-11 18 9-20 11zM336 249l20-11 18 9-20 11zM378 225l20-11 18 9-20 11z" fill="#16C784"/>
-            <path class="fig03-key fig03-key--fall" d="M315 261l20-11 18 9-20 11zM357 237l20-11 18 9-20 11z" fill="#EA3943"/>
-            <path class="fig03-sliders" d="M434 229l84 39M421 250l84 39M408 271l84 39M472 247l16 8M452 263l16 8M498 292l16 8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="fig03-ratio" d="M278 305c46-44 92 36 139-7 28-26 54-20 78-8" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="232" y="260" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">02 PARAMETERS</text>
-          </g>
-
-          <g class="fig03-layer fig03-layer--api">
-            <path class="iso-layer" d="M174 159l196-112 188 88-204 123z" fill="#10151B" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="iso-layer-side" d="M174 159v31l180 104 204-123v-36L354 258z" fill="#080C12" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-            <path class="fig03-api-key" d="M292 148c0-16 13-29 29-29s29 13 29 29-13 29-29 29c-6 0-12-2-16-5l-50 29h-24l-15 15-22-13 15-15v-19l54-31c-1-3-1-6-1-10zM321 137a11 11 0 1 0 0 22 11 11 0 0 0 0-22z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="fig03-lock" d="M405 125h64v48h-64zM419 125v-17c0-16 9-27 18-27s18 11 18 27v17" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="406" y="199" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">SERVER IP</text>
-            <text x="202" y="177" fill="#9AA3AF" font-family="'Courier New', monospace" font-size="12" font-weight="700">01 API KEY</text>
-          </g>
-        </svg>
-      </div>
-
-      <div class="hiw__body">
-        <div class="hiw__header">
-          <span class="label" data-i18n="index.hiw.label">Get Started</span>
-          <h2 data-i18n-html="index.hiw.h2">Structure your strategy<br>in three steps</h2>
-          <p data-i18n="index.hiw.sub">Define the target markets, limits, and execution rules before activation.</p>
-        </div>
-        <div class="hiw__steps">
-          <div class="hiw__step">
-            <div class="hiw__step-num">01</div>
-            <div>
-              <div class="hiw__step-time" data-i18n="index.hiw.s1.time">~5 min</div>
-              <h3 data-i18n="index.hiw.s1.h3">Create Binance API Key</h3>
-              <p data-i18n="index.hiw.s1.p">Create an API key from your Binance account. Disable withdrawal permission and allow only the designated server IP.</p>
-            </div>
-          </div>
-          <div class="hiw__step">
-            <div class="hiw__step-num">02</div>
-            <div>
-              <div class="hiw__step-time" data-i18n="index.hiw.s2.time">Configure</div>
-              <h3 data-i18n="index.hiw.s2.h3">Set Conditions and Limits</h3>
-              <p data-i18n="index.hiw.s2.p">Configure target assets, execution rules, risk limits, and position size. You can adjust any parameter at any time.</p>
-            </div>
-          </div>
-          <div class="hiw__step">
-            <div class="hiw__step-num">03</div>
-            <div>
-              <div class="hiw__step-time" data-i18n="index.hiw.s3.time">Ongoing</div>
-              <h3 data-i18n="index.hiw.s3.h3">Monitor</h3>
-              <p data-i18n="index.hiw.s3.p">Piano runs your defined conditions automatically. Check status and execution history on the dashboard.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
 <!-- ========== SECURITY ========== -->
 <section class="section" id="security">
   <div class="container">
@@ -635,6 +744,13 @@
 
 <!-- ========== PRICING ========== -->
 <section class="section" id="pricing">
+  <div class="pricing-pixel-notes pixel-only" aria-hidden="true">
+    <span class="pixel-floating-note pixel-floating-note--one"></span>
+    <span class="pixel-floating-note pixel-floating-note--two"></span>
+    <span class="pixel-floating-note pixel-floating-note--three"></span>
+    <span class="pixel-floating-note pixel-floating-note--four"></span>
+    <span class="pixel-floating-note pixel-floating-note--five"></span>
+  </div>
   <div class="container">
     <div class="pricing-header">
       <span class="label" data-i18n="index.pricing.label">Pricing</span>
@@ -685,7 +801,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button"><span data-i18n="index.faq.q5.q">Which exchanges are supported?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-i18n-html="index.faq.q5.a">Piano focuses on Binance-connected instruments, including crypto markets and supported futures that track commodities, ETF-linked indices, and selected global stocks. These are derivative contracts, not ownership of the underlying asset. Supported markets depend on exchange availability and user approval.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n-html="index.faq.q5.a">Piano focuses on Binance-connected instruments, including crypto markets and futures that track commodities, ETF-linked indices, and selected global stocks. These are derivative contracts, not ownership of the underlying asset. Product availability depends on exchange listings and user approval.</div></div>
       </div>
     </div>
   </div>
@@ -702,8 +818,9 @@
       <div class="risk-disclosure__items">
         <p data-i18n-html="index.risk.i1"><strong>1. Piano is a software tool.</strong> — It is not an investment advisory, discretionary investment management, or financial product brokerage service.</p>
         <p data-i18n-html="index.risk.i2"><strong>2. Piano does not solicit investments.</strong> — It does not recommend or solicit the purchase or sale of any specific assets.</p>
-        <p data-i18n-html="index.risk.i3"><strong>3. Piano analyzes market signals through algorithms and automatically executes trades within the conditions and limits set by the user.</strong> — Before activating automated trading, the user must directly approve the strategy, target assets, risk limits, and API permissions. All investment gains and losses are the user's responsibility.</p>
-        <p data-i18n-html="index.risk.i4"><strong>4. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
+        <p data-i18n-html="index.risk.i3"><strong>3. Piano automatically executes trades within the conditions set by the user.</strong> — Algorithms are used only for market signal analysis; the execution scope is set by the user.</p>
+        <p data-i18n-html="index.risk.i4"><strong>4. Activating automated trading is the user's own approval and responsibility.</strong> — The user directly approves the strategy, target assets, risk limits, and API permissions before activation. All investment gains and losses are the user's responsibility.</p>
+        <p data-i18n-html="index.risk.i5"><strong>5. Piano does not guarantee returns.</strong> — Past performance, backtests, and simulation results do not guarantee future returns.</p>
       </div>
 
       <div class="risk-disclosure__sub" data-i18n="index.risk.sub2">Investment Risk Disclosure</div>
@@ -824,6 +941,59 @@
       });
     });
     apply(mode);
+  })();
+
+  // Hero story carousel
+  (function(){
+    var root = document.querySelector('[data-hero-carousel]');
+    if (!root) return;
+    var panels = Array.from(root.querySelectorAll('[data-hero-panel]'));
+    var buttons = Array.from(root.querySelectorAll('[data-hero-slide]'));
+    var artPanels = Array.from(document.querySelectorAll('[data-hero-art-panel]'));
+    if (!panels.length) return;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var index = 0;
+    var timer = null;
+    var delay = 6800;
+    function show(next) {
+      index = (next + panels.length) % panels.length;
+      panels.forEach(function(panel, i) {
+        panel.classList.toggle('active', i === index);
+      });
+      buttons.forEach(function(button, i) {
+        var active = i === index;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      artPanels.forEach(function(panel, i) {
+        panel.classList.toggle('active', i === index);
+      });
+    }
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+    function start() {
+      if (reduceMotion || timer) return;
+      timer = window.setInterval(function() {
+        show(index + 1);
+      }, delay);
+    }
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        stop();
+        show(Number(button.getAttribute('data-hero-slide')) || 0);
+        start();
+      });
+    });
+    ['mouseenter', 'focusin'].forEach(function(evt) {
+      root.addEventListener(evt, stop);
+    });
+    ['mouseleave', 'focusout'].forEach(function(evt) {
+      root.addEventListener(evt, start);
+    });
+    show(0);
+    start();
   })();
 
   // Shared parallax system for both serious and pixel art modes.
