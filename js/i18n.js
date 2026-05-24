@@ -548,7 +548,7 @@
       'index.pixel.garden.h3': '한 시장에만<br>기대지 않도록',
       'index.pixel.garden.p': '한 시장만 보면 흐름이 바뀔 때 전략도 크게 흔들릴 수 있습니다. Piano는 금, 원유, ETF, AI 관련 주식까지 함께 살펴보고, 사용자가 정한 조건 안에서 리스크를 나눠 관리하게 돕습니다.',
       'index.pixel.basis.label': '베이시스 헷지',
-      'index.pixel.basis.h2': '가격 차이를 기준으로<br>한쪽 방향 의존을 줄여요',
+      'index.pixel.basis.h2': '방향을 맞히기보다<br>가격 차이를 관리해요',
       'index.pixel.basis.p': '베이시스 헷지는 현물과 선물의 가격 차이를 기준으로 포지션을 나눠 관리하는 방식이에요. 시장이 오를지 내릴지만 맞히는 데 기대지 않고, 두 가격의 차이가 벌어지거나 줄어드는 상황을 사용자가 정한 규칙 안에서 관리할 때 필요합니다.',
       'index.pixel.basis.tag1': '현물 포지션',
       'index.pixel.basis.tag2': '선물 포지션',
