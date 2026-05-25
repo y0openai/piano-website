@@ -175,7 +175,7 @@
       'index.features.f3.note': 'DCA + auto-rebalance',
 
       'index.hiw.label': 'How It Works',
-      'index.hiw.h2': 'From idea<br>to rule flow',
+      'index.hiw.h2': 'From idea to rule flow',
       'index.hiw.sub': 'Choose the assets, define conditions and limits, then activate execution only inside those boundaries.',
       'index.hiw.s1.time': 'Choose',
       'index.hiw.s1.h3': 'Select the assets yourself',
@@ -635,7 +635,7 @@
       'index.features.f3.note': 'DCA + 자동 리밸런싱',
 
       'index.hiw.label': '작동 방식',
-      'index.hiw.h2': '생각을<br>조건 흐름으로 바꾸기',
+      'index.hiw.h2': '생각을 조건 흐름으로 바꾸기',
       'index.hiw.sub': '자산을 고르고, 조건과 한도를 정한 뒤, 그 범위 안에서만 실행을 활성화합니다.',
       'index.hiw.s1.time': '선택',
       'index.hiw.s1.h3': '관심 자산을 직접 선택',

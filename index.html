@@ -270,80 +270,66 @@
   </div>
 </section>
 
-<!-- ========== TRUST BOUNDARY ========== -->
-<section class="trust-boundary" aria-label="Piano service boundaries" data-i18n-attr="aria-label:index.trust.aria">
-  <div class="trust-boundary__inner container">
-    <div class="trust-boundary__intro">
-      <span class="label" data-i18n="index.trust.label">Trust Boundary</span>
-      <h2 data-i18n="index.trust.h2">Piano keeps the line clear.</h2>
-    </div>
-    <div class="trust-boundary__grid">
-      <div class="trust-boundary__item">
-        <i data-lucide="messages-square" aria-hidden="true"></i>
-        <span data-i18n="index.trust.i1">No investment advice</span>
-      </div>
-      <div class="trust-boundary__item">
-        <i data-lucide="badge-x" aria-hidden="true"></i>
-        <span data-i18n="index.trust.i2">No asset recommendations</span>
-      </div>
-      <div class="trust-boundary__item">
-        <i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>
-        <span data-i18n="index.trust.i3">No profit guarantees</span>
-      </div>
-      <div class="trust-boundary__item">
-        <i data-lucide="hand" aria-hidden="true"></i>
-        <span data-i18n="index.trust.i4">No arbitrary asset disposal</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ========== HOW IT WORKS ========== -->
 <section class="section" id="how-it-works">
   <div class="container">
+
+    <!-- HIW shared header (top, horizontal — both modes) -->
+    <div class="hiw-header-row">
+      <span class="label" data-i18n="index.hiw.label">How It Works</span>
+      <h2 data-i18n="index.hiw.h2">From idea to rule flow</h2>
+      <p data-i18n="index.hiw.sub">Choose the assets, define conditions and limits, then activate execution only inside those boundaries.</p>
+    </div>
+
     <div class="hiw">
 
       <!-- FIG 0.3 — Three-step setup -->
       <div class="hiw__fig">
         <span class="fig-label">FIG 0.3</span>
-        <div class="pixel-workflow-art pixel-only" aria-hidden="true">
-          <span class="pixel-workflow-art__label">CONDITION FLOW / USER RULES</span>
-          <span class="pixel-workflow-scan"></span>
-          <span class="pixel-workflow-route pixel-workflow-route--top"></span>
-          <span class="pixel-workflow-route pixel-workflow-route--bottom"></span>
 
-          <div class="pixel-workflow-panel pixel-workflow-panel--choose">
-            <span class="pixel-workflow-panel__title">01 PICK</span>
-            <span class="pixel-market-token pixel-market-token--gold">AU</span>
-            <span class="pixel-market-token pixel-market-token--oil">OIL</span>
-            <span class="pixel-market-token pixel-market-token--etf">ETF</span>
-            <span class="pixel-market-token pixel-market-token--coin">COIN</span>
-            <span class="pixel-user-cursor"></span>
+        <!-- PIXEL MODE: canvas with steps overlay + floating notes -->
+        <div class="hiw-canvas pixel-only" aria-hidden="false">
+          <div class="pixel-stage pixel-stage--wide pixel-stage--workflow" aria-hidden="true">
+            <img class="pixel-stage__image pixel-stage__image--workflow" src="assets/pixel-piano-portfolio.png" alt="">
+            <span class="pixel-stage__vignette" aria-hidden="true"></span>
           </div>
-
-          <div class="pixel-workflow-panel pixel-workflow-panel--rules">
-            <span class="pixel-workflow-panel__title">02 RULES</span>
-            <span class="pixel-rule-slider pixel-rule-slider--entry"></span>
-            <span class="pixel-rule-slider pixel-rule-slider--limit"></span>
-            <span class="pixel-rule-slider pixel-rule-slider--exit"></span>
-            <span class="pixel-rule-gate"></span>
-            <span class="pixel-rule-check pixel-rule-check--one"></span>
-            <span class="pixel-rule-check pixel-rule-check--two"></span>
-            <span class="pixel-rule-check pixel-rule-check--three"></span>
-          </div>
-
-          <div class="pixel-workflow-panel pixel-workflow-panel--run">
-            <span class="pixel-workflow-panel__title">03 RUN</span>
-            <span class="pixel-run-screen"></span>
-            <span class="pixel-run-bar pixel-run-bar--long"></span>
-            <span class="pixel-run-bar pixel-run-bar--mid"></span>
-            <span class="pixel-run-bar pixel-run-bar--short"></span>
-            <span class="pixel-run-balance"></span>
-            <span class="pixel-run-lock"></span>
+          <!-- Floating music notes (pixel mode only) -->
+          <span class="hiw-note hiw-note--cyan" aria-hidden="true">&#9835;</span>
+          <span class="hiw-note hiw-note--gold" aria-hidden="true">&#9834;</span>
+          <span class="hiw-note hiw-note--pink" aria-hidden="true">&#9836;</span>
+          <span class="hiw-note hiw-note--green" aria-hidden="true">&#9835;</span>
+          <span class="hiw-note hiw-note--blue" aria-hidden="true">&#9834;</span>
+          <span class="hiw-note hiw-note--orange" aria-hidden="true">&#9836;</span>
+          <!-- Steps overlay on left side of image -->
+          <div class="hiw-steps-overlay">
+            <div class="hiw-steps-overlay__step">
+              <div class="hiw__step-num">01</div>
+              <div>
+                <div class="hiw__step-time" data-i18n="index.hiw.s1.time">Choose</div>
+                <h3 data-i18n="index.hiw.s1.h3">Select the assets yourself</h3>
+                <p data-i18n="index.hiw.s1.p">Choose only the supported instruments you want Piano to monitor. Piano does not recommend assets or decide what is suitable for you.</p>
+              </div>
+            </div>
+            <div class="hiw-steps-overlay__step">
+              <div class="hiw__step-num">02</div>
+              <div>
+                <div class="hiw__step-time" data-i18n="index.hiw.s2.time">Set</div>
+                <h3 data-i18n="index.hiw.s2.h3">Build conditions and limits</h3>
+                <p data-i18n="index.hiw.s2.p">Define entry conditions, exit conditions, risk limits, and position size. The condition filter only checks whether your rules are met.</p>
+              </div>
+            </div>
+            <div class="hiw-steps-overlay__step">
+              <div class="hiw__step-num">03</div>
+              <div>
+                <div class="hiw__step-time" data-i18n="index.hiw.s3.time">Run</div>
+                <h3 data-i18n="index.hiw.s3.h3">Execute and correct inside the boundary</h3>
+                <p data-i18n="index.hiw.s3.p">After you approve API permissions, Piano monitors, places orders, and corrects ratio drift only inside your configured conditions. Execution history stays visible on the dashboard.</p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- SERIOUS MODE: original SVG (unchanged) -->
         <svg class="iso-svg fig03-setup serious-art" viewBox="120 20 560 470" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Animated isometric three-step setup graphic">
           <ellipse class="fig03-shadow iso-shadow" cx="370" cy="438" rx="176" ry="28" fill="#05070A"/>
 
@@ -379,12 +365,8 @@
         </svg>
       </div>
 
-      <div class="hiw__body">
-        <div class="hiw__header">
-          <span class="label" data-i18n="index.hiw.label">How It Works</span>
-          <h2 data-i18n-html="index.hiw.h2">From idea<br>to rule flow</h2>
-          <p data-i18n="index.hiw.sub">Choose the assets, define conditions and limits, then activate execution only inside those boundaries.</p>
-        </div>
+      <!-- SERIOUS MODE: right-side body with header + steps -->
+      <div class="hiw__body serious-art">
         <div class="hiw__steps">
           <div class="hiw__step">
             <div class="hiw__step-num">01</div>
@@ -516,6 +498,105 @@
         <span class="feature-card__note" data-i18n="index.features.f3.note">DCA + auto-rebalance</span>
       </div>
     </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== SECURITY ========== -->
+<section class="section" id="security">
+  <div class="container">
+    <div class="security-header">
+      <span class="label" data-i18n="index.sec.label">Security</span>
+      <h2 data-i18n-html="index.sec.h2">We never directly<br>access your assets</h2>
+      <p data-i18n="index.sec.sub">Piano connects to Binance via API but never holds or transfers your assets.</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="key-round"></i></div>
+        <h3 data-i18n="index.sec.c1.h3">API Key Creation</h3>
+        <p data-i18n="index.sec.c1.p">You create it directly on Binance</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="shield-off"></i></div>
+        <h3 data-i18n="index.sec.c2.h3">Withdrawal Disabled</h3>
+        <p data-i18n="index.sec.c2.p">Only keys without withdrawal permission are used</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="globe-lock"></i></div>
+        <h3 data-i18n="index.sec.c3.h3">IP Restriction</h3>
+        <p data-i18n="index.sec.c3.p">Access only from authorized server IPs</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="power-off"></i></div>
+        <h3 data-i18n="index.sec.c4.h3">Instant Revocation</h3>
+        <p data-i18n="index.sec.c4.p">Revoke the API key and access is cut immediately</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="sliders-horizontal"></i></div>
+        <h3 data-i18n="index.sec.c5.h3">Parameter Control</h3>
+        <p data-i18n="index.sec.c5.p">You set and change all execution conditions yourself</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card__icon"><i data-lucide="container"></i></div>
+        <h3 data-i18n="index.sec.c6.h3">Isolated Environment</h3>
+        <p data-i18n="index.sec.c6.p">Each user runs on a dedicated instance</p>
+      </div>
+    </div>
+
+    <div class="security-compare">
+      <div class="security-col security-col--do">
+        <h3 data-i18n="index.sec.do.h3">What Piano does</h3>
+        <ul>
+          <li data-i18n="index.sec.do.li1">Runs your defined strategy rules automatically</li>
+          <li data-i18n="index.sec.do.li2">Monitors and corrects portfolio or hedge drift</li>
+          <li data-i18n="index.sec.do.li3">Executes only per your preconfigured conditions</li>
+          <li data-i18n="index.sec.do.li4">Monitors 24/7 automatically</li>
+        </ul>
+      </div>
+      <div class="security-col">
+        <h3 data-i18n="index.sec.dont.h3">What Piano doesn't do</h3>
+        <ul>
+          <li data-i18n="index.sec.dont.li1">No investment advice or asset recommendations</li>
+          <li data-i18n="index.sec.dont.li2">No profit guarantees or performance promises</li>
+          <li data-i18n="index.sec.dont.li3">Never arbitrarily disposes of your assets</li>
+          <li data-i18n="index.sec.dont.li4">No withdrawals or asset transfers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ========== TRUST BOUNDARY ========== -->
+<section class="trust-boundary" aria-label="Piano service boundaries" data-i18n-attr="aria-label:index.trust.aria">
+  <div class="trust-boundary__inner container">
+    <div class="trust-boundary__intro">
+      <span class="label" data-i18n="index.trust.label">Trust Boundary</span>
+      <h2 data-i18n="index.trust.h2">Piano keeps the line clear.</h2>
+    </div>
+    <div class="trust-boundary__grid">
+      <div class="trust-boundary__item">
+        <i data-lucide="messages-square" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i1">No investment advice</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="badge-x" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i2">No asset recommendations</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i3">No profit guarantees</span>
+      </div>
+      <div class="trust-boundary__item">
+        <i data-lucide="hand" aria-hidden="true"></i>
+        <span data-i18n="index.trust.i4">No arbitrary asset disposal</span>
+      </div>
     </div>
   </div>
 </section>
@@ -708,74 +789,6 @@
 </section>
 
 <div class="divider pixel-only"></div>
-
-
-<!-- ========== SECURITY ========== -->
-<section class="section" id="security">
-  <div class="container">
-    <div class="security-header">
-      <span class="label" data-i18n="index.sec.label">Security</span>
-      <h2 data-i18n-html="index.sec.h2">We never directly<br>access your assets</h2>
-      <p data-i18n="index.sec.sub">Piano connects to Binance via API but never holds or transfers your assets.</p>
-    </div>
-
-    <div class="security-grid">
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="key-round"></i></div>
-        <h3 data-i18n="index.sec.c1.h3">API Key Creation</h3>
-        <p data-i18n="index.sec.c1.p">You create it directly on Binance</p>
-      </div>
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="shield-off"></i></div>
-        <h3 data-i18n="index.sec.c2.h3">Withdrawal Disabled</h3>
-        <p data-i18n="index.sec.c2.p">Only keys without withdrawal permission are used</p>
-      </div>
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="globe-lock"></i></div>
-        <h3 data-i18n="index.sec.c3.h3">IP Restriction</h3>
-        <p data-i18n="index.sec.c3.p">Access only from authorized server IPs</p>
-      </div>
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="power-off"></i></div>
-        <h3 data-i18n="index.sec.c4.h3">Instant Revocation</h3>
-        <p data-i18n="index.sec.c4.p">Revoke the API key and access is cut immediately</p>
-      </div>
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="sliders-horizontal"></i></div>
-        <h3 data-i18n="index.sec.c5.h3">Parameter Control</h3>
-        <p data-i18n="index.sec.c5.p">You set and change all execution conditions yourself</p>
-      </div>
-      <div class="security-card">
-        <div class="security-card__icon"><i data-lucide="container"></i></div>
-        <h3 data-i18n="index.sec.c6.h3">Isolated Environment</h3>
-        <p data-i18n="index.sec.c6.p">Each user runs on a dedicated instance</p>
-      </div>
-    </div>
-
-    <div class="security-compare">
-      <div class="security-col security-col--do">
-        <h3 data-i18n="index.sec.do.h3">What Piano does</h3>
-        <ul>
-          <li data-i18n="index.sec.do.li1">Runs your defined strategy rules automatically</li>
-          <li data-i18n="index.sec.do.li2">Monitors and corrects portfolio or hedge drift</li>
-          <li data-i18n="index.sec.do.li3">Executes only per your preconfigured conditions</li>
-          <li data-i18n="index.sec.do.li4">Monitors 24/7 automatically</li>
-        </ul>
-      </div>
-      <div class="security-col">
-        <h3 data-i18n="index.sec.dont.h3">What Piano doesn't do</h3>
-        <ul>
-          <li data-i18n="index.sec.dont.li1">No investment advice or asset recommendations</li>
-          <li data-i18n="index.sec.dont.li2">No profit guarantees or performance promises</li>
-          <li data-i18n="index.sec.dont.li3">Never arbitrarily disposes of your assets</li>
-          <li data-i18n="index.sec.dont.li4">No withdrawals or asset transfers</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
 
 
 <!-- ========== PRICING ========== -->
@@ -999,21 +1012,35 @@
       buttons.forEach(function(button, i) {
         var active = i === index;
         button.classList.toggle('active', active);
+        button.classList.remove('progressing');
         button.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
       artPanels.forEach(function(panel, i) {
         panel.classList.toggle('active', i === index);
       });
+      var activeBtn = buttons[index];
+      if (activeBtn && !reduceMotion && timer) {
+        void activeBtn.offsetWidth;
+        activeBtn.classList.add('progressing');
+      }
     }
     function stop() {
       if (timer) window.clearInterval(timer);
       timer = null;
+      buttons.forEach(function(button) {
+        button.classList.remove('progressing');
+      });
     }
     function start() {
       if (reduceMotion || timer) return;
       timer = window.setInterval(function() {
         show(index + 1);
       }, delay);
+      var activeBtn = buttons[index];
+      if (activeBtn) {
+        void activeBtn.offsetWidth;
+        activeBtn.classList.add('progressing');
+      }
     }
     buttons.forEach(function(button) {
       button.addEventListener('click', function() {

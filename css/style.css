@@ -381,7 +381,25 @@ p { color: var(--fg-3); line-height: 1.75; }
 }
 .hero-story__btn.active {
   width: 46px;
+  background: rgba(22, 199, 132, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+.hero-story__btn.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 0;
   background: var(--green);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.hero-story__btn.progressing::after {
+  animation: hero-progress 6800ms linear forwards;
+}
+@keyframes hero-progress {
+  from { width: 0; }
+  to { width: 100%; }
 }
 .hero-story__viewport {
   position: relative;
@@ -523,6 +541,15 @@ html[data-art="pixel"] .hero__figure {
   border: 0;
   background: transparent;
 }
+html[data-art="pixel"] .hiw__fig {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  gap: 0;
+}
+html[data-art="pixel"] .hiw__fig .fig-label {
+  display: none;
+}
 .parallax-scene { --scroll-progress: 0; }
 .parallax-layer {
   transform: translate3d(0, var(--parallax-y, 0), 0);
@@ -582,6 +609,11 @@ html[data-art="pixel"] .hero__figure {
 .pixel-stage__image--b { object-position: center center; }
 .pixel-stage__image--c { object-position: 18% center; }
 .pixel-stage__image--d { object-position: 82% center; }
+.pixel-stage__image--workflow {
+  object-position: right center;
+  transform: scale(1.2);
+  transform-origin: right center;
+}
 
 /* Pull the garden / basis scenes farther outward visually so their core
    subjects (GOLD / ETF / SILVER / AI SEMI for garden, gauges for basis)
@@ -2247,13 +2279,29 @@ html[data-art="pixel"] .section-showcase--basis .pixel-stage--workshop {
 /* ==============================
    HOW IT WORKS
    ============================== */
-.hiw { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+/* --- HIW shared header row (top, horizontal, both modes) --- */
+.hiw-header-row {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.hiw-header-row h2 {
+  margin-bottom: 10px;
+}
+.hiw-header-row p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--fg-4);
+}
+
+/* --- HIW grid (fig left, body right) --- */
+.hiw { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .hiw__fig {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
   padding: 48px 24px; border: 1px solid var(--bd-3);
   border-radius: 16px; background: var(--bg-1);
 }
 .hiw__fig .fig-label { align-self: flex-start; }
+/* Header inside body no longer needed — kept for backward safety */
 .hiw__header { margin-bottom: 36px; }
 .hiw__header h2 { margin-bottom: 10px; }
 .hiw__steps { display: flex; flex-direction: column; }
@@ -2279,6 +2327,124 @@ html[data-art="pixel"] .section-showcase--basis .pixel-stage--workshop {
 }
 .hiw__mechanisms-intro p {
   max-width: 620px;
+}
+
+/* --- HIW canvas (pixel mode: image + overlay + notes) --- */
+.hiw-canvas {
+  position: relative;
+  width: 100%;
+}
+
+/* Steps overlay — left side of image */
+.hiw-steps-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 46%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 18px 20px 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 14, 26, 0.88) 0%,
+    rgba(6, 14, 26, 0.72) 76%,
+    transparent 100%
+  );
+  border-radius: 8px 0 0 8px;
+}
+.hiw-steps-overlay__step {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(167, 213, 214, 0.14);
+}
+.hiw-steps-overlay__step:last-child {
+  border-bottom: none;
+}
+.hiw-steps-overlay__step .hiw__step-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(167, 213, 214, 0.36);
+  color: var(--pixel-cyan);
+  margin-top: 2px;
+}
+.hiw-steps-overlay__step .hiw__step-time {
+  color: var(--pixel-cyan);
+  opacity: 0.7;
+}
+.hiw-steps-overlay__step h3 {
+  font-size: 0.82rem;
+  color: #e8f1ff;
+  margin-bottom: 3px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.hiw-steps-overlay__step p {
+  font-size: 0.75rem;
+  color: rgba(200, 220, 240, 0.72);
+  line-height: 1.45;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Floating music notes */
+.hiw-note {
+  position: absolute;
+  z-index: 12;
+  font-size: 3.3rem;
+  pointer-events: none;
+  user-select: none;
+  animation: hiw-note-rise 3.6s ease-in-out infinite;
+  opacity: 0;
+}
+.hiw-note--cyan  { left: 52%; bottom: 28%; color: var(--pixel-cyan);  animation-delay: 0s;    }
+.hiw-note--gold  { left: 62%; bottom: 22%; color: var(--pixel-gold);  animation-delay: 0.6s;  }
+.hiw-note--pink  { left: 74%; bottom: 30%; color: var(--pixel-pink);  animation-delay: 1.2s;  }
+.hiw-note--green { left: 58%; bottom: 38%; color: var(--pixel-green); animation-delay: 1.8s;  }
+.hiw-note--blue  { left: 68%; bottom: 18%; color: #7BD9FF;            animation-delay: 2.4s;  }
+.hiw-note--orange{ left: 80%; bottom: 26%; color: #FFB347;            animation-delay: 3.0s;  }
+
+@keyframes hiw-note-rise {
+  0%   { transform: translate3d(0, 0, 0) scale(0.8);     opacity: 0; }
+  12%  { opacity: 1; }
+  80%  { opacity: 0.7; }
+  100% { transform: translate3d(8px, -80px, 0) scale(1); opacity: 0; }
+}
+
+/* Reduced motion: disable note animation */
+@media (prefers-reduced-motion: reduce) {
+  .hiw-note { animation: none; opacity: 0; }
+}
+
+/* Pixel mode overrides */
+html[data-art="pixel"] .hiw-header-row h2 {
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.28);
+}
+html[data-art="pixel"] .hiw__fig {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  gap: 0;
+  align-items: stretch;
+}
+html[data-art="pixel"] .hiw__fig .fig-label {
+  display: none;
+}
+/* Pixel mode: hide the serious-art body column (steps are in overlay) */
+html[data-art="pixel"] .hiw__body {
+  display: none;
+}
+/* Pixel mode: fig takes full width */
+html[data-art="pixel"] .hiw {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+/* Serious mode: hide pixel canvas */
+html[data-art="serious"] .hiw-canvas {
+  display: none;
 }
 
 
@@ -2472,42 +2638,28 @@ html[data-art="pixel"] .section-showcase--basis .pixel-stage--workshop {
   .bridge-card { min-height: auto; }
   .feature-card { border-right: none; border-bottom: 1px solid var(--bd-4); }
   .feature-card:last-child { border-bottom: none; }
-  .hiw { grid-template-columns: 1fr; gap: 48px; }
+  /* HIW: mobile vertical stack */
+  .hiw-header-row { margin-bottom: 36px; }
+  /* Serious mode: single column */
+  .hiw { grid-template-columns: 1fr; gap: 40px; }
+  /* Serious: hide fig (SVG too complex for tiny screens) */
   .hiw__fig { display: none; }
-  html[data-art="pixel"] .hiw__fig { display: flex; padding: 22px 14px; }
-  html[data-art="pixel"] .pixel-workflow-art { min-height: 520px; }
-  html[data-art="pixel"] .pixel-workflow-panel--choose {
-    left: 8%;
-    top: 56px;
-    width: 84%;
-    height: 120px;
+  /* Serious: show body steps below header */
+  html[data-art="serious"] .hiw__body { display: block; }
+  /* Pixel: show fig (canvas) full width */
+  html[data-art="pixel"] .hiw__fig { display: flex; }
+  /* Pixel: canvas stays full width, override single-col */
+  html[data-art="pixel"] .hiw { grid-template-columns: 1fr; }
+  /* Pixel mobile: overlay becomes below-image steps block */
+  html[data-art="pixel"] .hiw-steps-overlay {
+    position: static;
+    width: 100%;
+    background: rgba(6, 14, 26, 0.82);
+    border-radius: 0 0 8px 8px;
+    padding: 20px 18px;
   }
-  html[data-art="pixel"] .pixel-workflow-panel--rules {
-    left: 12%;
-    top: 206px;
-    width: 76%;
-    height: 142px;
-  }
-  html[data-art="pixel"] .pixel-workflow-panel--run {
-    left: 8%;
-    right: auto;
-    top: 378px;
-    width: 84%;
-    height: 124px;
-  }
-  html[data-art="pixel"] .pixel-workflow-route {
-    left: 50%;
-    right: auto;
-    width: 6px;
-    height: 42px;
-    background: repeating-linear-gradient(180deg, #32E6B8 0 12px, transparent 12px 20px);
-    transform: none;
-  }
-  html[data-art="pixel"] .pixel-workflow-route--top { top: 176px; }
-  html[data-art="pixel"] .pixel-workflow-route--bottom {
-    top: 348px;
-    background: repeating-linear-gradient(180deg, #57D5FF 0 12px, transparent 12px 20px);
-  }
+  /* Hide notes on small screens to reduce clutter */
+  html[data-art="pixel"] .hiw-note { display: none; }
   .hiw__mechanisms { margin-top: 52px; }
   .security-grid { grid-template-columns: 1fr 1fr; }
   .security-compare { grid-template-columns: 1fr; }
