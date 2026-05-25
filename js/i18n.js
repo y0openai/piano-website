@@ -54,9 +54,8 @@
       'index.title': 'PIANO — Algorithmic Market Strategy Automation',
       'index.metaDesc': 'Piano helps users turn investing ideas into user-defined market conditions, then supports signal monitoring and order execution within the assets, limits, and rules they set.',
 
-      'index.hero.badge': 'Condition-Based Execution Tool',
-      'index.hero.h1': 'Leave conditions<br>before emotion arrives.',
-      'index.hero.sub': 'Plans are made calmly, but decisions often happen when emotion or fatigue arrives.',
+      'index.hero.badge': 'Acts on your conditions',
+      'index.hero.sub': 'Crypto markets alongside US equities, Japan, and commodities — executed only within the conditions and limits you set.',
       'index.hero.ctaPrimary': 'See How It Works',
       'index.hero.ctaSecondary': 'Ask About Features',
       'index.hero.figCaption': 'Your rules coordinate execution inside available instruments.',
@@ -501,9 +500,8 @@
       'index.title': 'PIANO — 알고리즘 기반 시장 전략 자동화',
       'index.metaDesc': 'Piano는 투자 생각을 사용자가 직접 정한 시장 조건으로 바꾸고, 사용자가 정한 자산·한도·규칙 안에서 신호 확인과 주문 실행을 돕는 소프트웨어 도구입니다.',
 
-      'index.hero.badge': '조건 기반 실행 도구',
-      'index.hero.h1': '감정이 오기 전에,<br>조건을 먼저 남겨두세요.',
-      'index.hero.sub': '계획은 차분할 때 세우지만, 결정은 감정이나 피로가 찾아왔을 때 흔들리기 쉽습니다.',
+      'index.hero.badge': '조건이 닿으면 실행되는 도구',
+      'index.hero.sub': '미국·일본·원자재까지 한 계좌에서, 가상자산 시장을 사용자가 정한 조건과 한도 안에서 실행해요.',
       'index.hero.ctaPrimary': '작동 방식 보기',
       'index.hero.ctaSecondary': '기능 문의하기',
       'index.hero.figCaption': '거래 가능한 상품 안에서, 실행은 사용자가 정한 규칙을 따릅니다.',
