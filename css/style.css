@@ -2247,9 +2247,72 @@ html[data-art="pixel"] .section-showcase--basis .pixel-stage--workshop {
   background:
     linear-gradient(180deg, transparent, var(--hover-bg), transparent);
 }
+html[data-art="pixel"] .bridge-section .features-intro {
+  position: relative;
+  isolation: isolate;
+  min-height: 320px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 16px;
+  overflow: hidden;
+}
+html[data-art="pixel"] .bridge-section .features-intro > .label,
+html[data-art="pixel"] .bridge-section .features-intro > h2,
+html[data-art="pixel"] .bridge-section .features-intro > p {
+  max-width: 44%;
+  margin-left: 0;
+  margin-right: 0;
+}
+html[data-art="pixel"] .bridge-section .features-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/hero-emotion-noise.png') 75% center / cover no-repeat;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+html[data-art="pixel"] .bridge-section .features-intro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(8,18,37,0.85) 0%,
+    rgba(8,18,37,0.6) 40%,
+    rgba(8,18,37,0.2) 70%,
+    rgba(8,18,37,0.35) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  html[data-art="pixel"] .bridge-section .features-intro {
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px;
+    min-height: auto;
+  }
+  html[data-art="pixel"] .bridge-section .features-intro > .label,
+  html[data-art="pixel"] .bridge-section .features-intro > h2,
+  html[data-art="pixel"] .bridge-section .features-intro > p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html[data-art="pixel"] .bridge-section .features-intro::after {
+    background: linear-gradient(180deg,
+      rgba(8,18,37,0.7) 0%,
+      rgba(8,18,37,0.5) 50%,
+      rgba(8,18,37,0.7) 100%);
+  }
+}
 .bridge-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 .bridge-card {
@@ -2698,7 +2761,8 @@ html[data-art="serious"] .hiw-canvas {
   .pixel-route-pulse { display: none; }
 }
 @media (max-width: 1120px) and (min-width: 861px) {
-  .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-grid,
+  .bridge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .security-grid { grid-template-columns: 1fr; }
