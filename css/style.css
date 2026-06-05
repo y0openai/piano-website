@@ -4506,3 +4506,30 @@ body.legal-page {
 .legal-page .text-center { text-align: center; }
 .legal-page .lead { font-size: 1rem; line-height: 1.7; }
 .legal-page .table-container { overflow-x: auto; margin: 16px 0 20px; }
+
+/* ===== Strategy classification (quant positioning) ===== */
+.strat-section { padding-bottom: 40px; }
+.strat-chips {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;
+}
+.strat-chip {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--bd-6);
+  border-radius: 999px;
+  background: var(--hover-bg);
+  font-size: 0.92rem; font-weight: 600; color: var(--fg);
+  white-space: nowrap;
+}
+.strat-chip__tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
+  color: var(--green);
+}
+.strat-note {
+  margin-top: 18px; font-size: 0.8rem; line-height: 1.6;
+  color: var(--fg-3); max-width: 640px;
+}
+@media (max-width: 480px) {
+  .strat-chip { font-size: 0.85rem; padding: 8px 13px; }
+}

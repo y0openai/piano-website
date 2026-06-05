@@ -1,0 +1,5 @@
+# Exclude the archived pre-compliance site from deployment.
+# legacy/ contains the old speculative copy (profit testimonials, "AI 자동매매",
+# return guarantees) removed during the compliance rebrand (대법원 2018도4413).
+# Kept in the repo for reference, but must NOT be publicly served.
+legacy/
