@@ -26,3 +26,6 @@ SECTION_COPY_AUDIT.md
 
 # System
 .DS_Store
+
+# Local-only ops scripts (contain personal PC paths — never publish/deploy)
+*.bat
