@@ -260,6 +260,33 @@
   </div>
 </section>
 
+<!-- ========== TRACK RECORD (live metrics — hidden until feed connected) ========== -->
+<section class="section track-section" id="track-record" hidden data-metrics-section>
+  <div class="container">
+    <div class="features-intro">
+      <span class="label" data-i18n="index.track.label">Track record</span>
+      <h2 data-i18n-html="index.track.h2">Real results,<br>from the running tool.</h2>
+      <p data-i18n="index.track.sub">The figures below are the actual performance of one running configuration. Past results do not guarantee future returns.</p>
+    </div>
+    <div class="track-grid track-grid--3">
+      <div class="track-card">
+        <div class="track-card__label" data-i18n="index.track.roi">Return (on deployed capital)</div>
+        <div class="track-card__value" data-metric="roi">—</div>
+      </div>
+      <div class="track-card">
+        <div class="track-card__label" data-i18n="index.track.winrate">Win rate</div>
+        <div class="track-card__value" data-metric="winrate">—</div>
+      </div>
+      <div class="track-card">
+        <div class="track-card__label" data-i18n="index.track.trades">Closed trades</div>
+        <div class="track-card__value track-card__value--neutral" data-metric="trades">—</div>
+      </div>
+    </div>
+    <p class="track-asof"><span data-i18n="index.track.periodLabel">Measurement period</span> <span data-metric="period">—</span></p>
+    <p class="strat-note" data-i18n="index.track.disclaimer">These are realized past results of a single running configuration, losses included. Past performance, backtests, and simulations do not guarantee future returns, and you may lose principal. The same tool is provided to every user.</p>
+  </div>
+</section>
+
 <!-- ========== BRIDGE (Persona onboarding for ETF/stock investors) ========== -->
 <section class="section bridge-section" aria-label="Four things stocks and ETFs do not reach" data-i18n-attr="aria-label:index.bridge.aria">
   <div class="container">
@@ -946,6 +973,7 @@
 
 
 <script src="js/i18n.js"></script>
+<script src="js/metrics.js"></script>
 <script type="module" src="js/hero-particles.js"></script>
 <script>
   lucide.createIcons();
