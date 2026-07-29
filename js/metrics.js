@@ -38,9 +38,9 @@
   fetch(FEED_URL, { cache: 'no-store' })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) {
-      if (!d || d.showReturns !== true || d.capitalRoiPct == null) return; // stay hidden
+      if (!d || d.showReturns !== true || d.accountRoiPct == null) return; // stay hidden
       data = d;
-      set('roi', pct(d.capitalRoiPct));
+      set('roi', pct(d.accountRoiPct));
       set('winrate', d.winRatePct == null ? '—' : Math.round(d.winRatePct) + '%');
       set('trades', d.totalTrades == null ? '—' : String(d.totalTrades));
       renderPeriod();
