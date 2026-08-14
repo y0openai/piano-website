@@ -1,9 +1,9 @@
 {
   "showReturns": true,
   "since": "2026-06-05T00:00:00Z",
-  "asOf": "2026-08-11T19:56:03Z",
+  "asOf": "2026-08-15T00:54:50Z",
   "source": "rachmaninoff",
-  "accountRoiPct": 16.85,
-  "winRatePct": 58.2,
-  "totalTrades": 208
+  "accountRoiPct": 15.91,
+  "winRatePct": 58.1,
+  "totalTrades": 222
 }
