@@ -1,10 +1,10 @@
 {
   "showReturns": true,
   "since": "2026-06-05T00:00:00Z",
-  "asOf": "2026-08-30T17:48:37Z",
+  "asOf": "2026-11-03T23:25:28Z",
   "source": "rachmaninoff (delta+gamma)",
-  "accountRoiPct": 0.38,
+  "accountRoiPct": 16.56,
   "roiMethod": "TWR",
-  "winRatePct": 59.4,
-  "totalTrades": 320
+  "winRatePct": 60.1,
+  "totalTrades": 414
 }
