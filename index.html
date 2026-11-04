@@ -261,29 +261,121 @@
 </section>
 
 <!-- ========== TRACK RECORD (live metrics — hidden until feed connected) ========== -->
+<!-- 데이터: data/metrics.json (piano-coin-gamma/scripts/publish_metrics.py 가 발행). 렌더: js/metrics.js -->
 <section class="section track-section" id="track-record" hidden data-metrics-section>
   <div class="container">
     <div class="features-intro">
       <span class="label" data-i18n="index.track.label">Track record</span>
-      <h2 data-i18n-html="index.track.h2">Real results,<br>from the running tool.</h2>
-      <p data-i18n="index.track.sub">The figures below are the actual performance of one live account running two configurations (delta/gamma). Past results do not guarantee future returns.</p>
+      <h2 data-i18n-html="index.track.h2">Not one number —<br>the whole account, in the open.</h2>
+      <p data-i18n="index.track.sub">The equity record of one live account running the tool. Drawdowns and losing months are shown as they happened, not just the gains.</p>
     </div>
-    <div class="track-grid track-grid--3">
+
+    <!-- 운용 조건 -->
+    <ul class="track-facts" aria-label="Operating conditions" data-i18n-attr="aria-label:index.track.factsAria">
+      <li><span data-i18n="index.track.fact.account">1 live account</span></li>
+      <li><span data-i18n="index.track.fact.venue">Binance USDⓈ-M futures</span></li>
+      <li><span data-i18n="index.track.fact.leverage">Leverage</span> <b data-metric="leverage">—</b></li>
+      <li><span data-i18n="index.track.fact.hedge">Two-way hedge</span></li>
+      <li><span data-i18n="index.track.fact.instruments">Instruments</span> <b data-metric="instruments">—</b></li>
+      <li><span data-i18n="index.track.fact.days">Recorded</span> <b data-metric="days">—</b></li>
+    </ul>
+
+    <!-- 핵심 지표 -->
+    <div class="track-grid">
       <div class="track-card">
         <div class="track-card__label" data-i18n="index.track.roi">Return (account)</div>
         <div class="track-card__value" data-metric="roi">—</div>
+        <div class="track-card__note" data-i18n="index.track.roiNote">Time-weighted (TWR)</div>
+      </div>
+      <div class="track-card" data-track-detail hidden>
+        <div class="track-card__label" data-i18n="index.track.mdd">Max drawdown (MDD)</div>
+        <div class="track-card__value track-card__value--neutral" data-metric="mdd">—</div>
+        <div class="track-card__note"><span data-i18n="index.track.mddNote">Incl. unrealized ·</span> <span data-metric="mddDate">—</span></div>
+      </div>
+      <div class="track-card" data-track-detail hidden>
+        <div class="track-card__label" data-i18n="index.track.sharpe">Return per unit of risk (Sharpe)</div>
+        <div class="track-card__value track-card__value--neutral" data-metric="sharpe">—</div>
+        <div class="track-card__note" data-i18n="index.track.sharpeNote">Daily, annualized, rf = 0</div>
       </div>
       <div class="track-card">
-        <div class="track-card__label" data-i18n="index.track.winrate">Win rate</div>
-        <div class="track-card__value" data-metric="winrate">—</div>
-      </div>
-      <div class="track-card">
-        <div class="track-card__label" data-i18n="index.track.trades">Closed trades</div>
-        <div class="track-card__value track-card__value--neutral" data-metric="trades">—</div>
+        <div class="track-card__label" data-i18n="index.track.cycles">Hedge cycles closed</div>
+        <div class="track-card__value track-card__value--neutral" data-metric="cycles">—</div>
+        <div class="track-card__note"><span data-i18n="index.track.legsNote">Individual legs</span> <span data-metric="trades">—</span></div>
       </div>
     </div>
+
+    <!-- 순자산 곡선 + 낙폭 -->
+    <figure class="track-panel track-chart" data-track-detail hidden>
+      <figcaption class="track-panel__head">
+        <span class="track-panel__title" data-i18n="index.track.curveTitle">Account equity (start = 100)</span>
+        <span class="track-panel__aside"><span data-i18n="index.track.curveNow">Now</span> <b data-metric="curveNow">—</b> · <span data-i18n="index.track.curveFromPeak">from peak</span> <b data-metric="curveDd">—</b></span>
+      </figcaption>
+      <div class="track-chart__plot" data-chart="equity" tabindex="0" role="img"></div>
+      <div class="track-chart__sublabel" data-i18n="index.track.ddTitle">Drawdown from previous peak (%)</div>
+      <div class="track-chart__plot track-chart__plot--dd" data-chart="drawdown" aria-hidden="true"></div>
+      <div class="track-tooltip" data-chart-tooltip hidden></div>
+    </figure>
+
+    <div class="track-split" data-track-detail hidden>
+      <!-- 월별 수익률 -->
+      <figure class="track-panel">
+        <figcaption class="track-panel__head">
+          <span class="track-panel__title" data-i18n="index.track.monthlyTitle">Monthly return</span>
+          <span class="track-panel__aside" data-i18n="index.track.partialNote">* partial month</span>
+        </figcaption>
+        <div class="track-chart__plot track-chart__plot--monthly" data-chart="monthly" role="img"></div>
+      </figure>
+
+      <!-- 위험·운용 지표 -->
+      <div class="track-panel">
+        <div class="track-panel__head"><span class="track-panel__title" data-i18n="index.track.statsTitle">Risk &amp; activity</span></div>
+        <dl class="track-stats">
+          <div><dt data-i18n="index.track.upDays">Days the account rose</dt><dd data-metric="upDays">—</dd></div>
+          <div><dt data-i18n="index.track.vol">Daily volatility</dt><dd data-metric="vol">—</dd></div>
+          <div><dt data-i18n="index.track.recovery">Longest time below a previous peak</dt><dd data-metric="recovery">—</dd></div>
+          <div><dt data-i18n="index.track.winrate">Win rate (per leg)</dt><dd data-metric="winrate">—</dd></div>
+          <div><dt data-i18n="index.track.hold">Median holding period</dt><dd data-metric="hold">—</dd></div>
+          <div><dt data-i18n="index.track.cashflows">Deposits/withdrawals removed</dt><dd data-metric="cashflows">—</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 자산군 구성 -->
+    <div class="track-panel" data-track-detail hidden>
+      <div class="track-panel__head">
+        <span class="track-panel__title" data-i18n="index.track.mixTitle">Where the trades were (share of closed legs)</span>
+      </div>
+      <div class="track-mix" data-chart="mix"></div>
+      <ul class="track-mix__legend" data-chart="mixLegend"></ul>
+    </div>
+
+    <!-- 읽는 법 -->
+    <div class="track-notes" data-track-detail hidden>
+      <div class="track-note">
+        <h3 data-i18n="index.track.n1.t">Why we show the drawdown</h3>
+        <p data-i18n="index.track.n1.p">A hedge keeps its losing side open while it waits for the spread to recover. Closed trades therefore tend to look like wins, while the account itself can swing hard in the meantime. The equity curve and max drawdown — unrealized losses included — are the closer picture of the risk.</p>
+      </div>
+      <div class="track-note">
+        <h3 data-i18n="index.track.n2.t">How the return is calculated</h3>
+        <p data-i18n="index.track.n2.p">Account equity is recorded every 5 minutes. The return is time-weighted (TWR): it is cut at each deposit or withdrawal so that money moving in or out does not count as performance. Records start on 2026-06-05; earlier trades are excluded because the starting capital was not recorded.</p>
+      </div>
+      <div class="track-note">
+        <h3 data-i18n="index.track.n3.t">What we leave out on purpose</h3>
+        <p data-i18n="index.track.n3.p">No annualized return: stretching a few months into a yearly figure reads like a promise. No per-instrument profit: it would read like a pick. Fees and funding are already included in every figure.</p>
+      </div>
+    </div>
+
+    <details class="track-table" data-track-detail hidden>
+      <summary data-i18n="index.track.tableSummary">View as table</summary>
+      <table>
+        <thead><tr><th data-i18n="index.track.tMonth">Month</th><th data-i18n="index.track.tReturn">Return</th><th data-i18n="index.track.tEnd">Equity index (end)</th><th data-i18n="index.track.tWorst">Worst drawdown in month</th></tr></thead>
+        <tbody data-chart="table"></tbody>
+      </table>
+      <p class="track-table__raw"><a href="data/metrics.json" target="_blank" rel="noopener" data-i18n="index.track.raw">Raw data (JSON, daily)</a></p>
+    </details>
+
     <p class="track-asof"><span data-i18n="index.track.periodLabel">Measurement period</span> <span data-metric="period">—</span></p>
-    <p class="strat-note" data-i18n="index.track.disclaimer">These are realized past results of a single live account running two configurations (delta/gamma), losses included. Return is the account’s time-weighted return (TWR) over the measurement period — a method that removes the effect of deposits and withdrawals; win rate and trade count cover both configurations and count individual hedge legs. Past performance, backtests, and simulations do not guarantee future returns, and you may lose principal. The same tool is provided to every user.</p>
+    <p class="strat-note track-disclaimer" data-i18n="index.track.disclaimer">These are realized past results of a single live account, losses included. Past performance, backtests, and simulations do not guarantee future returns, and you may lose principal. The same tool is provided to every user; settings and outcomes are each user's own decision.</p>
   </div>
 </section>
 
