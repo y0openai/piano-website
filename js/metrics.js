@@ -29,6 +29,12 @@
   function signed(v, digits) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(Number(v)).toFixed(digits) + '%'; }
   function pct(v) { return signed(v, 2); }
   function datePart(iso) { return String(iso).slice(0, 10); }
+  // "{name} — {n}" style templates from i18n; values are plain text (rendered via textContent)
+  function fmt(tpl, vals) { return tpl.replace(/\{(\w+)\}/g, function (_, k) { return vals[k] == null ? '' : vals[k]; }); }
+  function shortDate(day) {
+    if (lang() === 'ko') return Number(day.slice(5, 7)) + '/' + Number(day.slice(8, 10));
+    return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(parseDay(day));
+  }
   function q(sel) { return section.querySelector(sel); }
   function set(metric, text) {
     section.querySelectorAll('[data-metric="' + metric + '"]').forEach(function (el) { el.textContent = text; });
@@ -85,7 +91,11 @@
     set('leverage', d.leverage == null ? '—' : d.leverage + t('index.track.leverageUnit', '×'));
     set('instruments', d.instruments == null ? '—' : String(d.instruments));
     set('mdd', pct(d.maxDrawdownPct));
-    set('mddDate', d.maxDrawdownDate || '—');
+    // Show the peak → trough span so MDD is not mistaken for a monthly figure
+    set('mddNote', d.maxDrawdownPeakDate && d.maxDrawdownDate
+      ? fmt(t('index.track.mddRange', 'Peak {peak} → trough {trough} · unrealized incl.'),
+            { peak: shortDate(d.maxDrawdownPeakDate), trough: shortDate(d.maxDrawdownDate) })
+      : t('index.track.mddNote', 'Unrealized losses included ·') + ' ' + (d.maxDrawdownDate || '—'));
     set('sharpe', Number(d.sharpe).toFixed(2));
     set('upDays', Number(d.upDayPct).toFixed(1) + '%');
     set('vol', Number(d.dailyVolPct).toFixed(2) + '%');
@@ -329,10 +339,10 @@
       sw.className = 'track-mix__swatch';
       sw.style.background = color;
       li.appendChild(sw);
-      li.appendChild(document.createTextNode(
-        name + ' · ' + r.instruments + t('index.track.instrumentsUnit', ' instruments') +
-        ' · ' + r.trades + t('index.track.legsUnit', ' legs')
-      ));
+      li.appendChild(document.createTextNode(fmt(
+        t('index.track.mixItem', '{name} — {n} instruments, {legs} closed legs ({share}%)'),
+        { name: name, n: r.instruments, legs: r.trades, share: Math.round(share) }
+      )));
       legend.appendChild(li);
       labels.push(name + ' ' + Math.round(share) + '%');
     });
