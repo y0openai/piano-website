@@ -86,10 +86,9 @@
       'index.strat.h2': 'Not a hunch —<br>a defined strategy class.',
       'index.strat.sub': 'The way PIANO operates belongs to a well-established institutional strategy family — and the same tool is applied identically for every user.',
       'index.strat.c1': 'Two-way hedge', 'index.strat.c1tag': 'long + short held together',
-      'index.strat.c2': 'Tilt pulled back by rules', 'index.strat.c2tag': 'long/short ratio management',
+      'index.strat.c2': 'Tilt pulled back by rules', 'index.strat.c2tag': 'rebalancing',
       'index.strat.c3': 'Capture the spread', 'index.strat.c3tag': 'basis & funding carry',
       'index.strat.c4': 'Runs by rules', 'index.strat.c4tag': 'rule-based / systematic',
-      'index.strat.c5': 'Auto-correct within limits', 'index.strat.c5tag': 'rebalancing',
       'index.strat.note': 'Classification describes how the tool works; it does not guarantee returns. The same tool is provided to every user.',
 
       'index.track.label': 'Track record',
@@ -618,10 +617,9 @@
       'index.strat.h2': '감(感)이 아니라,<br>정의된 전략 분류.',
       'index.strat.sub': 'PIANO가 작동하는 방식은 기관이 오래 써 온 잘 알려진 전략군에 속합니다. 그리고 모든 사용자에게 동일한 도구가 동일하게 적용됩니다.',
       'index.strat.c1': '양방향 헷지', 'index.strat.c1tag': '롱·숏 동시 보유',
-      'index.strat.c2': '쏠림은 규칙대로 되돌림', 'index.strat.c2tag': '롱·숏 비율 관리',
+      'index.strat.c2': '쏠림은 규칙대로 되돌림', 'index.strat.c2tag': '리밸런싱',
       'index.strat.c3': '가격차를 수취', 'index.strat.c3tag': '베이시스·펀딩 캐리',
       'index.strat.c4': '규칙대로 실행', 'index.strat.c4tag': '룰베이스 시스테매틱',
-      'index.strat.c5': '한도 안에서 자동 보정', 'index.strat.c5tag': '리밸런싱',
       'index.strat.note': '분류는 작동 방식을 설명할 뿐, 수익을 보장하지 않습니다. 모든 사용자에게 동일한 도구가 제공됩니다.',
 
       'index.track.label': '운용 실적',
