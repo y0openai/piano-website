@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-title="index.title">
+<html lang="en" class="skin-b" data-i18n-title="index.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/skin-bento.css">
   <script>
-    (function(){var t=localStorage.getItem('piano-theme')||'auto',a=localStorage.getItem('piano-art-mode')||'pixel',h=document.documentElement;
+    (function(){var t=localStorage.getItem('piano-theme')||'auto',a=localStorage.getItem('piano-art-mode')||'serious',h=document.documentElement;
     if(t==='light')h.setAttribute('data-theme','light');
     else if(t==='dark')h.setAttribute('data-theme','dark');
     else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)h.setAttribute('data-theme','light');
-    h.setAttribute('data-art',a==='serious'?'serious':'pixel');})();
+    h.setAttribute('data-art',a==='pixel'?'pixel':'serious');})();
   </script>
 </head>
 <body>
@@ -85,7 +87,6 @@
 
 <!-- ========== HERO ========== -->
 <section class="hero container">
-  <canvas class="hero-particles serious-art" aria-hidden="true"></canvas>
   <div class="hero__text">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>
@@ -192,52 +193,31 @@
         </div>
       </div>
     </div>
-    <svg class="iso-svg serious-art" viewBox="80 14 640 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Label -->
-      <text x="120" y="32" font-family="'Courier New',monospace" font-size="13" font-weight="700" fill="#444" letter-spacing="0.08em">HERO FIGURE / PIANO STRATEGY CONSOLE</text>
-      <!-- Deck -->
-      <path class="iso-face-top" d="M120 250l250-144 280 144-250 146z" fill="#14191F" stroke="#2A3444" stroke-width="2"/>
-      <path class="iso-face-left" d="M120 250l280 146 0 52-280-146z" fill="#0D1117" stroke="#2A3444" stroke-width="2"/>
-      <path class="iso-face-right" d="M400 396l250-146 0 52-250 146z" fill="#10151B" stroke="#2A3444" stroke-width="2"/>
-      <!-- Risers + white keys (staggered scan) -->
-      <g class="fig01-r1">
-        <path d="M214 246l12-7 0-77-12 7z" fill="#EA3943"/>
-        <path class="iso-key" d="M202 258l26-15 36 19-26 15z" fill="#C0CAD4"/>
-      </g>
-      <g class="fig01-r2">
-        <path d="M266 216l12-7 0-69-12 7z" fill="#EA3943"/>
-        <path class="iso-key" d="M254 228l26-15 36 19-26 15z" fill="#C0CAD4"/>
-      </g>
-      <g class="fig01-r3">
-        <path d="M318 186l12-7 0-61-12 7z" fill="#EA3943"/>
-        <path class="iso-key" d="M306 198l26-15 36 19-26 15z" fill="#C0CAD4"/>
-      </g>
-      <g class="fig01-r4">
-        <path d="M370 156l12-7 0-53-12 7z" fill="#EA3943"/>
-        <path class="iso-key" d="M358 168l26-15 36 19-26 15z" fill="#C0CAD4"/>
-      </g>
-      <g class="fig01-r5">
-        <path d="M422 186l12-7 0-57-12 7z" fill="#EA3943"/>
-        <path class="iso-key" d="M410 198l26-15 36 19-26 15z" fill="#C0CAD4"/>
-      </g>
-      <g class="fig01-r6">
-        <path d="M454 204l12-7 0-65-12 7z" fill="#16C784"/>
-      </g>
-      <!-- Blue accent keys -->
-      <path d="M232 276l26-15 36 19-26 15z" fill="#16C784"/>
-      <path d="M284 246l26-15 36 19-26 15z" fill="#16C784"/>
-      <path d="M336 216l26-15 36 19-26 15z" fill="#16C784"/>
-      <path d="M388 186l26-15 36 19-26 15z" fill="#16C784"/>
-      <path d="M440 216l26-15 36 19-26 15z" fill="#16C784"/>
-      <!-- Spot rail (blue pulse) -->
-      <path class="fig01-rail-blue" d="M170 330l230 125 184-105" stroke="#16C784" stroke-width="5" stroke-linecap="round"/>
-      <!-- Futures rail (teal pulse) -->
-      <path class="fig01-rail-teal" d="M210 306l190 102 146-84" stroke="#EA3943" stroke-width="5" stroke-linecap="round"/>
-      <!-- Balance arc (trace) -->
-      <path class="fig01-arc" d="M178 206c82-94 176 86 264-26 58-72 118-54 178-22" stroke="#16C784" stroke-width="4" stroke-linecap="round" stroke-dasharray="600"/>
-      <!-- Caption -->
-      <text class="iso-cap" x="120" y="468" font-family="Inter,sans-serif" font-size="18" font-weight="600" fill="#EDEDED" data-i18n="index.hero.figCaption">Your rules coordinate execution inside available instruments.</text>
-    </svg>
+    <!-- Strategy console (serious mode): equity curve filled by js/metrics.js; stays hidden without the feed -->
+    <div class="hero-console serious-art" data-hero-console hidden>
+      <div class="hero-console__in">
+        <aside class="hero-console__side">
+          <div class="hero-console__t">MY RULES · <span data-i18n="index.console.example">example</span></div>
+          <div class="hero-console__row is-on"><span data-i18n="index.console.r1">Daily loss limit</span><b>ON</b></div>
+          <div class="hero-console__row"><span data-i18n="index.console.r2">Ratio correction</span><b>ON</b></div>
+          <div class="hero-console__row"><span data-i18n="index.console.r3">Hedge exit condition</span><b>ROI</b></div>
+          <div class="hero-console__row"><span data-i18n="index.console.r4">Withdrawal permission</span><b>OFF</b></div>
+          <div class="hero-console__t hero-console__t--gap" data-i18n="index.console.assets">Instruments traded</div>
+          <div data-hero-mix></div>
+        </aside>
+        <div class="hero-console__main">
+          <div class="hero-console__head">
+            <div>
+              <div class="hero-console__cap" data-i18n="index.track.curveTitle">Account equity index (start = 100)</div>
+              <div class="hero-console__val"><span data-hero-metric="now">—</span><small data-hero-metric="roi">—</small></div>
+            </div>
+            <span class="hero-console__chip"><i aria-hidden="true"></i><span data-hero-metric="asof">—</span></span>
+          </div>
+          <div class="hero-console__plot" data-hero-chart aria-hidden="true"></div>
+          <p class="hero-console__note"><span data-i18n="index.console.note">One live account, losses included. Past performance does not guarantee future returns, and you may lose principal.</span> <a href="#track-record" data-i18n="index.console.more">Full record →</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1065,7 +1045,6 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/metrics.js"></script>
-<script type="module" src="js/hero-particles.js"></script>
 <script>
   lucide.createIcons();
 
@@ -1114,11 +1093,11 @@
   // Art mode toggle (serious ↔ pixel)
   (function(){
     var key = 'piano-art-mode';
-    var mode = localStorage.getItem(key) || 'pixel';
+    var mode = localStorage.getItem(key) || 'serious';
     var root = document.documentElement;
     var buttons = document.querySelectorAll('.art-toggle__btn');
     function apply(next) {
-      mode = next === 'serious' ? 'serious' : 'pixel';
+      mode = next === 'pixel' ? 'pixel' : 'serious';
       root.setAttribute('data-art', mode);
       localStorage.setItem(key, mode);
       buttons.forEach(function(btn) {

@@ -394,6 +394,74 @@
     }
   }
 
+  // ---------- hero console (same feed + gate as the track section) ----------
+  var heroConsole = document.querySelector('[data-hero-console]');
+  function heroSet(metric, text) {
+    heroConsole.querySelectorAll('[data-hero-metric="' + metric + '"]').forEach(function (el) { el.textContent = text; });
+  }
+  function renderHeroText() {
+    var c = data.curve;
+    heroSet('now', c[c.length - 1].v.toFixed(1));
+    heroSet('roi', pct(data.accountRoiPct));
+    heroSet('asof', fmt(t('index.console.asof', 'as of {date}'), { date: datePart(data.asOf || c[c.length - 1].d) }));
+    var box = heroConsole.querySelector('[data-hero-mix]');
+    while (box.firstChild) box.removeChild(box.firstChild);
+    (data.assetMix || []).forEach(function (r) {
+      var row = document.createElement('div');
+      row.className = 'hero-console__row';
+      var name = document.createElement('span');
+      name.textContent = t('index.track.mix.' + r.key, r.key);
+      var n = document.createElement('b');
+      n.textContent = String(r.instruments);
+      row.appendChild(name);
+      row.appendChild(n);
+      box.appendChild(row);
+    });
+  }
+  function renderHeroChart() {
+    var host = heroConsole.querySelector('[data-hero-chart]');
+    if (!host.clientWidth) return; // not visible (pixel mode) — the ResizeObserver redraws on show
+    var c = data.curve;
+    var g = makeSvg(host), svg = g.svg;
+    var pad = { l: 34, r: 12, t: 12, b: 24 };
+    var vals = c.map(function (p) { return p.v; });
+    var ticks = niceTicks(Math.min.apply(null, vals), Math.max.apply(null, vals), 4);
+    var lo = ticks[0], hi = ticks[ticks.length - 1];
+    var x = function (i) { return pad.l + i / (c.length - 1) * (g.w - pad.l - pad.r); };
+    var y = function (v) { return pad.t + (1 - (v - lo) / (hi - lo)) * (g.h - pad.t - pad.b); };
+    ticks.forEach(function (v) {
+      svg.appendChild(svgEl('line', { x1: pad.l, x2: g.w - pad.r, y1: y(v), y2: y(v), 'class': 'tr-grid' }));
+      var lab = svgEl('text', { x: pad.l - 8, y: y(v) + 4, 'text-anchor': 'end', 'class': 'tr-axis' });
+      lab.textContent = String(v);
+      svg.appendChild(lab);
+    });
+    monthTicks(svg, c, x, g.h - 4);
+    var defs = svgEl('defs'), grad = svgEl('linearGradient', { id: 'heroFill', x1: 0, y1: 0, x2: 0, y2: 1 });
+    grad.appendChild(svgEl('stop', { offset: '0' }, { stopColor: 'var(--tr-line)', stopOpacity: '0.24' }));
+    grad.appendChild(svgEl('stop', { offset: '1' }, { stopColor: 'var(--tr-line)', stopOpacity: '0' }));
+    defs.appendChild(grad);
+    svg.appendChild(defs);
+    var line = c.map(function (p, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(p.v).toFixed(1); }).join('');
+    svg.appendChild(svgEl('path', { d: line + 'L' + x(c.length - 1).toFixed(1) + ',' + y(lo) + 'L' + x(0).toFixed(1) + ',' + y(lo) + 'Z', fill: 'url(#heroFill)' }));
+    svg.appendChild(svgEl('path', { d: line, fill: 'none', 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, { stroke: 'var(--tr-line)' }));
+    svg.appendChild(svgEl('circle', { cx: x(c.length - 1), cy: y(c[c.length - 1].v), r: 4, 'stroke-width': 2 }, { fill: 'var(--tr-line)', stroke: 'var(--bg)' }));
+  }
+  function initHero() {
+    if (!heroConsole || !hasDetail(data)) return;
+    heroConsole.hidden = false;
+    renderHeroText();
+    renderHeroChart();
+    if (window.PianoI18n) PianoI18n.onChange(function () { renderHeroText(); renderHeroChart(); });
+    if (window.ResizeObserver) {
+      var host = heroConsole.querySelector('[data-hero-chart]'), lastW = 0;
+      new ResizeObserver(function () {
+        if (host.clientWidth === lastW) return;
+        lastW = host.clientWidth;
+        requestAnimationFrame(renderHeroChart);
+      }).observe(host);
+    }
+  }
+
   fetch(FEED_URL, { cache: 'no-store' })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) {
@@ -405,6 +473,7 @@
         bindHover();
       }
       renderAll();
+      initHero();
       if (window.PianoI18n) PianoI18n.onChange(renderAll);
       if (window.ResizeObserver) {
         var pending = false, lastW = 0;
